@@ -27,12 +27,22 @@ document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 // Contact form
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-  contactForm.addEventListener('submit', function(e) {
+  contactForm.addEventListener('submit', async function(e) {
     e.preventDefault();
     const success = document.getElementById('formSuccess');
-    success.classList.add('visible');
-    this.querySelectorAll('input, textarea, select').forEach(el => el.value = '');
-    setTimeout(() => success.classList.remove('visible'), 5000);
+    try {
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(this)).toString()
+      });
+      success.classList.add('visible');
+      this.querySelectorAll('input, textarea, select').forEach(el => el.value = '');
+      setTimeout(() => success.classList.remove('visible'), 5000);
+    } catch {
+      success.textContent = 'Er ging iets mis. Stuur een mail naar russchenbertjan@gmail.com.';
+      success.classList.add('visible');
+    }
   });
 }
 

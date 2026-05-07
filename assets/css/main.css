@@ -589,6 +589,55 @@ body {
 }
 .form__success.visible { display: block; }
 
+/* ── Logo Ticker ── */
+.logo-ticker {
+  padding: 2rem 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  background: var(--bg-2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+.logo-ticker__label {
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+.logo-ticker__track {
+  width: 100%;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 15%, #000 85%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 15%, #000 85%, transparent 100%);
+}
+.logo-ticker__list {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  width: max-content;
+  animation: ticker-scroll 30s linear infinite;
+}
+.logo-ticker__logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.55;
+  filter: grayscale(1) brightness(1.6);
+  transition: opacity .3s, filter .3s;
+}
+.logo-ticker__logo:hover {
+  opacity: 1;
+  filter: none;
+}
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
 /* ── Footer ── */
 .footer {
   background: var(--bg-2);
