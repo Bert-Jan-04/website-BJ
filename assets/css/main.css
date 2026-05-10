@@ -407,7 +407,7 @@ body {
   width: 100%;
   aspect-ratio: 4/5;
   object-fit: cover;
-  object-position: top center;
+  object-position: center;
   border-radius: var(--radius);
   display: block;
 }
