@@ -274,6 +274,7 @@
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .kb-controls__inner { flex-direction: column; align-items: stretch; }
+  .kb-filters         { justify-content: center; }
   .kb-search { width: 100%; }
   .kb-cta__inner { padding: 40px 28px; }
 }

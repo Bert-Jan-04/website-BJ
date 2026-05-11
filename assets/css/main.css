@@ -753,6 +753,9 @@ body {
 @media (max-width: 900px) {
   .over__inner    { grid-template-columns: 1fr; gap: 48px; }
   .contact__inner { grid-template-columns: 1fr; gap: 48px; }
+  .over__tags     { justify-content: center; }
+  .contact__info  { text-align: center; }
+  .contact__details { align-items: center; }
 }
 @media (max-width: 768px) {
   .nav__links  { display: none; }
