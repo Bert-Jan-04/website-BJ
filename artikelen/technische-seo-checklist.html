@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Technische SEO: de checklist voor een foutloze website | SportSEO Specialist</title>
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="stylesheet" href="../assets/css/artikel.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="../index.html" class="nav__logo">Sport<span>SEO</span> Specialist</a>
+      <nav class="nav__links">
+        <a href="../diensten.html">Diensten</a>
+        <a href="../over-mij.html">Over mij</a>
+        <a href="../cases.html">Cases</a>
+        <a href="../kennisbank.html" class="nav__link--active">Kennisbank</a>
+        <a href="../index.html#contact" class="btn btn--outline">Contact</a>
+      </nav>
+      <button class="nav__burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <a href="../diensten.html" class="nav__mobile-link">Diensten</a>
+      <a href="../over-mij.html" class="nav__mobile-link">Over mij</a>
+      <a href="../cases.html" class="nav__mobile-link">Cases</a>
+      <a href="../kennisbank.html" class="nav__mobile-link">Kennisbank</a>
+      <a href="../index.html#contact" class="nav__mobile-link">Contact</a>
+    </div>
+  </header>
+
+  <section class="artikel-hero">
+    <div class="artikel-hero__grid"></div>
+    <div class="container">
+      <a href="../kennisbank.html" class="artikel-hero__back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        Terug naar kennisbank
+      </a>
+      <div class="artikel-hero__inner">
+        <div class="artikel-hero__meta">
+          <span class="kb-badge kb-badge--blue">SEO</span>
+          <span class="artikel-hero__date">Mei 2026</span>
+          <span class="artikel-hero__read">7 min lezen</span>
+        </div>
+        <h1>Technische SEO: de checklist voor een foutloze website</h1>
+        <p class="artikel-hero__sub">Van canonical tags en sitemap tot Core Web Vitals, de technische basis die elke website op orde moet hebben voordat je aan content begint.</p>
+        <div class="artikel-hero__author">
+          <div class="artikel-hero__avatar">BJ</div>
+          <div>
+            <div class="artikel-hero__author-name">Bert-Jan Russchen</div>
+            <div class="artikel-hero__author-role">SEO &amp; Automatisering Specialist</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="artikel-section">
+    <div class="container">
+      <div class="artikel-layout">
+
+        <article class="artikel-content">
+
+          <h2 id="wat-is-technische-seo">Wat is technische SEO?</h2>
+          <p>Technische SEO is de fundering van je hele SEO-strategie. Het gaat om alles wat Google nodig heeft om je website te kunnen crawlen, begrijpen en indexeren, los van de content zelf. Zelfs de beste content scoort niet als Google die pagina niet kan vinden of correct kan lezen.</p>
+          <p>Technische problemen zijn ook verraderlijk: ze zijn vaak onzichtbaar voor de bezoeker, maar hebben grote gevolgen voor je rankings. Met deze checklist loop je de belangrijkste punten af die ik bij elke SEO-audit als eerste controleer. Wil je weten hoe Google vervolgens rangschikt? Lees dan ook <a href="seo-ranking-algoritme.html">hoe het ranking-algoritme werkt</a>.</p>
+
+          <h2 id="crawling-en-indexering">Crawling en indexering begrijpen</h2>
+          <p>Googlebot bezoekt je website via links. Het volgt elke link die het tegenkomt en brengt zo de structuur van je site in kaart. Pagina's die geen inkomende links hebben (zogenaamde <em>orphan pages</em>) worden zelden gecrawld.</p>
+          <p>Wat je moet controleren:</p>
+          <ul>
+            <li>Staat er geen <code>noindex</code>-tag op pagina's die wél geïndexeerd moeten worden?</li>
+            <li>Blokkeert je <code>robots.txt</code> geen belangrijke pagina's of mappen?</li>
+            <li>Open Google Search Console en controleer het Coverage-rapport op fouten en waarschuwingen</li>
+            <li>Zijn er pagina's met <code>nofollow</code> op interne links die dat niet zouden moeten hebben?</li>
+          </ul>
+
+          <div class="artikel-callout">
+            <p><strong>Google Search Console is je beste vriend.</strong> Dit gratis hulpmiddel van Google laat precies zien welke pagina's geïndexeerd zijn, welke fouten er zijn, en hoe je site presteert in zoekresultaten. Als je het nog niet hebt ingesteld: doe dat vandaag nog.</p>
+          </div>
+
+          <h2 id="sitemap-robots">Sitemap.xml en robots.txt</h2>
+          <p>Een <strong>sitemap.xml</strong> is een bestand dat Google vertelt welke pagina's op je website bestaan en wanneer ze voor het laatst zijn bijgewerkt. Het is geen garantie dat Google die pagina's indexeert, maar het helpt wel, zeker voor nieuwe websites of grote sites met veel pagina's.</p>
+          <p>Je sitemap is meestal bereikbaar via <code>jouwdomein.nl/sitemap.xml</code>. Dien hem in via Google Search Console onder het menu "Sitemaps". Verwijder verouderde pagina's en 404-fouten uit je sitemap.</p>
+          <p>Het <strong>robots.txt</strong>-bestand staat in de root van je website en vertelt crawlers welke pagina's ze mogen bezoeken. Een veelgemaakte fout is het per ongeluk blokkeren van CSS- of JavaScript-bestanden, waardoor Google je website niet correct kan renderen.</p>
+
+          <h2 id="canonical-tags">Canonical tags voorkomen duplicate content</h2>
+          <p>Duplicate content ontstaat wanneer dezelfde (of vrijwel dezelfde) content op meerdere URL's bereikbaar is. Dit verdeelt je "linkwaarde" over meerdere pagina's en verwarrt Google over welke versie het moet ranken.</p>
+          <p>Veelvoorkomende oorzaken:</p>
+          <ul>
+            <li>HTTP én HTTPS versies van je site die beide bereikbaar zijn</li>
+            <li>www en non-www versies</li>
+            <li>URL-parameters van filters of tracking (<code>?utm_source=...</code>)</li>
+            <li>Pagineringen zonder canonical</li>
+          </ul>
+          <p>De oplossing is een <code>&lt;link rel="canonical" href="..."&gt;</code>-tag in de <code>&lt;head&gt;</code> van je pagina, die verwijst naar de voorkeursversie. Zorg ook voor een 301-redirect van de niet-canonieke versies.</p>
+
+          <h2 id="paginasnelheid">Paginasnelheid en Core Web Vitals</h2>
+          <p>Snelheid is een directe rankingfactor. <a href="core-web-vitals.html">Core Web Vitals</a>, LCP, INP en CLS, zijn de drie metrics die Google gebruikt om paginaervaring te meten. Een slechte score heeft meetbare gevolgen voor je rankings.</p>
+          <p>De meest impactvolle verbeteringen voor snelheid:</p>
+          <ul>
+            <li>Comprimeer afbeeldingen en gebruik moderne formaten (WebP, AVIF)</li>
+            <li>Laad JavaScript deferred of asynchroon</li>
+            <li>Gebruik een CDN (Content Delivery Network)</li>
+            <li>Activeer browsercaching en Gzip-compressie op de server</li>
+            <li>Verwijder ongebruikte CSS en JavaScript</li>
+          </ul>
+
+          <h2 id="mobile-first">Mobile-first indexing</h2>
+          <p>Sinds 2023 indexeert Google uitsluitend op basis van de mobiele versie van je website. Dit betekent dat content die alleen op de desktopversie staat, niet meegenomen wordt in de ranking.</p>
+          <p>Zorg voor een volledig responsive ontwerp waarbij de mobiele versie dezelfde content bevat als de desktopversie. Test je website in Chrome DevTools (toggle device toolbar) en via <a href="https://search.google.com/test/mobile-friendly" target="_blank" rel="noopener">Google's Mobile-Friendly Test</a>.</p>
+          <p>Voor technische details over hoe je website is gebouwd, kan een <a href="wordpress-vs-maatwerk.html">afweging tussen WordPress en maatwerk</a> relevant zijn, het platform bepaalt mede hoeveel controle je hebt over mobiele optimalisatie.</p>
+
+          <h2 id="structured-data">Structured data en Schema markup</h2>
+          <p>Structured data is code die je aan je HTML toevoegt om Google extra context te geven over wat een pagina beschrijft. Het kan leiden tot <em>rich results</em>: zoekresultaten met stervormige beoordelingen, FAQ-uitklappers, receptinformatie of evenementdata.</p>
+          <p>Meest gebruikte schema-typen voor MKB-websites:</p>
+          <ul>
+            <li><strong>LocalBusiness</strong>: naam, adres, telefoonnummer, openingstijden</li>
+            <li><strong>FAQ</strong>: veelgestelde vragen die uitklappen in zoekresultaten</li>
+            <li><strong>Article</strong>: voor kennisartikelen en blogposts</li>
+            <li><strong>BreadcrumbList</strong>: navigatiepad in de zoekresultaten</li>
+          </ul>
+          <p>Gebruik de <a href="https://validator.schema.org" target="_blank" rel="noopener">Schema.org validator</a> om je markup te controleren op fouten.</p>
+
+          <hr class="artikel-divider" />
+          <p>Een gezonde technische basis is de voorwaarde voor alles wat daarna komt. Wil je dieper ingaan op snelheid? Lees het artikel over <a href="core-web-vitals.html">Core Web Vitals</a>. Voor de volgende stap in je SEO-strategie, bekijk hoe het <a href="seo-ranking-algoritme.html">ranking-algoritme</a> werkt.</p>
+
+        </article>
+
+        <aside class="artikel-aside">
+          <div class="aside-block">
+            <p class="aside-block__title">In dit artikel</p>
+            <ul class="aside-toc">
+              <li><a href="#wat-is-technische-seo">Wat is technische SEO?</a></li>
+              <li><a href="#crawling-en-indexering">Crawling en indexering</a></li>
+              <li><a href="#sitemap-robots">Sitemap en robots.txt</a></li>
+              <li><a href="#canonical-tags">Canonical tags</a></li>
+              <li><a href="#paginasnelheid">Paginasnelheid</a></li>
+              <li><a href="#mobile-first">Mobile-first indexing</a></li>
+              <li><a href="#structured-data">Structured data</a></li>
+            </ul>
+          </div>
+
+          <div class="aside-block">
+            <p class="aside-block__title">Gerelateerde artikelen</p>
+            <div class="aside-links">
+              <a href="seo-ranking-algoritme.html" class="aside-link">
+                <div class="aside-link__icon aside-link__icon--blue">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                </div>
+                <span class="aside-link__text">Hoe werkt Google's algoritme?</span>
+              </a>
+              <a href="core-web-vitals.html" class="aside-link">
+                <div class="aside-link__icon aside-link__icon--purple">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                </div>
+                <span class="aside-link__text">Core Web Vitals uitgelegd</span>
+              </a>
+              <a href="wordpress-vs-maatwerk.html" class="aside-link">
+                <div class="aside-link__icon aside-link__icon--purple">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="16" width="20" height="5" rx="1"/><rect x="2" y="9" width="20" height="5" rx="1"/><rect x="2" y="2" width="20" height="5" rx="1"/></svg>
+                </div>
+                <span class="aside-link__text">WordPress vs. maatwerk</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="aside-cta">
+            <p>Wil je weten hoe jouw website er technisch voor staat?</p>
+            <a href="../index.html#contact" class="btn btn--primary">Vraag een audit aan</a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="../index.html" class="nav__logo">Sport<span>SEO</span> Specialist</a>
+      <p>© 2026 SportSEO Specialist, alle rechten voorbehouden</p>
+      <p class="footer__meta">KVK: 87830817 &nbsp;·&nbsp; Ald Duerswâld 4, 9241WN Wijnjewoude</p>
+      <div class="footer__links">
+        <a href="#">Privacybeleid</a>
+        <a href="#">Algemene voorwaarden</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

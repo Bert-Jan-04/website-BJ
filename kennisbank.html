@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kennisbank | SportSEO Specialist</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/kennisbank.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__logo">Sport<span>SEO</span> Specialist</a>
+      <nav class="nav__links">
+        <a href="diensten.html">Diensten</a>
+        <a href="over-mij.html">Over mij</a>
+        <a href="cases.html">Cases</a>
+        <a href="kennisbank.html" class="nav__link--active">Kennisbank</a>
+        <a href="index.html#contact" class="btn btn--outline">Contact</a>
+      </nav>
+      <button class="nav__burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <a href="diensten.html" class="nav__mobile-link">Diensten</a>
+      <a href="over-mij.html" class="nav__mobile-link">Over mij</a>
+      <a href="cases.html" class="nav__mobile-link">Cases</a>
+      <a href="kennisbank.html" class="nav__mobile-link">Kennisbank</a>
+      <a href="index.html#contact" class="nav__mobile-link">Contact</a>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="hero__bg">
+      <div class="hero__circle hero__circle--1"></div>
+      <div class="hero__circle hero__circle--2"></div>
+      <div class="hero__grid"></div>
+    </div>
+    <div class="container page-hero__inner">
+      <span class="section__label">Kennisbank</span>
+      <h1>Alles wat je moet weten over <span class="gradient-text">digitale groei</span></h1>
+      <p>Praktische gidsen en artikelen over SEO, AI-automatisering, marketing en websiteontwikkeling.</p>
+    </div>
+  </section>
+
+  <!-- FILTER + ZOEK -->
+  <section class="kb-controls">
+    <div class="container kb-controls__inner">
+      <div class="kb-filters" role="tablist">
+        <button class="kb-filter kb-filter--active" data-cat="alle" role="tab">Alle</button>
+        <button class="kb-filter" data-cat="seo" role="tab">SEO</button>
+        <button class="kb-filter" data-cat="ai" role="tab">AI &amp; Automatisering</button>
+        <button class="kb-filter" data-cat="marketing" role="tab">Marketing</button>
+        <button class="kb-filter" data-cat="websites" role="tab">Websites</button>
+      </div>
+      <div class="kb-search-wrap">
+        <svg class="kb-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input type="text" id="kb-search" class="kb-search" placeholder="Zoek artikel..." aria-label="Zoek artikel" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTIKELEN GRID -->
+  <section class="section kb-section">
+    <div class="container">
+      <div class="kb-grid" id="kb-grid">
+
+        <!-- SEO artikelen -->
+        <article class="kb-card fade-in" data-cat="seo">
+          <div class="kb-card__image kb-card__image--blue">
+            <div class="kb-card__image-grid"></div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+              <path d="M8 11h6M11 8v6" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <div class="kb-card__body">
+            <div class="kb-card__top">
+              <span class="kb-badge kb-badge--blue">SEO</span>
+              <span class="kb-read-time">5 min lezen</span>
+            </div>
+            <h2 class="kb-card__title">Hoe werkt Google's ranking-algoritme in 2026?</h2>
+            <p class="kb-card__excerpt">Een helder overzicht van de factoren die bepalen waar jouw pagina's eindigen in de zoekresultaten en wat je eraan kunt doen.</p>
+            <div class="kb-card__footer">
+              <div class="kb-author">
+                <div class="kb-author__avatar">BJ</div>
+                <span>Bert-Jan Russchen</span>
+              </div>
+              <a href="artikelen/seo-ranking-algoritme.html" class="kb-card__link">
+                Lees artikel
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="kb-card fade-in fade-in-delay-1" data-cat="seo">
+          <div class="kb-card__image kb-card__image--blue">
+            <div class="kb-card__image-grid"></div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+            </svg>
+          </div>
+          <div class="kb-card__body">
+            <div class="kb-card__top">
+              <span class="kb-badge kb-badge--blue">SEO</span>
+              <span class="kb-read-time">7 min lezen</span>
+            </div>
+            <h2 class="kb-card__title">Technische SEO: de checklist voor een foutloze website</h2>
+            <p class="kb-card__excerpt">Van canonical tags en sitemap tot Core Web Vitals, de technische basis die elke website op orde moet hebben.</p>
+            <div class="kb-card__footer">
+              <div class="kb-author">
+                <div class="kb-author__avatar">BJ</div>
+                <span>Bert-Jan Russchen</span>
+              </div>
+              <a href="artikelen/technische-seo-checklist.html" class="kb-card__link">
+                Lees artikel
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="kb-card fade-in fade-in-delay-2" data-cat="seo">
+          <div class="kb-card__image kb-card__image--blue">
+            <div class="kb-card__image-grid"></div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <div class="kb-card__body">
+            <div class="kb-card__top">
+              <span class="kb-badge kb-badge--blue">SEO</span>
+              <span class="kb-read-time">6 min lezen</span>
+            </div>
+            <h2 class="kb-card__title">Lokale SEO: zo kom je bovenaan in jouw regio</h2>
+            <p class="kb-card__excerpt">Google Bedrijfsprofiel, lokale zoekwoorden en NAP-consistentie, alles wat je nodig hebt om lokaal gevonden te worden.</p>
+            <div class="kb-card__footer">
+              <div class="kb-author">
+                <div class="kb-author__avatar">BJ</div>
+                <span>Bert-Jan Russchen</span>
+              </div>
+              <a href="artikelen/lokale-seo.html" class="kb-card__link">
+                Lees artikel
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- AI & Automatisering -->
+        <article class="kb-card fade-in" data-cat="ai">
+          <div class="kb-card__image kb-card__image--orange">
+            <div class="kb-card__image-grid"></div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2l1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5z"/>
+              <path d="M19 14l.75 2.25L22 17l-2.25.75L19 20l-.75-2.25L16 17l2.25-.75z"/>
+              <path d="M5 18l.5 1.5L7 20l-1.5.5L5 22l-.5-1.5L3 20l1.5-.5z"/>
+            </svg>
+          </div>
+          <div class="kb-card__body">
+            <div class="kb-card__top">
+              <span class="kb-badge kb-badge--orange">AI &amp; Automatisering</span>
+              <span class="kb-read-time">8 min lezen</span>
+            </div>
+            <h2 class="kb-card__title">Wat is een AI-workflow en wat levert het op?</h2>
+            <p class="kb-card__excerpt">Uitleg over hoe geautomatiseerde AI-processen handmatige taken overnemen en hoeveel tijd dat een gemiddeld bedrijf bespaart.</p>
+            <div class="kb-card__footer">
+              <div class="kb-author">
+                <div class="kb-author__avatar">BJ</div>
+                <span>Bert-Jan Russchen</span>
+              </div>
+              <a href="artikelen/ai-workflow.html" class="kb-card__link">
+                Lees artikel
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="kb-card fade-in fade-in-delay-1" data-cat="ai">
+          <div class="kb-card__image kb-card__image--orange">
+            <div class="kb-card__image-grid"></div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/>
+              <polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+            </svg>
+          </div>
+          <div class="kb-card__body">
+            <div class="kb-card__top">
+              <span class="kb-badge kb-badge--orange">AI &amp; Automatisering</span>
+              <span class="kb-read-time">5 min lezen</span>
+            </div>
+            <h2 class="kb-card__title">Make vs Zapier: welk platform past bij jou?</h2>
+            <p class="kb-card__excerpt">Een eerlijke vergelijking van de twee populairste automatiseringsplatforms, met voor- en nadelen per gebruiksscenario.</p>
+            <div class="kb-card__footer">
+              <div class="kb-author">
+                <div class="kb-author__avatar">BJ</div>
+                <span>Bert-Jan Russchen</span>
+              </div>
+              <a href="artikelen/make-vs-zapier.html" class="kb-card__link">
+                Lees artikel
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="kb-card fade-in fade-in-delay-2" data-cat="ai">
+          <div class="kb-card__image kb-card__image--orange">
+            <div class="kb-card__image-grid"></div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/>
+              <path d="M9 21V9"/><path d="M7 15h2M7 18h4M13 12h4M13 15h2"/>
+            </svg>
+          </div>
+          <div class="kb-card__body">
+            <div class="kb-card__top">
+              <span class="kb-badge kb-badge--orange">AI &amp; Automatisering</span>
+              <span class="kb-read-time">6 min lezen</span>
+            </div>
+            <h2 class="kb-card__title">Rapportages automatiseren met Looker Studio en AI</h2>
+            <p class="kb-card__excerpt">Hoe je datarapporten volledig automatisch laat aanmaken en versturen, zonder dat je er zelf iets voor hoeft te doen.</p>
+            <div class="kb-card__footer">
+              <div class="kb-author">
+                <div class="kb-author__avatar">BJ</div>
+                <span>Bert-Jan Russchen</span>
+              </div>
+              <a href="artikelen/rapportages-automatiseren.html" class="kb-card__link">
+                Lees artikel
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Marketing -->
+        <article class="kb-card fade-in" data-cat="marketing">
+          <div class="kb-card__image kb-card__image--green">
+            <div class="kb-card__image-grid"></div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M3 11l19-9-9 19-2-8-8-2z"/>
+            </svg>
+          </div>
+          <div class="kb-card__body">
+            <div class="kb-card__top">
+              <span class="kb-badge kb-badge--green">Marketing</span>
+              <span class="kb-read-time">4 min lezen</span>
+            </div>
+            <h2 class="kb-card__title">Content marketing voor sportbedrijven: zo doe je dat</h2>
+            <p class="kb-card__excerpt">Welk type content werkt in de sportbranche, hoe je een contentstrategie opzet en welke kanalen de meeste impact geven.</p>
+            <div class="kb-card__footer">
+              <div class="kb-author">
+                <div class="kb-author__avatar">BJ</div>
+                <span>Bert-Jan Russchen</span>
+              </div>
+              <a href="artikelen/content-marketing-sportbedrijven.html" class="kb-card__link">
+                Lees artikel
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="kb-card fade-in fade-in-delay-1" data-cat="marketing">
+          <div class="kb-card__image kb-card__image--green">
+            <div class="kb-card__image-grid"></div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+          </div>
+          <div class="kb-card__body">
+            <div class="kb-card__top">
+              <span class="kb-badge kb-badge--green">Marketing</span>
+              <span class="kb-read-time">5 min lezen</span>
+            </div>
+            <h2 class="kb-card__title">E-mailmarketing die wél gelezen wordt</h2>
+            <p class="kb-card__excerpt">Van onderwerpregel tot verzendtiming, de concrete tactieken die open- en klikratio's significant verhogen.</p>
+            <div class="kb-card__footer">
+              <div class="kb-author">
+                <div class="kb-author__avatar">BJ</div>
+                <span>Bert-Jan Russchen</span>
+              </div>
+              <a href="artikelen/emailmarketing.html" class="kb-card__link">
+                Lees artikel
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Websites -->
+        <article class="kb-card fade-in" data-cat="websites">
+          <div class="kb-card__image kb-card__image--purple">
+            <div class="kb-card__image-grid"></div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+          </div>
+          <div class="kb-card__body">
+            <div class="kb-card__top">
+              <span class="kb-badge kb-badge--purple">Websites</span>
+              <span class="kb-read-time">6 min lezen</span>
+            </div>
+            <h2 class="kb-card__title">Wat maakt een website snel? Core Web Vitals uitgelegd</h2>
+            <p class="kb-card__excerpt">LCP, FID en CLS in begrijpelijke taal, en de meest voorkomende oorzaken van een lage score met concrete oplossingen.</p>
+            <div class="kb-card__footer">
+              <div class="kb-author">
+                <div class="kb-author__avatar">BJ</div>
+                <span>Bert-Jan Russchen</span>
+              </div>
+              <a href="artikelen/core-web-vitals.html" class="kb-card__link">
+                Lees artikel
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="kb-card fade-in fade-in-delay-1" data-cat="websites">
+          <div class="kb-card__image kb-card__image--purple">
+            <div class="kb-card__image-grid"></div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="16" width="20" height="5" rx="1"/>
+              <rect x="2" y="9" width="20" height="5" rx="1"/>
+              <rect x="2" y="2" width="20" height="5" rx="1"/>
+            </svg>
+          </div>
+          <div class="kb-card__body">
+            <div class="kb-card__top">
+              <span class="kb-badge kb-badge--purple">Websites</span>
+              <span class="kb-read-time">7 min lezen</span>
+            </div>
+            <h2 class="kb-card__title">WordPress vs. maatwerk: wat is de beste keuze?</h2>
+            <p class="kb-card__excerpt">Een eerlijke afweging van beide opties, inclusief kosten, onderhoud en schaalbaarheid voor groeiende bedrijven.</p>
+            <div class="kb-card__footer">
+              <div class="kb-author">
+                <div class="kb-author__avatar">BJ</div>
+                <span>Bert-Jan Russchen</span>
+              </div>
+              <a href="artikelen/wordpress-vs-maatwerk.html" class="kb-card__link">
+                Lees artikel
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- GEEN RESULTATEN -->
+      <div class="kb-empty" id="kb-empty" style="display:none;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+        <p>Geen artikelen gevonden voor "<span id="kb-empty-term"></span>"</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section kb-cta">
+    <div class="container">
+      <div class="kb-cta__inner fade-in">
+        <span class="section__label">Samenwerken?</span>
+        <h2>Heb je een concrete vraag of wil je sparren?</h2>
+        <p>Ik help je graag verder, of het nu gaat om een SEO-audit, een automatiseringsproject of een nieuwe website.</p>
+        <a href="index.html#contact" class="btn btn--primary">Neem contact op</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="index.html" class="nav__logo">Sport<span>SEO</span> Specialist</a>
+      <p>© 2026 SportSEO Specialist, alle rechten voorbehouden</p>
+      <p class="footer__meta">KVK: 87830817 &nbsp;·&nbsp; Ald Duerswâld 4, 9241WN Wijnjewoude</p>
+      <div class="footer__links">
+        <a href="#">Privacybeleid</a>
+        <a href="#">Algemene voorwaarden</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    const filters = document.querySelectorAll('.kb-filter');
+    const cards   = document.querySelectorAll('.kb-card');
+    const search  = document.getElementById('kb-search');
+    const empty   = document.getElementById('kb-empty');
+    const emptyTerm = document.getElementById('kb-empty-term');
+    let activeCat = 'alle';
+
+    function applyFilters() {
+      const q = search.value.toLowerCase().trim();
+      let visible = 0;
+      cards.forEach(card => {
+        const cat     = card.dataset.cat;
+        const text    = card.textContent.toLowerCase();
+        const catOk   = activeCat === 'alle' || cat === activeCat;
+        const searchOk = !q || text.includes(q);
+        const show    = catOk && searchOk;
+        card.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      empty.style.display = visible === 0 ? 'flex' : 'none';
+      emptyTerm.textContent = q;
+    }
+
+    filters.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filters.forEach(b => b.classList.remove('kb-filter--active'));
+        btn.classList.add('kb-filter--active');
+        activeCat = btn.dataset.cat;
+        applyFilters();
+      });
+    });
+
+    search.addEventListener('input', applyFilters);
+  </script>
+</body>
+</html>

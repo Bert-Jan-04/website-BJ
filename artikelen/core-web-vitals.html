@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wat maakt een website snel? Core Web Vitals uitgelegd | SportSEO Specialist</title>
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="stylesheet" href="../assets/css/artikel.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="../index.html" class="nav__logo">Sport<span>SEO</span> Specialist</a>
+      <nav class="nav__links">
+        <a href="../diensten.html">Diensten</a>
+        <a href="../over-mij.html">Over mij</a>
+        <a href="../cases.html">Cases</a>
+        <a href="../kennisbank.html" class="nav__link--active">Kennisbank</a>
+        <a href="../index.html#contact" class="btn btn--outline">Contact</a>
+      </nav>
+      <button class="nav__burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <a href="../diensten.html" class="nav__mobile-link">Diensten</a>
+      <a href="../over-mij.html" class="nav__mobile-link">Over mij</a>
+      <a href="../cases.html" class="nav__mobile-link">Cases</a>
+      <a href="../kennisbank.html" class="nav__mobile-link">Kennisbank</a>
+      <a href="../index.html#contact" class="nav__mobile-link">Contact</a>
+    </div>
+  </header>
+
+  <section class="artikel-hero">
+    <div class="artikel-hero__grid"></div>
+    <div class="container">
+      <a href="../kennisbank.html" class="artikel-hero__back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        Terug naar kennisbank
+      </a>
+      <div class="artikel-hero__inner">
+        <div class="artikel-hero__meta">
+          <span class="kb-badge kb-badge--purple">Websites</span>
+          <span class="artikel-hero__date">Mei 2026</span>
+          <span class="artikel-hero__read">6 min lezen</span>
+        </div>
+        <h1>Wat maakt een website snel? Core Web Vitals uitgelegd</h1>
+        <p class="artikel-hero__sub">LCP, INP en CLS in begrijpelijke taal, de meest voorkomende oorzaken van een lage score en de concrete oplossingen per metric.</p>
+        <div class="artikel-hero__author">
+          <div class="artikel-hero__avatar">BJ</div>
+          <div>
+            <div class="artikel-hero__author-name">Bert-Jan Russchen</div>
+            <div class="artikel-hero__author-role">SEO &amp; Automatisering Specialist</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="artikel-section">
+    <div class="container">
+      <div class="artikel-layout">
+
+        <article class="artikel-content">
+
+          <h2 id="wat-zijn-cwv">Wat zijn Core Web Vitals?</h2>
+          <p>Core Web Vitals zijn drie metrics die Google gebruikt om de paginaervaring van een website te meten. Ze zijn in 2021 officieel onderdeel geworden van het ranking-algoritme, wat ze direct relevant maakt voor iedereen die wil scoren in Google. Lees ook hoe dit past in het bredere beeld van <a href="seo-ranking-algoritme.html">Google's ranking-algoritme</a>.</p>
+          <p>De drie metrics zijn:</p>
+          <ul>
+            <li><strong>LCP</strong>, Largest Contentful Paint: hoe snel laadt het grootste zichtbare element?</li>
+            <li><strong>INP</strong>, Interaction to Next Paint: hoe snel reageert de pagina op interactie?</li>
+            <li><strong>CLS</strong>, Cumulative Layout Shift: springen elementen onverwacht in de layout?</li>
+          </ul>
+          <p>Per metric gelden drempelwaarden: groen (goed), oranje (verbetering nodig) en rood (slecht). Google weegt de field data, echte gebruiksdata, zwaarder dan lab-data bij het bepalen van je ranking.</p>
+
+          <h2 id="lcp">LCP, Largest Contentful Paint</h2>
+          <p>LCP meet hoe snel het grootste zichtbare element op de pagina geladen is. Dat is vaak een hero-afbeelding, een grote tekstregel of een videothumbnail. De drempelwaarden: goed is onder 2,5 seconden; slecht is boven 4 seconden.</p>
+          <p><strong>Meest voorkomende oorzaken van een slechte LCP:</strong></p>
+          <ul>
+            <li>Grote, niet-gecomprimeerde afbeeldingen (de meest voorkomende oorzaak)</li>
+            <li>Trage serverresponstijd (TTFB boven 600ms)</li>
+            <li>Render-blocking CSS of JavaScript</li>
+            <li>Geen gebruik van een CDN</li>
+          </ul>
+          <p><strong>Oplossingen:</strong></p>
+          <ul>
+            <li>Comprimeer afbeeldingen en gebruik WebP of AVIF formaat</li>
+            <li>Voeg <code>fetchpriority="high"</code> toe aan de hero-afbeelding</li>
+            <li>Gebruik een snelle hosting/CDN (Cloudflare, Netlify, Vercel)</li>
+            <li>Activeer server-side caching</li>
+          </ul>
+
+          <h2 id="inp">INP, Interaction to Next Paint</h2>
+          <p>INP verving in 2024 FID (First Input Delay) als maatstaf voor interactiviteit. Waar FID alleen de eerste interactie mat, meet INP de responstijd van alle interacties gedurende het hele bezoek. Goed is onder 200ms; slecht is boven 500ms.</p>
+          <p>INP-problemen zijn vaker aanwezig op JavaScript-zwaar websites, denk aan complexe React-applicaties, grote plugins of veel third-party scripts (chatbots, analytics, advertenties).</p>
+          <p><strong>Oplossingen:</strong></p>
+          <ul>
+            <li>Vermijd lange JavaScript-taken (Long Tasks van &gt;50ms)</li>
+            <li>Gebruik code splitting om JavaScript gefaseerd te laden</li>
+            <li>Laad third-party scripts asynchroon of deferred</li>
+            <li>Verwijder ongebruikte JavaScript en plugins</li>
+          </ul>
+
+          <h2 id="cls">CLS, Cumulative Layout Shift</h2>
+          <p>CLS meet hoe stabiel de lay-out van een pagina is tijdens het laden. Als afbeeldingen, advertenties of fonts onverwacht verschuiven nadat de pagina al zichtbaar is, dan verschuift ook de inhoud die je al las, frustrerend en schaadelijk voor je score. Goed is onder 0,1; slecht is boven 0,25.</p>
+          <p><strong>Meest voorkomende oorzaken:</strong></p>
+          <ul>
+            <li>Afbeeldingen zonder width en height attributen</li>
+            <li>Advertenties of embeds die groter laden dan gereserveerde ruimte</li>
+            <li>Web fonts die later laden (FOIT/FOUT)</li>
+            <li>Dynamisch ingevoegde content bovenaan de pagina</li>
+          </ul>
+          <p><strong>Oplossingen:</strong></p>
+          <ul>
+            <li>Voeg altijd <code>width</code> en <code>height</code> attributen toe aan <code>&lt;img&gt;</code>-tags</li>
+            <li>Reserveer ruimte voor advertenties met <code>min-height</code></li>
+            <li>Gebruik <code>font-display: swap</code> in je CSS voor custom fonts</li>
+            <li>Voorkom het injecteren van content bovenaan na het laden</li>
+          </ul>
+
+          <h2 id="hoe-meten">Hoe meet je Core Web Vitals?</h2>
+          <p>De beste tools om je scores te controleren:</p>
+          <ul>
+            <li><strong>PageSpeed Insights</strong>: toont zowel lab-data als field data per URL</li>
+            <li><strong>Google Search Console</strong>: Core Web Vitals-rapport voor de hele site, inclusief trends</li>
+            <li><strong>Chrome DevTools</strong>: Performance-tab voor gedetailleerde analyse per laadstap</li>
+            <li><strong>WebPageTest</strong>: uitgebreide filmstrip-analyse voor waterfall-diagrammen</li>
+          </ul>
+
+          <div class="artikel-callout artikel-callout--purple">
+            <p><strong>Field data vs Lab data.</strong> PageSpeed Insights toont twee soorten data: lab-data (gemeten in gecontroleerde omstandigheid) en field data (echte gebruiksdata uit de Chrome User Experience Report). Google gebruikt field data voor ranking. Als je lab-data groen is maar field data rood, dan is er een probleem op échte apparaten van echte gebruikers.</p>
+          </div>
+
+          <h2 id="impact-seo">Invloed op SEO</h2>
+          <p>Core Web Vitals zijn één onderdeel van Google's Page Experience-signaal, dat ook HTTPS, mobile-friendliness en het ontbreken van intrusive interstitials omvat. Het is geen dominante rankingfactor, relevante content weegt zwaarder, maar bij gelijke content geeft een goede paginaervaring de doorslag.</p>
+          <p>De indirecte impact is misschien nog groter: een snellere website leidt tot minder bounces, meer paginaweergaven en hogere conversieratio's. Dat verbetert je user engagement-signalen, die Google ook meeneemt in de ranking. Meer technische SEO-context vind je in de <a href="technische-seo-checklist.html">technische SEO-checklist</a>. Voor advies over welk platform het makkelijkst te optimaliseren is, lees het artikel over <a href="wordpress-vs-maatwerk.html">WordPress vs. maatwerk</a>.</p>
+
+          <hr class="artikel-divider" />
+          <p>Core Web Vitals zijn oplosbaar, voor vrijwel elk probleem bestaat een concrete fix. Het vereist echter wel inzicht in waar het probleem zit. Wil je weten hoe jouw website scoort? <a href="../index.html#contact">Neem contact op</a> voor een gratis snelheidscheck.</p>
+
+        </article>
+
+        <aside class="artikel-aside">
+          <div class="aside-block">
+            <p class="aside-block__title">In dit artikel</p>
+            <ul class="aside-toc">
+              <li><a href="#wat-zijn-cwv">Wat zijn Core Web Vitals?</a></li>
+              <li><a href="#lcp">LCP: laadsnelheid</a></li>
+              <li><a href="#inp">INP: interactiviteit</a></li>
+              <li><a href="#cls">CLS: stabiliteit</a></li>
+              <li><a href="#hoe-meten">Hoe meten?</a></li>
+              <li><a href="#impact-seo">Invloed op SEO</a></li>
+            </ul>
+          </div>
+
+          <div class="aside-block">
+            <p class="aside-block__title">Gerelateerde artikelen</p>
+            <div class="aside-links">
+              <a href="technische-seo-checklist.html" class="aside-link">
+                <div class="aside-link__icon aside-link__icon--blue">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                </div>
+                <span class="aside-link__text">Technische SEO checklist</span>
+              </a>
+              <a href="wordpress-vs-maatwerk.html" class="aside-link">
+                <div class="aside-link__icon aside-link__icon--purple">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="16" width="20" height="5" rx="1"/><rect x="2" y="9" width="20" height="5" rx="1"/><rect x="2" y="2" width="20" height="5" rx="1"/></svg>
+                </div>
+                <span class="aside-link__text">WordPress vs. maatwerk</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="aside-cta">
+            <p>Wil je weten hoe snel jouw website is?</p>
+            <a href="../index.html#contact" class="btn btn--primary">Gratis snelheidscheck</a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="../index.html" class="nav__logo">Sport<span>SEO</span> Specialist</a>
+      <p>© 2026 SportSEO Specialist, alle rechten voorbehouden</p>
+      <p class="footer__meta">KVK: 87830817 &nbsp;·&nbsp; Ald Duerswâld 4, 9241WN Wijnjewoude</p>
+      <div class="footer__links">
+        <a href="#">Privacybeleid</a>
+        <a href="#">Algemene voorwaarden</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

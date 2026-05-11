@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rapportages automatiseren met Looker Studio en AI | SportSEO Specialist</title>
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="stylesheet" href="../assets/css/artikel.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="../index.html" class="nav__logo">Sport<span>SEO</span> Specialist</a>
+      <nav class="nav__links">
+        <a href="../diensten.html">Diensten</a>
+        <a href="../over-mij.html">Over mij</a>
+        <a href="../cases.html">Cases</a>
+        <a href="../kennisbank.html" class="nav__link--active">Kennisbank</a>
+        <a href="../index.html#contact" class="btn btn--outline">Contact</a>
+      </nav>
+      <button class="nav__burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <a href="../diensten.html" class="nav__mobile-link">Diensten</a>
+      <a href="../over-mij.html" class="nav__mobile-link">Over mij</a>
+      <a href="../cases.html" class="nav__mobile-link">Cases</a>
+      <a href="../kennisbank.html" class="nav__mobile-link">Kennisbank</a>
+      <a href="../index.html#contact" class="nav__mobile-link">Contact</a>
+    </div>
+  </header>
+
+  <section class="artikel-hero">
+    <div class="artikel-hero__grid"></div>
+    <div class="container">
+      <a href="../kennisbank.html" class="artikel-hero__back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        Terug naar kennisbank
+      </a>
+      <div class="artikel-hero__inner">
+        <div class="artikel-hero__meta">
+          <span class="kb-badge kb-badge--orange">AI &amp; Automatisering</span>
+          <span class="artikel-hero__date">Mei 2026</span>
+          <span class="artikel-hero__read">6 min lezen</span>
+        </div>
+        <h1>Rapportages automatiseren met Looker Studio en AI</h1>
+        <p class="artikel-hero__sub">Hoe je datarapporten volledig automatisch laat aanmaken, voorzien van AI-analyse en verzenden, zonder dat je er zelf iets voor hoeft te doen.</p>
+        <div class="artikel-hero__author">
+          <div class="artikel-hero__avatar">BJ</div>
+          <div>
+            <div class="artikel-hero__author-name">Bert-Jan Russchen</div>
+            <div class="artikel-hero__author-role">SEO &amp; Automatisering Specialist</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="artikel-section">
+    <div class="container">
+      <div class="artikel-layout">
+
+        <article class="artikel-content">
+
+          <h2 id="waarom-automatiseren">Waarom rapportages automatiseren loont</h2>
+          <p>Hoeveel uur besteed jij elke maand aan het samenstellen van rapporten? Data uit meerdere bronnen samenvoegen, grafieken bijwerken, inzichten formuleren en het geheel presentabel maken, voor de meeste MKB-eigenaren is dit minstens vier tot acht uur per maand. Uren die beter besteed kunnen worden.</p>
+          <p>Automatische rapportages bieden drie grote voordelen. Ten eerste <strong>tijdsbesparing</strong>: na de initiële setup kosten ze je nul uur. Ten tweede <strong>consistentie</strong>: hetzelfde format, dezelfde vergelijkingsperiodes, elke keer foutloos. Ten derde <strong>snelheid</strong>: de data is real-time, niet twee weken oud.</p>
+          <p>De combinatie van Looker Studio als rapportagelaag en <a href="ai-workflow.html">AI-workflows</a> voor analyse en verzending maakt dit haalbaar zonder technische achtergrond.</p>
+
+          <h2 id="looker-studio">Looker Studio als rapportagebasis</h2>
+          <p>Looker Studio (voorheen Google Data Studio) is een gratis tool van Google waarmee je interactieve dashboards en rapporten bouwt. Het is de ideale basis voor automatische rapportages omdat het native koppelt met alle Google-producten en de rapporten altijd live en actueel zijn.</p>
+          <p>Zo begin je:</p>
+          <ol>
+            <li>Ga naar <a href="https://lookerstudio.google.com" target="_blank" rel="noopener">lookerstudio.google.com</a> en maak een gratis account aan</li>
+            <li>Kies een template uit de templatebibliotheek of start met een leeg rapport</li>
+            <li>Pas het ontwerp aan naar je huisstijl: kleuren, logo, lettertype</li>
+            <li>Sla de indeling op als template voor toekomstige rapporten</li>
+          </ol>
+
+          <div class="artikel-callout artikel-callout--orange">
+            <p><strong>Begin met een dashboard, niet meteen een volledig rapport.</strong> Een dashboard dat continu live data toont, is al waardevol vóórdat je automatische verzending instelt. Bouw eerst het dashboard, test het twee weken, en automatiseer daarna de verzending.</p>
+          </div>
+
+          <h2 id="data-koppelen">Data-bronnen koppelen</h2>
+          <p>Looker Studio heeft native connectoren voor alle veelgebruikte databronnen. Je verbindt ze eenmalig en daarna worden alle grafieken en tabellen automatisch bijgewerkt.</p>
+          <p>De meest gebruikte connectoren:</p>
+          <ul>
+            <li><strong>Google Analytics 4</strong>: sessies, conversies, verkeersbronnen, gebruikersgedrag</li>
+            <li><strong>Google Search Console</strong>: zoekwoorden, impressies, CTR, gemiddelde positie</li>
+            <li><strong>Google Ads</strong>: campagneprestaties, kosten, conversies</li>
+            <li><strong>Google Sheets</strong>: voor handmatige KPI's of data uit andere systemen</li>
+            <li><strong>CRM via connector</strong>: HubSpot, Salesforce of een Sheets-export</li>
+          </ul>
+          <p>Voor databronnen zonder native connector gebruik je een tussenstap via <a href="make-vs-zapier.html">Make of Zapier</a> om data naar een Google Sheet te schrijven, dat Looker Studio vervolgens leest.</p>
+
+          <h2 id="ai-samenvatting">AI-samenvatting toevoegen</h2>
+          <p>Een dashboard met grafieken is nuttig, maar een rapport dat ook vertelt <em>wat de data betekent</em>, is veel waardevoller. Hier komt AI om de hoek kijken.</p>
+          <p>De eenvoudigste aanpak is een Make-workflow die maandelijks de key metrics ophaalt via de Google Analytics API, deze doorstuurt naar Claude of GPT-4o met een vaste prompt ("Analyseer deze data en schrijf een beknopte samenvatting van 3 alinea's met de belangrijkste bevindingen en aanbevelingen") en de gegenereerde tekst toevoegt aan het rapport.</p>
+          <p>Het resultaat: een rapport dat niet alleen cijfers toont, maar ook vertelt wat er goed gaat, wat aandacht nodig heeft en wat de volgende stap is.</p>
+
+          <h2 id="automatisch-verzenden">Automatisch verzenden via e-mail</h2>
+          <p>Looker Studio heeft een ingebouwde functie voor geplande e-mailrapporten. Via het menu "Delen" → "Rapport plannen" stel je in wanneer en naar wie het rapport als PDF wordt verstuurd. Dat is de snelste oplossing voor standaard rapportages.</p>
+          <p>Voor meer controle, eigen PDF-template, bijgevoegde AI-samenvatting als tekst, verzending via je eigen e-mailadres, bouw je een Make-workflow:</p>
+          <ol>
+            <li>Trigger: eerste dag van de maand</li>
+            <li>Looker Studio PDF exporteren (via de Looker Studio API of een headless browser)</li>
+            <li>AI-samenvatting genereren op basis van opgehaalde metrics</li>
+            <li>E-mail samenstellen met PDF als bijlage en samenvatting in de body</li>
+            <li>Verzenden via Gmail, Outlook of je e-mailmarketingtool</li>
+          </ol>
+          <p>Eenmaal ingesteld, hoef je er nooit meer naar om te kijken. De rapportage arriveert elke eerste van de maand automatisch in de inbox van jou en je klanten.</p>
+
+          <hr class="artikel-divider" />
+          <p>Meer weten over de workflow-kant van dit systeem? Lees <a href="ai-workflow.html">wat AI-workflows zijn en wat ze opleveren</a> of bekijk de vergelijking tussen <a href="make-vs-zapier.html">Make en Zapier</a> om het juiste platform te kiezen.</p>
+
+        </article>
+
+        <aside class="artikel-aside">
+          <div class="aside-block">
+            <p class="aside-block__title">In dit artikel</p>
+            <ul class="aside-toc">
+              <li><a href="#waarom-automatiseren">Waarom automatiseren?</a></li>
+              <li><a href="#looker-studio">Looker Studio instellen</a></li>
+              <li><a href="#data-koppelen">Data-bronnen koppelen</a></li>
+              <li><a href="#ai-samenvatting">AI-samenvatting toevoegen</a></li>
+              <li><a href="#automatisch-verzenden">Automatisch verzenden</a></li>
+            </ul>
+          </div>
+
+          <div class="aside-block">
+            <p class="aside-block__title">Gerelateerde artikelen</p>
+            <div class="aside-links">
+              <a href="ai-workflow.html" class="aside-link">
+                <div class="aside-link__icon aside-link__icon--orange">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5z"/></svg>
+                </div>
+                <span class="aside-link__text">Wat is een AI-workflow?</span>
+              </a>
+              <a href="make-vs-zapier.html" class="aside-link">
+                <div class="aside-link__icon aside-link__icon--orange">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+                </div>
+                <span class="aside-link__text">Make vs Zapier vergelijking</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="aside-cta">
+            <p>Wil je automatische rapportages voor jouw bedrijf?</p>
+            <a href="../index.html#contact" class="btn btn--primary">Plan een gesprek</a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="../index.html" class="nav__logo">Sport<span>SEO</span> Specialist</a>
+      <p>© 2026 SportSEO Specialist, alle rechten voorbehouden</p>
+      <p class="footer__meta">KVK: 87830817 &nbsp;·&nbsp; Ald Duerswâld 4, 9241WN Wijnjewoude</p>
+      <div class="footer__links">
+        <a href="#">Privacybeleid</a>
+        <a href="#">Algemene voorwaarden</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
