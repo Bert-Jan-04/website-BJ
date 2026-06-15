@@ -24,27 +24,43 @@ const observer = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-// Contact form
+// Contact form → WhatsApp
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-  contactForm.addEventListener('submit', async function(e) {
+  contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
-    const success = document.getElementById('formSuccess');
-    try {
-      await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(new FormData(this)).toString()
-      });
-      success.classList.add('visible');
-      this.querySelectorAll('input, textarea, select').forEach(el => el.value = '');
-      setTimeout(() => success.classList.remove('visible'), 5000);
-    } catch {
-      success.textContent = 'Er ging iets mis. Stuur een mail naar russchenbertjan@gmail.com.';
-      success.classList.add('visible');
+    const naam    = document.getElementById('naam').value.trim();
+    const bedrijf = document.getElementById('bedrijf').value.trim();
+    const dienst  = document.getElementById('dienst').value;
+    const bericht = document.getElementById('bericht').value.trim();
+    if (!naam || !bericht) {
+      document.getElementById('naam').reportValidity();
+      document.getElementById('bericht').reportValidity();
+      return;
     }
+    let msg = `Hoi Bert-Jan!\n\nNaam: ${naam}`;
+    if (bedrijf) msg += `\nBedrijf: ${bedrijf}`;
+    if (dienst)  msg += `\nInteresse in: ${dienst}`;
+    msg += `\n\n${bericht}`;
+    window.open(`https://wa.me/31682671920?text=${encodeURIComponent(msg)}`, '_blank');
   });
 }
+
+// FAQ accordion
+document.querySelectorAll('.faq__question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq__item');
+    const isOpen = btn.getAttribute('aria-expanded') === 'true';
+    document.querySelectorAll('.faq__item').forEach(i => {
+      i.querySelector('.faq__question').setAttribute('aria-expanded', 'false');
+      i.classList.remove('open');
+    });
+    if (!isOpen) {
+      btn.setAttribute('aria-expanded', 'true');
+      item.classList.add('open');
+    }
+  });
+});
 
 // Werkwijze: animated line fill on scroll
 const stepLine = document.getElementById('stepLine');
@@ -97,7 +113,7 @@ if (heroTitle) {
       const raw    = el.textContent.trim();
       const num    = parseInt(raw);
       const suffix = raw.replace(/[0-9]/g, '');
-      if (isNaN(num)) return;
+      if (isNaN(num) || raw !== num + suffix) return;
       let start = null;
       const step = ts => {
         if (!start) start = ts;
