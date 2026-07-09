@@ -1,0 +1,70 @@
+---
+title: Rapportages automatiseren met Looker Studio en AI
+excerpt: Hoe je datarapporten volledig automatisch laat aanmaken en versturen, zonder dat je er zelf iets voor hoeft te doen.
+subtitle: Hoe je datarapporten volledig automatisch laat aanmaken, voorzien van AI-analyse en verzenden, zonder dat je er zelf iets voor hoeft te doen.
+category: ai
+badge: AI & Automatisering
+badgeColor: orange
+date: Mei 2026
+readTime: 6 min lezen
+icon: <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/><path d="M7 15h2M7 18h4M13 12h4M13 15h2"/>
+related:
+- ai-workflow
+- make-vs-zapier
+ctaText: Wil je automatische rapportages voor jouw bedrijf?
+ctaButton: Plan een gesprek
+---
+import Callout from '../../components/Callout.astro';
+
+## Waarom rapportages automatiseren loont
+<p>Hoeveel uur besteed jij elke maand aan het samenstellen van rapporten? Data uit meerdere bronnen samenvoegen, grafieken bijwerken, inzichten formuleren en het geheel presentabel maken, voor de meeste MKB-eigenaren is dit minstens vier tot acht uur per maand. Uren die beter besteed kunnen worden.</p>
+<p>Automatische rapportages bieden drie grote voordelen. Ten eerste <strong>tijdsbesparing</strong>: na de initiële setup kosten ze je nul uur. Ten tweede <strong>consistentie</strong>: hetzelfde format, dezelfde vergelijkingsperiodes, elke keer foutloos. Ten derde <strong>snelheid</strong>: de data is real-time, niet twee weken oud.</p>
+<p>De combinatie van Looker Studio als rapportagelaag en <a href="/artikelen/ai-workflow">AI-workflows</a> voor analyse en verzending maakt dit haalbaar zonder technische achtergrond.</p>
+
+## Looker Studio als rapportagebasis
+<p>Looker Studio (voorheen Google Data Studio) is een gratis tool van Google waarmee je interactieve dashboards en rapporten bouwt. Het is de ideale basis voor automatische rapportages omdat het native koppelt met alle Google-producten en de rapporten altijd live en actueel zijn.</p>
+<p>Zo begin je:</p>
+<ol>
+  <li>Ga naar <a href="https://lookerstudio.google.com" target="_blank" rel="noopener">lookerstudio.google.com</a> en maak een gratis account aan</li>
+  <li>Kies een template uit de templatebibliotheek of start met een leeg rapport</li>
+  <li>Pas het ontwerp aan naar je huisstijl: kleuren, logo, lettertype</li>
+  <li>Sla de indeling op als template voor toekomstige rapporten</li>
+</ol>
+
+<div class="artikel-callout artikel-callout--orange">
+  <p><strong>Begin met een dashboard, niet meteen een volledig rapport.</strong> Een dashboard dat continu live data toont, is al waardevol vóórdat je automatische verzending instelt. Bouw eerst het dashboard, test het twee weken, en automatiseer daarna de verzending.</p>
+</div>
+
+## Data-bronnen koppelen
+<p>Looker Studio heeft native connectoren voor alle veelgebruikte databronnen. Je verbindt ze eenmalig en daarna worden alle grafieken en tabellen automatisch bijgewerkt.</p>
+<p>De meest gebruikte connectoren:</p>
+<ul>
+  <li><strong>Google Analytics 4</strong>: sessies, conversies, verkeersbronnen, gebruikersgedrag</li>
+  <li><strong>Google Search Console</strong>: zoekwoorden, impressies, CTR, gemiddelde positie</li>
+  <li><strong>Google Ads</strong>: campagneprestaties, kosten, conversies</li>
+  <li><strong>Google Sheets</strong>: voor handmatige KPI's of data uit andere systemen</li>
+  <li><strong>CRM via connector</strong>: HubSpot, Salesforce of een Sheets-export</li>
+</ul>
+<p>Voor databronnen zonder native connector gebruik je een tussenstap via <a href="/artikelen/make-vs-zapier">Make of Zapier</a> om data naar een Google Sheet te schrijven, dat Looker Studio vervolgens leest.</p>
+
+## AI-samenvatting toevoegen
+<p>Een dashboard met grafieken is nuttig, maar een rapport dat ook vertelt <em>wat de data betekent</em>, is veel waardevoller. Hier komt AI om de hoek kijken.</p>
+<p>De eenvoudigste aanpak is een Make-workflow die maandelijks de key metrics ophaalt via de Google Analytics API, deze doorstuurt naar Claude of GPT-4o met een vaste prompt ("Analyseer deze data en schrijf een beknopte samenvatting van 3 alinea's met de belangrijkste bevindingen en aanbevelingen") en de gegenereerde tekst toevoegt aan het rapport.</p>
+<p>Het resultaat: een rapport dat niet alleen cijfers toont, maar ook vertelt wat er goed gaat, wat aandacht nodig heeft en wat de volgende stap is.</p>
+
+## Automatisch verzenden via e-mail
+<p>Looker Studio heeft een ingebouwde functie voor geplande e-mailrapporten. Via het menu "Delen" → "Rapport plannen" stel je in wanneer en naar wie het rapport als PDF wordt verstuurd. Dat is de snelste oplossing voor standaard rapportages.</p>
+<p>Voor meer controle, eigen PDF-template, bijgevoegde AI-samenvatting als tekst, verzending via je eigen e-mailadres, bouw je een Make-workflow:</p>
+<ol>
+  <li>Trigger: eerste dag van de maand</li>
+  <li>Looker Studio PDF exporteren (via de Looker Studio API of een headless browser)</li>
+  <li>AI-samenvatting genereren op basis van opgehaalde metrics</li>
+  <li>E-mail samenstellen met PDF als bijlage en samenvatting in de body</li>
+  <li>Verzenden via Gmail, Outlook of je e-mailmarketingtool</li>
+</ol>
+<p>Eenmaal ingesteld, hoef je er nooit meer naar om te kijken. De rapportage arriveert elke eerste van de maand automatisch in de inbox van jou en je klanten.</p>
+
+<hr class="artikel-divider" />
+<p>Meer weten over de workflow-kant van dit systeem? Lees <a href="/artikelen/ai-workflow">wat AI-workflows zijn en wat ze opleveren</a> of bekijk de vergelijking tussen <a href="/artikelen/make-vs-zapier">Make en Zapier</a> om het juiste platform te kiezen.</p>
+
+        

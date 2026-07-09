@@ -1,0 +1,12 @@
+---
+interface Props {
+  variant?: 'blue' | 'orange' | 'green' | 'purple';
+}
+
+const { variant } = Astro.props;
+const className = variant && variant !== 'blue' ? `artikel-callout artikel-callout--${variant}` : 'artikel-callout';
+---
+
+<div class={className}>
+  <p><slot /></p>
+</div>

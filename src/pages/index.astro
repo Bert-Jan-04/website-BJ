@@ -1,76 +1,46 @@
-<!DOCTYPE html>
-<html lang="nl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SportSEO Specialist | Websites, Marketing & Automatisering</title>
-  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Hoe lang duurt het voordat ik resultaat zie van SEO?",
-        "acceptedAnswer": { "@type": "Answer", "text": "De eerste beweging zie je vaak al na 1 tot 3 maanden. Structurele groei — meer verkeer, hogere posities, meer aanvragen — bouw je op in 4 tot 6 maanden. SEO is een investering die zich blijft uitbetalen: hoe eerder je begint, hoe groter de voorsprong op je concurrenten." }
-      },
-      {
-        "@type": "Question",
-        "name": "Wat is het verschil tussen SEO en Google Ads?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Met Google Ads betaal je per klik — stop je met betalen, stopt het verkeer. SEO bouwt organische zichtbaarheid die blijft groeien ook als je niets meer investeert. Op de lange termijn levert SEO meer op voor minder geld, en bezoekers vertrouwen organische resultaten meer dan advertenties." }
-      },
-      {
-        "@type": "Question",
-        "name": "Werkt SEO ook voor kleine bedrijven of lokale organisaties?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Zeker. Lokale SEO is juist heel krachtig voor kleine bedrijven. Je concurreert niet met heel Nederland, maar met anderen in jouw regio of niche. Dat maakt het goed haalbaar om snel bovenaan te staan bij mensen die écht naar jou op zoek zijn." }
-      },
-      {
-        "@type": "Question",
-        "name": "Wat heb ik nodig om te starten?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Alleen een website en de wil om te groeien. Ik verzorg het zoekwoordenonderzoek, de strategie en de uitvoering. Je hoeft zelf geen SEO-kennis te hebben — ik leg alles duidelijk uit en hou je op de hoogte van de voortgang." }
-      },
-      {
-        "@type": "Question",
-        "name": "Doe je ook eenmalige SEO-audits?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Ja. Wil je weten waar je nu staat en wat de grootste kansen zijn? Dan kan ik een uitgebreide SEO-audit uitvoeren: technische analyse, zoekwoordkansen, concurrentieonderzoek en een concreet actieplan." }
-      },
-      {
-        "@type": "Question",
-        "name": "Wat kost een SEO-traject?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Dat hangt af van de omvang en het doel. Ik werk met trajecten op maat — geen standaard pakketjes. Plan een gratis gesprek en ik maak een voorstel dat past bij jouw situatie en budget. Geen verplichtingen." }
-      }
-    ]
-  }
-  </script>
-</head>
-<body>
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
 
-  <header class="nav" id="nav">
-    <div class="container nav__inner">
-      <a href="index.html" class="nav__logo">Sport<span>SEO</span> Specialist</a>
-      <nav class="nav__links">
-        <a href="diensten.html">Diensten</a>
-        <a href="over-mij.html">Over mij</a>
-        <a href="cases.html">Cases</a>
-        <a href="kennisbank.html">Kennisbank</a>
-        <a href="#contact" class="btn btn--outline">Contact</a>
-      </nav>
-      <button class="nav__burger" id="burger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-    <div class="nav__mobile" id="mobileMenu">
-      <a href="diensten.html" class="nav__mobile-link">Diensten</a>
-      <a href="over-mij.html" class="nav__mobile-link">Over mij</a>
-      <a href="cases.html" class="nav__mobile-link">Cases</a>
-      <a href="kennisbank.html" class="nav__mobile-link">Kennisbank</a>
-      <a href="#contact" class="nav__mobile-link">Contact</a>
-    </div>
-  </header>
+<BaseLayout title="SportSEO Specialist | Websites, Marketing & Automatisering">
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'Hoe lang duurt het voordat ik resultaat zie van SEO?',
+          acceptedAnswer: { '@type': 'Answer', text: 'De eerste beweging zie je vaak al na 1 tot 3 maanden. Structurele groei — meer verkeer, hogere posities, meer aanvragen — bouw je op in 4 tot 6 maanden. SEO is een investering die zich blijft uitbetalen: hoe eerder je begint, hoe groter de voorsprong op je concurrenten.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Wat is het verschil tussen SEO en Google Ads?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Met Google Ads betaal je per klik — stop je met betalen, stopt het verkeer. SEO bouwt organische zichtbaarheid die blijft groeien ook als je niets meer investeert. Op de lange termijn levert SEO meer op voor minder geld, en bezoekers vertrouwen organische resultaten meer dan advertenties.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Werkt SEO ook voor kleine bedrijven of lokale organisaties?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Zeker. Lokale SEO is juist heel krachtig voor kleine bedrijven. Je concurreert niet met heel Nederland, maar met anderen in jouw regio of niche. Dat maakt het goed haalbaar om snel bovenaan te staan bij mensen die écht naar jou op zoek zijn.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Wat heb ik nodig om te starten?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Alleen een website en de wil om te groeien. Ik verzorg het zoekwoordenonderzoek, de strategie en de uitvoering. Je hoeft zelf geen SEO-kennis te hebben — ik leg alles duidelijk uit en hou je op de hoogte van de voortgang.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Doe je ook eenmalige SEO-audits?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Ja. Wil je weten waar je nu staat en wat de grootste kansen zijn? Dan kan ik een uitgebreide SEO-audit uitvoeren: technische analyse, zoekwoordkansen, concurrentieonderzoek en een concreet actieplan.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Wat kost een SEO-traject?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Dat hangt af van de omvang en het doel. Ik werk met trajecten op maat — geen standaard pakketjes. Plan een gratis gesprek en ik maak een voorstel dat past bij jouw situatie en budget. Geen verplichtingen.' },
+        },
+      ],
+    })} />
+  </Fragment>
 
   <section class="hero">
     <div class="hero__bg">
@@ -92,7 +62,7 @@
       </p>
       <div class="hero__cta">
         <a href="#contact" class="btn btn--primary">Start een project</a>
-        <a href="diensten.html" class="btn btn--ghost">Bekijk diensten</a>
+        <a href="/diensten" class="btn btn--ghost">Bekijk diensten</a>
       </div>
       <div class="hero__stats">
         <div class="stat">
@@ -121,20 +91,20 @@
     <div class="logo-ticker__label">Bedrijven die ik help</div>
     <div class="logo-ticker__track">
       <div class="logo-ticker__list" aria-hidden="true">
-        <a href="https://www.voetbalfunnoord.nl/" target="_blank" rel="noopener"><img src="assets/images/logo-voetbalfunnoord.webp" alt="Voetbal Fun Noord" class="logo-ticker__logo" /></a>
-        <a href="https://sportpoeder.nl/" target="_blank" rel="noopener"><img src="assets/images/sportpoeder-logo.jpg" alt="Sportpoeder" class="logo-ticker__logo" /></a>
-        <a href="https://www.voetbalfunnoord.nl/" target="_blank" rel="noopener"><img src="assets/images/logo-voetbalfunnoord.webp" alt="Voetbal Fun Noord" class="logo-ticker__logo" /></a>
-        <a href="https://sportpoeder.nl/" target="_blank" rel="noopener"><img src="assets/images/sportpoeder-logo.jpg" alt="Sportpoeder" class="logo-ticker__logo" /></a>
-        <a href="https://www.voetbalfunnoord.nl/" target="_blank" rel="noopener"><img src="assets/images/logo-voetbalfunnoord.webp" alt="Voetbal Fun Noord" class="logo-ticker__logo" /></a>
-        <a href="https://sportpoeder.nl/" target="_blank" rel="noopener"><img src="assets/images/sportpoeder-logo.jpg" alt="Sportpoeder" class="logo-ticker__logo" /></a>
-        <a href="https://www.voetbalfunnoord.nl/" target="_blank" rel="noopener"><img src="assets/images/logo-voetbalfunnoord.webp" alt="Voetbal Fun Noord" class="logo-ticker__logo" /></a>
-        <a href="https://sportpoeder.nl/" target="_blank" rel="noopener"><img src="assets/images/sportpoeder-logo.jpg" alt="Sportpoeder" class="logo-ticker__logo" /></a>
-        <a href="https://www.voetbalfunnoord.nl/" target="_blank" rel="noopener"><img src="assets/images/logo-voetbalfunnoord.webp" alt="Voetbal Fun Noord" class="logo-ticker__logo" /></a>
-        <a href="https://sportpoeder.nl/" target="_blank" rel="noopener"><img src="assets/images/sportpoeder-logo.jpg" alt="Sportpoeder" class="logo-ticker__logo" /></a>
-        <a href="https://www.voetbalfunnoord.nl/" target="_blank" rel="noopener"><img src="assets/images/logo-voetbalfunnoord.webp" alt="Voetbal Fun Noord" class="logo-ticker__logo" /></a>
-        <a href="https://sportpoeder.nl/" target="_blank" rel="noopener"><img src="assets/images/sportpoeder-logo.jpg" alt="Sportpoeder" class="logo-ticker__logo" /></a>
-        <a href="https://www.voetbalfunnoord.nl/" target="_blank" rel="noopener"><img src="assets/images/logo-voetbalfunnoord.webp" alt="Voetbal Fun Noord" class="logo-ticker__logo" /></a>
-        <a href="https://sportpoeder.nl/" target="_blank" rel="noopener"><img src="assets/images/sportpoeder-logo.jpg" alt="Sportpoeder" class="logo-ticker__logo" /></a>
+        <a href="https://www.voetbalfunnoord.nl/" target="_blank" rel="noopener"><img src="/assets/images/logo-voetbalfunnoord.webp" alt="Voetbal Fun Noord" class="logo-ticker__logo" /></a>
+        <a href="https://sportpoeder.nl/" target="_blank" rel="noopener"><img src="/assets/images/sportpoeder-logo.jpg" alt="Sportpoeder" class="logo-ticker__logo" /></a>
+        <a href="https://www.voetbalfunnoord.nl/" target="_blank" rel="noopener"><img src="/assets/images/logo-voetbalfunnoord.webp" alt="Voetbal Fun Noord" class="logo-ticker__logo" /></a>
+        <a href="https://sportpoeder.nl/" target="_blank" rel="noopener"><img src="/assets/images/sportpoeder-logo.jpg" alt="Sportpoeder" class="logo-ticker__logo" /></a>
+        <a href="https://www.voetbalfunnoord.nl/" target="_blank" rel="noopener"><img src="/assets/images/logo-voetbalfunnoord.webp" alt="Voetbal Fun Noord" class="logo-ticker__logo" /></a>
+        <a href="https://sportpoeder.nl/" target="_blank" rel="noopener"><img src="/assets/images/sportpoeder-logo.jpg" alt="Sportpoeder" class="logo-ticker__logo" /></a>
+        <a href="https://www.voetbalfunnoord.nl/" target="_blank" rel="noopener"><img src="/assets/images/logo-voetbalfunnoord.webp" alt="Voetbal Fun Noord" class="logo-ticker__logo" /></a>
+        <a href="https://sportpoeder.nl/" target="_blank" rel="noopener"><img src="/assets/images/sportpoeder-logo.jpg" alt="Sportpoeder" class="logo-ticker__logo" /></a>
+        <a href="https://www.voetbalfunnoord.nl/" target="_blank" rel="noopener"><img src="/assets/images/logo-voetbalfunnoord.webp" alt="Voetbal Fun Noord" class="logo-ticker__logo" /></a>
+        <a href="https://sportpoeder.nl/" target="_blank" rel="noopener"><img src="/assets/images/sportpoeder-logo.jpg" alt="Sportpoeder" class="logo-ticker__logo" /></a>
+        <a href="https://www.voetbalfunnoord.nl/" target="_blank" rel="noopener"><img src="/assets/images/logo-voetbalfunnoord.webp" alt="Voetbal Fun Noord" class="logo-ticker__logo" /></a>
+        <a href="https://sportpoeder.nl/" target="_blank" rel="noopener"><img src="/assets/images/sportpoeder-logo.jpg" alt="Sportpoeder" class="logo-ticker__logo" /></a>
+        <a href="https://www.voetbalfunnoord.nl/" target="_blank" rel="noopener"><img src="/assets/images/logo-voetbalfunnoord.webp" alt="Voetbal Fun Noord" class="logo-ticker__logo" /></a>
+        <a href="https://sportpoeder.nl/" target="_blank" rel="noopener"><img src="/assets/images/sportpoeder-logo.jpg" alt="Sportpoeder" class="logo-ticker__logo" /></a>
       </div>
     </div>
   </section>
@@ -159,7 +129,7 @@
             <li>SEO-geoptimaliseerde content</li>
             <li>Merkidentiteit & huisstijl</li>
           </ul>
-          <a href="diensten.html#web-design" class="dienst-card__link">Meer info <span>→</span></a>
+          <a href="/diensten#web-design" class="dienst-card__link">Meer info <span>→</span></a>
         </div>
 
         <div class="dienst-card dienst-card--accent fade-in fade-in-delay-1">
@@ -175,7 +145,7 @@
             <li>Automatische rapportages</li>
             <li>Data-analyse & dashboards</li>
           </ul>
-          <a href="diensten.html#automatisering" class="dienst-card__link">Meer info <span>→</span></a>
+          <a href="/diensten#automatisering" class="dienst-card__link">Meer info <span>→</span></a>
         </div>
 
       </div>
@@ -186,7 +156,7 @@
     <div class="container over__inner">
       <div class="over__visual fade-in">
         <div class="over__photo-wrap">
-          <img src="assets/images/bert-jan-russchen-foto.jpg" alt="Bert-Jan Russchen, SportSEO Specialist" class="over__photo" />
+          <img src="/assets/images/bert-jan-russchen-foto.jpg" alt="Bert-Jan Russchen, SportSEO Specialist" class="over__photo" />
           <div class="over__photo-accent"></div>
         </div>
         <div class="over__tags">
@@ -238,7 +208,7 @@
       <div class="cases__grid">
         <div class="case-card fade-in">
           <div class="case-card__image" style="--hue: 350">
-            <img src="assets/images/voetbalfunnoord-website.png" alt="Voetbal Fun Noord website" />
+            <img src="/assets/images/voetbalfunnoord-website.png" alt="Voetbal Fun Noord website" />
             <div class="case-card__label">Website &amp; SEO</div>
           </div>
           <div class="case-card__body">
@@ -252,7 +222,7 @@
         </div>
         <div class="case-card fade-in">
           <div class="case-card__image" style="--hue: 25">
-            <img src="assets/images/afbeelding-case-sportpoeder.png" alt="Sportpoeder case" />
+            <img src="/assets/images/afbeelding-case-sportpoeder.png" alt="Sportpoeder case" />
             <div class="case-card__label">SEO</div>
           </div>
           <div class="case-card__body">
@@ -261,7 +231,7 @@
             <div class="case-card__tags">
               <span>SEO</span><span>Content</span><span>Kortingscodes</span>
             </div>
-            <a href="cases.html#sportpoeder" class="case-card__link">Bekijk case →</a>
+            <a href="/cases#sportpoeder" class="case-card__link">Bekijk case →</a>
           </div>
         </div>
       </div>
@@ -394,19 +364,4 @@
       </form>
     </div>
   </section>
-
-  <footer class="footer">
-    <div class="container footer__inner">
-      <a href="index.html" class="nav__logo">Sport<span>SEO</span> Specialist</a>
-      <p>© 2026 SportSEO Specialist, alle rechten voorbehouden</p>
-      <p class="footer__meta">KVK: 87830817 &nbsp;·&nbsp; Ald Duerswâld 4, 9241WN Wijnjewoude</p>
-      <div class="footer__links">
-        <a href="#">Privacybeleid</a>
-        <a href="#">Algemene voorwaarden</a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="assets/js/main.js"></script>
-</body>
-</html>
+</BaseLayout>

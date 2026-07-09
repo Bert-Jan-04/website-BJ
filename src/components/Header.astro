@@ -1,0 +1,35 @@
+---
+interface Props {
+  current?: 'diensten' | 'over-mij' | 'cases' | 'kennisbank';
+}
+
+const { current } = Astro.props;
+
+const links = [
+  { href: '/diensten', label: 'Diensten', key: 'diensten' },
+  { href: '/over-mij', label: 'Over mij', key: 'over-mij' },
+  { href: '/cases', label: 'Cases', key: 'cases' },
+  { href: '/kennisbank', label: 'Kennisbank', key: 'kennisbank' },
+] as const;
+---
+
+<header class="nav" id="nav">
+  <div class="container nav__inner">
+    <a href="/" class="nav__logo">Sport<span>SEO</span> Specialist</a>
+    <nav class="nav__links">
+      {links.map((link) => (
+        <a href={link.href} class={link.key === current ? 'nav__link--active' : undefined}>{link.label}</a>
+      ))}
+      <a href="/#contact" class="btn btn--outline">Contact</a>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav__mobile" id="mobileMenu">
+    {links.map((link) => (
+      <a href={link.href} class="nav__mobile-link">{link.label}</a>
+    ))}
+    <a href="/#contact" class="nav__mobile-link">Contact</a>
+  </div>
+</header>

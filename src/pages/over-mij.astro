@@ -1,40 +1,8 @@
-<!DOCTYPE html>
-<html lang="nl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Over mij | SportSEO Specialist</title>
-  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <link rel="stylesheet" href="assets/css/over-mij.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-</head>
-<body>
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
 
-  <header class="nav" id="nav">
-    <div class="container nav__inner">
-      <a href="index.html" class="nav__logo">Sport<span>SEO</span> Specialist</a>
-      <nav class="nav__links">
-        <a href="diensten.html">Diensten</a>
-        <a href="over-mij.html" class="nav__link--active">Over mij</a>
-        <a href="cases.html">Cases</a>
-        <a href="kennisbank.html">Kennisbank</a>
-        <a href="index.html#contact" class="btn btn--outline">Contact</a>
-      </nav>
-      <button class="nav__burger" id="burger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-    <div class="nav__mobile" id="mobileMenu">
-      <a href="diensten.html" class="nav__mobile-link">Diensten</a>
-      <a href="over-mij.html" class="nav__mobile-link">Over mij</a>
-      <a href="cases.html" class="nav__mobile-link">Cases</a>
-      <a href="kennisbank.html" class="nav__mobile-link">Kennisbank</a>
-      <a href="index.html#contact" class="nav__mobile-link">Contact</a>
-    </div>
-  </header>
-
+<BaseLayout title="Over mij | SportSEO Specialist" pageCss="/assets/css/over-mij.css" current="over-mij">
   <!-- HERO -->
   <section class="om-hero">
     <div class="hero__bg">
@@ -63,7 +31,7 @@
         <!-- Hoofdfoto: voeg toe als assets/images/bert-jan-russchen-foto.jpg -->
         <div class="om-photo-wrap">
           <img
-            src="assets/images/bert-jan-russchen-foto.jpg"
+            src="/assets/images/bert-jan-russchen-foto.jpg"
             alt="Bert-Jan Russchen, SportSEO Specialist"
             class="om-photo"
           />
@@ -82,10 +50,10 @@
     <div class="container verhaal__inner">
       <div class="verhaal__media fade-in">
         <div class="verhaal__photo-main">
-          <img src="assets/images/foto-hardlopen-bert-jan.JPG" alt="Bert-Jan aan het hardlopen" />
+          <img src="/assets/images/foto-hardlopen-bert-jan.JPG" alt="Bert-Jan aan het hardlopen" />
         </div>
         <div class="verhaal__photo-small">
-          <img src="assets/images/foto-voetbal-bert-jan.jpg" alt="Bert-Jan aan de bal" />
+          <img src="/assets/images/foto-voetbal-bert-jan.jpg" alt="Bert-Jan aan de bal" />
         </div>
 
         <div class="verhaal__exp-badge">
@@ -149,7 +117,7 @@
 
         <div class="passie-card fade-in">
           <div class="passie-card__header passie-card__header--sport">
-            <img src="assets/images/foto-hardlopen-bert-jan.JPG" alt="Bert-Jan aan het hardlopen" class="passie-card__img" />
+            <img src="/assets/images/foto-hardlopen-bert-jan.JPG" alt="Bert-Jan aan het hardlopen" class="passie-card__img" />
             <div class="passie-card__icon">
               <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8">
                 <circle cx="16" cy="16" r="12"/>
@@ -175,7 +143,7 @@
 
         <div class="passie-card passie-card--featured fade-in fade-in-delay-1">
           <div class="passie-card__header passie-card__header--marketing">
-            <img src="assets/images/foto-bertjan-laptop.png" alt="Bert-Jan aan het werk op laptop" class="passie-card__img" />
+            <img src="/assets/images/foto-bertjan-laptop.png" alt="Bert-Jan aan het werk op laptop" class="passie-card__img" />
             <div class="passie-card__icon">
               <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8">
                 <path d="M27 5L15 15M27 5L19 27l-4-10L5 13l22-8z"/>
@@ -199,7 +167,7 @@
 
         <div class="passie-card fade-in fade-in-delay-2">
           <div class="passie-card__header passie-card__header--proces">
-            <img src="assets/images/foto-bertjan-noteren.png" alt="Bert-Jan aantekeningen maken" class="passie-card__img" />
+            <img src="/assets/images/foto-bertjan-noteren.png" alt="Bert-Jan aantekeningen maken" class="passie-card__img" />
             <div class="passie-card__icon">
               <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8">
                 <circle cx="24" cy="6" r="3.5"/>
@@ -285,7 +253,7 @@
             </div>
           </li>
         </ul>
-        <a href="index.html#contact" class="btn btn--primary">Plan een kennismaking →</a>
+        <a href="/#contact" class="btn btn--primary">Plan een kennismaking →</a>
       </div>
 
       <div class="aanpak__rechts fade-in fade-in-delay-2">
@@ -325,22 +293,8 @@
         <h2>Klaar om kennis te maken?</h2>
         <p>Plan een gratis gesprek van 30 minuten, geen verplichtingen.</p>
       </div>
-      <a href="index.html#contact" class="btn btn--primary">Plan een gratis gesprek →</a>
+      <a href="/#contact" class="btn btn--primary">Plan een gratis gesprek →</a>
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="container footer__inner">
-      <a href="index.html" class="nav__logo">Sport<span>SEO</span> Specialist</a>
-      <p>© 2026 SportSEO Specialist, alle rechten voorbehouden</p>
-      <p class="footer__meta">KVK: 87830817 &nbsp;·&nbsp; Ald Duerswâld 4, 9241WN Wijnjewoude</p>
-      <div class="footer__links">
-        <a href="#">Privacybeleid</a>
-        <a href="#">Algemene voorwaarden</a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="assets/js/main.js"></script>
-</body>
-</html>
+</BaseLayout>

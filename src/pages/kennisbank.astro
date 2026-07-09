@@ -1,0 +1,158 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const order = [
+  'seo-ranking-algoritme',
+  'technische-seo-checklist',
+  'lokale-seo',
+  'ai-workflow',
+  'make-vs-zapier',
+  'rapportages-automatiseren',
+  'content-marketing-sportbedrijven',
+  'emailmarketing',
+  'core-web-vitals',
+  'wordpress-vs-maatwerk',
+];
+
+const allArticles = await getCollection('artikelen');
+const articles = order
+  .map((slug) => allArticles.find((a) => a.slug === slug))
+  .filter((a): a is NonNullable<typeof a> => Boolean(a));
+
+const delayClass: Record<string, number> = {};
+let groupIndex = 0;
+let lastCategory = '';
+for (const a of articles) {
+  if (a.data.category !== lastCategory) {
+    groupIndex = 0;
+    lastCategory = a.data.category;
+  }
+  delayClass[a.slug] = groupIndex % 3;
+  groupIndex++;
+}
+---
+
+<BaseLayout title="Kennisbank | SportSEO Specialist" pageCss="/assets/css/kennisbank.css" current="kennisbank">
+  <section class="page-hero">
+    <div class="hero__bg">
+      <div class="hero__circle hero__circle--1"></div>
+      <div class="hero__circle hero__circle--2"></div>
+      <div class="hero__grid"></div>
+    </div>
+    <div class="container page-hero__inner">
+      <span class="section__label">Kennisbank</span>
+      <h1>Alles wat je moet weten over <span class="gradient-text">digitale groei</span></h1>
+      <p>Praktische gidsen en artikelen over SEO, AI-automatisering, marketing en websiteontwikkeling.</p>
+    </div>
+  </section>
+
+  <section class="kb-controls">
+    <div class="container kb-controls__inner">
+      <div class="kb-filters" role="tablist">
+        <button class="kb-filter kb-filter--active" data-cat="alle" role="tab">Alle</button>
+        <button class="kb-filter" data-cat="seo" role="tab">SEO</button>
+        <button class="kb-filter" data-cat="ai" role="tab">AI &amp; Automatisering</button>
+        <button class="kb-filter" data-cat="marketing" role="tab">Marketing</button>
+        <button class="kb-filter" data-cat="websites" role="tab">Websites</button>
+      </div>
+      <div class="kb-search-wrap">
+        <svg class="kb-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input type="text" id="kb-search" class="kb-search" placeholder="Zoek artikel..." aria-label="Zoek artikel" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section kb-section">
+    <div class="container">
+      <div class="kb-grid" id="kb-grid">
+        {articles.map((a) => {
+          const fadeClass = delayClass[a.slug] === 0 ? 'fade-in' : `fade-in fade-in-delay-${delayClass[a.slug]}`;
+          return (
+            <article class={`kb-card ${fadeClass}`} data-cat={a.data.category}>
+              <div class={`kb-card__image kb-card__image--${a.data.badgeColor}`}>
+                <div class="kb-card__image-grid"></div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" set:html={a.data.icon} />
+              </div>
+              <div class="kb-card__body">
+                <div class="kb-card__top">
+                  <span class={`kb-badge kb-badge--${a.data.badgeColor}`}>{a.data.badge}</span>
+                  <span class="kb-read-time">{a.data.readTime}</span>
+                </div>
+                <h2 class="kb-card__title">{a.data.title}</h2>
+                <p class="kb-card__excerpt">{a.data.excerpt}</p>
+                <div class="kb-card__footer">
+                  <div class="kb-author">
+                    <div class="kb-author__avatar">BJ</div>
+                    <span>Bert-Jan Russchen</span>
+                  </div>
+                  <a href={`/artikelen/${a.slug}`} class="kb-card__link">
+                    Lees artikel
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+
+      <div class="kb-empty" id="kb-empty" style="display:none;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+        <p>Geen artikelen gevonden voor "<span id="kb-empty-term"></span>"</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section kb-cta">
+    <div class="container">
+      <div class="kb-cta__inner fade-in">
+        <span class="section__label">Samenwerken?</span>
+        <h2>Heb je een concrete vraag of wil je sparren?</h2>
+        <p>Ik help je graag verder, of het nu gaat om een SEO-audit, een automatiseringsproject of een nieuwe website.</p>
+        <a href="/#contact" class="btn btn--primary">Neem contact op</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const filters = document.querySelectorAll('.kb-filter');
+    const cards   = document.querySelectorAll('.kb-card');
+    const search  = document.getElementById('kb-search') as HTMLInputElement;
+    const empty   = document.getElementById('kb-empty') as HTMLElement;
+    const emptyTerm = document.getElementById('kb-empty-term') as HTMLElement;
+    let activeCat = 'alle';
+
+    function applyFilters() {
+      const q = search.value.toLowerCase().trim();
+      let visible = 0;
+      cards.forEach(card => {
+        const cat     = (card as HTMLElement).dataset.cat;
+        const text    = (card.textContent || '').toLowerCase();
+        const catOk   = activeCat === 'alle' || cat === activeCat;
+        const searchOk = !q || text.includes(q);
+        const show    = catOk && searchOk;
+        (card as HTMLElement).style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      empty.style.display = visible === 0 ? 'flex' : 'none';
+      emptyTerm.textContent = q;
+    }
+
+    filters.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filters.forEach(b => b.classList.remove('kb-filter--active'));
+        btn.classList.add('kb-filter--active');
+        activeCat = (btn as HTMLElement).dataset.cat || 'alle';
+        applyFilters();
+      });
+    });
+
+    search.addEventListener('input', applyFilters);
+  </script>
+</BaseLayout>

@@ -1,0 +1,82 @@
+---
+title: 'Technische SEO: de checklist voor een foutloze website'
+excerpt: Van canonical tags en sitemap tot Core Web Vitals, de technische basis die elke website op orde moet hebben.
+subtitle: Van canonical tags en sitemap tot Core Web Vitals, de technische basis die elke website op orde moet hebben voordat je aan content begint.
+category: seo
+badge: SEO
+badgeColor: blue
+date: Mei 2026
+readTime: 7 min lezen
+icon: <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+related:
+- seo-ranking-algoritme
+- core-web-vitals
+- wordpress-vs-maatwerk
+ctaText: Wil je weten hoe jouw website er technisch voor staat?
+ctaButton: Vraag een audit aan
+---
+import Callout from '../../components/Callout.astro';
+
+## Wat is technische SEO?
+<p>Technische SEO is de fundering van je hele SEO-strategie. Het gaat om alles wat Google nodig heeft om je website te kunnen crawlen, begrijpen en indexeren, los van de content zelf. Zelfs de beste content scoort niet als Google die pagina niet kan vinden of correct kan lezen.</p>
+<p>Technische problemen zijn ook verraderlijk: ze zijn vaak onzichtbaar voor de bezoeker, maar hebben grote gevolgen voor je rankings. Met deze checklist loop je de belangrijkste punten af die ik bij elke SEO-audit als eerste controleer. Wil je weten hoe Google vervolgens rangschikt? Lees dan ook <a href="/artikelen/seo-ranking-algoritme">hoe het ranking-algoritme werkt</a>.</p>
+
+## Crawling en indexering begrijpen
+<p>Googlebot bezoekt je website via links. Het volgt elke link die het tegenkomt en brengt zo de structuur van je site in kaart. Pagina's die geen inkomende links hebben (zogenaamde <em>orphan pages</em>) worden zelden gecrawld.</p>
+<p>Wat je moet controleren:</p>
+<ul>
+  <li>Staat er geen <code>noindex</code>-tag op pagina's die wél geïndexeerd moeten worden?</li>
+  <li>Blokkeert je <code>robots.txt</code> geen belangrijke pagina's of mappen?</li>
+  <li>Open Google Search Console en controleer het Coverage-rapport op fouten en waarschuwingen</li>
+  <li>Zijn er pagina's met <code>nofollow</code> op interne links die dat niet zouden moeten hebben?</li>
+</ul>
+
+<Callout><strong>Google Search Console is je beste vriend.</strong> Dit gratis hulpmiddel van Google laat precies zien welke pagina's geïndexeerd zijn, welke fouten er zijn, en hoe je site presteert in zoekresultaten. Als je het nog niet hebt ingesteld: doe dat vandaag nog.</Callout>
+
+## Sitemap.xml en robots.txt
+<p>Een <strong>sitemap.xml</strong> is een bestand dat Google vertelt welke pagina's op je website bestaan en wanneer ze voor het laatst zijn bijgewerkt. Het is geen garantie dat Google die pagina's indexeert, maar het helpt wel, zeker voor nieuwe websites of grote sites met veel pagina's.</p>
+<p>Je sitemap is meestal bereikbaar via <code>jouwdomein.nl/sitemap.xml</code>. Dien hem in via Google Search Console onder het menu "Sitemaps". Verwijder verouderde pagina's en 404-fouten uit je sitemap.</p>
+<p>Het <strong>robots.txt</strong>-bestand staat in de root van je website en vertelt crawlers welke pagina's ze mogen bezoeken. Een veelgemaakte fout is het per ongeluk blokkeren van CSS- of JavaScript-bestanden, waardoor Google je website niet correct kan renderen.</p>
+
+## Canonical tags voorkomen duplicate content
+<p>Duplicate content ontstaat wanneer dezelfde (of vrijwel dezelfde) content op meerdere URL's bereikbaar is. Dit verdeelt je "linkwaarde" over meerdere pagina's en verwarrt Google over welke versie het moet ranken.</p>
+<p>Veelvoorkomende oorzaken:</p>
+<ul>
+  <li>HTTP én HTTPS versies van je site die beide bereikbaar zijn</li>
+  <li>www en non-www versies</li>
+  <li>URL-parameters van filters of tracking (<code>?utm_source=...</code>)</li>
+  <li>Pagineringen zonder canonical</li>
+</ul>
+<p>De oplossing is een <code>&lt;link rel="canonical" href="..."&gt;</code>-tag in de <code>&lt;head&gt;</code> van je pagina, die verwijst naar de voorkeursversie. Zorg ook voor een 301-redirect van de niet-canonieke versies.</p>
+
+## Paginasnelheid en Core Web Vitals
+<p>Snelheid is een directe rankingfactor. <a href="/artikelen/core-web-vitals">Core Web Vitals</a>, LCP, INP en CLS, zijn de drie metrics die Google gebruikt om paginaervaring te meten. Een slechte score heeft meetbare gevolgen voor je rankings.</p>
+<p>De meest impactvolle verbeteringen voor snelheid:</p>
+<ul>
+  <li>Comprimeer afbeeldingen en gebruik moderne formaten (WebP, AVIF)</li>
+  <li>Laad JavaScript deferred of asynchroon</li>
+  <li>Gebruik een CDN (Content Delivery Network)</li>
+  <li>Activeer browsercaching en Gzip-compressie op de server</li>
+  <li>Verwijder ongebruikte CSS en JavaScript</li>
+</ul>
+
+## Mobile-first indexing
+<p>Sinds 2023 indexeert Google uitsluitend op basis van de mobiele versie van je website. Dit betekent dat content die alleen op de desktopversie staat, niet meegenomen wordt in de ranking.</p>
+<p>Zorg voor een volledig responsive ontwerp waarbij de mobiele versie dezelfde content bevat als de desktopversie. Test je website in Chrome DevTools (toggle device toolbar) en via <a href="https://search.google.com/test/mobile-friendly" target="_blank" rel="noopener">Google's Mobile-Friendly Test</a>.</p>
+<p>Voor technische details over hoe je website is gebouwd, kan een <a href="/artikelen/wordpress-vs-maatwerk">afweging tussen WordPress en maatwerk</a> relevant zijn, het platform bepaalt mede hoeveel controle je hebt over mobiele optimalisatie.</p>
+
+## Structured data en Schema markup
+<p>Structured data is code die je aan je HTML toevoegt om Google extra context te geven over wat een pagina beschrijft. Het kan leiden tot <em>rich results</em>: zoekresultaten met stervormige beoordelingen, FAQ-uitklappers, receptinformatie of evenementdata.</p>
+<p>Meest gebruikte schema-typen voor MKB-websites:</p>
+<ul>
+  <li><strong>LocalBusiness</strong>: naam, adres, telefoonnummer, openingstijden</li>
+  <li><strong>FAQ</strong>: veelgestelde vragen die uitklappen in zoekresultaten</li>
+  <li><strong>Article</strong>: voor kennisartikelen en blogposts</li>
+  <li><strong>BreadcrumbList</strong>: navigatiepad in de zoekresultaten</li>
+</ul>
+<p>Gebruik de <a href="https://validator.schema.org" target="_blank" rel="noopener">Schema.org validator</a> om je markup te controleren op fouten.</p>
+
+<hr class="artikel-divider" />
+<p>Een gezonde technische basis is de voorwaarde voor alles wat daarna komt. Wil je dieper ingaan op snelheid? Lees het artikel over <a href="/artikelen/core-web-vitals">Core Web Vitals</a>. Voor de volgende stap in je SEO-strategie, bekijk hoe het <a href="/artikelen/seo-ranking-algoritme">ranking-algoritme</a> werkt.</p>
+
+        

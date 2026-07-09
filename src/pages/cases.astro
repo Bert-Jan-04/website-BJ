@@ -1,40 +1,8 @@
-<!DOCTYPE html>
-<html lang="nl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cases | SportSEO Specialist</title>
-  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <link rel="stylesheet" href="assets/css/cases.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-</head>
-<body>
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
 
-  <header class="nav" id="nav">
-    <div class="container nav__inner">
-      <a href="index.html" class="nav__logo">Sport<span>SEO</span> Specialist</a>
-      <nav class="nav__links">
-        <a href="diensten.html">Diensten</a>
-        <a href="over-mij.html">Over mij</a>
-        <a href="cases.html" class="nav__link--active">Cases</a>
-        <a href="kennisbank.html">Kennisbank</a>
-        <a href="index.html#contact" class="btn btn--outline">Contact</a>
-      </nav>
-      <button class="nav__burger" id="burger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-    <div class="nav__mobile" id="mobileMenu">
-      <a href="diensten.html" class="nav__mobile-link">Diensten</a>
-      <a href="over-mij.html" class="nav__mobile-link">Over mij</a>
-      <a href="cases.html" class="nav__mobile-link">Cases</a>
-      <a href="kennisbank.html" class="nav__mobile-link">Kennisbank</a>
-      <a href="index.html#contact" class="nav__mobile-link">Contact</a>
-    </div>
-  </header>
-
+<BaseLayout title="Cases | SportSEO Specialist" pageCss="/assets/css/cases.css" current="cases">
   <!-- PAGE HERO -->
   <section class="page-hero">
     <div class="hero__bg">
@@ -138,7 +106,7 @@
             </div>
             <div class="dm__body" style="padding:0">
               <img
-                src="assets/images/afbeelding-case-sportpoeder.png"
+                src="/assets/images/afbeelding-case-sportpoeder.png"
                 alt="Sportpoeder case"
                 style="width:100%;display:block;border-radius:0 0 10px 10px;object-fit:cover"
               />
@@ -257,7 +225,7 @@
             </div>
             <div class="dm__body" style="padding:0">
               <img
-                src="assets/images/voetbalfunnoord-website.png"
+                src="/assets/images/voetbalfunnoord-website.png"
                 alt="Screenshot Voetbal Fun Noord website"
                 style="width:100%;display:block;border-radius:0 0 10px 10px;object-fit:cover"
               />
@@ -295,22 +263,8 @@
         <h2>Wil jij het volgende succesverhaal worden?</h2>
         <p>Plan een gratis gesprek en ontdek wat er mogelijk is voor jouw bedrijf.</p>
       </div>
-      <a href="index.html#contact" class="btn btn--primary">Start een project →</a>
+      <a href="/#contact" class="btn btn--primary">Start een project →</a>
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="container footer__inner">
-      <a href="index.html" class="nav__logo">Sport<span>SEO</span> Specialist</a>
-      <p>© 2026 SportSEO Specialist, alle rechten voorbehouden</p>
-      <p class="footer__meta">KVK: 87830817 &nbsp;·&nbsp; Ald Duerswâld 4, 9241WN Wijnjewoude</p>
-      <div class="footer__links">
-        <a href="#">Privacybeleid</a>
-        <a href="#">Algemene voorwaarden</a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="assets/js/main.js"></script>
-</body>
-</html>
+</BaseLayout>

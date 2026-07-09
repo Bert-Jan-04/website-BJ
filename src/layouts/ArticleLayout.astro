@@ -1,0 +1,93 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  entry: CollectionEntry<'artikelen'>;
+  headings: { depth: number; slug: string; text: string }[];
+}
+
+const { entry, headings } = Astro.props;
+const { title, excerpt, subtitle, badge, badgeColor, date, readTime, related, ctaText, ctaButton } = entry.data;
+
+const toc = headings.filter((h) => h.depth === 2);
+
+const allArticles = await getCollection('artikelen');
+const relatedEntries = related
+  .map((slug) => allArticles.find((a) => a.slug === slug))
+  .filter((a): a is CollectionEntry<'artikelen'> => Boolean(a));
+---
+
+<BaseLayout title={`${title} | SportSEO Specialist`} pageCss="/assets/css/artikel.css">
+  <section class="artikel-hero">
+    <div class="artikel-hero__grid"></div>
+    <div class="container">
+      <a href="/kennisbank" class="artikel-hero__back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        Terug naar kennisbank
+      </a>
+      <div class="artikel-hero__inner">
+        <div class="artikel-hero__meta">
+          <span class={`kb-badge kb-badge--${badgeColor}`}>{badge}</span>
+          <span class="artikel-hero__date">{date}</span>
+          <span class="artikel-hero__read">{readTime}</span>
+        </div>
+        <h1>{title}</h1>
+        <p class="artikel-hero__sub">{subtitle}</p>
+        <div class="artikel-hero__author">
+          <div class="artikel-hero__avatar">BJ</div>
+          <div>
+            <div class="artikel-hero__author-name">Bert-Jan Russchen</div>
+            <div class="artikel-hero__author-role">SEO &amp; Automatisering Specialist</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="artikel-section">
+    <div class="container">
+      <div class="artikel-layout">
+
+        <article class="artikel-content">
+          <slot />
+        </article>
+
+        <aside class="artikel-aside">
+          {toc.length > 0 && (
+            <div class="aside-block">
+              <p class="aside-block__title">In dit artikel</p>
+              <ul class="aside-toc">
+                {toc.map((h) => (
+                  <li><a href={`#${h.slug}`}>{h.text}</a></li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {relatedEntries.length > 0 && (
+            <div class="aside-block">
+              <p class="aside-block__title">Gerelateerde artikelen</p>
+              <div class="aside-links">
+                {relatedEntries.map((r) => (
+                  <a href={`/artikelen/${r.slug}`} class="aside-link">
+                    <div class={`aside-link__icon aside-link__icon--${r.data.badgeColor}`}>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" set:html={r.data.icon} />
+                    </div>
+                    <span class="aside-link__text">{r.data.title}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <div class="aside-cta">
+            <p>{ctaText}</p>
+            <a href="/#contact" class="btn btn--primary">{ctaButton}</a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+</BaseLayout>
