@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import home from '../data/home.json';
+import site from '../data/site.json';
+
+const tickerLogos = Array.from({ length: 7 }, () => home.logos).flat();
 ---
 
 <BaseLayout title="SportSEO Specialist | Websites, Marketing & Automatisering">
@@ -7,38 +11,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
-      mainEntity: [
-        {
-          '@type': 'Question',
-          name: 'Hoe lang duurt het voordat ik resultaat zie van SEO?',
-          acceptedAnswer: { '@type': 'Answer', text: 'De eerste beweging zie je vaak al na 1 tot 3 maanden. Structurele groei — meer verkeer, hogere posities, meer aanvragen — bouw je op in 4 tot 6 maanden. SEO is een investering die zich blijft uitbetalen: hoe eerder je begint, hoe groter de voorsprong op je concurrenten.' },
-        },
-        {
-          '@type': 'Question',
-          name: 'Wat is het verschil tussen SEO en Google Ads?',
-          acceptedAnswer: { '@type': 'Answer', text: 'Met Google Ads betaal je per klik — stop je met betalen, stopt het verkeer. SEO bouwt organische zichtbaarheid die blijft groeien ook als je niets meer investeert. Op de lange termijn levert SEO meer op voor minder geld, en bezoekers vertrouwen organische resultaten meer dan advertenties.' },
-        },
-        {
-          '@type': 'Question',
-          name: 'Werkt SEO ook voor kleine bedrijven of lokale organisaties?',
-          acceptedAnswer: { '@type': 'Answer', text: 'Zeker. Lokale SEO is juist heel krachtig voor kleine bedrijven. Je concurreert niet met heel Nederland, maar met anderen in jouw regio of niche. Dat maakt het goed haalbaar om snel bovenaan te staan bij mensen die écht naar jou op zoek zijn.' },
-        },
-        {
-          '@type': 'Question',
-          name: 'Wat heb ik nodig om te starten?',
-          acceptedAnswer: { '@type': 'Answer', text: 'Alleen een website en de wil om te groeien. Ik verzorg het zoekwoordenonderzoek, de strategie en de uitvoering. Je hoeft zelf geen SEO-kennis te hebben — ik leg alles duidelijk uit en hou je op de hoogte van de voortgang.' },
-        },
-        {
-          '@type': 'Question',
-          name: 'Doe je ook eenmalige SEO-audits?',
-          acceptedAnswer: { '@type': 'Answer', text: 'Ja. Wil je weten waar je nu staat en wat de grootste kansen zijn? Dan kan ik een uitgebreide SEO-audit uitvoeren: technische analyse, zoekwoordkansen, concurrentieonderzoek en een concreet actieplan.' },
-        },
-        {
-          '@type': 'Question',
-          name: 'Wat kost een SEO-traject?',
-          acceptedAnswer: { '@type': 'Answer', text: 'Dat hangt af van de omvang en het doel. Ik werk met trajecten op maat — geen standaard pakketjes. Plan een gratis gesprek en ik maak een voorstel dat past bij jouw situatie en budget. Geen verplichtingen.' },
-        },
-      ],
+      mainEntity: home.faq.map((item) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: { '@type': 'Answer', text: item.answer },
+      })),
     })} />
   </Fragment>
 
@@ -50,35 +27,29 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
     <div class="container hero__inner">
       <div class="hero__badge">
-        <span class="badge__dot"></span> Beschikbaar voor nieuwe projecten
+        <span class="badge__dot"></span> {home.hero.badge}
       </div>
       <h1 class="hero__title">
-        Zet jouw sportbedrijf<br />
-        <span class="gradient-text">op de kaart.</span>
+        {home.hero.titleLine1}<br />
+        <span class="gradient-text">{home.hero.titleGradient}</span>
       </h1>
       <p class="hero__sub">
-        Unieke websites, krachtige marketing en slimme automatisering,
-        speciaal voor kleine en middelgrote bedrijven in de sportbranche.
+        {home.hero.subtitle}
       </p>
       <div class="hero__cta">
-        <a href="#contact" class="btn btn--primary">Start een project</a>
-        <a href="/diensten" class="btn btn--ghost">Bekijk diensten</a>
+        <a href="#contact" class="btn btn--primary">{home.hero.ctaPrimary}</a>
+        <a href="/diensten" class="btn btn--ghost">{home.hero.ctaSecondary}</a>
       </div>
       <div class="hero__stats">
-        <div class="stat">
-          <strong style="white-space:nowrap">1-op-1</strong>
-          <span>Persoonlijke aanpak</span>
-        </div>
-        <div class="stat__divider"></div>
-        <div class="stat">
-          <strong>3x</strong>
-          <span>Meer online zichtbaarheid</span>
-        </div>
-        <div class="stat__divider"></div>
-        <div class="stat">
-          <strong>100%</strong>
-          <span>Op maat gemaakt</span>
-        </div>
+        {home.hero.stats.map((stat, i) => (
+          <>
+            {i > 0 && <div class="stat__divider"></div>}
+            <div class="stat">
+              <strong style={stat.value === '1-op-1' ? 'white-space:nowrap' : undefined}>{stat.value}</strong>
+              <span>{stat.label}</span>
+            </div>
+          </>
+        ))}
       </div>
     </div>
     <div class="hero__scroll">
@@ -91,20 +62,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="logo-ticker__label">Bedrijven die ik help</div>
     <div class="logo-ticker__track">
       <div class="logo-ticker__list" aria-hidden="true">
-        <a href="https://www.voetbalfunnoord.nl/" target="_blank" rel="noopener"><img src="/assets/images/logo-voetbalfunnoord.webp" alt="Voetbal Fun Noord" class="logo-ticker__logo" /></a>
-        <a href="https://sportpoeder.nl/" target="_blank" rel="noopener"><img src="/assets/images/sportpoeder-logo.jpg" alt="Sportpoeder" class="logo-ticker__logo" /></a>
-        <a href="https://www.voetbalfunnoord.nl/" target="_blank" rel="noopener"><img src="/assets/images/logo-voetbalfunnoord.webp" alt="Voetbal Fun Noord" class="logo-ticker__logo" /></a>
-        <a href="https://sportpoeder.nl/" target="_blank" rel="noopener"><img src="/assets/images/sportpoeder-logo.jpg" alt="Sportpoeder" class="logo-ticker__logo" /></a>
-        <a href="https://www.voetbalfunnoord.nl/" target="_blank" rel="noopener"><img src="/assets/images/logo-voetbalfunnoord.webp" alt="Voetbal Fun Noord" class="logo-ticker__logo" /></a>
-        <a href="https://sportpoeder.nl/" target="_blank" rel="noopener"><img src="/assets/images/sportpoeder-logo.jpg" alt="Sportpoeder" class="logo-ticker__logo" /></a>
-        <a href="https://www.voetbalfunnoord.nl/" target="_blank" rel="noopener"><img src="/assets/images/logo-voetbalfunnoord.webp" alt="Voetbal Fun Noord" class="logo-ticker__logo" /></a>
-        <a href="https://sportpoeder.nl/" target="_blank" rel="noopener"><img src="/assets/images/sportpoeder-logo.jpg" alt="Sportpoeder" class="logo-ticker__logo" /></a>
-        <a href="https://www.voetbalfunnoord.nl/" target="_blank" rel="noopener"><img src="/assets/images/logo-voetbalfunnoord.webp" alt="Voetbal Fun Noord" class="logo-ticker__logo" /></a>
-        <a href="https://sportpoeder.nl/" target="_blank" rel="noopener"><img src="/assets/images/sportpoeder-logo.jpg" alt="Sportpoeder" class="logo-ticker__logo" /></a>
-        <a href="https://www.voetbalfunnoord.nl/" target="_blank" rel="noopener"><img src="/assets/images/logo-voetbalfunnoord.webp" alt="Voetbal Fun Noord" class="logo-ticker__logo" /></a>
-        <a href="https://sportpoeder.nl/" target="_blank" rel="noopener"><img src="/assets/images/sportpoeder-logo.jpg" alt="Sportpoeder" class="logo-ticker__logo" /></a>
-        <a href="https://www.voetbalfunnoord.nl/" target="_blank" rel="noopener"><img src="/assets/images/logo-voetbalfunnoord.webp" alt="Voetbal Fun Noord" class="logo-ticker__logo" /></a>
-        <a href="https://sportpoeder.nl/" target="_blank" rel="noopener"><img src="/assets/images/sportpoeder-logo.jpg" alt="Sportpoeder" class="logo-ticker__logo" /></a>
+        {tickerLogos.map((logo) => (
+          <a href={logo.url} target="_blank" rel="noopener"><img src={logo.image} alt={logo.name} class="logo-ticker__logo" /></a>
+        ))}
       </div>
     </div>
   </section>
@@ -116,38 +76,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <h2>Twee takken, één doel: <span class="gradient-text">jouw groei</span></h2>
       </div>
       <div class="diensten__grid">
-
-        <div class="dienst-card fade-in">
-          <div class="dienst-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        {home.diensten.map((dienst, i) => (
+          <div class={`dienst-card ${dienst.id === 'automatisering' ? 'dienst-card--accent' : ''} fade-in ${i > 0 ? `fade-in-delay-${i}` : ''}`}>
+            {dienst.badge && <div class="dienst-card__badge">{dienst.badge}</div>}
+            <div class="dienst-card__icon">
+              {dienst.id === 'design' ? (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              ) : (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              )}
+            </div>
+            <h3>{dienst.title}</h3>
+            <p>{dienst.description}</p>
+            <ul class="dienst-card__list">
+              {dienst.items.map((item) => <li>{item}</li>)}
+            </ul>
+            <a href={dienst.link} class="dienst-card__link">Meer info <span>→</span></a>
           </div>
-          <h3>Design & Marketing</h3>
-          <p>Van een pakkend websitedesign tot social media canvassen die converteren. Ik zorg dat jouw merk eruitziet als een winnaar.</p>
-          <ul class="dienst-card__list">
-            <li>Op maat gemaakte websites</li>
-            <li>Social media templates & canvassen</li>
-            <li>SEO-geoptimaliseerde content</li>
-            <li>Merkidentiteit & huisstijl</li>
-          </ul>
-          <a href="/diensten#web-design" class="dienst-card__link">Meer info <span>→</span></a>
-        </div>
-
-        <div class="dienst-card dienst-card--accent fade-in fade-in-delay-1">
-          <div class="dienst-card__badge">Populair</div>
-          <div class="dienst-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-          </div>
-          <h3>Procesautomatisering</h3>
-          <p>Bespaar uren per week door slimme automatisering. Ik analyseer jouw werkprocessen en bouw maatwerk oplossingen die echt werken.</p>
-          <ul class="dienst-card__list">
-            <li>Workflow automatisering</li>
-            <li>Koppeling van systemen & API's</li>
-            <li>Automatische rapportages</li>
-            <li>Data-analyse & dashboards</li>
-          </ul>
-          <a href="/diensten#automatisering" class="dienst-card__link">Meer info <span>→</span></a>
-        </div>
-
+        ))}
       </div>
     </div>
   </section>
@@ -156,44 +102,35 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="container over__inner">
       <div class="over__visual fade-in">
         <div class="over__photo-wrap">
-          <img src="/assets/images/bert-jan-russchen-foto.jpg" alt="Bert-Jan Russchen, SportSEO Specialist" class="over__photo" />
+          <img src={home.overMij.photo} alt="Bert-Jan Russchen, SportSEO Specialist" class="over__photo" />
           <div class="over__photo-accent"></div>
         </div>
         <div class="over__tags">
-          <span class="tag">Sport</span>
-          <span class="tag tag--orange">Design</span>
-          <span class="tag">Automatisering</span>
-          <span class="tag tag--orange">SEO</span>
+          {home.overMij.tags.map((tag, i) => (
+            <span class={i % 2 === 1 ? 'tag tag--orange' : 'tag'}>{tag}</span>
+          ))}
         </div>
       </div>
       <div class="over__content fade-in fade-in-delay-1">
         <span class="section__label">Over mij</span>
-        <h2>Passie voor sport,<br /><span class="gradient-text">expertise in digitaal</span></h2>
-        <p>
-          Als jonge ondernemer met jarenlange werkervaring in marketing weet ik wat
-          er nodig is om online op te vallen. Sport drijft mij, en daarom richt ik
-          mij juist op ondernemers in de sportwereld.
-        </p>
-        <p>
-          Mijn doel is samen groeien naar succes: een goede én visueel sterke online
-          strategie waarbij het totale plaatje telt. Van merkidentiteit tot website
-          en marketing, alles onder één dak.
-        </p>
+        <h2>{home.overMij.titleLine1}<br /><span class="gradient-text">{home.overMij.titleGradient}</span></h2>
+        {home.overMij.paragraphs.map((p) => <p>{p}</p>)}
         <div class="over__values">
-          <div class="value fade-in fade-in-delay-1">
-            <div class="value__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-            <div>
-              <strong>Snel & efficiënt</strong>
-              <span>Korte doorlooptijden zonder concessies aan kwaliteit</span>
+          {home.overMij.values.map((value, i) => (
+            <div class={`value fade-in fade-in-delay-${i + 1}`}>
+              <div class="value__icon">
+                {i === 0 ? (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                ) : (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                )}
+              </div>
+              <div>
+                <strong>{value.title}</strong>
+                <span>{value.text}</span>
+              </div>
             </div>
-          </div>
-          <div class="value fade-in fade-in-delay-2">
-            <div class="value__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
-            <div>
-              <strong>Resultaatgericht</strong>
-              <span>Altijd focus op meetbare groei voor jouw bedrijf</span>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
@@ -206,34 +143,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <h2>Recente <span class="gradient-text">projecten</span></h2>
       </div>
       <div class="cases__grid">
-        <div class="case-card fade-in">
-          <div class="case-card__image" style="--hue: 350">
-            <img src="/assets/images/voetbalfunnoord-website.png" alt="Voetbal Fun Noord website" />
-            <div class="case-card__label">Website &amp; SEO</div>
-          </div>
-          <div class="case-card__body">
-            <h4>Voetbal Fun Noord</h4>
-            <p>Nieuwe website en complete SEO-strategie voor betere vindbaarheid in de regio.</p>
-            <div class="case-card__tags">
-              <span>Web design</span><span>SEO</span><span>Strategie</span>
+        {home.casesFeatured.map((c) => (
+          <div class="case-card fade-in">
+            <div class="case-card__image" style={`--hue: ${c.hue}`}>
+              <img src={c.image} alt={c.title} />
+              <div class="case-card__label">{c.imageLabel}</div>
             </div>
-            <a href="https://www.voetbalfunnoord.nl/" target="_blank" rel="noopener" class="case-card__link">Bekijk website →</a>
-          </div>
-        </div>
-        <div class="case-card fade-in">
-          <div class="case-card__image" style="--hue: 25">
-            <img src="/assets/images/afbeelding-case-sportpoeder.png" alt="Sportpoeder case" />
-            <div class="case-card__label">SEO</div>
-          </div>
-          <div class="case-card__body">
-            <h4>Sportpoeder.nl</h4>
-            <p>Van 3,4 naar 8,7 miljoen vertoningen en van 60K naar 135K klikken in 6 maanden door volledige SEO-aanpak.</p>
-            <div class="case-card__tags">
-              <span>SEO</span><span>Content</span><span>Kortingscodes</span>
+            <div class="case-card__body">
+              <h4>{c.title}</h4>
+              <p>{c.description}</p>
+              <div class="case-card__tags">
+                {c.tags.map((tag) => <span>{tag}</span>)}
+              </div>
+              {c.external ? (
+                <a href={c.link} target="_blank" rel="noopener" class="case-card__link">{c.linkLabel}</a>
+              ) : (
+                <a href={c.link} class="case-card__link">{c.linkLabel}</a>
+              )}
             </div>
-            <a href="/cases#sportpoeder" class="case-card__link">Bekijk case →</a>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   </section>
@@ -246,67 +175,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <h2>Alles wat je wil <span class="gradient-text">weten</span></h2>
       </div>
       <div class="faq__list">
-
-        <div class="faq__item">
-          <button class="faq__question" aria-expanded="false">
-            Hoe lang duurt het voordat ik resultaat zie van SEO?
-            <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-          </button>
-          <div class="faq__answer">
-            <p>De eerste beweging zie je vaak al na 1 tot 3 maanden. Structurele groei — meer verkeer, hogere posities, meer aanvragen — bouw je op in 4 tot 6 maanden. SEO is een investering die zich blijft uitbetalen: hoe eerder je begint, hoe groter de voorsprong op je concurrenten.</p>
+        {home.faq.map((item) => (
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false">
+              {item.question}
+              <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq__answer">
+              <p>{item.answer}</p>
+            </div>
           </div>
-        </div>
-
-        <div class="faq__item">
-          <button class="faq__question" aria-expanded="false">
-            Wat is het verschil tussen SEO en Google Ads?
-            <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-          </button>
-          <div class="faq__answer">
-            <p>Met Google Ads betaal je per klik — stop je met betalen, stopt het verkeer. SEO bouwt organische zichtbaarheid die blijft groeien ook als je niets meer investeert. Op de lange termijn levert SEO meer op voor minder geld, en bezoekers vertrouwen organische resultaten meer dan advertenties.</p>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <button class="faq__question" aria-expanded="false">
-            Werkt SEO ook voor kleine bedrijven of lokale organisaties?
-            <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-          </button>
-          <div class="faq__answer">
-            <p>Zeker. Lokale SEO is juist heel krachtig voor kleine bedrijven. Je concurreert niet met heel Nederland, maar met anderen in jouw regio of niche. Dat maakt het goed haalbaar om snel bovenaan te staan bij mensen die écht naar jou op zoek zijn.</p>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <button class="faq__question" aria-expanded="false">
-            Wat heb ik nodig om te starten?
-            <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-          </button>
-          <div class="faq__answer">
-            <p>Alleen een website en de wil om te groeien. Ik verzorg het zoekwoordenonderzoek, de strategie en de uitvoering. Je hoeft zelf geen SEO-kennis te hebben — ik leg alles duidelijk uit en hou je op de hoogte van de voortgang.</p>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <button class="faq__question" aria-expanded="false">
-            Doe je ook eenmalige SEO-audits?
-            <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-          </button>
-          <div class="faq__answer">
-            <p>Ja. Wil je weten waar je nu staat en wat de grootste kansen zijn? Dan kan ik een uitgebreide SEO-audit uitvoeren: technische analyse, zoekwoordkansen, concurrentieonderzoek en een concreet actieplan. Neem contact op voor de mogelijkheden.</p>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <button class="faq__question" aria-expanded="false">
-            Wat kost een SEO-traject?
-            <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-          </button>
-          <div class="faq__answer">
-            <p>Dat hangt af van de omvang en het doel. Ik werk met trajecten op maat — geen standaard pakketjes. Plan een gratis gesprek en ik maak een voorstel dat past bij jouw situatie en budget. Geen verplichtingen.</p>
-          </div>
-        </div>
-
+        ))}
       </div>
     </div>
   </section>
@@ -316,19 +195,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="contact__info fade-in">
         <span class="section__label">Contact</span>
         <h2>Klaar om te <span class="gradient-text">groeien?</span></h2>
-        <p>Vul het formulier in en je bericht wordt direct via WhatsApp verstuurd. Ik reageer zo snel mogelijk.</p>
+        <p>{home.contact.intro}</p>
         <div class="contact__details">
-          <a href="https://wa.me/31682671920" target="_blank" rel="noopener" class="contact__item">
+          <a href={`https://wa.me/${site.whatsapp}`} target="_blank" rel="noopener" class="contact__item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-            +31 6 82 67 19 20
+            {site.phone}
           </a>
-          <a href="https://instagram.com/seosportspecialist" target="_blank" rel="noopener" class="contact__item">
+          <a href={site.instagramUrl} target="_blank" rel="noopener" class="contact__item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-            @seosportspecialist
+            {site.instagramHandle}
           </a>
-          <a href="mailto:russchenbertjan@gmail.com" class="contact__item">
+          <a href={`mailto:${site.email}`} class="contact__item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            russchenbertjan@gmail.com
+            {site.email}
           </a>
         </div>
       </div>

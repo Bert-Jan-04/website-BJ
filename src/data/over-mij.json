@@ -1,0 +1,63 @@
+{
+  "hero": {
+    "titleLine1": "Sport, strategie",
+    "titleLine2": "en",
+    "titleGradient": "resultaat",
+    "subtitle": "Ik ben Bert-Jan Russchen, jonge ondernemer met jarenlange werkervaring in marketing. Vanuit die praktijkkennis en een half jaar programmeren aan Harvard University help ik ondernemers in de sportwereld aan een sterke, visueel aantrekkelijke online strategie.",
+    "tags": ["Sport", "Online Marketing", "Online Strategie", "SEO"],
+    "photo": "/assets/images/bert-jan-russchen-foto.jpg",
+    "statBubble": { "value": "5+", "label": "jaar ervaring" }
+  },
+  "verhaal": {
+    "photoMain": "/assets/images/foto-hardlopen-bert-jan.JPG",
+    "photoSmall": "/assets/images/foto-voetbal-bert-jan.jpg",
+    "badge": { "value": "5+", "labelLine1": "jaar marketing-", "labelLine2": "ervaring" },
+    "titleLine1": "Van de sportvelden",
+    "titleGradient": "naar het digitale veld",
+    "paragraphs": [
+      "Sport is voor mij meer dan een hobby, het is wat mij drijft om juist sportondernemers te helpen. Na jarenlange werkervaring in het marketingvak besloot ik voor mijzelf te beginnen. Die praktijkkennis neem ik mee, aangevuld met een half jaar programmeeropleiding aan Harvard University.",
+      "Mijn doel is samen groeien naar succes, met ondernemers in de sportwereld die klaar zijn voor een goede én visueel sterke online strategie. Het totale plaatje telt: van merkidentiteit en website tot een aanpak die écht aansluit bij wie jij bent."
+    ],
+    "values": [
+      { "title": "Sportmentaliteit", "text": "Doorzetten, verbeteren en altijd streven naar het beste eindresultaat" },
+      { "title": "Data-gedreven", "text": "Beslissingen op basis van cijfers, meetbare groei staat altijd centraal" },
+      { "title": "Persoonlijk contact", "text": "Geen groot bureau, jij werkt direct met mij samen, zonder tussenpersonen" }
+    ]
+  },
+  "passies": {
+    "label": "Wat mij drijft",
+    "titleLine1": "Drie passies,",
+    "titleGradient": "één aanpak",
+    "subtitle": "De combinatie van sport, marketing en procesdenken maakt mijn aanpak uniek.",
+    "cards": [
+      { "id": "sport", "image": "/assets/images/foto-hardlopen-bert-jan.JPG", "title": "Passie voor sport", "text": "Sport zit in mijn DNA. Als actief sporter begrijp ik de wereld van sportbedrijven van binnenuit, hun uitdagingen, hun klanten en wat hen uniek maakt. Dat begrip vertaalt zich direct in sterkere content en een relevantere online aanwezigheid.", "tags": ["Actief sporter", "Branchekennis", "Sportnetwerk"] },
+      { "id": "marketing", "image": "/assets/images/foto-bertjan-laptop.png", "title": "Online marketing", "text": "Van SEO tot social media, ik weet hoe je online opvalt in een competitieve markt. Niet met losse trucjes, maar met een samenhangende strategie die past bij jouw merk en doelgroep in de sportwereld.", "tags": ["SEO & content", "Social media", "E-mailmarketing"] },
+      { "id": "proces", "image": "/assets/images/foto-bertjan-noteren.png", "title": "Procesoptimalisatie", "text": "Slimmer werken, niet harder. Ik analyseer hoe jouw bedrijf draait, breng inefficiënties in kaart en bouw automatiseringen die uren per week besparen. Meer tijd voor je sporters, minder tijd aan administratie.", "tags": ["Workflow analyse", "Automatisering", "Systeemkoppelingen"] }
+    ]
+  },
+  "aanpak": {
+    "titleLine1": "Waarom sportbedrijven",
+    "titleGradient": "voor mij kiezen",
+    "text": "Ik ben geen groot bureau met tientallen medewerkers. Ik ben één persoon die zich volledig inzet voor jouw project, met de mentaliteit van een sporter: consistent, gedisciplineerd en altijd gericht op het beste eindresultaat.",
+    "items": [
+      { "title": "Diepgaande branchekennis", "text": "Je hoeft niet uit te leggen hoe de sportmarkt werkt, ik ken die van binnenuit" },
+      { "title": "Alles onder één dak", "text": "Website, marketing én automatisering, geen losse partijen die niet samenwerken" },
+      { "title": "Directe communicatie", "text": "Geen tussenpersonen, je belt of appt rechtstreeks met mij" },
+      { "title": "Transparante prijzen", "text": "Vaste offertes, je weet van tevoren precies wat je betaalt, geen verrassingen" }
+    ],
+    "buttonLabel": "Plan een kennismaking →",
+    "stats": [
+      { "value": "1-op-1", "label": "Persoonlijke aanpak" },
+      { "value": "5+", "label": "Jaar marketingervaring" },
+      { "value": "3×", "label": "Meer zichtbaarheid gemiddeld" },
+      { "value": "100%", "label": "Focus op de sportbranche" }
+    ],
+    "quote": "De beste strategie is één die past bij wie je bent, en voor mij begint dat altijd bij sport.",
+    "quoteAuthor": "Bert-Jan Russchen"
+  },
+  "cta": {
+    "title": "Klaar om kennis te maken?",
+    "subtitle": "Plan een gratis gesprek van 30 minuten, geen verplichtingen.",
+    "buttonLabel": "Plan een gratis gesprek →"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "hero": {
+    "label": "Portfolio",
+    "titlePlain": "Projecten die ",
+    "titleGradient": "resultaat",
+    "titleSuffix": " leveren",
+    "subtitle": "Van AI-dashboards tot automatiseringen, concrete projecten voor echte bedrijven, met meetbare uitkomsten."
+  },
+  "cases": [
+    {
+      "id": "sportpoeder",
+      "client": "Sportpoeder.nl",
+      "badges": ["SEO", "Content", "Conversie-optimalisatie"],
+      "titleLine1": "Van 3,4 naar 8,7 miljoen vertoningen",
+      "titleGradient": "in slechts 6 maanden",
+      "lead": "Sportpoeder.nl is een van de grootste aanbieders van sportvoeding kortingscodes in Nederland. Door een complete SEO-aanpak — van geoptimaliseerde kortingscode-pagina's tot gerichte SEO-blogs — verdubbelden het bereik en de klikken in een half jaar tijd.",
+      "challenge": "Sportpoeder stond al sterk op kortingscodes, maar liet enorm veel organisch verkeer liggen. De pagina's waren niet optimaal ingericht voor Google en er was nauwelijks ondersteunende content die bezoekers eerder in hun zoekproces kon aantrekken.",
+      "solution": "Volledige SEO-strategie: optimalisatie van alle kortingscode-pagina's, gerichte SEO-blogs voor long-tail zoekwoorden en technische verbeteringen. Resultaat: structureel meer zichtbaarheid en klikken vanuit Google.",
+      "tech": [{ "label": "On-page SEO", "highlighted": true }, { "label": "SEO-blogs", "highlighted": true }, { "label": "Kortingscode-pagina's" }, { "label": "Zoekwoordenonderzoek" }, { "label": "Technische SEO" }, { "label": "Google Search Console", "highlighted": true }],
+      "resultLink": "https://sportpoeder.nl/",
+      "resultLabel": "Sportpoeder.nl →",
+      "browserTitle": "sportpoeder.nl",
+      "image": "/assets/images/afbeelding-case-sportpoeder.png",
+      "imageAlt": "Sportpoeder case",
+      "results": [
+        { "value": "8,7M", "label": "vertoningen in 6 maanden (was 3,4M)", "highlighted": true },
+        { "value": "135K", "label": "klikken in 6 maanden (was 60K)", "highlighted": false },
+        { "value": "+156%", "label": "meer vertoningen in een half jaar", "highlighted": true },
+        { "value": "+125%", "label": "meer organische klikken vanuit Google", "highlighted": false }
+      ]
+    },
+    {
+      "id": "voetbalfunnoord",
+      "client": "Voetbal Fun Noord",
+      "badges": ["Website", "SEO-strategie"],
+      "titleLine1": "Een nieuwe online basis voor de organisatie,",
+      "titleGradient": "beter vindbaar in de regio",
+      "lead": "Voetbal Fun Noord was nauwelijks vindbaar online. Ze organiseren leuke voetbaldagen voor voetbalclubs, zoals seizoensafsluitingen en -openingen. We bouwden een nieuwe website en zetten een complete SEO-strategie op zodat ze structureel gevonden worden door clubs in de regio.",
+      "challenge": "De oude website was verouderd, niet mobielvriendelijk en stond nergens in Google. Voetbalclubs die op zoek waren naar een leuke voetbaldag vonden de organisatie simpelweg niet terug.",
+      "solution": "Nieuwe mobielvriendelijke website plus een complete SEO-strategie: zoekwoordenonderzoek, technische optimalisatie en lokale SEO zodat Voetbal Fun Noord gevonden wordt door iedereen die in de buurt zoekt.",
+      "tech": [{ "label": "Website design", "highlighted": true }, { "label": "Lokale SEO", "highlighted": true }, { "label": "Zoekwoordenonderzoek" }, { "label": "Technische optimalisatie" }, { "label": "Mobiel vriendelijk" }, { "label": "Google Search Console", "highlighted": true }],
+      "resultLink": "https://www.voetbalfunnoord.nl/",
+      "resultLabel": "Voetbalfunnoord.nl →",
+      "browserTitle": "voetbalfunnoord.nl",
+      "image": "/assets/images/voetbalfunnoord-website.png",
+      "imageAlt": "Screenshot Voetbal Fun Noord website",
+      "results": [
+        { "value": "Top 3", "label": "lokale Google-resultaten in de regio", "highlighted": false },
+        { "value": "100%", "label": "mobielvriendelijke website met perfecte score", "highlighted": true },
+        { "value": "+240%", "label": "meer organisch websiteverkeer na livegang", "highlighted": false },
+        { "value": "Nieuw", "label": "merkidentiteit die past bij de organisatie en haar doelgroep", "highlighted": true }
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Wil jij het volgende succesverhaal worden?",
+    "subtitle": "Plan een gratis gesprek en ontdek wat er mogelijk is voor jouw bedrijf.",
+    "buttonLabel": "Start een project →"
+  }
+}

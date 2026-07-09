@@ -1,0 +1,138 @@
+{
+  "hero": {
+    "label": "Wat ik aanbied",
+    "titleLine1": "Diensten die jouw bedrijf",
+    "titleGradient": "laten groeien",
+    "subtitle": "Alles wat je nodig hebt om online op te vallen, van een strak websitedesign tot volledige procesautomatisering. Speciaal voor de sportbranche."
+  },
+  "tak1": {
+    "titlePlain": "Design & ",
+    "titleGradient": "Marketing",
+    "description": "Jouw online aanwezigheid is het visitekaartje van je bedrijf. Ik zorg dat het er niet alleen goed uitziet, maar ook converteert."
+  },
+  "tak2": {
+    "titlePlain": "Proces",
+    "titleGradient": "automatisering",
+    "description": "Stop met het handmatig uitvoeren van terugkerende taken. Ik automatiseer wat kan, zodat jij je kunt focussen op wat echt telt."
+  },
+  "diensten": [
+    {
+      "id": "web-design",
+      "tak": 1,
+      "variant": "blue",
+      "category": "Website design",
+      "title": "Website design",
+      "lead": "Een website die niet alleen mooi is, maar ook werkt. Ik ontwerp en bouw snelle, mobielvriendelijke websites die bezoekers omzetten in klanten, volledig afgestemd op jouw sportmerk.",
+      "ideal": ["Sportscholen", "Voetbalclubs", "Personal trainers", "Sportwinkels", "Fitnessstudio's"],
+      "tools": [{ "label": "HTML / CSS" }, { "label": "JavaScript" }, { "label": "Figma" }, { "label": "WordPress" }, { "label": "Google Analytics" }],
+      "includes": ["Volledig op maat ontworpen", "Responsive op alle apparaten", "SEO-klaar vanaf dag 1", "Contactformulier & Google Maps", "Google Analytics koppeling", "Snel laadtijd (Core Web Vitals)", "30 dagen nazorg inbegrepen"],
+      "note": "Gratis kennismakingsgesprek van 30 min",
+      "extras": [
+        { "label": "Eenpagina website", "note": "Op aanvraag" },
+        { "label": "Webshop", "note": "Op aanvraag" },
+        { "label": "Redesign bestaande site", "note": "Op aanvraag" }
+      ]
+    },
+    {
+      "id": "social-media",
+      "tak": 1,
+      "variant": "orange",
+      "category": "Social media",
+      "title": "Social media canvassen",
+      "lead": "Professionele, bewerkbare templates voor al jouw social media kanalen. Consistent, herkenbaar en klaar om te posten, zonder dat je grafisch designer hoeft te zijn.",
+      "ideal": ["Sportclubs", "Gym-eigenaren", "Coaches", "Sportevenementen"],
+      "tools": [{ "label": "Canva Pro", "highlighted": true }, { "label": "Instagram" }, { "label": "Facebook" }, { "label": "LinkedIn" }, { "label": "TikTok" }],
+      "includes": ["10 bewerkbare Canva-templates", "Posts, stories & reels-covers", "Passend bij jouw huisstijl", "Alle formaten inbegrepen", "Instructievideo voor gebruik", "2 revisierondes"],
+      "note": "Gratis kennismakingsgesprek van 30 min",
+      "extras": [
+        { "label": "Maandpakket (20 posts)", "note": "Op aanvraag" },
+        { "label": "Compleet social media pakket", "note": "Op aanvraag" }
+      ]
+    },
+    {
+      "id": "seo",
+      "tak": 1,
+      "variant": "blue",
+      "category": "SEO",
+      "title": "SEO & Vindbaarheid",
+      "lead": "Gevonden worden door de juiste mensen in Google. Ik optimaliseer jouw website zodat potentiële klanten jou vinden op het moment dat ze zoeken naar jouw diensten in de sportbranche.",
+      "ideal": ["Lokale sportbedrijven", "Nieuwe websites", "Lage Google-positie", "Weinig bezoekers"],
+      "stats": [
+        { "value": "+180%", "label": "Gemiddeld meer organisch verkeer" },
+        { "value": "Top 3", "label": "Lokale zoekresultaten" },
+        { "value": "3 mnd", "label": "Gemiddeld eerste resultaten" }
+      ],
+      "tools": [{ "label": "Google Search Console" }, { "label": "Ahrefs" }, { "label": "Semrush" }, { "label": "Google Analytics 4" }],
+      "includes": ["Uitgebreid zoekwoordenonderzoek", "On-page SEO optimalisatie", "Lokale SEO & Google Business Profile", "Technische SEO-audit", "Linkbuilding strategie", "Maandelijkse rapportage", "Concurrentieanalyse"],
+      "note": "Gratis SEO-scan van jouw website",
+      "extras": [
+        { "label": "Eenmalige SEO-audit", "note": "Op aanvraag" },
+        { "label": "Lokale SEO setup", "note": "Op aanvraag" }
+      ]
+    },
+    {
+      "id": "marketing",
+      "tak": 1,
+      "variant": "orange",
+      "category": "Marketing",
+      "title": "Online marketing",
+      "lead": "Meer zichtbaarheid en meer klanten via organische kanalen. Van SEO en social media tot e-mailmarketing, ik zorg dat jouw merk online opvalt zonder afhankelijk te zijn van advertentiebudget.",
+      "ideal": ["Sportscholen die willen groeien", "Seizoensaanbiedingen", "Nieuwe locaties", "Events & acties"],
+      "tools": [{ "label": "SEO", "highlighted": true }, { "label": "Instagram", "highlighted": true }, { "label": "Facebook" }, { "label": "E-mailmarketing" }, { "label": "Content strategie" }],
+      "includes": ["SEO-strategie & zoekwoordenonderzoek", "Social media beheer (Instagram & Facebook)", "Content creatie & planning", "E-mailmarketing & nieuwsbrieven", "Doelgroep onderzoek", "Maandelijkse rapportage"],
+      "note": "",
+      "extras": [
+        { "label": "E-mail marketing setup", "note": "Op aanvraag" },
+        { "label": "Merkidentiteit & huisstijl", "note": "Op aanvraag" }
+      ]
+    },
+    {
+      "id": "automatisering",
+      "tak": 2,
+      "variant": "orange",
+      "category": "Automatisering",
+      "title": "Workflow automatisering",
+      "lead": "Elke dag worden er in jouw bedrijf taken herhaald die ook automatisch kunnen. Ik breng ze in kaart en bouw koppelingen die uren per week besparen, zonder extra software te leren.",
+      "idealLabel": "Voorbeelden die ik automatiseer",
+      "ideal": ["Inschrijvingen verwerken", "Bevestigingsmails versturen", "Facturen aanmaken", "Kalender bijwerken", "Leads doorsturen"],
+      "tools": [{ "label": "Make (Integromat)", "highlighted": true }, { "label": "n8n", "highlighted": true }, { "label": "Zapier" }, { "label": "Python" }, { "label": "Google Workspace" }],
+      "includes": ["Analyse van huidige werkprocessen", "Koppeling via Make, Zapier of n8n", "E-mail & notificatie automatisering", "Formulier- & CRM-koppelingen", "Testfase & foutcontrole", "Documentatie & handleiding", "30 dagen support na oplevering"],
+      "note": "Gratis procesanalyse van 45 min",
+      "extras": []
+    },
+    {
+      "id": "integraties",
+      "tak": 2,
+      "variant": "blue",
+      "category": "Integraties",
+      "title": "Systeemintegraties & API's",
+      "lead": "Jouw CRM, boekhoudpakket, ledenadministratie en website die niet met elkaar praten? Ik maak de koppeling, zodat data automatisch gesynchroniseerd wordt tussen al jouw tools.",
+      "idealLabel": "Systemen die ik koppel",
+      "ideal": ["Exact Online", "Mindbody", "SportCtrl", "HubSpot", "Mailchimp", "Google Sheets"],
+      "tools": [{ "label": "REST API" }, { "label": "Python" }, { "label": "Webhooks" }, { "label": "JSON / XML" }],
+      "includes": ["Inventarisatie van jouw systemen", "API-koppeling op maat", "Foutmeldingen & monitoring", "Automatische synchronisatie", "Logging & overzicht", "Documentatie"],
+      "note": "Vrijblijvende haalbaarheidsanalyse",
+      "extras": [
+        { "label": "Data-analyse & dashboards", "note": "Op aanvraag" },
+        { "label": "Maatwerk Python-scripts", "note": "Op aanvraag" }
+      ]
+    }
+  ],
+  "werkwijze": {
+    "label": "Hoe het werkt",
+    "titleLine1": "Van idee naar",
+    "titleGradient": "resultaat",
+    "subtitle": "Een helder proces van vier stappen, zodat je altijd weet waar je aan toe bent.",
+    "steps": [
+      { "num": "Stap 1", "title": "Kennismaking", "description": "We bespreken jouw bedrijf, doelen en uitdagingen in een gratis gesprek van 30 minuten.", "details": ["Gratis en vrijblijvend", "Online of telefonisch", "Jij stelt de agenda"], "duration": "30 minuten" },
+      { "num": "Stap 2", "title": "Offerte & plan", "description": "Ik stel een concreet voorstel op met een duidelijke planning, vaste prijs en heldere deadlines.", "details": ["Gedetailleerde offerte", "Vaste prijs, geen verrassingen", "Planning met mijlpalen"], "duration": "Binnen 48 uur" },
+      { "num": "Stap 3", "title": "Uitvoering", "description": "Ik ga aan de slag. Je ontvangt regelmatige updates en kunt op elk moment feedback geven.", "details": ["Wekelijkse voortgangsupdate", "Tussentijds feedback inplannen", "Directe communicatie via WhatsApp / e-mail"], "duration": "Afhankelijk van project" },
+      { "num": "Stap 4", "title": "Oplevering & nazorg", "description": "Jouw project gaat live. Ik geef uitleg, zorg voor overdracht en sta de eerste periode klaar voor vragen.", "details": ["Live zetten & testen", "Instructie & overdracht", "30 dagen gratis nazorg"], "duration": "Klaar voor gebruik" }
+    ]
+  },
+  "cta": {
+    "title": "Klaar om te beginnen?",
+    "subtitle": "Vraag een gratis kennismakingsgesprek aan, geen verplichtingen.",
+    "buttonLabel": "Plan een gratis gesprek →"
+  }
+}

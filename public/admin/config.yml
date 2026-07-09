@@ -1,0 +1,370 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+media_folder: "public/assets/images"
+public_folder: "/assets/images"
+
+locale: "nl"
+
+collections:
+  - name: "pages"
+    label: "Pagina's"
+    files:
+
+      - file: "src/data/site.json"
+        label: "Bedrijfsgegevens"
+        name: "site"
+        description: "Gebruikt in de footer en contactsecties op meerdere pagina's."
+        fields:
+          - { label: "Bedrijfsnaam", name: "companyName", widget: "string" }
+          - { label: "KVK-nummer", name: "kvk", widget: "string" }
+          - { label: "Adres", name: "address", widget: "string" }
+          - { label: "Telefoonnummer (weergave)", name: "phone", widget: "string" }
+          - { label: "WhatsApp-nummer (alleen cijfers, met landcode, bv. 31612345678)", name: "whatsapp", widget: "string", pattern: ["^[0-9]+$", "Alleen cijfers, geen + of spaties"] }
+          - { label: "E-mailadres", name: "email", widget: "string" }
+          - { label: "Instagram-naam (met @)", name: "instagramHandle", widget: "string" }
+          - { label: "Instagram-URL", name: "instagramUrl", widget: "string" }
+
+      - file: "src/data/home.json"
+        label: "Homepage"
+        name: "home"
+        fields:
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Badge-tekst (boven de titel)", name: "badge", widget: "string" }
+              - { label: "Titel regel 1", name: "titleLine1", widget: "string" }
+              - { label: "Titel regel 2 (gradient)", name: "titleGradient", widget: "string" }
+              - { label: "Subtitel", name: "subtitle", widget: "text" }
+              - { label: "Primaire knoptekst", name: "ctaPrimary", widget: "string" }
+              - { label: "Secundaire knoptekst", name: "ctaSecondary", widget: "string" }
+              - label: "Statistieken"
+                name: "stats"
+                widget: "list"
+                min: 3
+                max: 3
+                fields:
+                  - { label: "Waarde", name: "value", widget: "string" }
+                  - { label: "Label", name: "label", widget: "string" }
+          - label: "Logo's (bedrijven die ik help)"
+            name: "logos"
+            widget: "list"
+            fields:
+              - { label: "Naam", name: "name", widget: "string" }
+              - { label: "Website-URL", name: "url", widget: "string" }
+              - { label: "Logo", name: "image", widget: "image" }
+          - label: "Diensten-kaarten (2, vast — niet toevoegen/verwijderen)"
+            name: "diensten"
+            widget: "list"
+            min: 2
+            max: 2
+            fields:
+              - { label: "ID (niet wijzigen)", name: "id", widget: "select", options: ["design", "automatisering"] }
+              - { label: "Badge (leeg = geen badge)", name: "badge", widget: "string", required: false }
+              - { label: "Titel", name: "title", widget: "string" }
+              - { label: "Beschrijving", name: "description", widget: "text" }
+              - { label: "Bullet-lijst", name: "items", widget: "list" }
+              - { label: "Link", name: "link", widget: "string" }
+          - label: "Over mij (teaser)"
+            name: "overMij"
+            widget: "object"
+            fields:
+              - { label: "Foto", name: "photo", widget: "image" }
+              - { label: "Tags", name: "tags", widget: "list" }
+              - { label: "Titel regel 1", name: "titleLine1", widget: "string" }
+              - { label: "Titel regel 2 (gradient)", name: "titleGradient", widget: "string" }
+              - { label: "Paragrafen", name: "paragraphs", widget: "list" }
+              - label: "Kernwaarden (2, vast)"
+                name: "values"
+                widget: "list"
+                min: 2
+                max: 2
+                fields:
+                  - { label: "Titel", name: "title", widget: "string" }
+                  - { label: "Tekst", name: "text", widget: "string" }
+          - label: "Uitgelichte cases (2, vast)"
+            name: "casesFeatured"
+            widget: "list"
+            min: 2
+            max: 2
+            fields:
+              - { label: "Kleurtint (hue, 0-360)", name: "hue", widget: "number" }
+              - { label: "Afbeelding", name: "image", widget: "image" }
+              - { label: "Label op afbeelding", name: "imageLabel", widget: "string" }
+              - { label: "Titel", name: "title", widget: "string" }
+              - { label: "Beschrijving", name: "description", widget: "text" }
+              - { label: "Tags", name: "tags", widget: "list" }
+              - { label: "Link", name: "link", widget: "string" }
+              - { label: "Link-tekst", name: "linkLabel", widget: "string" }
+              - { label: "Externe link (opent nieuw tabblad)", name: "external", widget: "boolean" }
+          - label: "Veelgestelde vragen"
+            name: "faq"
+            widget: "list"
+            fields:
+              - { label: "Vraag", name: "question", widget: "string" }
+              - { label: "Antwoord", name: "answer", widget: "text" }
+          - label: "Contact"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Introtekst boven formulier", name: "intro", widget: "text" }
+
+      - file: "src/data/diensten.json"
+        label: "Diensten-pagina"
+        name: "diensten"
+        fields:
+          - label: "Page hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Titel regel 1", name: "titleLine1", widget: "string" }
+              - { label: "Titel regel 2 (gradient)", name: "titleGradient", widget: "string" }
+              - { label: "Subtitel", name: "subtitle", widget: "text" }
+          - label: "Tak 1 banner (Design & Marketing)"
+            name: "tak1"
+            widget: "object"
+            fields:
+              - { label: "Titel (plat deel)", name: "titlePlain", widget: "string" }
+              - { label: "Titel (gradient deel)", name: "titleGradient", widget: "string" }
+              - { label: "Beschrijving", name: "description", widget: "text" }
+          - label: "Tak 2 banner (Automatisering)"
+            name: "tak2"
+            widget: "object"
+            fields:
+              - { label: "Titel (plat deel)", name: "titlePlain", widget: "string" }
+              - { label: "Titel (gradient deel)", name: "titleGradient", widget: "string" }
+              - { label: "Beschrijving", name: "description", widget: "text" }
+          - label: "Diensten (6, vast — niet toevoegen/verwijderen, elk heeft een eigen icoon in de code)"
+            name: "diensten"
+            widget: "list"
+            min: 6
+            max: 6
+            fields:
+              - { label: "ID (niet wijzigen)", name: "id", widget: "select", options: ["web-design", "social-media", "seo", "marketing", "automatisering", "integraties"] }
+              - { label: "Tak (1 of 2)", name: "tak", widget: "select", options: [1, 2] }
+              - { label: "Kleur", name: "variant", widget: "select", options: ["blue", "orange"] }
+              - { label: "Categorie-badge", name: "category", widget: "string" }
+              - { label: "Titel", name: "title", widget: "string" }
+              - { label: "Introtekst", name: "lead", widget: "text" }
+              - { label: "Label boven tags (optioneel, standaard 'Ideaal voor')", name: "idealLabel", widget: "string", required: false }
+              - { label: "Tags ('ideaal voor')", name: "ideal", widget: "list" }
+              - label: "Statistieken (alleen gebruikt bij SEO)"
+                name: "stats"
+                widget: "list"
+                required: false
+                fields:
+                  - { label: "Waarde", name: "value", widget: "string" }
+                  - { label: "Label", name: "label", widget: "string" }
+              - label: "Tools/kanalen"
+                name: "tools"
+                widget: "list"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Uitgelicht (oranje)", name: "highlighted", widget: "boolean", required: false, default: false }
+              - { label: "Kaart: wat is inbegrepen", name: "includes", widget: "list" }
+              - { label: "Kaart: notitie onder knop (optioneel)", name: "note", widget: "string", required: false }
+              - label: "Extra opties"
+                name: "extras"
+                widget: "list"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Notitie", name: "note", widget: "string" }
+          - label: "Werkwijze"
+            name: "werkwijze"
+            widget: "object"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Titel regel 1", name: "titleLine1", widget: "string" }
+              - { label: "Titel regel 2 (gradient)", name: "titleGradient", widget: "string" }
+              - { label: "Subtitel", name: "subtitle", widget: "text" }
+              - label: "Stappen (4, vast)"
+                name: "steps"
+                widget: "list"
+                min: 4
+                max: 4
+                fields:
+                  - { label: "Stapnummer-label", name: "num", widget: "string" }
+                  - { label: "Titel", name: "title", widget: "string" }
+                  - { label: "Beschrijving", name: "description", widget: "text" }
+                  - { label: "Details", name: "details", widget: "list" }
+                  - { label: "Duur", name: "duration", widget: "string" }
+          - label: "CTA-banner"
+            name: "cta"
+            widget: "object"
+            fields:
+              - { label: "Titel", name: "title", widget: "string" }
+              - { label: "Subtitel", name: "subtitle", widget: "string" }
+              - { label: "Knoptekst", name: "buttonLabel", widget: "string" }
+
+      - file: "src/data/over-mij.json"
+        label: "Over mij-pagina"
+        name: "over-mij"
+        fields:
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Titel regel 1", name: "titleLine1", widget: "string" }
+              - { label: "Titel regel 2 (plat deel)", name: "titleLine2", widget: "string" }
+              - { label: "Titel regel 2 (gradient deel)", name: "titleGradient", widget: "string" }
+              - { label: "Subtitel", name: "subtitle", widget: "text" }
+              - { label: "Tags", name: "tags", widget: "list" }
+              - { label: "Foto", name: "photo", widget: "image" }
+              - label: "Statistiek-bubbel"
+                name: "statBubble"
+                widget: "object"
+                fields:
+                  - { label: "Waarde", name: "value", widget: "string" }
+                  - { label: "Label", name: "label", widget: "string" }
+          - label: "Mijn verhaal"
+            name: "verhaal"
+            widget: "object"
+            fields:
+              - { label: "Grote foto", name: "photoMain", widget: "image" }
+              - { label: "Kleine foto", name: "photoSmall", widget: "image" }
+              - label: "Ervaring-badge"
+                name: "badge"
+                widget: "object"
+                fields:
+                  - { label: "Waarde", name: "value", widget: "string" }
+                  - { label: "Label regel 1", name: "labelLine1", widget: "string" }
+                  - { label: "Label regel 2", name: "labelLine2", widget: "string" }
+              - { label: "Titel regel 1", name: "titleLine1", widget: "string" }
+              - { label: "Titel regel 2 (gradient)", name: "titleGradient", widget: "string" }
+              - { label: "Paragrafen", name: "paragraphs", widget: "list" }
+              - label: "Kernwaarden (3, vast)"
+                name: "values"
+                widget: "list"
+                min: 3
+                max: 3
+                fields:
+                  - { label: "Titel", name: "title", widget: "string" }
+                  - { label: "Tekst", name: "text", widget: "string" }
+          - label: "Drie passies"
+            name: "passies"
+            widget: "object"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Titel regel 1", name: "titleLine1", widget: "string" }
+              - { label: "Titel regel 2 (gradient)", name: "titleGradient", widget: "string" }
+              - { label: "Subtitel", name: "subtitle", widget: "text" }
+              - label: "Kaarten (3, vast — elk heeft een eigen icoon)"
+                name: "cards"
+                widget: "list"
+                min: 3
+                max: 3
+                fields:
+                  - { label: "ID (niet wijzigen)", name: "id", widget: "select", options: ["sport", "marketing", "proces"] }
+                  - { label: "Afbeelding", name: "image", widget: "image" }
+                  - { label: "Titel", name: "title", widget: "string" }
+                  - { label: "Tekst", name: "text", widget: "text" }
+                  - { label: "Tags", name: "tags", widget: "list" }
+          - label: "Waarom ik (aanpak)"
+            name: "aanpak"
+            widget: "object"
+            fields:
+              - { label: "Titel regel 1", name: "titleLine1", widget: "string" }
+              - { label: "Titel regel 2 (gradient)", name: "titleGradient", widget: "string" }
+              - { label: "Tekst", name: "text", widget: "text" }
+              - label: "Redenen"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Titel", name: "title", widget: "string" }
+                  - { label: "Tekst", name: "text", widget: "string" }
+              - { label: "Knoptekst", name: "buttonLabel", widget: "string" }
+              - label: "Statistieken (4, vast)"
+                name: "stats"
+                widget: "list"
+                min: 4
+                max: 4
+                fields:
+                  - { label: "Waarde", name: "value", widget: "string" }
+                  - { label: "Label", name: "label", widget: "string" }
+              - { label: "Quote", name: "quote", widget: "text" }
+              - { label: "Quote-auteur", name: "quoteAuthor", widget: "string" }
+          - label: "CTA-banner"
+            name: "cta"
+            widget: "object"
+            fields:
+              - { label: "Titel", name: "title", widget: "string" }
+              - { label: "Subtitel", name: "subtitle", widget: "string" }
+              - { label: "Knoptekst", name: "buttonLabel", widget: "string" }
+
+      - file: "src/data/cases.json"
+        label: "Cases-pagina"
+        name: "cases"
+        fields:
+          - label: "Page hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Titel (plat deel voor)", name: "titlePlain", widget: "string" }
+              - { label: "Titel (gradient deel)", name: "titleGradient", widget: "string" }
+              - { label: "Titel (plat deel na)", name: "titleSuffix", widget: "string" }
+              - { label: "Subtitel", name: "subtitle", widget: "text" }
+          - label: "Cases"
+            name: "cases"
+            widget: "list"
+            fields:
+              - { label: "ID (uniek, gebruikt als link-anker, geen spaties)", name: "id", widget: "string", pattern: ["^[a-z0-9-]+$", "Alleen kleine letters, cijfers en koppeltekens"] }
+              - { label: "Klantnaam", name: "client", widget: "string" }
+              - { label: "Badges", name: "badges", widget: "list" }
+              - { label: "Titel regel 1", name: "titleLine1", widget: "string" }
+              - { label: "Titel regel 2 (gradient)", name: "titleGradient", widget: "string" }
+              - { label: "Introtekst", name: "lead", widget: "text" }
+              - { label: "De uitdaging", name: "challenge", widget: "text" }
+              - { label: "De oplossing", name: "solution", widget: "text" }
+              - label: "Wat er is gedaan"
+                name: "tech"
+                widget: "list"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Uitgelicht (oranje)", name: "highlighted", widget: "boolean", required: false, default: false }
+              - { label: "Resultaat-link", name: "resultLink", widget: "string" }
+              - { label: "Resultaat-link tekst", name: "resultLabel", widget: "string" }
+              - { label: "Browser-titel in schermafbeelding", name: "browserTitle", widget: "string" }
+              - { label: "Afbeelding", name: "image", widget: "image" }
+              - { label: "Alt-tekst afbeelding", name: "imageAlt", widget: "string" }
+              - label: "Resultaten"
+                name: "results"
+                widget: "list"
+                fields:
+                  - { label: "Waarde", name: "value", widget: "string" }
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Uitgelicht (oranje)", name: "highlighted", widget: "boolean", required: false, default: false }
+          - label: "CTA-banner"
+            name: "cta"
+            widget: "object"
+            fields:
+              - { label: "Titel", name: "title", widget: "string" }
+              - { label: "Subtitel", name: "subtitle", widget: "string" }
+              - { label: "Knoptekst", name: "buttonLabel", widget: "string" }
+
+  - name: "artikelen"
+    label: "Kennisbank"
+    folder: "src/content/artikelen"
+    extension: "mdx"
+    format: "frontmatter"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titel", name: "title", widget: "string" }
+      - { label: "Excerpt (korte samenvatting op kennisbank-overzicht)", name: "excerpt", widget: "text" }
+      - { label: "Subtitel (op de artikelpagina zelf)", name: "subtitle", widget: "text" }
+      - { label: "Categorie", name: "category", widget: "select", options: ["seo", "ai", "marketing", "websites"] }
+      - { label: "Badge-tekst", name: "badge", widget: "string" }
+      - { label: "Badge-kleur", name: "badgeColor", widget: "select", options: ["blue", "orange", "green", "purple"] }
+      - { label: "Datum (weergavetekst, bv. 'Mei 2026')", name: "date", widget: "string" }
+      - { label: "Leestijd (bv. '6 min lezen')", name: "readTime", widget: "string" }
+      - { label: "Icoon (SVG-paths, alleen wijzigen als je weet wat je doet)", name: "icon", widget: "text" }
+      - { label: "Gerelateerde artikelen (exacte bestandsnaam-slugs, bv. 'lokale-seo')", name: "related", widget: "list" }
+      - { label: "CTA-tekst (in zijbalk)", name: "ctaText", widget: "string" }
+      - { label: "CTA-knoptekst", name: "ctaButton", widget: "string" }
+      - { label: "Inhoud", name: "body", widget: "markdown" }
