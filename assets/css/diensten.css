@@ -206,6 +206,18 @@
 }
 .sdc__price { font-size: 0.85rem; color: var(--text-muted); }
 .sdc__price strong { font-size: 1.15rem; color: #fff; font-weight: 800; }
+.sdc__price--cta {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--orange);
+  text-decoration: none;
+  border: 1px solid rgba(255,165,0,0.35);
+  border-radius: 20px;
+  padding: 4px 12px;
+  transition: background 0.2s, color 0.2s;
+}
+.sdc__price--cta:hover { background: var(--orange); color: #000; }
 .sdc__includes {
   list-style: none;
   display: flex;
