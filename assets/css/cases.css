@@ -427,12 +427,20 @@
   .cf__results { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 768px) {
-  .cf__header  { text-align: center; }
-  .cf__meta    { justify-content: center; }
-  .cf__results { grid-template-columns: repeat(2, 1fr); }
-  .dm__stats   { grid-template-columns: repeat(2, 1fr); }
-  .dm__charts  { grid-template-columns: 1fr; }
+  .cf__header        { text-align: center; }
+  .cf__meta          { justify-content: center; flex-wrap: wrap; }
+  .cf__title         { font-size: clamp(1.5rem, 5vw, 2rem); letter-spacing: -0.5px; }
+  .cf__results       { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .cf__result-card   { padding: 20px 16px; }
+  .cf__result-card strong { font-size: 1.6rem; }
+  .cf__tech-list     { gap: 6px; }
+  .dm__stats         { grid-template-columns: repeat(2, 1fr); }
+  .dm__charts        { grid-template-columns: 1fr; }
+  .dashboard-mock    { max-width: 100%; }
 }
 @media (max-width: 480px) {
-  .cf__results { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .cf__results       { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .cf__result-card   { padding: 16px 12px; }
+  .cf__result-card strong { font-size: 1.4rem; }
+  .cf__block         { padding: 20px; }
 }

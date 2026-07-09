@@ -819,18 +819,35 @@ body {
   .contact__details { align-items: center; }
 }
 @media (max-width: 768px) {
-  .nav__links  { display: none; }
-  .nav__burger { display: flex; }
-  .section     { padding: 72px 0; }
-  .hero__stats { gap: 24px; }
-  .stat__divider       { display: none; }
-  .form__row           { grid-template-columns: 1fr; }
-  .contact__form       { padding: 28px; }
-  .footer__inner       { flex-direction: column; text-align: center; }
-  .cta-banner__inner   { flex-direction: column; text-align: center; }
+  .nav__links            { display: none; }
+  .nav__burger           { display: flex; }
+  .nav__inner            { height: 60px; }
+  .nav__logo             { font-size: 1.05rem; }
+  .section               { padding: 64px 0; }
+  .hero__inner           { padding: 56px 0 80px; }
+  .hero__title           { letter-spacing: -1px; }
+  .hero__sub             { font-size: 1rem; }
+  .hero__stats           { gap: 20px; }
+  .stat strong           { font-size: 1.4rem; }
+  .stat__divider         { display: none; }
+  .logo-ticker__logo     { height: 28px; }
+  .logo-ticker__list     { gap: 2.5rem; }
+  .page-hero             { padding: 110px 0 56px; }
+  .page-hero__inner h1   { letter-spacing: -1px; }
+  .page-hero__inner > p  { font-size: 1rem; }
+  .faq__question         { padding: 16px 20px; font-size: 0.95rem; }
+  .faq__answer > p       { padding: 0 20px 16px; }
+  .form__row             { grid-template-columns: 1fr; }
+  .contact__form         { padding: 24px; }
+  .footer__inner         { flex-direction: column; text-align: center; }
+  .cta-banner__inner     { flex-direction: column; text-align: center; }
+  .cases__grid           { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
-  .hero__cta      { flex-direction: column; }
-  .hero__cta .btn { text-align: center; }
-  .dienst-card    { padding: 28px; }
+  .hero__inner           { padding: 40px 0 64px; }
+  .hero__cta             { flex-direction: column; }
+  .hero__cta .btn        { text-align: center; }
+  .section               { padding: 48px 0; }
+  .dienst-card           { padding: 24px; }
+  .page-hero             { padding: 96px 0 40px; }
 }

@@ -293,6 +293,10 @@
   .artikel-aside { position: static; }
 }
 @media (max-width: 640px) {
-  .artikel-hero { padding: 120px 0 48px; }
-  .artikel-hero h1 { letter-spacing: -1px; }
+  .artikel-hero          { padding: 100px 0 40px; }
+  .artikel-hero h1       { letter-spacing: -1px; font-size: clamp(1.6rem, 7vw, 2.4rem); }
+  .artikel-hero__meta    { flex-wrap: wrap; gap: 8px; }
+  .artikel-content       { font-size: 0.95rem; }
+  .artikel-content h2    { font-size: 1.4rem; }
+  .artikel-content h3    { font-size: 1.15rem; }
 }

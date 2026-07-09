@@ -428,8 +428,14 @@
   }
   .stap-item__dot            { left: 24px; }
   .stap-item__card           { max-width: 100%; }
+  .service-detail__right     { max-width: 100%; }
+  .extra-card span           { white-space: normal; }
 }
 @media (max-width: 480px) {
-  .service-section           { padding: 56px 0; }
-  .service-detail__card      { padding: 24px; }
+  .service-section           { padding: 48px 0; }
+  .service-detail__card      { padding: 20px; }
+  .tak-banner__num           { font-size: 2.5rem; letter-spacing: -3px; }
+  .tak-banner__inner         { gap: 12px; }
+  .sdc__price--cta           { font-size: 0.8rem; padding: 3px 10px; }
+  .service-detail__extra-cards { gap: 8px; }
 }
