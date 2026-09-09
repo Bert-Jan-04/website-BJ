@@ -1,15 +1,51 @@
 ---
 import site from '../data/site.json';
+
+interface Props {
+  current: 'home' | 'diensten' | 'cases' | 'over-mij' | 'contact';
+}
+
+const { current } = Astro.props;
+const isHome = current === 'home';
+
+const pageLinks = isHome
+  ? [
+      { href: '#top', label: 'Home' },
+      { href: '#work', label: 'Playground' },
+      { href: '#tiktok', label: 'Shorts' },
+      { href: '#about', label: 'Over ons' },
+      { href: '#contact', label: 'Contact' },
+    ]
+  : [
+      { href: '/', label: 'Home' },
+      { href: '/diensten', label: 'Diensten' },
+      { href: '/cases', label: 'Klantcases' },
+      { href: '/over-mij', label: 'Over ons' },
+      { href: '/contact', label: 'Contact' },
+    ];
+
+const telHref = `+${site.whatsapp}`;
 ---
 
-<footer class="footer">
-  <div class="container footer__inner">
-    <a href="/" class="nav__logo">Sport<span>SEO</span> Specialist</a>
-    <p>© 2026 {site.companyName}, alle rechten voorbehouden</p>
-    <p class="footer__meta">KVK: {site.kvk} &nbsp;·&nbsp; {site.address}</p>
-    <div class="footer__links">
-      <a href="#">Privacybeleid</a>
-      <a href="#">Algemene voorwaarden</a>
+<footer class="footer" id="contact" data-footer>
+  <div class="footer-grid">
+    <div class="footer-col footer-col--contact">
+      <p class="eyebrow">Contact</p>
+      <a href={`mailto:${site.email}`}>{site.email}</a>
+      <a href={`tel:${telHref}`}>{site.phone}</a>
+    </div>
+    <div class="footer-col">
+      <p class="eyebrow">Pagina's</p>
+      {pageLinks.map((link) => <a href={link.href}>{link.label}</a>)}
+    </div>
+    <div class="footer-col">
+      <p class="eyebrow">Socials</p>
+      <a href={site.instagramUrl} target="_blank" rel="noreferrer">Instagram</a>
+      <a href="https://www.tiktok.com" target="_blank" rel="noreferrer">TikTok</a>
+      <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a href="https://www.youtube.com" target="_blank" rel="noreferrer">YouTube</a>
     </div>
   </div>
+  <p class="copyright">© 2026 {site.companyName}, alle rechten voorbehouden<br />KVK: {site.kvk} · {site.address}</p>
+  <div class="footer-wordmark" aria-hidden="true">SPORTSEOSPECIALIST</div>
 </footer>

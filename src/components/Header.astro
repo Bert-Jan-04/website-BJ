@@ -1,35 +1,80 @@
 ---
 interface Props {
-  current?: 'diensten' | 'over-mij' | 'cases' | 'kennisbank';
+  current: 'home' | 'diensten' | 'cases' | 'over-mij' | 'contact';
+  showKernPager?: boolean;
 }
 
-const { current } = Astro.props;
+const { current, showKernPager = false } = Astro.props;
 
 const links = [
-  { href: '/diensten', label: 'Diensten', key: 'diensten' },
-  { href: '/over-mij', label: 'Over mij', key: 'over-mij' },
-  { href: '/cases', label: 'Cases', key: 'cases' },
-  { href: '/kennisbank', label: 'Kennisbank', key: 'kennisbank' },
+  { key: 'home', href: '/', label: 'Home' },
+  { key: 'diensten', href: '/diensten', label: 'Diensten' },
+  { key: 'cases', href: '/cases', label: 'Klantcases' },
+  { key: 'over-mij', href: '/over-mij', label: 'About' },
+  { key: 'contact', href: '/contact', label: 'Contact' },
 ] as const;
+
+const storyLines = [
+  { t1: '5 jaar ervaring' },
+  { t1: 'Webdesign' },
+  { t1: 'Marketing' },
+  { t1: 'Sportbranche' },
+];
 ---
 
-<header class="nav" id="nav">
-  <div class="container nav__inner">
-    <a href="/" class="nav__logo">Sport<span>SEO</span> Specialist</a>
-    <nav class="nav__links">
-      {links.map((link) => (
-        <a href={link.href} class={link.key === current ? 'nav__link--active' : undefined}>{link.label}</a>
+<header class="header" data-header>
+  <div class="header-left">
+    <div class="story-badge" aria-hidden="true">
+      <svg class="ring-svg" viewBox="0 0 50 50">
+        <circle class="ring-track" cx="25" cy="25" r="23.5"></circle>
+        <circle class="ring-progress is-running" cx="25" cy="25" r="23.5"></circle>
+      </svg>
+      <svg class="story-star" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 0c.4 4.2 1.6 6.8 6 8-4.4 1.2-5.6 3.8-6 8-.4-4.2-1.6-6.8-6-8 4.4-1.2 5.6-3.8 6-8zm8.2 3.4c.2 1.7.7 2.7 2.4 3.2-1.7.5-2.2 1.5-2.4 3.2-.2-1.7-.7-2.7-2.4-3.2 1.7-.5 2.2-1.5 2.4-3.2zM3.8 14.2c.2 1.7.7 2.7 2.4 3.2-1.7.5-2.2 1.5-2.4 3.2-.2-1.7-.7-2.7-2.4-3.2 1.7-.5 2.2-1.5 2.4-3.2z"/>
+      </svg>
+    </div>
+    <div class="story-text" data-story>
+      {storyLines.map((line, i) => (
+        <div class={`story-line ${i === 0 ? 'is-active' : ''}`}>
+          <span class="t1">{line.t1}</span>
+        </div>
       ))}
-      <a href="/#contact" class="btn btn--outline">Contact</a>
+    </div>
+    {showKernPager && <span class="kern-label" data-kern-label hidden>Kernwaarden</span>}
+  </div>
+
+  <a class="logo-b" href="/" aria-label="Sport SEO Specialist home">
+    <img src="/assets/images/logo.png" alt="Sport SEO Specialist" />
+  </a>
+
+  <div class="header-right">
+    <nav class="main-nav" data-nav aria-label="Hoofdnavigatie">
+      {links.map((link) => (
+        <a href={link.href} class={link.key === current ? 'active' : undefined}>{link.label}</a>
+      ))}
     </nav>
-    <button class="nav__burger" id="burger" aria-label="Menu">
-      <span></span><span></span><span></span>
+    {showKernPager && <span class="kern-pager" data-kern-pager hidden></span>}
+    <button class="hamburger" data-menu-open aria-label="Menu openen" type="button">
+      <span></span>
+      <span></span>
     </button>
   </div>
-  <div class="nav__mobile" id="mobileMenu">
-    {links.map((link) => (
-      <a href={link.href} class="nav__mobile-link">{link.label}</a>
-    ))}
-    <a href="/#contact" class="nav__mobile-link">Contact</a>
-  </div>
 </header>
+
+<div class="menu" data-menu>
+  <div class="menu-top">
+    <a class="logo-b" href="/" data-menu-close aria-label="Sport SEO Specialist home">
+      <img src="/assets/images/logo.png" alt="Sport SEO Specialist" />
+    </a>
+    <button class="menu-close" data-menu-close aria-label="Menu sluiten" type="button">
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <nav class="menu-nav">
+    {links.map((link) => (
+      <a href={link.href} data-menu-close>{link.label}</a>
+    ))}
+  </nav>
+  <p class="menu-meta">russchenbertjan@gmail.com · 06 82 67 19 20</p>
+</div>

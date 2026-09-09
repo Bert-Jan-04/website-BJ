@@ -1,0 +1,47 @@
+---
+import WhatsAppButton from './WhatsAppButton.astro';
+import site from '../data/site.json';
+
+interface Props {
+  showDock?: boolean;
+  dockLabel?: string;
+}
+
+const { showDock = false, dockLabel = 'Start Boost Scan' } = Astro.props;
+const waHref = `https://wa.me/${site.whatsapp}`;
+---
+
+{showDock && (
+  <button type="button" class="scan-dock" data-scan-dock data-open-scan>
+    {dockLabel}
+    <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0l1.1 5.3L16 8l-6.9 2.7L8 16l-1.1-5.3L0 8l6.9-2.7z"/></svg>
+  </button>
+)}
+
+<WhatsAppButton />
+
+<div class="scan" data-scan hidden>
+  <div class="scan-card">
+    <button class="scan-close" type="button" data-close-scan aria-label="Sluiten">×</button>
+    <p class="eyebrow">Boost Scan</p>
+    <h3 data-scan-title>Waar kunnen we jouw merk boost geven?</h3>
+    <form data-scan-form>
+      <label>
+        Merknaam
+        <input name="brand" type="text" placeholder="Bijv. Dunkin'" required />
+      </label>
+      <fieldset>
+        <legend>Focus</legend>
+        <label class="chip"><input type="radio" name="focus" value="Branding" required /> Branding</label>
+        <label class="chip"><input type="radio" name="focus" value="Website" /> Website</label>
+        <label class="chip"><input type="radio" name="focus" value="Content" /> Content</label>
+      </fieldset>
+      <button class="btn btn-solid" type="submit">Start scan</button>
+      <p class="final-note"><i></i> Vrijblijvend · Duurt minder dan 2 minuten</p>
+    </form>
+    <div class="scan-done" data-scan-done hidden>
+      <p>Er zit meer in <strong data-scan-brand></strong> dan je nu laat zien. Laten we het doornemen via WhatsApp.</p>
+      <a class="btn btn-solid" href={waHref} target="_blank" rel="noreferrer">App ons</a>
+    </div>
+  </div>
+</div>

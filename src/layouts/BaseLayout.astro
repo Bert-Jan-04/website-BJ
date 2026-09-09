@@ -4,11 +4,12 @@ import Footer from '../components/Footer.astro';
 
 interface Props {
   title: string;
-  pageCss?: string;
-  current?: 'diensten' | 'over-mij' | 'cases' | 'kennisbank';
+  description?: string;
+  current: 'home' | 'diensten' | 'cases' | 'over-mij' | 'contact';
+  showKernPager?: boolean;
 }
 
-const { title, pageCss, current } = Astro.props;
+const { title, description, current, showKernPager } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -17,20 +18,21 @@ const { title, pageCss, current } = Astro.props;
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
+  {description && <meta name="description" content={description} />}
   <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
   <link rel="stylesheet" href="/assets/css/main.css" />
-  {pageCss && <link rel="stylesheet" href={pageCss} />}
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <slot name="head" />
 </head>
 <body>
 
-  <Header current={current} />
+  <Header current={current} showKernPager={showKernPager} />
 
   <slot />
 
-  <Footer />
+  <Footer current={current} />
 
   <script src="/assets/js/main.js" is:inline></script>
 </body>

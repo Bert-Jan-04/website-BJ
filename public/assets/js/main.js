@@ -1,152 +1,229 @@
-// Nav: scrolled state
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 40);
-}, { passive: true });
+(() => {
+  const header = document.querySelector("[data-header]");
+  const menu = document.querySelector("[data-menu]");
+  const storyLines = [...document.querySelectorAll("[data-story] .story-line")];
+  const ring = document.querySelector(".ring-progress");
 
-// Mobile menu
-const burger = document.getElementById('burger');
-const mobileMenu = document.getElementById('mobileMenu');
-burger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
-document.querySelectorAll('.nav__mobile-link').forEach(link => {
-  link.addEventListener('click', () => mobileMenu.classList.remove('open'));
-});
-
-// Scroll-in animations
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12 });
-
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-// Contact form → WhatsApp
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-  contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const naam    = document.getElementById('naam').value.trim();
-    const bedrijf = document.getElementById('bedrijf').value.trim();
-    const dienst  = document.getElementById('dienst').value;
-    const bericht = document.getElementById('bericht').value.trim();
-    if (!naam || !bericht) {
-      document.getElementById('naam').reportValidity();
-      document.getElementById('bericht').reportValidity();
-      return;
-    }
-    let msg = `Hoi Bert-Jan!\n\nNaam: ${naam}`;
-    if (bedrijf) msg += `\nBedrijf: ${bedrijf}`;
-    if (dienst)  msg += `\nInteresse in: ${dienst}`;
-    msg += `\n\n${bericht}`;
-    window.open(`https://wa.me/31682671920?text=${encodeURIComponent(msg)}`, '_blank');
-  });
-}
-
-// FAQ accordion
-document.querySelectorAll('.faq__question').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const item = btn.closest('.faq__item');
-    const isOpen = btn.getAttribute('aria-expanded') === 'true';
-    document.querySelectorAll('.faq__item').forEach(i => {
-      i.querySelector('.faq__question').setAttribute('aria-expanded', 'false');
-      i.classList.remove('open');
-    });
-    if (!isOpen) {
-      btn.setAttribute('aria-expanded', 'true');
-      item.classList.add('open');
-    }
-  });
-});
-
-// Werkwijze: animated line fill on scroll
-const stepLine = document.getElementById('stepLine');
-if (stepLine) {
-  const track = stepLine.closest('.stappen-track');
-  const updateLine = () => {
-    const rect = track.getBoundingClientRect();
-    const progress = Math.min(1, Math.max(0,
-      (window.innerHeight - rect.top) / (rect.height + window.innerHeight * 0.4)
-    ));
-    stepLine.style.height = (progress * 100) + '%';
+  const setMenu = (open) => {
+    menu?.classList.toggle("is-open", open);
+    document.body.style.overflow = open ? "hidden" : "";
   };
-  window.addEventListener('scroll', updateLine, { passive: true });
-  updateLine();
-}
 
-// Hero animations (homepage only)
-const heroTitle = document.querySelector('.hero__title');
-if (heroTitle) {
-  const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&!?';
+  document.querySelector("[data-menu-open]")?.addEventListener("click", () => setMenu(true));
+  document.querySelectorAll("[data-menu-close]").forEach((el) => {
+    el.addEventListener("click", () => setMenu(false));
+  });
 
-  function scrambleNode(node, delay, duration) {
-    const isText   = node.nodeType === 3;
-    const original = node.textContent;
-    const plain    = original.trim();
-    const lead     = original.slice(0, original.indexOf(plain[0]));
-    const total    = Math.round(duration / 16);
-    let f = 0;
-    setTimeout(() => {
-      const id = setInterval(() => {
-        const out = Array.from(plain).map((ch, i) => {
-          if (ch === ' ') return ' ';
-          const revealAt = Math.floor(i / plain.length * total * 0.55);
-          return f > revealAt ? ch : CHARS[Math.floor(Math.random() * CHARS.length)];
-        }).join('');
-        node.textContent = lead + out;
-        if (++f >= total) { node.textContent = original; clearInterval(id); }
-      }, 16);
-    }, delay);
+  const onScroll = () => {
+    const compact = window.scrollY > 80;
+    header?.classList.toggle("is-scrolled", compact);
+    if (window.innerWidth < 981) header?.classList.add("is-compact");
+    else header?.classList.remove("is-compact");
+  };
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+  onScroll();
+
+  if (storyLines.length) {
+    let storyIndex = 0;
+    const rotateStory = () => {
+      const current = storyLines[storyIndex];
+      const nextIndex = (storyIndex + 1) % storyLines.length;
+      const next = storyLines[nextIndex];
+      current.classList.remove("is-active");
+      current.classList.add("is-leaving");
+      next.classList.add("is-active");
+      ring?.classList.remove("is-running");
+      void ring?.offsetWidth;
+      ring?.classList.add("is-running");
+      setTimeout(() => current.classList.remove("is-leaving"), 500);
+      storyIndex = nextIndex;
+    };
+    setInterval(rotateStory, 4600);
   }
 
-  const lineNode = Array.from(heroTitle.childNodes).find(n => n.nodeType === 3 && n.textContent.trim());
-  const gradSpan = heroTitle.querySelector('.gradient-text');
-  if (lineNode) scrambleNode(lineNode, 280, 950);
-  if (gradSpan)  scrambleNode(gradSpan, 650, 780);
-
-  // Stats counter
-  setTimeout(() => {
-    document.querySelectorAll('.hero__stats .stat strong').forEach(el => {
-      const raw    = el.textContent.trim();
-      const num    = parseInt(raw);
-      const suffix = raw.replace(/[0-9]/g, '');
-      if (isNaN(num) || raw !== num + suffix) return;
-      let start = null;
-      const step = ts => {
-        if (!start) start = ts;
-        const p    = Math.min((ts - start) / 1000, 1);
-        const ease = 1 - Math.pow(1 - p, 3);
-        el.textContent = Math.round(ease * num) + suffix;
-        if (p < 1) requestAnimationFrame(step);
-      };
-      requestAnimationFrame(step);
-    });
-  }, 1500);
-
-  // Mouse parallax on background circles
-  const heroEl = document.querySelector('.hero');
-  heroEl?.addEventListener('mousemove', e => {
-    const { left, top, width, height } = heroEl.getBoundingClientRect();
-    const x = (e.clientX - left) / width  - 0.5;
-    const y = (e.clientY - top)  / height - 0.5;
-    document.documentElement.style.setProperty('--cx1', `${x * -44}px`);
-    document.documentElement.style.setProperty('--cy1', `${y * -44}px`);
-    document.documentElement.style.setProperty('--cx2', `${x *  30}px`);
-    document.documentElement.style.setProperty('--cy2', `${y *  30}px`);
-  }, { passive: true });
-}
-
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      const top = target.getBoundingClientRect().top + window.scrollY - 72;
-      window.scrollTo({ top, behavior: 'smooth' });
-    }
+  document.querySelectorAll("video[autoplay]").forEach((v) => {
+    v.muted = true;
+    v.play().catch(() => {});
   });
-});
+
+  const lightSections = document.querySelectorAll('[data-theme="light"]');
+  if (lightSections.length && header) {
+    const lightState = new Map();
+    const themeIo = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        lightState.set(entry.target, entry.isIntersecting && entry.intersectionRatio > 0.28);
+      });
+      header.classList.toggle("is-light", [...lightState.values()].some(Boolean));
+    }, { threshold: [0.2, 0.35, 0.55] });
+    lightSections.forEach((el) => themeIo.observe(el));
+  }
+
+  const kernSections = document.querySelectorAll("[data-kern]");
+  const pager = document.querySelector("[data-kern-pager]");
+  const kernLabel = document.querySelector("[data-kern-label]");
+  if (kernSections.length && pager) {
+    const kernIo = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (!visible) {
+        pager.hidden = true;
+        if (kernLabel) kernLabel.hidden = true;
+        return;
+      }
+      pager.hidden = false;
+      pager.textContent = `${visible.target.dataset.kern} / 04`;
+      if (kernLabel) kernLabel.hidden = false;
+    }, { threshold: 0.4 });
+    kernSections.forEach((el) => kernIo.observe(el));
+  }
+
+  const dock = document.querySelector("[data-scan-dock]");
+  const footer = document.querySelector("footer");
+  if (dock && footer) {
+    const footIo = new IntersectionObserver((entries) => {
+      dock.classList.toggle("is-hidden", entries[0].isIntersecting);
+    }, { threshold: 0.12 });
+    footIo.observe(footer);
+  }
+
+  const slider = document.querySelector("[data-slider]");
+  const track = document.querySelector("[data-slider-track]");
+  const cursor = document.querySelector("[data-swipe-cursor]");
+  if (slider && track) {
+    let x = 0;
+    let startX = 0;
+    let startOffset = 0;
+    let dragging = false;
+    let paused = false;
+
+    const maxOffset = () => Math.max(0, track.scrollWidth - slider.clientWidth + 48);
+    const apply = (value, animate) => {
+      x = Math.min(0, Math.max(-maxOffset(), value));
+      track.style.transition = animate ? "transform .7s cubic-bezier(.625,.05,0,1)" : "none";
+      track.style.transform = `translate3d(${x}px,0,0)`;
+    };
+
+    slider.addEventListener("pointerdown", (e) => {
+      dragging = true;
+      paused = true;
+      startX = e.clientX;
+      startOffset = x;
+      slider.classList.add("is-dragging");
+      slider.setPointerCapture(e.pointerId);
+    });
+    slider.addEventListener("pointermove", (e) => {
+      if (cursor) {
+        cursor.hidden = false;
+        cursor.style.left = `${e.clientX}px`;
+        cursor.style.top = `${e.clientY}px`;
+      }
+      if (!dragging) return;
+      apply(startOffset + (e.clientX - startX), false);
+    });
+    const endDrag = () => {
+      if (!dragging) return;
+      dragging = false;
+      slider.classList.remove("is-dragging");
+      apply(x, true);
+      setTimeout(() => { paused = false; }, 900);
+    };
+    slider.addEventListener("pointerup", endDrag);
+    slider.addEventListener("pointercancel", endDrag);
+    slider.addEventListener("pointerleave", () => {
+      if (cursor) cursor.hidden = true;
+    });
+    slider.addEventListener("wheel", (e) => {
+      if (Math.abs(e.deltaX) < Math.abs(e.deltaY) && Math.abs(e.deltaY) < 8) return;
+      if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+        e.preventDefault();
+        apply(x - e.deltaX, false);
+      }
+    }, { passive: false });
+
+    setInterval(() => {
+      if (paused || dragging) return;
+      const step = (track.children[0]?.offsetWidth || 320) + 16;
+      const next = x - step;
+      apply(Math.abs(next) >= maxOffset() - 8 ? 0 : next, true);
+    }, 3200);
+  }
+
+  const counters = document.querySelectorAll("[data-count]");
+  const format = (value, el) => {
+    const suffix = el.dataset.suffix || "";
+    return value.toLocaleString("nl-NL") + suffix;
+  };
+  const animateCount = (el) => {
+    const target = Number(el.dataset.count);
+    const start = performance.now();
+    const duration = 1400;
+    const tick = (now) => {
+      const p = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = format(Math.round(target * eased), el);
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+  const countIo = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      animateCount(entry.target);
+      countIo.unobserve(entry.target);
+    });
+  }, { threshold: 0.4 });
+  counters.forEach((el) => countIo.observe(el));
+
+  const scan = document.querySelector("[data-scan]");
+  const scanForm = document.querySelector("[data-scan-form]");
+  const scanDone = document.querySelector("[data-scan-done]");
+  const scanTitleEl = document.querySelector("[data-scan-title]");
+
+  const openScan = () => {
+    if (!scan) return;
+    if (scanForm) scanForm.hidden = false;
+    if (scanDone) scanDone.hidden = true;
+    if (scanTitleEl) scanTitleEl.textContent = "Waar kunnen we jouw merk boost geven?";
+    scan.hidden = false;
+    document.body.style.overflow = "hidden";
+  };
+  const closeScan = () => {
+    if (!scan) return;
+    scan.hidden = true;
+    document.body.style.overflow = "";
+  };
+
+  document.querySelectorAll("[data-open-scan]").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      openScan();
+    });
+  });
+  document.querySelector("[data-close-scan]")?.addEventListener("click", closeScan);
+  scan?.addEventListener("click", (e) => {
+    if (e.target === scan) closeScan();
+  });
+
+  scanForm?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const brand = new FormData(scanForm).get("brand") || "jouw merk";
+    const brandEl = document.querySelector("[data-scan-brand]");
+    if (brandEl) brandEl.textContent = brand;
+    if (scanTitleEl) scanTitleEl.textContent = "Scan klaar";
+    scanForm.hidden = true;
+    if (scanDone) scanDone.hidden = false;
+  });
+
+  const contactForm = document.querySelector("[data-contact-form]");
+  const contactDone = document.querySelector("[data-contact-done]");
+  contactForm?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = String(new FormData(contactForm).get("name") || "").trim();
+    const nameEl = document.querySelector("[data-contact-name]");
+    if (nameEl) nameEl.textContent = name ? `, ${name}` : "";
+    contactForm.hidden = true;
+    if (contactDone) contactDone.hidden = false;
+  });
+})();
