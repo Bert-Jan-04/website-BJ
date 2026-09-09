@@ -1,16 +1,16 @@
 {
   "hero": {
-    "titleLine1": "Boosting",
-    "titleLine2": "Sport",
-    "titleLine3": "Bedrijven",
-    "subtitle": "Ik combineer AI met jarenlange praktijkervaring in marketing, design en automatisering. Sportbedrijven vertrouwen mij om op te vallen, relevant te blijven en te groeien in een tijd waarin alles sneller en generieker wordt.",
-    "ctaLabel": "Start Boost Scan",
-    "whoLinkLabel": "Zo... wie is deze SportSEO Specialist?"
+    "titleLine1": "Branding",
+    "titleLine2": "Content",
+    "titleLine3": "Sport",
+    "subtitle": "Unieke websites, krachtige marketing en slimme automatisering, speciaal voor kleine en middelgrote bedrijven in de sportbranche.",
+    "ctaLabel": "Start scan",
+    "whoLinkLabel": "So... who are we?"
   },
   "logos": [
-    { "name": "Sportpoeder", "image": "/assets/images/logo-sportpoeder.png" },
-    { "name": "VoetbalFunNoord", "image": "/assets/images/logo-voetbalfunnoord.png" },
-    { "name": "Rebuild", "image": "/assets/images/logo-rebuild.png" }
+    { "name": "Sportpoeder", "image": "/assets/images/logo-sportpoeder.png", "height": "32px" },
+    { "name": "VoetbalFunNoord", "image": "/assets/images/logo-voetbalfunnoord.png", "height": "38px" },
+    { "name": "Rebuild", "image": "/assets/images/logo-rebuild.png", "height": "30px" }
   ],
   "arcCards": [
     { "image": "/assets/images/team-meeting.png", "alt": "Strategie overleg", "mark": true },
@@ -19,28 +19,53 @@
     { "image": "/assets/images/notebook.png", "alt": "Content aantekeningen" },
     { "image": "/assets/images/laptop.png", "alt": "Website werk" }
   ],
-  "aboutTeaser": "De afgelopen jaren kreeg ik als SportSEO Specialist een kijkje achter de schermen van sportbedrijven groot en klein. Die praktijkervaring combineer ik vandaag met AI, strategie en smaak om sportmerken sneller te laten groeien.",
+  "aboutParagraphs": [
+    "Als jonge ondernemer met jarenlange werkervaring in marketing weet ik wat er nodig is om online op te vallen. Sport drijft mij, en daarom richt ik mij juist op ondernemers in de sportwereld.",
+    "Mijn doel is samen groeien naar succes: een goede én visueel sterke online strategie waarbij het totale plaatje telt. Van merkidentiteit tot website en marketing, alles onder één dak."
+  ],
   "stats": [
     { "value": "1-op-1", "label": "Persoonlijke aanpak" },
     { "value": "3x", "label": "Meer online zichtbaarheid" },
     { "value": "100%", "label": "Op maat gemaakt" }
   ],
-  "playground": {
+  "work": {
     "tiles": [
-      { "image": "/assets/images/sportpoeder-slide-1.jpg", "label": "Sportpoeder", "link": "/cases" },
-      { "image": "/assets/images/voetbalfunnoord-slide-1.jpg", "label": "VoetbalFunNoord", "link": "/cases" }
+      { "id": "rebuild", "label": "Rebuild", "armPrefix": "rebuild", "slides": [
+        { "src": "/assets/images/rebuild-slide-1.jpg", "alt": "Rebuild homepage" },
+        { "src": "/assets/images/rebuild-slide-2.jpg", "alt": "Rebuild programma" },
+        { "src": "/assets/images/rebuild-slide-7.jpg", "alt": "Vier lagen van Rebuild" },
+        { "src": "/assets/images/rebuild-slide-3.jpg", "alt": "Het traject" },
+        { "src": "/assets/images/rebuild-slide-4.jpg", "alt": "Reviews" },
+        { "src": "/assets/images/rebuild-slide-5.jpg", "alt": "Verhalen van deelnemers" },
+        { "src": "/assets/images/rebuild-slide-6.jpg", "alt": "Het Rebuild team" },
+        { "src": "/assets/images/rebuild-slide-8.jpg", "alt": "Rebuild community" }
+      ]},
+      { "id": "sportpoeder", "label": "Sportpoeder", "armPrefix": "sportpoeder", "slides": [
+        { "src": "/assets/images/sportpoeder-slide-1.jpg", "alt": "Sportpoeder homepage" },
+        { "src": "/assets/images/sportpoeder-slide-2.jpg", "alt": "Populair en sales" },
+        { "src": "/assets/images/sportpoeder-slide-3.jpg", "alt": "Deal van de dag" },
+        { "src": "/assets/images/sportpoeder-slide-4.jpg", "alt": "Shop per merk" },
+        { "src": "/assets/images/sportpoeder-slide-8.jpg", "alt": "Deals voor jou" },
+        { "src": "/assets/images/sportpoeder-slide-5.jpg", "alt": "Productvergelijker" },
+        { "src": "/assets/images/sportpoeder-slide-6.jpg", "alt": "Kortingscodes" },
+        { "src": "/assets/images/sportpoeder-slide-7.jpg", "alt": "Footer" }
+      ]}
     ]
   },
-  "shorts": {
-    "title": "Gezien op social?",
-    "subtitle": "Van website-rebuilds tot content voor sportbedrijven, een kijkje achter de schermen van mijn projecten.",
-    "stat": "70.000+ volgers online"
+  "socials": {
+    "title": "Onze socials",
+    "posts": [
+      { "image": "/assets/images/social-post-1.png", "alt": "Nieuwe website online" },
+      { "image": "/assets/images/social-post-2.png", "alt": "Website analyse BigGym" },
+      { "image": "/assets/images/social-post-3.png", "alt": "Hoe ik sportbedrijven help groeien" }
+    ]
   },
   "final": {
     "titleLine1": "Jouw merk",
     "titleLine2": "heeft meer",
-    "titleLine3": "potentie",
-    "subtitle": "Ontdek in 2 minuten waar jouw sportbedrijf nog groei, aandacht en momentum laat liggen.",
-    "note": "Vrijblijvend · Duurt minder dan 2 minuten"
+    "titleLine3": "potentieel",
+    "subtitle": "Ontdek waar jouw merk nog groei, aandacht en momentum laat liggen.",
+    "note": "Vrijblijvend",
+    "image": "/assets/images/bertjan-portrait.png"
   }
 }

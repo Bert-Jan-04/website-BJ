@@ -1,11 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ScanModal from '../components/ScanModal.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
 import site from '../data/site.json';
 import home from '../data/home.json';
+
+const mailHref = `mailto:${site.email}`;
 ---
 
-<BaseLayout title="SportSEO Specialist — Websites, marketing & automatisering voor sportbedrijven" description={home.hero.subtitle} current="home">
+<BaseLayout title="SportSEO Specialist — Branding, content en websites voor de sportbranche" description={home.hero.subtitle} current="home">
   <main id="top">
     <section class="hero">
       <h1>
@@ -15,9 +17,9 @@ import home from '../data/home.json';
       </h1>
       <p class="hero-sub">{home.hero.subtitle}</p>
       <div class="hero-ctas">
-        <button class="btn btn-solid" type="button" data-open-scan>{home.hero.ctaLabel}</button>
+        <a class="btn btn-solid" href={mailHref}>{home.hero.ctaLabel}</a>
         <a class="who-link" href="#about">
-          <img src="/assets/images/team-meeting.png" alt="SportSEO Specialist" />
+          <img src="/assets/images/team-meeting.png" alt="Sport SEO Specialist" />
           <span>{home.hero.whoLinkLabel}</span>
         </a>
       </div>
@@ -26,25 +28,25 @@ import home from '../data/home.json';
     <section class="clients-section" id="about">
       <div class="logo-wall" aria-label="Bedrijven die ik help">
         {home.logos.map((logo) => (
-          <img src={logo.image} alt={logo.name} style="height:28px;width:auto;filter:grayscale(1) brightness(1.7);" />
+          <img src={logo.image} alt={logo.name} style={`height:${logo.height};width:auto;filter:grayscale(1) brightness(1.7);`} />
         ))}
       </div>
 
       <div class="arc">
         {home.arcCards.map((card, i) => {
-          const rotations = [-22, -13, -4, 4, 13];
-          const ys = [56, 22, 4, 4, 22];
+          const rotations = [-20, -10, 0, 10, 20];
+          const ys = [50, 20, 0, 20, 50];
           return (
             <article class="arc-card" style={`--r:${rotations[i]}deg; --y:${ys[i]}px;`}>
               <img src={card.image} alt={card.alt} />
-              {card.mark && <span class="arc-mark">SEO</span>}
+              {card.mark && <span class="arc-mark">SPORT SEO SPECIALIST</span>}
             </article>
           );
         })}
       </div>
 
-      <p class="about-copy">{home.aboutTeaser}</p>
-      <button class="btn btn-ghost" type="button" data-open-scan>{home.hero.ctaLabel}</button>
+      {home.aboutParagraphs.map((p) => <p class="about-copy">{p}</p>)}
+      <a class="btn btn-ghost" href={mailHref}>Contact opnemen</a>
     </section>
 
     <section class="stats-section">
@@ -58,26 +60,46 @@ import home from '../data/home.json';
       </div>
     </section>
 
-    <section class="tiktok-section" id="work">
-      <div class="tiktok-head">
-        <div>
-          <h2>{home.shorts.title}</h2>
-          <p>{home.shorts.subtitle}</p>
-        </div>
-        <p class="tiktok-stat">{home.shorts.stat}</p>
-      </div>
-
-      <div class="tiktok-grid" id="tiktok">
-        {home.playground.tiles.map((tile) => (
-          <a class="video-card" href={tile.link}>
-            <img src={tile.image} alt={tile.label} />
-            <span class="video-caption">{tile.label}</span>
+    <section class="work-section" id="work">
+      <div class="work-grid">
+        {home.work.tiles.map((tile) => (
+          <a class="work-tile" href="/cases">
+            <div class="tablet-mock">
+              <div class="tablet-mock-inner">
+                <div class="tablet-mock-rig">
+                  <img class="tablet-mock-arm tl" src={`/assets/images/${tile.armPrefix}-arm-tl.png`} alt="" />
+                  <img class="tablet-mock-arm br" src={`/assets/images/${tile.armPrefix}-arm-br.png`} alt="" />
+                  <div class="tablet-mock-bezel">
+                    <span class="tablet-mock-cam"></span>
+                    <div class="tablet-mock-screen">
+                      <div class="tablet-mock-film">
+                        {tile.slides.map((slide) => <img src={slide.src} alt={slide.alt} />)}
+                        <img src={tile.slides[0].src} alt="" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="work-tile-tag">{tile.label}</span>
           </a>
         ))}
-        <a class="video-card" href="/cases">
-          <img src="/assets/images/rebuild-slide-1.jpg" alt="Rebuild" />
-          <span class="video-caption">Rebuild</span>
-        </a>
+      </div>
+      <a class="btn btn-dark work-cta" href={mailHref}>Contact opnemen</a>
+    </section>
+
+    <section class="tiktok-section" id="tiktok">
+      <div class="tiktok-head">
+        <h2>{home.socials.title}</h2>
+      </div>
+
+      <div class="tiktok-grid">
+        {home.socials.posts.map((post, i) => (
+          <article class="video-card">
+            <img src={post.image} alt={post.alt} />
+            {i === 1 && <a class="btn btn-dark video-cta" href={mailHref}>Contact opnemen</a>}
+          </article>
+        ))}
       </div>
     </section>
 
@@ -89,15 +111,15 @@ import home from '../data/home.json';
           <span>{home.final.titleLine3}</span>
         </h2>
         <p>{home.final.subtitle}</p>
-        <button class="btn btn-solid" type="button" data-open-scan>{home.hero.ctaLabel}</button>
+        <a class="btn btn-solid" href={mailHref}>{home.hero.ctaLabel}</a>
         <p class="final-note"><i></i> {home.final.note}</p>
       </div>
       <div class="final-visual">
-        <span class="giant-word"><b>SPORT</b>SEO</span>
-        <img src="/assets/images/team-meeting.png" alt="SportSEO Specialist" />
+        <span class="giant-word"><b>SEO</b>SPORT</span>
+        <img src={home.final.image} alt="Bert-Jan Russchen" />
       </div>
     </section>
   </main>
 
-  <ScanModal />
+  <WhatsAppButton />
 </BaseLayout>
