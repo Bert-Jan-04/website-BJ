@@ -7,8 +7,7 @@ interface Props {
   dockLabel?: string;
 }
 
-const { showDock = false, dockLabel = 'Start Boost Scan' } = Astro.props;
-const waHref = `https://wa.me/${site.whatsapp}`;
+const { showDock = false, dockLabel = 'Start scan' } = Astro.props;
 ---
 
 {showDock && (
@@ -23,25 +22,63 @@ const waHref = `https://wa.me/${site.whatsapp}`;
 <div class="scan" data-scan hidden>
   <div class="scan-card">
     <button class="scan-close" type="button" data-close-scan aria-label="Sluiten">×</button>
-    <p class="eyebrow">Boost Scan</p>
-    <h3 data-scan-title>Waar kunnen we jouw merk boost geven?</h3>
+    <p class="eyebrow">Website Scan</p>
+    <p class="scan-step-count" data-scan-progress>Vraag 1 van 4</p>
+
     <form data-scan-form>
-      <label>
-        Merknaam
-        <input name="brand" type="text" placeholder="Bijv. Dunkin'" required />
-      </label>
-      <fieldset>
-        <legend>Focus</legend>
-        <label class="chip"><input type="radio" name="focus" value="Branding" required /> Branding</label>
-        <label class="chip"><input type="radio" name="focus" value="Website" /> Website</label>
-        <label class="chip"><input type="radio" name="focus" value="Content" /> Content</label>
-      </fieldset>
-      <button class="btn btn-solid" type="submit">Start scan</button>
-      <p class="final-note"><i></i> Vrijblijvend · Duurt minder dan 2 minuten</p>
+      <div class="scan-step is-active" data-scan-step="1">
+        <h3>Wat is je merk- of bedrijfsnaam?</h3>
+        <label>
+          Merknaam
+          <input data-scan-brand-input name="brand" type="text" placeholder="Bijv. Sportpoeder" required />
+        </label>
+        <button class="btn btn-solid" type="button" data-scan-next>Volgende →</button>
+      </div>
+
+      <div class="scan-step" data-scan-step="2">
+        <h3>Heb je al een website?</h3>
+        <div class="scan-options" data-scan-options="website">
+          <button type="button" class="scan-option" data-points="10">Ja, en ik ben er tevreden over</button>
+          <button type="button" class="scan-option" data-points="35">Ja, maar ik ben er niet tevreden over</button>
+          <button type="button" class="scan-option" data-points="50">Nee, nog niet</button>
+        </div>
+      </div>
+
+      <div class="scan-step" data-scan-step="3">
+        <h3>Hoe goed vind je jezelf terug in Google?</h3>
+        <div class="scan-options" data-scan-options="google">
+          <button type="button" class="scan-option" data-points="5">Ik sta hoog (top 3)</button>
+          <button type="button" class="scan-option" data-points="20">Ergens op de eerste pagina</button>
+          <button type="button" class="scan-option" data-points="35">Niet op de eerste pagina</button>
+          <button type="button" class="scan-option" data-points="30">Weet ik niet</button>
+        </div>
+      </div>
+
+      <div class="scan-step" data-scan-step="4">
+        <h3>Waar wil je de meeste groei behalen?</h3>
+        <div class="scan-options" data-scan-options="focus">
+          <button type="button" class="scan-option" data-value="Branding & design">Branding &amp; design</button>
+          <button type="button" class="scan-option" data-value="Website">Website</button>
+          <button type="button" class="scan-option" data-value="SEO & vindbaarheid">SEO &amp; vindbaarheid</button>
+          <button type="button" class="scan-option" data-value="Marketing & automatisering">Marketing &amp; automatisering</button>
+        </div>
+      </div>
     </form>
+
     <div class="scan-done" data-scan-done hidden>
-      <p>Er zit meer in <strong data-scan-brand></strong> dan je nu laat zien. Laten we het doornemen via WhatsApp.</p>
-      <a class="btn btn-solid" href={waHref} target="_blank" rel="noreferrer">App ons</a>
+      <div class="scan-score-ring">
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <circle class="scan-score-track" cx="50" cy="50" r="44"></circle>
+          <circle class="scan-score-progress" data-scan-score-circle cx="50" cy="50" r="44"></circle>
+        </svg>
+        <span class="scan-score-value" data-scan-score>0</span>
+      </div>
+      <h3 data-scan-verdict>Resultaat</h3>
+      <p data-scan-message></p>
+      <div class="scan-done-ctas">
+        <a class="btn btn-solid" data-scan-whatsapp data-phone={site.whatsapp} target="_blank" rel="noreferrer">App over je resultaat</a>
+        <a class="btn btn-ghost" href="/contact">Neem contact op</a>
+      </div>
     </div>
   </div>
 </div>

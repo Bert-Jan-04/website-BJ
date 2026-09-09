@@ -179,13 +179,36 @@
   const scan = document.querySelector("[data-scan]");
   const scanForm = document.querySelector("[data-scan-form]");
   const scanDone = document.querySelector("[data-scan-done]");
-  const scanTitleEl = document.querySelector("[data-scan-title]");
+  const scanSteps = [...document.querySelectorAll("[data-scan-step]")];
+  const scanProgress = document.querySelector("[data-scan-progress]");
+  const scanBrandInput = document.querySelector("[data-scan-brand-input]");
+  const scanScoreEl = document.querySelector("[data-scan-score]");
+  const scanScoreCircle = document.querySelector("[data-scan-score-circle]");
+  const scanVerdictEl = document.querySelector("[data-scan-verdict]");
+  const scanMessageEl = document.querySelector("[data-scan-message]");
+  const scanWhatsappEl = document.querySelector("[data-scan-whatsapp]");
+  const TOTAL_STEPS = scanSteps.length;
+  const SCORE_CIRCUMFERENCE = 2 * Math.PI * 44;
+
+  let scanAnswers = { brand: "", websitePoints: 0, googlePoints: 0, focus: "" };
+
+  const showScanStep = (n) => {
+    scanSteps.forEach((el) => el.classList.toggle("is-active", Number(el.dataset.scanStep) === n));
+    if (scanProgress) scanProgress.textContent = `Vraag ${n} van ${TOTAL_STEPS}`;
+  };
+
+  const resetScan = () => {
+    scanAnswers = { brand: "", websitePoints: 0, googlePoints: 0, focus: "" };
+    document.querySelectorAll(".scan-option").forEach((btn) => btn.classList.remove("is-selected"));
+    if (scanBrandInput) scanBrandInput.value = "";
+    if (scanForm) scanForm.hidden = false;
+    if (scanDone) scanDone.hidden = true;
+    showScanStep(1);
+  };
 
   const openScan = () => {
     if (!scan) return;
-    if (scanForm) scanForm.hidden = false;
-    if (scanDone) scanDone.hidden = true;
-    if (scanTitleEl) scanTitleEl.textContent = "Waar kunnen we jouw merk boost geven?";
+    resetScan();
     scan.hidden = false;
     document.body.style.overflow = "hidden";
   };
@@ -206,14 +229,96 @@
     if (e.target === scan) closeScan();
   });
 
+  const advanceFromBrandStep = () => {
+    const brand = (scanBrandInput?.value || "").trim();
+    if (!brand) {
+      scanBrandInput?.focus();
+      return;
+    }
+    scanAnswers.brand = brand;
+    showScanStep(2);
+  };
+
   scanForm?.addEventListener("submit", (e) => {
     e.preventDefault();
-    const brand = new FormData(scanForm).get("brand") || "jouw merk";
-    const brandEl = document.querySelector("[data-scan-brand]");
-    if (brandEl) brandEl.textContent = brand;
-    if (scanTitleEl) scanTitleEl.textContent = "Scan klaar";
-    scanForm.hidden = true;
+    advanceFromBrandStep();
+  });
+  document.querySelector("[data-scan-next]")?.addEventListener("click", advanceFromBrandStep);
+
+  const finishScan = () => {
+    const raw = 100 - scanAnswers.websitePoints - scanAnswers.googlePoints;
+    const score = Math.max(20, Math.min(90, raw));
+
+    let verdict;
+    let message;
+    if (score >= 75) {
+      verdict = "Sterke basis 💪";
+      message = `Je doet al veel goed. Met een paar gerichte optimalisaties op het gebied van ${scanAnswers.focus.toLowerCase()} haal je nog meer uit ${scanAnswers.brand}.`;
+    } else if (score >= 55) {
+      verdict = "Ruimte voor groei";
+      message = `Er liggen kansen die ${scanAnswers.brand} nu laat liggen. Met de juiste focus op ${scanAnswers.focus.toLowerCase()} kun je flink groeien.`;
+    } else if (score >= 35) {
+      verdict = "Hier valt veel te winnen";
+      message = `${scanAnswers.brand} laat op dit moment veel potentie liggen, vooral op het gebied van ${scanAnswers.focus.toLowerCase()}. Laten we samen kijken wat er mogelijk is.`;
+    } else {
+      verdict = "Grote kansen liggen te wachten";
+      message = `Er is genoeg ruimte om ${scanAnswers.brand} naar een hoger niveau te tillen, zeker op het gebied van ${scanAnswers.focus.toLowerCase()}. Ik denk graag met je mee.`;
+    }
+
+    if (scanVerdictEl) scanVerdictEl.textContent = verdict;
+    if (scanMessageEl) scanMessageEl.textContent = message;
+    if (scanScoreCircle) {
+      scanScoreCircle.style.strokeDasharray = String(SCORE_CIRCUMFERENCE);
+      scanScoreCircle.style.strokeDashoffset = String(SCORE_CIRCUMFERENCE);
+    }
+    if (scanWhatsappEl) {
+      const phone = scanWhatsappEl.dataset.phone || "";
+      const text = `Hoi! Ik deed de website scan voor ${scanAnswers.brand} en scoorde ${score}/100. Ik wil hier graag over praten.`;
+      scanWhatsappEl.href = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+    }
+
+    if (scanForm) scanForm.hidden = true;
     if (scanDone) scanDone.hidden = false;
+
+    if (scanScoreEl) {
+      const start = performance.now();
+      const duration = 900;
+      const tick = (now) => {
+        const p = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        const value = Math.round(score * eased);
+        scanScoreEl.textContent = String(value);
+        if (scanScoreCircle) {
+          scanScoreCircle.style.strokeDashoffset = String(SCORE_CIRCUMFERENCE * (1 - value / 100));
+        }
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    }
+  };
+
+  document.querySelectorAll("[data-scan-options]").forEach((group) => {
+    const kind = group.dataset.scanOptions;
+    group.querySelectorAll(".scan-option").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        group.querySelectorAll(".scan-option").forEach((b) => b.classList.remove("is-selected"));
+        btn.classList.add("is-selected");
+        const points = Number(btn.dataset.points || 0);
+
+        setTimeout(() => {
+          if (kind === "website") {
+            scanAnswers.websitePoints = points;
+            showScanStep(3);
+          } else if (kind === "google") {
+            scanAnswers.googlePoints = points;
+            showScanStep(4);
+          } else if (kind === "focus") {
+            scanAnswers.focus = btn.dataset.value || btn.textContent.trim();
+            finishScan();
+          }
+        }, 220);
+      });
+    });
   });
 
   const contactForm = document.querySelector("[data-contact-form]");

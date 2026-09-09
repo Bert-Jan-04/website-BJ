@@ -747,7 +747,96 @@ strong { font-weight: 700; }
 
 .chip:has(input:checked) { background: #fff; color: #111; }
 .chip input { display: none; }
-.scan-done p { margin-bottom: 22px; line-height: 1.5; color: #fff; }
+
+.scan-step-count {
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #777;
+  margin: -4px 0 20px;
+}
+
+.scan-step { display: none; }
+.scan-step.is-active { display: block; }
+
+.scan-step h3 {
+  font-size: 26px;
+  letter-spacing: -.03em;
+  margin: 0 0 20px;
+  color: #fff;
+}
+
+.scan-step label {
+  display: block;
+  font-size: 13px;
+  color: #bbb;
+  margin-bottom: 8px;
+}
+
+.scan-options {
+  display: grid;
+  gap: 10px;
+}
+
+.scan-option {
+  text-align: left;
+  border: 1px solid #333;
+  border-radius: 14px;
+  padding: 14px 18px;
+  color: #fff;
+  font-size: 15px;
+  transition: border-color .2s, background .2s;
+}
+
+.scan-option:hover { border-color: #666; }
+.scan-option.is-selected { background: #fff; color: #111; border-color: #fff; }
+
+.scan-done { text-align: center; }
+
+.scan-score-ring {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 24px;
+}
+
+.scan-score-ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+
+.scan-score-track {
+  fill: none;
+  stroke: rgba(255,255,255,.12);
+  stroke-width: 8;
+}
+
+.scan-score-progress {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-dasharray: 276;
+  stroke-dashoffset: 276;
+  transition: stroke-dashoffset .3s ease;
+}
+
+.scan-score-value {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 36px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.scan-done h3 { font-size: 24px; letter-spacing: -.03em; margin: 0 0 12px; color: #fff; }
+.scan-done p { margin-bottom: 22px; line-height: 1.5; color: #ccc; }
+
+.scan-done-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
 
 .final-note {
   margin-top: 16px;
