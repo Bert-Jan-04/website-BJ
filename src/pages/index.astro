@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import WhatsAppButton from '../components/WhatsAppButton.astro';
+import ScanModal from '../components/ScanModal.astro';
 import site from '../data/site.json';
 import home from '../data/home.json';
 
@@ -17,7 +17,7 @@ const mailHref = `mailto:${site.email}`;
       </h1>
       <p class="hero-sub">{home.hero.subtitle}</p>
       <div class="hero-ctas">
-        <a class="btn btn-solid" href={mailHref}>{home.hero.ctaLabel}</a>
+        <button class="btn btn-solid" type="button" data-open-scan>{home.hero.ctaLabel}</button>
         <a class="who-link" href="#about">
           <img src="/assets/images/team-meeting.png" alt="Sport SEO Specialist" />
           <span>{home.hero.whoLinkLabel}</span>
@@ -111,7 +111,7 @@ const mailHref = `mailto:${site.email}`;
           <span>{home.final.titleLine3}</span>
         </h2>
         <p>{home.final.subtitle}</p>
-        <a class="btn btn-solid" href={mailHref}>{home.hero.ctaLabel}</a>
+        <button class="btn btn-solid" type="button" data-open-scan>{home.hero.ctaLabel}</button>
         <p class="final-note"><i></i> {home.final.note}</p>
       </div>
       <div class="final-visual">
@@ -121,5 +121,5 @@ const mailHref = `mailto:${site.email}`;
     </section>
   </main>
 
-  <WhatsAppButton />
+  <ScanModal />
 </BaseLayout>
