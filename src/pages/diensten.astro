@@ -1,262 +1,204 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import data from '../data/diensten.json';
+import ScanModal from '../components/ScanModal.astro';
+import diensten from '../data/diensten.json';
 
-const icons: Record<string, string> = {
-  'web-design': '<rect x="3" y="4" width="26" height="20" rx="3"/><path d="M3 11h26M10 28h12M16 24v4"/><circle cx="8" cy="7.5" r="1" fill="currentColor" stroke="none"/><circle cx="11.5" cy="7.5" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="7.5" r="1" fill="currentColor" stroke="none"/>',
-  'social-media': '<rect x="2" y="2" width="28" height="28" rx="7"/><circle cx="16" cy="16" r="6"/><circle cx="23" cy="9" r="1.5" fill="currentColor" stroke="none"/>',
-  'seo': '<circle cx="13" cy="13" r="8"/><path d="M19 19l8 8"/><path d="M10 13h6M13 10v6"/>',
-  'marketing': '<path d="M26 4L14 14M26 4l-8 22-4-10-10-4 22-8z"/>',
-  'automatisering': '<circle cx="24" cy="6" r="4"/><circle cx="8" cy="16" r="4"/><circle cx="24" cy="26" r="4"/><path d="M11.5 14.5l9-7M11.5 17.5l9 7"/>',
-  'integraties': '<ellipse cx="16" cy="7" rx="12" ry="4"/><path d="M4 7v6c0 2.2 5.4 4 12 4s12-1.8 12-4V7"/><path d="M4 13v6c0 2.2 5.4 4 12 4s12-1.8 12-4v-6"/><path d="M4 19v6c0 2.2 5.4 4 12 4s12-1.8 12-4v-6"/>',
-};
-
-const stepIcons = [
-  '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
-  '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>',
-  '<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>',
-  '<polyline points="20 6 9 17 4 12"/>',
-];
-
-const pillIcons: Record<string, string> = {
-  'web-design': '<rect x="2" y="3" width="16" height="13" rx="2"/><path d="M2 8h16"/>',
-  'social-media': '<rect x="2" y="2" width="16" height="16" rx="4"/><circle cx="10" cy="10" r="3"/><circle cx="14.5" cy="5.5" r="0.8" fill="currentColor" stroke="none"/>',
-  'seo': '<circle cx="8" cy="8" r="5"/><path d="M13 13l4 4"/>',
-  'marketing': '<path d="M18 3L9 10M18 3l-6 16-3-7-7-3 16-6z"/>',
-  'automatisering': '<circle cx="15" cy="4" r="2"/><circle cx="5" cy="10" r="2"/><circle cx="15" cy="16" r="2"/><path d="M7 10.8l6 4M13 5.2L7 9"/>',
-};
-
-const pillLabels: Record<string, string> = {
-  'web-design': 'Web design',
-  'social-media': 'Social media',
-  'seo': 'SEO',
-  'marketing': 'Marketing',
-  'automatisering': 'Automatisering',
-};
+const seo = diensten.seo;
+const marketing = diensten.marketing;
 ---
 
-<BaseLayout title="Diensten | SportSEO Specialist" pageCss="/assets/css/diensten.css" current="diensten">
-  <!-- PAGE HERO -->
-  <section class="page-hero">
-    <div class="hero__bg">
-      <div class="hero__circle hero__circle--1"></div>
-      <div class="hero__circle hero__circle--2"></div>
-      <div class="hero__grid"></div>
-    </div>
-    <div class="container page-hero__inner">
-      <span class="section__label">{data.hero.label}</span>
-      <h1>{data.hero.titleLine1}<br /><span class="gradient-text">{data.hero.titleGradient}</span></h1>
-      <p>{data.hero.subtitle}</p>
-      <div class="page-hero__nav">
-        {Object.entries(pillLabels).map(([id, label]) => {
-          const d = data.diensten.find((s) => s.id === id)!;
-          return (
-            <a href={`#${id}`} class={`hero-pill ${d.variant === 'orange' ? 'hero-pill--orange' : ''}`}>
-              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" set:html={pillIcons[id]} />
-              {label}
-            </a>
-          );
-        })}
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════ TAK 1 ═══════════════ -->
-  <div class="tak-banner">
-    <div class="container tak-banner__inner">
-      <div class="tak-banner__num">01</div>
-      <div>
-        <h2>{data.tak1.titlePlain}<span class="gradient-text">{data.tak1.titleGradient}</span></h2>
-        <p>{data.tak1.description}</p>
-      </div>
-    </div>
-  </div>
-
-  {data.diensten.filter((d) => d.tak === 1).map((d, i) => (
-    <section class={`service-section ${i % 2 === 1 ? 'service-section--alt' : ''}`} id={d.id}>
-      <div class="container">
-        <div class={`service-detail ${i % 2 === 1 ? 'service-detail--reverse' : ''}`}>
-          <div class="service-detail__left">
-            <div class={`service-detail__icon ${d.variant}`}>
-              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" set:html={icons[d.id]} />
-            </div>
-            <h2>{d.title}</h2>
-            <p class="service-detail__lead">{d.lead}</p>
-            <div class="service-detail__ideal">
-              <span class="ideal__label">{d.idealLabel ?? 'Ideaal voor'}</span>
-              <div class="ideal__tags">
-                {d.ideal.map((tag) => <span>{tag}</span>)}
-              </div>
-            </div>
-            {d.stats && (
-              <div class="seo-stats">
-                {d.stats.map((stat) => (
-                  <div class="seo-stat">
-                    <strong>{stat.value}</strong>
-                    <span>{stat.label}</span>
-                  </div>
-                ))}
-              </div>
-            )}
-            <div class="service-detail__tools">
-              <span class="tools__label">{d.id === 'social-media' ? 'Platforms' : d.id === 'marketing' ? 'Kanalen' : 'Tools & technologie'}</span>
-              <div class="tools__list">
-                {d.tools.map((tool) => (
-                  <span class={`tool-badge ${tool.highlighted ? 'tool-badge--orange' : ''}`}>{tool.label}</span>
-                ))}
-              </div>
-            </div>
-            {d.id === 'social-media' && (
-              <div class="format-showcase">
-                <div class="format-item"><div class="format-preview format-preview--square">1:1</div><span>Post</span></div>
-                <div class="format-item"><div class="format-preview format-preview--story">9:16</div><span>Story / Reel</span></div>
-                <div class="format-item"><div class="format-preview format-preview--banner">16:9</div><span>Banner</span></div>
-                <div class="format-item"><div class="format-preview format-preview--portrait">4:5</div><span>Portrait</span></div>
-              </div>
-            )}
-          </div>
-          <div class="service-detail__right">
-            <div class="service-detail__card">
-              <div class="sdc__header">
-                <span class={`sdc__category ${d.variant === 'orange' ? 'sdc__category--orange' : ''}`}>{d.category}</span>
-                <a href="/#contact" class="sdc__price sdc__price--cta">Offerte aanvragen →</a>
-              </div>
-              <ul class="sdc__includes">
-                {d.includes.map((item) => <li>{item}</li>)}
-              </ul>
-              <a href="/#contact" class="btn btn--primary btn--full">Offerte aanvragen →</a>
-              {d.note && <p class="sdc__note">{d.note}</p>}
-            </div>
-            {d.extras.length > 0 && (
-              <div class="service-detail__extra-cards">
-                {d.extras.map((extra) => (
-                  <div class="extra-card">
-                    <strong>{extra.label}</strong>
-                    <span>{extra.note}</span>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        </div>
+<BaseLayout title="Diensten — SportSEO Specialist" description={diensten.hero.subtitle} current="diensten">
+  <main id="top">
+    <section style="padding:60px 24px 90px;">
+      <h1 style="font-size:clamp(38px,6.4vw,84px);line-height:1;letter-spacing:-.04em;font-weight:900;color:#fff;max-width:820px;margin:0 0 24px;">{diensten.hero.title}</h1>
+      <p style="max-width:620px;font-size:clamp(16px,1.5vw,19px);line-height:1.55;color:#d8d8d6;margin:0 0 36px;">{diensten.hero.subtitle}</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;">
+        {diensten.hero.chips.map((chip) => (
+          <a href={chip.href} style="font-size:14px;font-weight:600;color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:999px;padding:10px 18px;">{chip.label}</a>
+        ))}
       </div>
     </section>
-  ))}
 
-  <!-- ═══════════════ TAK 2 ═══════════════ -->
-  <div class="tak-banner tak-banner--orange">
-    <div class="container tak-banner__inner">
-      <div class="tak-banner__num tak-banner__num--orange">02</div>
-      <div>
-        <h2>{data.tak2.titlePlain}<span class="gradient-text">{data.tak2.titleGradient}</span></h2>
-        <p>{data.tak2.description}</p>
-      </div>
-    </div>
-  </div>
-
-  {data.diensten.filter((d) => d.tak === 2).map((d, i) => (
-    <section class={`service-section ${i % 2 === 1 ? 'service-section--alt' : ''}`} id={d.id}>
-      <div class="container">
-        <div class={`service-detail ${i % 2 === 1 ? 'service-detail--reverse' : ''}`}>
-          <div class="service-detail__left">
-            <div class={`service-detail__icon ${d.variant}`}>
-              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" set:html={icons[d.id]} />
-            </div>
-            <h2>{d.title}</h2>
-            <p class="service-detail__lead">{d.lead}</p>
-            <div class="service-detail__ideal">
-              <span class="ideal__label">{d.idealLabel ?? 'Ideaal voor'}</span>
-              <div class="ideal__tags">
-                {d.ideal.map((tag) => <span>{tag}</span>)}
-              </div>
-            </div>
-            <div class="service-detail__tools">
-              <span class="tools__label">Tools</span>
-              <div class="tools__list">
-                {d.tools.map((tool) => (
-                  <span class={`tool-badge ${tool.highlighted ? 'tool-badge--orange' : ''}`}>{tool.label}</span>
-                ))}
-              </div>
-            </div>
-          </div>
-          <div class="service-detail__right">
-            <div class="service-detail__card service-detail__card--orange">
-              <div class="sdc__header">
-                <span class="sdc__category sdc__category--orange">{d.category}</span>
-                <a href="/#contact" class="sdc__price sdc__price--cta">Offerte aanvragen →</a>
-              </div>
-              <ul class="sdc__includes">
-                {d.includes.map((item) => <li>{item}</li>)}
-              </ul>
-              <a href="/#contact" class="btn btn--primary btn--full">Offerte aanvragen →</a>
-              {d.note && <p class="sdc__note">{d.note}</p>}
-            </div>
-            {d.extras.length > 0 && (
-              <div class="service-detail__extra-cards">
-                {d.extras.map((extra) => (
-                  <div class="extra-card">
-                    <strong>{extra.label}</strong>
-                    <span>{extra.note}</span>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
-    </section>
-  ))}
-
-  <!-- WERKWIJZE -->
-  <section class="section werkwijze" id="werkwijze">
-    <div class="container">
-      <div class="section__header">
-        <span class="section__label">{data.werkwijze.label}</span>
-        <h2>{data.werkwijze.titleLine1} <span class="gradient-text">{data.werkwijze.titleGradient}</span></h2>
-        <p class="werkwijze__sub">{data.werkwijze.subtitle}</p>
-      </div>
-
-      <div class="stappen-track">
-        <div class="stappen-line"><div class="stappen-line__fill" id="stepLine"></div></div>
-
-        {data.werkwijze.steps.map((step, i) => {
-          const isFinish = i === data.werkwijze.steps.length - 1;
-          const isRight = i % 2 === 1;
-          return (
-            <div class={`stap-item ${isRight ? 'stap-item--right' : ''} fade-in ${i > 0 ? `fade-in-delay-${i}` : ''}`}>
-              <div class={`stap-item__dot ${isFinish ? 'stap-item__dot--finish' : ''}`}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width={isFinish ? '2.2' : '2'} set:html={stepIcons[i]} />
-              </div>
-              <div class={`stap-item__card ${isFinish ? 'stap-item__card--finish' : ''}`}>
-                <div class={`stap-item__num ${isFinish ? 'stap-item__num--finish' : ''}`}>{step.num}</div>
-                <h3>{step.title}</h3>
-                <p>{step.description}</p>
-                <ul class="stap-item__details">
-                  {step.details.map((detail) => <li>{detail}</li>)}
-                </ul>
-                <div class={`stap-item__duration ${isFinish ? 'stap-item__duration--finish' : ''}`}>
-                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
-                    {isFinish ? <><polyline points="13 3 8 8 5 5"/><circle cx="8" cy="8" r="6"/></> : <><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></>}
-                  </svg>
-                  {step.duration}
+    <section data-theme="light" style="background:#f6f6f3;color:#111;padding:90px 32px;">
+      <div style="max-width:1240px;margin:0 auto;">
+        <p style="font-size:13px;color:#777;margin:0 0 12px;">{diensten.designMarketing.eyebrow}</p>
+        <h2 style="font-size:clamp(30px,4vw,52px);font-weight:800;letter-spacing:-.03em;max-width:640px;margin:0 0 16px;">{diensten.designMarketing.title}</h2>
+        <p style="font-size:17px;line-height:1.55;color:#333;max-width:620px;margin:0 0 48px;">{diensten.designMarketing.intro}</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(340px, 1fr));gap:24px;">
+          {diensten.designMarketing.cards.map((card) => (
+            <article id={card.anchorId} class="service-card">
+              <span class="service-card-tag">{card.tag}</span>
+              <h3>{card.title}</h3>
+              <p style="font-size:15px;line-height:1.55;color:#333;margin:0;">{card.desc}</p>
+              {card.idealFor && (
+                <div class="service-card-group">
+                  <p>Ideaal voor</p>
+                  <div class="service-card-chips">{card.idealFor.map((t: string) => <span>{t}</span>)}</div>
                 </div>
-              </div>
+              )}
+              {card.group1 && (
+                <div class="service-card-group">
+                  <p>{card.group1.label}</p>
+                  <div class="service-card-chips">{card.group1.items.map((t: string) => <span>{t}</span>)}</div>
+                </div>
+              )}
+              {card.formatChips && (
+                <div class="service-card-formats">
+                  {card.formatChips.map((fc: { ratio: string; label: string }) => (
+                    <div><strong>{fc.ratio}</strong><span>{fc.label}</span></div>
+                  ))}
+                </div>
+              )}
+              <a href="#" data-open-scan style="font-size:14px;font-weight:600;color:#111;width:max-content;">Offerte aanvragen →</a>
+              <ul class="service-card-features">
+                {card.features.map((feat: string) => <li><span>✓</span><span>{feat}</span></li>)}
+              </ul>
+              <button type="button" class="btn btn-dark" data-open-scan>Offerte aanvragen →</button>
+              {card.microCopy && <p class="service-card-micro">{card.microCopy}</p>}
+              {card.addons && (
+                <div class="service-card-addons">
+                  {card.addons.map((addon: { label: string; price: string }) => (
+                    <div><span>{addon.label}</span><span>{addon.price}</span></div>
+                  ))}
+                </div>
+              )}
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section data-theme="light" style="background:#111;color:#fff;padding:90px 32px;">
+      <div style="max-width:780px;margin:0 auto;">
+        <article id={seo.anchorId} class="service-card service-card--dark">
+          <span class="service-card-tag">{seo.tag}</span>
+          <h2>{seo.title}</h2>
+          <p style="font-size:16px;line-height:1.55;color:#d8d8d6;margin:0;">{seo.desc}</p>
+          <div class="service-card-group">
+            <p>Ideaal voor</p>
+            <div class="service-card-chips">{seo.idealFor.map((t) => <span>{t}</span>)}</div>
+          </div>
+          <div class="service-card-stats">
+            {seo.stats.map((stat) => (
+              <div><strong>{stat.value}</strong><span>{stat.label}</span></div>
+            ))}
+          </div>
+          <div class="service-card-group">
+            <p>{seo.group1.label}</p>
+            <div class="service-card-chips">{seo.group1.items.map((t) => <span>{t}</span>)}</div>
+          </div>
+          <a href="#" data-open-scan style="font-size:14px;font-weight:600;color:#fff;width:max-content;">Offerte aanvragen →</a>
+          <ul class="service-card-features">
+            {seo.features.map((feat) => <li><span>✓</span><span>{feat}</span></li>)}
+          </ul>
+          <button type="button" class="btn btn-solid" data-open-scan>Offerte aanvragen →</button>
+          <p class="service-card-micro">{seo.microCopy}</p>
+          <div class="service-card-addons">
+            {seo.addons.map((addon) => (
+              <div><span>{addon.label}</span><span>{addon.price}</span></div>
+            ))}
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section data-theme="light" style="background:#e4e2d8;color:#111;padding:90px 32px;">
+      <div style="max-width:780px;margin:0 auto;">
+        <article id={marketing.anchorId} class="service-card">
+          <span class="service-card-tag">{marketing.tag}</span>
+          <h2>{marketing.title}</h2>
+          <p style="font-size:16px;line-height:1.55;color:#333;margin:0;">{marketing.desc}</p>
+          <div class="service-card-group">
+            <p>Ideaal voor</p>
+            <div class="service-card-chips">{marketing.idealFor.map((t) => <span>{t}</span>)}</div>
+          </div>
+          <div class="service-card-group">
+            <p>{marketing.group1.label}</p>
+            <div class="service-card-chips">{marketing.group1.items.map((t) => <span>{t}</span>)}</div>
+          </div>
+          <a href="#" data-open-scan style="font-size:14px;font-weight:600;color:#111;width:max-content;">Offerte aanvragen →</a>
+          <ul class="service-card-features">
+            {marketing.features.map((feat) => <li><span>✓</span><span>{feat}</span></li>)}
+          </ul>
+          <button type="button" class="btn btn-dark" data-open-scan>Offerte aanvragen →</button>
+          {marketing.addons && (
+            <div class="service-card-addons">
+              {marketing.addons.map((addon) => (
+                <div><span>{addon.label}</span><span>{addon.price}</span></div>
+              ))}
             </div>
-          );
-        })}
+          )}
+        </article>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CTA BANNER -->
-  <section class="cta-banner">
-    <div class="container cta-banner__inner">
-      <div>
-        <h2>{data.cta.title}</h2>
-        <p>{data.cta.subtitle}</p>
+    <section data-theme="light" style="background:#d8d6ce;color:#111;padding:90px 32px;">
+      <div style="max-width:1240px;margin:0 auto;">
+        <p style="font-size:13px;color:#777;margin:0 0 12px;">{diensten.automatisering.eyebrow}</p>
+        <h2 style="font-size:clamp(30px,4vw,52px);font-weight:800;letter-spacing:-.03em;max-width:640px;margin:0 0 16px;">{diensten.automatisering.title}</h2>
+        <p style="font-size:17px;line-height:1.55;color:#333;max-width:620px;margin:0 0 48px;">{diensten.automatisering.intro}</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(340px, 1fr));gap:24px;">
+          {diensten.automatisering.cards.map((card) => (
+            <article id={card.anchorId} class="service-card">
+              <span class="service-card-tag">{card.tag}</span>
+              <h3>{card.title}</h3>
+              <p style="font-size:15px;line-height:1.55;color:#333;margin:0;">{card.desc}</p>
+              {card.group1 && (
+                <div class="service-card-group">
+                  <p>{card.group1.label}</p>
+                  <div class="service-card-chips">{card.group1.items.map((t: string) => <span>{t}</span>)}</div>
+                </div>
+              )}
+              {card.group2 && (
+                <div class="service-card-group">
+                  <p>{card.group2.label}</p>
+                  <div class="service-card-chips">{card.group2.items.map((t: string) => <span>{t}</span>)}</div>
+                </div>
+              )}
+              <a href="#" data-open-scan style="font-size:14px;font-weight:600;color:#111;width:max-content;">Offerte aanvragen →</a>
+              <ul class="service-card-features">
+                {card.features.map((feat: string) => <li><span>✓</span><span>{feat}</span></li>)}
+              </ul>
+              <button type="button" class="btn btn-dark" data-open-scan>Offerte aanvragen →</button>
+              {card.microCopy && <p class="service-card-micro">{card.microCopy}</p>}
+              {card.addons && (
+                <div class="service-card-addons">
+                  {card.addons.map((addon: { label: string; price: string }) => (
+                    <div><span>{addon.label}</span><span>{addon.price}</span></div>
+                  ))}
+                </div>
+              )}
+            </article>
+          ))}
+        </div>
       </div>
-      <a href="/#contact" class="btn btn--primary">{data.cta.buttonLabel}</a>
-    </div>
-  </section>
+    </section>
 
+    <section style="background:#000;color:#fff;padding:100px 24px;">
+      <div style="max-width:1240px;margin:0 auto;">
+        <p style="font-size:13px;color:#8a8a8a;margin:0 0 12px;">{diensten.werkwijze.eyebrow}</p>
+        <h2 style="font-size:clamp(34px,4.6vw,64px);font-weight:800;letter-spacing:-.03em;margin:0 0 16px;">{diensten.werkwijze.title}</h2>
+        <p style="font-size:17px;line-height:1.55;color:#d8d8d6;max-width:600px;margin:0 0 48px;">{diensten.werkwijze.subtitle}</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:20px;">
+          {diensten.werkwijze.steps.map((step) => (
+            <div class="step-card">
+              <span>{step.tag}</span>
+              <h3>{step.title}</h3>
+              <p>{step.desc}</p>
+              <ul>{step.items.map((it) => <li><span>✓</span><span>{it}</span></li>)}</ul>
+              <span class="duration">{step.duration}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section style="background:#111;color:#fff;padding:110px 24px;text-align:center;">
+      <h2 style="font-size:clamp(32px,4.6vw,58px);font-weight:800;letter-spacing:-.03em;margin:0 0 16px;">{diensten.cta.title}</h2>
+      <p style="font-size:17px;color:#d8d8d6;margin:0 0 32px;">{diensten.cta.subtitle}</p>
+      <button type="button" class="btn btn-solid" data-open-scan>{diensten.cta.buttonLabel}</button>
+    </section>
+  </main>
+
+  <ScanModal showDock={true} />
 </BaseLayout>

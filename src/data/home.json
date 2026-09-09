@@ -1,150 +1,46 @@
 {
   "hero": {
-    "badge": "Beschikbaar voor nieuwe projecten",
-    "titleLine1": "Zet jouw onderneming",
-    "titleGradient": "op de kaart.",
-    "subtitle": "Unieke websites, krachtige marketing en slimme automatisering, speciaal voor kleine en middelgrote bedrijven in de sportbranche.",
-    "ctaPrimary": "Start een project",
-    "ctaSecondary": "Bekijk diensten",
-    "stats": [
-      {
-        "value": "1-op-1",
-        "label": "Persoonlijke aanpak"
-      },
-      {
-        "value": "3x",
-        "label": "Meer online zichtbaarheid"
-      },
-      {
-        "value": "100%",
-        "label": "Op maat gemaakt"
-      }
-    ]
+    "titleLine1": "Boosting",
+    "titleLine2": "Sport",
+    "titleLine3": "Bedrijven",
+    "subtitle": "Ik combineer AI met jarenlange praktijkervaring in marketing, design en automatisering. Sportbedrijven vertrouwen mij om op te vallen, relevant te blijven en te groeien in een tijd waarin alles sneller en generieker wordt.",
+    "ctaLabel": "Start Boost Scan",
+    "whoLinkLabel": "Zo... wie is deze SportSEO Specialist?"
   },
   "logos": [
-    {
-      "name": "Voetbal Fun Noord",
-      "url": "https://www.voetbalfunnoord.nl/",
-      "image": "/assets/images/logo-voetbalfunnoord.webp"
-    },
-    {
-      "name": "Sportpoeder",
-      "url": "https://sportpoeder.nl/",
-      "image": "/assets/images/sportpoeder-logo.jpg"
-    }
+    { "name": "Sportpoeder", "image": "/assets/images/logo-sportpoeder.png" },
+    { "name": "VoetbalFunNoord", "image": "/assets/images/logo-voetbalfunnoord.png" },
+    { "name": "Rebuild", "image": "/assets/images/logo-rebuild.png" }
   ],
-  "diensten": [
-    {
-      "id": "design",
-      "badge": "",
-      "title": "Design & Marketing",
-      "description": "Van een pakkend websitedesign tot social media canvassen die converteren. Ik zorg dat jouw merk eruitziet als een winnaar.",
-      "items": [
-        "Op maat gemaakte websites",
-        "Social media templates & canvassen",
-        "SEO-geoptimaliseerde content",
-        "Merkidentiteit & huisstijl"
-      ],
-      "link": "/diensten#web-design"
-    },
-    {
-      "id": "automatisering",
-      "badge": "Populair",
-      "title": "Procesautomatisering",
-      "description": "Bespaar uren per week door slimme automatisering. Ik analyseer jouw werkprocessen en bouw maatwerk oplossingen die echt werken.",
-      "items": [
-        "Workflow automatisering",
-        "Koppeling van systemen & API's",
-        "Automatische rapportages",
-        "Data-analyse & dashboards"
-      ],
-      "link": "/diensten#automatisering"
-    }
+  "arcCards": [
+    { "image": "/assets/images/team-meeting.png", "alt": "Strategie overleg", "mark": true },
+    { "image": "/assets/images/running.png", "alt": "Sport en discipline" },
+    { "image": "/assets/images/football.png", "alt": "Voetbal actie" },
+    { "image": "/assets/images/notebook.png", "alt": "Content aantekeningen" },
+    { "image": "/assets/images/laptop.png", "alt": "Website werk" }
   ],
-  "overMij": {
-    "photo": "/assets/images/bert-jan-russchen-foto.jpg",
-    "tags": [
-      "Sport",
-      "Design",
-      "Automatisering",
-      "SEO"
-    ],
-    "titleLine1": "Passie voor sport,",
-    "titleGradient": "expertise in digitaal",
-    "paragraphs": [
-      "Als jonge ondernemer met jarenlange werkervaring in marketing weet ik wat er nodig is om online op te vallen. Sport drijft mij, en daarom richt ik mij juist op ondernemers in de sportwereld.",
-      "Mijn doel is samen groeien naar succes: een goede én visueel sterke online strategie waarbij het totale plaatje telt. Van merkidentiteit tot website en marketing, alles onder één dak."
-    ],
-    "values": [
-      {
-        "title": "Snel & efficiënt",
-        "text": "Korte doorlooptijden zonder concessies aan kwaliteit"
-      },
-      {
-        "title": "Resultaatgericht",
-        "text": "Altijd focus op meetbare groei voor jouw bedrijf"
-      }
+  "aboutTeaser": "De afgelopen jaren kreeg ik als SportSEO Specialist een kijkje achter de schermen van sportbedrijven groot en klein. Die praktijkervaring combineer ik vandaag met AI, strategie en smaak om sportmerken sneller te laten groeien.",
+  "stats": [
+    { "value": "1-op-1", "label": "Persoonlijke aanpak" },
+    { "value": "3x", "label": "Meer online zichtbaarheid" },
+    { "value": "100%", "label": "Op maat gemaakt" }
+  ],
+  "playground": {
+    "tiles": [
+      { "image": "/assets/images/sportpoeder-slide-1.jpg", "label": "Sportpoeder", "link": "/cases" },
+      { "image": "/assets/images/voetbalfunnoord-slide-1.jpg", "label": "VoetbalFunNoord", "link": "/cases" }
     ]
   },
-  "casesFeatured": [
-    {
-      "external": true,
-      "hue": 350,
-      "title": "Voetbal Fun Noord",
-      "tags": [
-        "Web design",
-        "SEO",
-        "Strategie"
-      ],
-      "imageLabel": "Website & SEO",
-      "linkLabel": "Bekijk website →",
-      "link": "https://www.voetbalfunnoord.nl/",
-      "image": "/assets/images/voetbalfunnoord-website.png",
-      "description": "Nieuwe website en complete SEO-strategie voor betere vindbaarheid in de regio."
-    },
-    {
-      "external": false,
-      "hue": 25,
-      "title": "Sportpoeder.nl",
-      "tags": [
-        "SEO",
-        "Content",
-        "Kortingscodes"
-      ],
-      "imageLabel": "SEO",
-      "linkLabel": "Bekijk case →",
-      "link": "/cases#sportpoeder",
-      "image": "/assets/images/afbeelding-case-sportpoeder.png",
-      "description": "Van 3,4 naar 8,7 miljoen vertoningen en van 60K naar 135K klikken in 6 maanden door volledige SEO-aanpak."
-    }
-  ],
-  "faq": [
-    {
-      "question": "Hoe lang duurt het voordat ik resultaat zie van SEO?",
-      "answer": "De eerste beweging zie je vaak al na 1 tot 3 maanden. Structurele groei — meer verkeer, hogere posities, meer aanvragen — bouw je op in 4 tot 6 maanden. SEO is een investering die zich blijft uitbetalen: hoe eerder je begint, hoe groter de voorsprong op je concurrenten."
-    },
-    {
-      "question": "Wat is het verschil tussen SEO en Google Ads?",
-      "answer": "Met Google Ads betaal je per klik — stop je met betalen, stopt het verkeer. SEO bouwt organische zichtbaarheid die blijft groeien ook als je niets meer investeert. Op de lange termijn levert SEO meer op voor minder geld, en bezoekers vertrouwen organische resultaten meer dan advertenties."
-    },
-    {
-      "question": "Werkt SEO ook voor kleine bedrijven of lokale organisaties?",
-      "answer": "Zeker. Lokale SEO is juist heel krachtig voor kleine bedrijven. Je concurreert niet met heel Nederland, maar met anderen in jouw regio of niche. Dat maakt het goed haalbaar om snel bovenaan te staan bij mensen die écht naar jou op zoek zijn."
-    },
-    {
-      "question": "Wat heb ik nodig om te starten?",
-      "answer": "Alleen een website en de wil om te groeien. Ik verzorg het zoekwoordenonderzoek, de strategie en de uitvoering. Je hoeft zelf geen SEO-kennis te hebben — ik leg alles duidelijk uit en hou je op de hoogte van de voortgang."
-    },
-    {
-      "question": "Doe je ook eenmalige SEO-audits?",
-      "answer": "Ja. Wil je weten waar je nu staat en wat de grootste kansen zijn? Dan kan ik een uitgebreide SEO-audit uitvoeren: technische analyse, zoekwoordkansen, concurrentieonderzoek en een concreet actieplan. Neem contact op voor de mogelijkheden."
-    },
-    {
-      "question": "Wat kost een SEO-traject?",
-      "answer": "Dat hangt af van de omvang en het doel. Ik werk met trajecten op maat — geen standaard pakketjes. Plan een gratis gesprek en ik maak een voorstel dat past bij jouw situatie en budget. Geen verplichtingen."
-    }
-  ],
-  "contact": {
-    "intro": "Vul het formulier in en je bericht wordt direct via WhatsApp verstuurd. Ik reageer zo snel mogelijk."
+  "shorts": {
+    "title": "Gezien op social?",
+    "subtitle": "Van website-rebuilds tot content voor sportbedrijven, een kijkje achter de schermen van mijn projecten.",
+    "stat": "70.000+ volgers online"
+  },
+  "final": {
+    "titleLine1": "Jouw merk",
+    "titleLine2": "heeft meer",
+    "titleLine3": "potentie",
+    "subtitle": "Ontdek in 2 minuten waar jouw sportbedrijf nog groei, aandacht en momentum laat liggen.",
+    "note": "Vrijblijvend · Duurt minder dan 2 minuten"
   }
 }

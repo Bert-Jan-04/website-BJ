@@ -1,246 +1,103 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import home from '../data/home.json';
+import ScanModal from '../components/ScanModal.astro';
 import site from '../data/site.json';
-
-const tickerLogos = Array.from({ length: 7 }, () => home.logos).flat();
+import home from '../data/home.json';
 ---
 
-<BaseLayout title="SportSEO Specialist | Websites, Marketing & Automatisering">
-  <Fragment slot="head">
-    <script type="application/ld+json" set:html={JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: home.faq.map((item) => ({
-        '@type': 'Question',
-        name: item.question,
-        acceptedAnswer: { '@type': 'Answer', text: item.answer },
-      })),
-    })} />
-  </Fragment>
-
-  <section class="hero">
-    <div class="hero__bg">
-      <div class="hero__circle hero__circle--1"></div>
-      <div class="hero__circle hero__circle--2"></div>
-      <div class="hero__grid"></div>
-    </div>
-    <div class="container hero__inner">
-      <div class="hero__badge">
-        <span class="badge__dot"></span> {home.hero.badge}
-      </div>
-      <h1 class="hero__title">
-        {home.hero.titleLine1}<br />
-        <span class="gradient-text">{home.hero.titleGradient}</span>
+<BaseLayout title="SportSEO Specialist — Websites, marketing & automatisering voor sportbedrijven" description={home.hero.subtitle} current="home">
+  <main id="top">
+    <section class="hero">
+      <h1>
+        <span>{home.hero.titleLine1}</span>
+        <span>{home.hero.titleLine2}</span>
+        <span>{home.hero.titleLine3}</span>
       </h1>
-      <p class="hero__sub">
-        {home.hero.subtitle}
-      </p>
-      <div class="hero__cta">
-        <a href="#contact" class="btn btn--primary">{home.hero.ctaPrimary}</a>
-        <a href="/diensten" class="btn btn--ghost">{home.hero.ctaSecondary}</a>
+      <p class="hero-sub">{home.hero.subtitle}</p>
+      <div class="hero-ctas">
+        <button class="btn btn-solid" type="button" data-open-scan>{home.hero.ctaLabel}</button>
+        <a class="who-link" href="#about">
+          <img src="/assets/images/team-meeting.png" alt="SportSEO Specialist" />
+          <span>{home.hero.whoLinkLabel}</span>
+        </a>
       </div>
-      <div class="hero__stats">
-        {home.hero.stats.map((stat, i) => (
-          <>
-            {i > 0 && <div class="stat__divider"></div>}
-            <div class="stat">
-              <strong style={stat.value === '1-op-1' ? 'white-space:nowrap' : undefined}>{stat.value}</strong>
-              <span>{stat.label}</span>
-            </div>
-          </>
+    </section>
+
+    <section class="clients-section" id="about">
+      <div class="logo-wall" aria-label="Bedrijven die ik help">
+        {home.logos.map((logo) => (
+          <img src={logo.image} alt={logo.name} style="height:28px;width:auto;filter:grayscale(1) brightness(1.7);" />
         ))}
       </div>
-    </div>
-    <div class="hero__scroll">
-      <span>Scroll</span>
-      <div class="scroll__line"></div>
-    </div>
-  </section>
 
-  <section class="logo-ticker">
-    <div class="logo-ticker__label">Bedrijven die ik help</div>
-    <div class="logo-ticker__track">
-      <div class="logo-ticker__list" aria-hidden="true">
-        {tickerLogos.map((logo) => (
-          <a href={logo.url} target="_blank" rel="noopener"><img src={logo.image} alt={logo.name} class="logo-ticker__logo" /></a>
-        ))}
+      <div class="arc">
+        {home.arcCards.map((card, i) => {
+          const rotations = [-22, -13, -4, 4, 13];
+          const ys = [56, 22, 4, 4, 22];
+          return (
+            <article class="arc-card" style={`--r:${rotations[i]}deg; --y:${ys[i]}px;`}>
+              <img src={card.image} alt={card.alt} />
+              {card.mark && <span class="arc-mark">SEO</span>}
+            </article>
+          );
+        })}
       </div>
-    </div>
-  </section>
 
-  <section class="section diensten" id="diensten">
-    <div class="container">
-      <div class="section__header">
-        <span class="section__label">Wat ik doe</span>
-        <h2>Twee takken, één doel: <span class="gradient-text">jouw groei</span></h2>
-      </div>
-      <div class="diensten__grid">
-        {home.diensten.map((dienst, i) => (
-          <div class={`dienst-card ${dienst.id === 'automatisering' ? 'dienst-card--accent' : ''} fade-in ${i > 0 ? `fade-in-delay-${i}` : ''}`}>
-            {dienst.badge && <div class="dienst-card__badge">{dienst.badge}</div>}
-            <div class="dienst-card__icon">
-              {dienst.id === 'design' ? (
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-              ) : (
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-              )}
-            </div>
-            <h3>{dienst.title}</h3>
-            <p>{dienst.description}</p>
-            <ul class="dienst-card__list">
-              {dienst.items.map((item) => <li>{item}</li>)}
-            </ul>
-            <a href={dienst.link} class="dienst-card__link">Meer info <span>→</span></a>
+      <p class="about-copy">{home.aboutTeaser}</p>
+      <button class="btn btn-ghost" type="button" data-open-scan>{home.hero.ctaLabel}</button>
+    </section>
+
+    <section class="stats-section">
+      <div class="stats">
+        {home.stats.map((stat) => (
+          <div>
+            <strong>{stat.value}</strong>
+            <span>{stat.label}</span>
           </div>
         ))}
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section over" id="over">
-    <div class="container over__inner">
-      <div class="over__visual fade-in">
-        <div class="over__photo-wrap">
-          <img src={home.overMij.photo} alt="Bert-Jan Russchen, SportSEO Specialist" class="over__photo" />
-          <div class="over__photo-accent"></div>
+    <section class="tiktok-section" id="work">
+      <div class="tiktok-head">
+        <div>
+          <h2>{home.shorts.title}</h2>
+          <p>{home.shorts.subtitle}</p>
         </div>
-        <div class="over__tags">
-          {home.overMij.tags.map((tag, i) => (
-            <span class={i % 2 === 1 ? 'tag tag--orange' : 'tag'}>{tag}</span>
-          ))}
-        </div>
+        <p class="tiktok-stat">{home.shorts.stat}</p>
       </div>
-      <div class="over__content fade-in fade-in-delay-1">
-        <span class="section__label">Over mij</span>
-        <h2>{home.overMij.titleLine1}<br /><span class="gradient-text">{home.overMij.titleGradient}</span></h2>
-        {home.overMij.paragraphs.map((p) => <p>{p}</p>)}
-        <div class="over__values">
-          {home.overMij.values.map((value, i) => (
-            <div class={`value fade-in fade-in-delay-${i + 1}`}>
-              <div class="value__icon">
-                {i === 0 ? (
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                ) : (
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-                )}
-              </div>
-              <div>
-                <strong>{value.title}</strong>
-                <span>{value.text}</span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="section cases" id="cases">
-    <div class="container">
-      <div class="section__header">
-        <span class="section__label">Portfolio</span>
-        <h2>Recente <span class="gradient-text">projecten</span></h2>
-      </div>
-      <div class="cases__grid">
-        {home.casesFeatured.map((c) => (
-          <div class="case-card fade-in">
-            <div class="case-card__image" style={`--hue: ${c.hue}`}>
-              <img src={c.image} alt={c.title} />
-              <div class="case-card__label">{c.imageLabel}</div>
-            </div>
-            <div class="case-card__body">
-              <h4>{c.title}</h4>
-              <p>{c.description}</p>
-              <div class="case-card__tags">
-                {c.tags.map((tag) => <span>{tag}</span>)}
-              </div>
-              {c.external ? (
-                <a href={c.link} target="_blank" rel="noopener" class="case-card__link">{c.linkLabel}</a>
-              ) : (
-                <a href={c.link} class="case-card__link">{c.linkLabel}</a>
-              )}
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="section faq" id="faq">
-    <div class="container">
-      <div class="section__header">
-        <span class="section__label">Veelgestelde vragen</span>
-        <h2>Alles wat je wil <span class="gradient-text">weten</span></h2>
-      </div>
-      <div class="faq__list">
-        {home.faq.map((item) => (
-          <div class="faq__item">
-            <button class="faq__question" aria-expanded="false">
-              {item.question}
-              <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            <div class="faq__answer">
-              <p>{item.answer}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="section contact" id="contact">
-    <div class="container contact__inner">
-      <div class="contact__info fade-in">
-        <span class="section__label">Contact</span>
-        <h2>Klaar om te <span class="gradient-text">groeien?</span></h2>
-        <p>{home.contact.intro}</p>
-        <div class="contact__details">
-          <a href={`https://wa.me/${site.whatsapp}`} target="_blank" rel="noopener" class="contact__item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-            {site.phone}
+      <div class="tiktok-grid" id="tiktok">
+        {home.playground.tiles.map((tile) => (
+          <a class="video-card" href={tile.link}>
+            <img src={tile.image} alt={tile.label} />
+            <span class="video-caption">{tile.label}</span>
           </a>
-          <a href={site.instagramUrl} target="_blank" rel="noopener" class="contact__item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-            {site.instagramHandle}
-          </a>
-          <a href={`mailto:${site.email}`} class="contact__item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            {site.email}
-          </a>
-        </div>
+        ))}
+        <a class="video-card" href="/cases">
+          <img src="/assets/images/rebuild-slide-1.jpg" alt="Rebuild" />
+          <span class="video-caption">Rebuild</span>
+        </a>
       </div>
-      <form class="contact__form fade-in fade-in-delay-1" id="contactForm" novalidate>
-        <div class="form__row">
-          <div class="form__group">
-            <label for="naam">Naam</label>
-            <input type="text" id="naam" name="naam" placeholder="Jan Jansen" required />
-          </div>
-          <div class="form__group">
-            <label for="bedrijf">Bedrijfsnaam</label>
-            <input type="text" id="bedrijf" name="bedrijf" placeholder="Jouw bedrijf" />
-          </div>
-        </div>
-        <div class="form__group">
-          <label for="dienst">Interesse in</label>
-          <select id="dienst" name="dienst">
-            <option value="">Selecteer een dienst...</option>
-            <option value="SEO-strategie">SEO-strategie</option>
-            <option value="SEO-blogs & content">SEO-blogs &amp; content</option>
-            <option value="Website design">Website design</option>
-            <option value="Alles van bovenstaande">Alles van bovenstaande</option>
-          </select>
-        </div>
-        <div class="form__group">
-          <label for="bericht">Bericht</label>
-          <textarea id="bericht" name="bericht" rows="4" placeholder="Vertel kort iets over jouw project..." required></textarea>
-        </div>
-        <button type="submit" class="btn btn--primary btn--full">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;vertical-align:middle;margin-right:6px"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-          Stuur via WhatsApp
-        </button>
-      </form>
-    </div>
-  </section>
+    </section>
+
+    <section class="final-hero">
+      <div class="final-copy">
+        <h2>
+          <span>{home.final.titleLine1}</span>
+          <span>{home.final.titleLine2}</span>
+          <span>{home.final.titleLine3}</span>
+        </h2>
+        <p>{home.final.subtitle}</p>
+        <button class="btn btn-solid" type="button" data-open-scan>{home.hero.ctaLabel}</button>
+        <p class="final-note"><i></i> {home.final.note}</p>
+      </div>
+      <div class="final-visual">
+        <span class="giant-word"><b>SPORT</b>SEO</span>
+        <img src="/assets/images/team-meeting.png" alt="SportSEO Specialist" />
+      </div>
+    </section>
+  </main>
+
+  <ScanModal />
 </BaseLayout>
