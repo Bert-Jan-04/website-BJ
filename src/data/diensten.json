@@ -7,7 +7,8 @@
       { "label": "Social media", "href": "#social-media" },
       { "label": "SEO", "href": "#seo" },
       { "label": "Marketing", "href": "#marketing" },
-      { "label": "Automatisering", "href": "#automatisering" }
+      { "label": "Automatisering", "href": "#automatisering" },
+      { "label": "ChatGPT Ads", "href": "#chatgpt-ads" }
     ]
   },
   "designMarketing": {
@@ -37,6 +38,18 @@
         "features": ["10 bewerkbare Canva-templates", "Posts, stories & reels-covers", "Passend bij jouw huisstijl", "Alle formaten inbegrepen", "Instructievideo voor gebruik", "2 revisierondes"],
         "microCopy": "Gratis kennismakingsgesprek van 30 min",
         "addons": [{ "label": "Maandpakket (20 posts)", "price": "Op aanvraag" }, { "label": "Compleet social media pakket", "price": "Op aanvraag" }]
+      },
+      {
+        "anchorId": "chatgpt-ads",
+        "tag": "ChatGPT Ads",
+        "title": "ChatGPT Ads",
+        "desc": "Adverteren in ChatGPT en zichtbaar worden bij potentiële klanten op het moment dat ze zoeken. Ik help jouw sportbedrijf met ChatGPT Ads en AI advertising, van strategie en advertenties tot optimalisatie en conversie.",
+        "idealFor": ["Sportscholen", "Personal trainers", "Sportwinkels", "Fitnessstudio's", "Sportbedrijven"],
+        "group1": { "label": "Wat ik voor je regel", "items": ["ChatGPT Ads", "Advertentiestrategie", "AI advertising", "Campagne-optimalisatie", "Conversie-optimalisatie"] },
+        "features": ["Adverteren in ChatGPT", "ChatGPT Ads strategie", "Gericht op jouw doelgroep", "Advertenties die converteren", "Continue optimalisatie", "Data & resultaten inzichtelijk", "Persoonlijke begeleiding"],
+        "ctaLabel": "ChatGPT Ads aanvragen →",
+        "microCopy": "Gratis kennismakingsgesprek van 30 min",
+        "addons": [{ "label": "ChatGPT advertentiecampagne", "price": "Op aanvraag" }, { "label": "AI advertising strategie", "price": "Op aanvraag" }, { "label": "Campagne optimalisatie", "price": "Op aanvraag" }]
       }
     ]
   },

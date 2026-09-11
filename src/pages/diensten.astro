@@ -49,11 +49,11 @@ const marketing = diensten.marketing;
                   ))}
                 </div>
               )}
-              <a href="#" data-open-scan style="font-size:14px;font-weight:600;color:#111;width:max-content;">Offerte aanvragen →</a>
+              <a href="#" data-open-scan style="font-size:14px;font-weight:600;color:#111;width:max-content;">{card.ctaLabel || 'Offerte aanvragen →'}</a>
               <ul class="service-card-features">
                 {card.features.map((feat: string) => <li><span>✓</span><span>{feat}</span></li>)}
               </ul>
-              <button type="button" class="btn btn-dark" data-open-scan>Offerte aanvragen →</button>
+              <button type="button" class="btn btn-dark" data-open-scan>{card.ctaLabel || 'Offerte aanvragen →'}</button>
               {card.microCopy && <p class="service-card-micro">{card.microCopy}</p>}
               {card.addons && (
                 <div class="service-card-addons">

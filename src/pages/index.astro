@@ -88,6 +88,20 @@ const mailHref = `mailto:${site.email}`;
       <a class="btn btn-dark work-cta" href={mailHref}>Contact opnemen</a>
     </section>
 
+    <section class="alert-section">
+      <div class="alert-card">
+        <div>
+          <span class="alert-badge"><i></i>{home.serviceAlert.badgeLabel}</span>
+          <h2 class="alert-title">{home.serviceAlert.title}</h2>
+          <p class="alert-desc">{home.serviceAlert.description}</p>
+          <a class="btn btn-solid" href={home.serviceAlert.ctaHref}>{home.serviceAlert.ctaLabel}</a>
+        </div>
+        <div class="alert-media">
+          <img src={home.serviceAlert.image} alt={home.serviceAlert.imageAlt} />
+        </div>
+      </div>
+    </section>
+
     <section class="tiktok-section" id="tiktok">
       <div class="tiktok-head">
         <h2>{home.socials.title}</h2>

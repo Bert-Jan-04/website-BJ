@@ -36,6 +36,17 @@ import cases from '../data/cases.json';
               <img src={item.logo} alt={item.id} style={`height:${item.logoHeight};width:auto;margin-bottom:20px;${item.grayscaleLogo ? 'filter:grayscale(1) brightness(0);' : ''}`} />
               <h2 style="font-size:clamp(28px,3.4vw,44px);font-weight:800;letter-spacing:-.03em;margin:0 0 16px;">{item.title}</h2>
               <p style="font-size:16px;line-height:1.6;color:#333;margin:0 0 20px;">{item.description}</p>
+              {item.stats && (
+                <div style="display:grid;gap:14px;margin:0 0 20px;">
+                  {item.stats.map((stat) => (
+                    <div>
+                      <strong style="display:block;font-size:21px;font-weight:800;letter-spacing:-.02em;color:#111;">{stat.label}</strong>
+                      {stat.detail && <span style="font-size:14px;color:#666;">{stat.detail}</span>}
+                    </div>
+                  ))}
+                </div>
+              )}
+              {item.outro && <p style="font-size:15px;line-height:1.6;color:#333;margin:0 0 20px;">{item.outro}</p>}
               <div style="display:flex;flex-wrap:wrap;gap:8px;">
                 {item.tags.map((tag) => (
                   <span style="border:1px solid #ccc;border-radius:999px;padding:6px 12px;font-size:13px;color:#333;">{tag}</span>

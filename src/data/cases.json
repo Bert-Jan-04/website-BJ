@@ -28,8 +28,15 @@
       "id": "sportpoeder",
       "logo": "/assets/images/logo-sportpoeder.png",
       "logoHeight": "28px",
-      "title": "Website voor een supplementenplatform",
-      "description": "Sportpoeder vergelijkt en beoordeelt sportsupplementen. Ik werkte mee aan de website: van homepage en dealpagina's tot een productvergelijker en kortingscodepagina, gericht op overzicht en snel de beste deal vinden.",
+      "title": "Sportpoeder × SportSEO Specialist",
+      "description": "In 6 maanden tijd groeide de organische vindbaarheid van Sportpoeder aanzienlijk door een gerichte SEO-strategie en consistente content.",
+      "stats": [
+        { "label": "+113% organische klikken", "detail": "66.100 → 141.000" },
+        { "label": "+185% vertoningen", "detail": "3,58 mln → 10,2 mln" },
+        { "label": "Gemiddelde positie", "detail": "10,5 → 7,7" },
+        { "label": "+74.900 extra bezoekers via Google" }
+      ],
+      "outro": "Een sterke SEO-basis die zorgt voor blijvende organische groei.",
       "tags": ["E-commerce", "Website design", "UX"],
       "armPrefix": "sportpoeder",
       "slides": [
