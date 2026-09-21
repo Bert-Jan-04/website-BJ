@@ -325,9 +325,18 @@
   const contactDone = document.querySelector("[data-contact-done]");
   contactForm?.addEventListener("submit", (e) => {
     e.preventDefault();
-    const name = String(new FormData(contactForm).get("name") || "").trim();
+    const data = new FormData(contactForm);
+    const name = String(data.get("name") || "").trim();
+    const email = String(data.get("email") || "").trim();
+    const message = String(data.get("message") || "").trim();
     const nameEl = document.querySelector("[data-contact-name]");
     if (nameEl) nameEl.textContent = name ? `, ${name}` : "";
+
+    const subject = `Contact via website${name ? ` — ${name}` : ""}`;
+    const body = `Naam: ${name}\nE-mail: ${email}\n\n${message}`;
+    const mailtoHref = `mailto:russchenbertjan@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoHref;
+
     contactForm.hidden = true;
     if (contactDone) contactDone.hidden = false;
   });
