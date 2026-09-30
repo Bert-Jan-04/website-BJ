@@ -1,8 +1,10 @@
 ---
 import site from '../data/site.json';
+import regio from '../data/regio.json';
+import type { PageKey } from '../layouts/BaseLayout.astro';
 
 interface Props {
-  current: 'home' | 'diensten' | 'cases' | 'over-mij' | 'contact';
+  current: PageKey;
 }
 
 const { current } = Astro.props;
@@ -18,11 +20,14 @@ const pageLinks = isHome
     ]
   : [
       { href: '/', label: 'Home' },
-      { href: '/diensten', label: 'Diensten' },
-      { href: '/cases', label: 'Klantcases' },
-      { href: '/over-mij', label: 'Over ons' },
-      { href: '/contact', label: 'Contact' },
+      { href: '/diensten/', label: 'Diensten' },
+      { href: '/cases/', label: 'Klantcases' },
+      { href: '/blog/', label: 'Blog' },
+      { href: '/over-mij/', label: 'Over ons' },
+      { href: '/contact/', label: 'Contact' },
     ];
+
+const footerRegions = regio.cities.filter((c) => c.footer);
 
 const telHref = `+${site.whatsapp}`;
 ---
@@ -37,6 +42,11 @@ const telHref = `+${site.whatsapp}`;
     <div class="footer-col">
       <p class="eyebrow">Pagina's</p>
       {pageLinks.map((link) => <a href={link.href}>{link.label}</a>)}
+    </div>
+    <div class="footer-col">
+      <p class="eyebrow">Werkgebied</p>
+      {footerRegions.map((c) => <a href={`/regio/${c.slug}/`}>{c.name}</a>)}
+      <a href="/regio/">Alle regio's →</a>
     </div>
     <div class="footer-col">
       <p class="eyebrow">Socials</p>

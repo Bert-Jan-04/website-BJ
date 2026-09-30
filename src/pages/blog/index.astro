@@ -1,0 +1,51 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ScanModal from '../../components/ScanModal.astro';
+
+const posts = (await getCollection('blog')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const fmt = (d: Date) => d.toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+
+<BaseLayout
+  title="Blog: SEO & marketing voor sportbedrijven | SportSEO Specialist"
+  description="Praktische tips over SEO, websites, Google Bedrijfsprofiel en marketing voor sportscholen, verenigingen, trainers en sportwebshops."
+  current="blog"
+  breadcrumbs={[{ name: 'Blog', path: '/blog/' }]}
+>
+  <main id="top">
+    <section class="page-hero">
+      <ol class="crumbs">
+        <li><a href="/">Home</a></li>
+        <li>Blog</li>
+      </ol>
+      <h1>Kennisbank voor sportondernemers</h1>
+      <p class="lead">Praktische tips over vindbaarheid, websites en marketing voor sportscholen, verenigingen, trainers en sportwebshops. Zonder vakjargon, direct toe te passen.</p>
+    </section>
+
+    <section class="lp-section lp-section--light" data-theme="light">
+      <div class="lp-inner">
+        <div class="post-list">
+          {posts.map((post) => (
+            <a class="post-card" href={`/blog/${post.id}/`}>
+              <div class="post-meta"><span>{post.data.category}</span><time datetime={post.data.pubDate.toISOString()}>{fmt(post.data.pubDate)}</time></div>
+              <h2>{post.data.title}</h2>
+              <p>{post.data.description}</p>
+              <span class="lp-more">Lees artikel →</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <h2>Liever dat iemand het voor je doet?</h2>
+      <p>Start de gratis scan en ontdek waar jouw bedrijf online nog groei laat liggen.</p>
+      <div class="hero-ctas">
+        <button type="button" class="btn btn-solid" data-open-scan>Start gratis scan</button>
+      </div>
+    </section>
+  </main>
+
+  <ScanModal />
+</BaseLayout>

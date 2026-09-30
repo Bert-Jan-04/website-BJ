@@ -1,6 +1,8 @@
 ---
+import type { PageKey } from '../layouts/BaseLayout.astro';
+
 interface Props {
-  current: 'home' | 'diensten' | 'cases' | 'over-mij' | 'contact';
+  current: PageKey;
   showKernPager?: boolean;
 }
 
@@ -8,10 +10,11 @@ const { current, showKernPager = false } = Astro.props;
 
 const links = [
   { key: 'home', href: '/', label: 'Home' },
-  { key: 'diensten', href: '/diensten', label: 'Diensten' },
-  { key: 'cases', href: '/cases', label: 'Klantcases' },
-  { key: 'over-mij', href: '/over-mij', label: 'About' },
-  { key: 'contact', href: '/contact', label: 'Contact' },
+  { key: 'diensten', href: '/diensten/', label: 'Diensten' },
+  { key: 'cases', href: '/cases/', label: 'Klantcases' },
+  { key: 'blog', href: '/blog/', label: 'Blog' },
+  { key: 'over-mij', href: '/over-mij/', label: 'About' },
+  { key: 'contact', href: '/contact/', label: 'Contact' },
 ] as const;
 
 const storyLines = [
@@ -45,7 +48,7 @@ const storyLines = [
   </div>
 
   <a class="logo-b" href="/" aria-label="Sport SEO Specialist home">
-    <img src="/assets/images/logo.png" alt="Sport SEO Specialist" />
+    <img src="/assets/images/logo.webp" alt="Sport SEO Specialist" />
   </a>
 
   <div class="header-right">
@@ -65,7 +68,7 @@ const storyLines = [
 <div class="menu" data-menu>
   <div class="menu-top">
     <a class="logo-b" href="/" data-menu-close aria-label="Sport SEO Specialist home">
-      <img src="/assets/images/logo.png" alt="Sport SEO Specialist" />
+      <img src="/assets/images/logo.webp" alt="Sport SEO Specialist" />
     </a>
     <button class="menu-close" data-menu-close aria-label="Menu sluiten" type="button">
       <span></span>

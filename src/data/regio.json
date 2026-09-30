@@ -1,0 +1,408 @@
+{
+  "hero": {
+    "title": "Werkgebied: Friesland en Groningen",
+    "subtitle": "Vanuit Wijnjewoude help ik sportbedrijven en ondernemers in heel Noord-Nederland aan een website die gevonden wordt en klanten oplevert. Kies je plaats en lees wat ik voor jou kan doen."
+  },
+  "provinces": [
+    { "name": "Friesland", "intro": "Van Elfstedensteden tot watersportdorpen: in Friesland wordt gesport, en er wordt ook op gezocht. Ik ken de provincie van binnenuit." },
+    { "name": "Groningen", "intro": "Van de studentenstad tot de Veenkoloniën en de Eemsdelta: ook in Groningen help ik sportbedrijven en lokale ondernemers hoger in Google." }
+  ],
+  "cities": [
+    {
+      "slug": "leeuwarden",
+      "name": "Leeuwarden",
+      "province": "Friesland",
+      "footer": true,
+      "intro": "Leeuwarden is de grootste stad van Friesland en de plek waar de meeste Friezen online zoeken naar een sportschool, personal trainer of vereniging. Die concurrentie is flink: wie in Leeuwarden niet bovenaan staat bij 'sportschool Leeuwarden' of 'personal trainer Leeuwarden', laat elke week nieuwe leden liggen. Ik bouw websites en SEO-strategieën die jouw sportbedrijf in de Friese hoofdstad zichtbaar maken.",
+      "localTitle": "Sporten in de Friese hoofdstad",
+      "local": [
+        "Leeuwarden is een stad met een sterke sportidentiteit: van SC Cambuur tot de Elfstedentocht, die hier start en finisht. Daarnaast zorgen de hogescholen en Campus Fryslân voor een grote groep jonge sporters die hun sportschool, bootcamp of vereniging vrijwel altijd via Google en Instagram kiezen.",
+        "Dat betekent dat lokale zoekresultaten in Leeuwarden flink bevochten worden. Een goed ingericht Google Bedrijfsprofiel, pagina's per wijk of doelgroep en snelle, mobielvriendelijke landingspagina's maken hier het verschil tussen een vol en een half leeg rooster."
+      ],
+      "sectors": ["Sportscholen", "Personal trainers", "Boksscholen", "Studentensport", "Voetbalverenigingen", "Fysiotherapie"],
+      "faq": [
+        { "q": "Kom je ook langs in Leeuwarden?", "a": "Ja. Een kennismaking kan online, maar ik kom ook graag bij je langs in Leeuwarden om je locatie, team en doelen te zien. Dat helpt enorm bij het maken van goede foto's, video en teksten." },
+        { "q": "Hoe snel kan ik in Leeuwarden hoger in Google komen?", "a": "Bij lokale zoekwoorden zie je vaak binnen drie maanden de eerste verbeteringen, zeker als je Google Bedrijfsprofiel en website samen worden aangepakt. Voor drukbevochten termen in Leeuwarden reken je op zes tot twaalf maanden voor een stabiele toppositie." }
+      ],
+      "nearby": ["drachten", "franeker", "dokkum", "sneek"]
+    },
+    {
+      "slug": "drachten",
+      "name": "Drachten",
+      "province": "Friesland",
+      "footer": true,
+      "intro": "Drachten is de grootste plaats van Oost-Friesland en ligt op een kwartiertje rijden van mijn eigen werkplek in Wijnjewoude. Voor sportscholen, trainers en sportwinkels in Drachten en de rest van Smallingerland zorg ik voor websites die snel laden, goed scoren in Google en bezoekers omzetten in leden of klanten.",
+      "localTitle": "Een groeiende sportmarkt in Smallingerland",
+      "local": [
+        "Drachten heeft een groot verzorgingsgebied: mensen uit Ureterp, Opeinde, Rottevalle en Boornbergum komen hier sporten en winkelen. Dat maakt zoektermen als 'sportschool Drachten' of 'fysio Drachten' waardevol, omdat ze een veel grotere groep bereiken dan alleen de inwoners van de stad zelf.",
+        "Veel sportbedrijven in Drachten hebben nog een verouderde website of vertrouwen volledig op Facebook. Juist daar liggen kansen: met een moderne site, lokale landingspagina's en een actief Google Bedrijfsprofiel ben je vaak binnen enkele maanden de lokale concurrent voorbij."
+      ],
+      "sectors": ["Sportscholen", "Personal trainers", "Sportwinkels", "Voetbalverenigingen", "Zwem- en sportcentra", "Fysiotherapie"],
+      "faq": [
+        { "q": "Werk je vaak voor bedrijven in Drachten?", "a": "Drachten ligt vlak bij Wijnjewoude, dus ik ben er regelmatig. Een kennismaking op jouw locatie is dan ook snel geregeld." },
+        { "q": "Kun je ook zorgen dat ik gevonden word in de dorpen rond Drachten?", "a": "Ja. Met aparte pagina's en de juiste instellingen in je Google Bedrijfsprofiel kun je ook gevonden worden door mensen uit Ureterp, Opeinde, Nijega en omgeving." }
+      ],
+      "nearby": ["gorredijk", "leeuwarden", "heerenveen", "oosterwolde"]
+    },
+    {
+      "slug": "heerenveen",
+      "name": "Heerenveen",
+      "province": "Friesland",
+      "footer": true,
+      "intro": "Heerenveen is misschien wel dé sportgemeente van Friesland, met sc Heerenveen, ijsstadion Thialf en Sportstad Heerenveen. Waar zoveel sport is, is ook veel concurrentie om de aandacht van sporters. Ik help sportbedrijven in Heerenveen om online net zo sterk te presteren als op het veld of het ijs.",
+      "localTitle": "Sportstad van Friesland",
+      "local": [
+        "Rond Thialf en het Abe Lenstra Stadion is een hele sporteconomie ontstaan: trainers, schaatsscholen, fysiotherapeuten, sportvoedingswinkels en coaches. Veel van die bedrijven richten zich niet alleen op Heerenveen zelf, maar op sporters uit heel Nederland. Dat vraagt om SEO die verder kijkt dan alleen lokale zoektermen.",
+        "Tegelijk zoeken inwoners van Heerenveen, Joure, Akkrum en Gorredijk natuurlijk gewoon naar de dichtstbijzijnde sportschool of bootcamp. Een goede website combineert beide: lokaal sterk gevonden worden én landelijk autoriteit opbouwen in jouw sport."
+      ],
+      "sectors": ["Schaatsen", "Voetbal", "Sportscholen", "Sportvoeding", "Coaches", "Sportfysiotherapie"],
+      "faq": [
+        { "q": "Kun je ook landelijk SEO doen voor mijn sportbedrijf in Heerenveen?", "a": "Zeker. In Heerenveen hebben veel bedrijven klanten uit heel Nederland. Ik maak dan een strategie met zowel lokale pagina's als landelijke content rond jouw sport." },
+        { "q": "Hoe ver is Heerenveen van je vandaan?", "a": "Vanuit Wijnjewoude ben ik in ongeveer een half uur in Heerenveen. Langskomen is dus geen enkel probleem." }
+      ],
+      "nearby": ["joure", "gorredijk", "wolvega", "drachten"]
+    },
+    {
+      "slug": "sneek",
+      "name": "Sneek",
+      "province": "Friesland",
+      "footer": true,
+      "intro": "Sneek staat bekend om watersport, de Sneekweek en de Waterpoort. Maar ook buiten het zeilseizoen is er in Sneek en Súdwest-Fryslân volop sportieve bedrijvigheid. Ik help sportbedrijven, verhuurders en trainers in Sneek aan een website die het hele jaar door klanten binnenhaalt.",
+      "localTitle": "Watersport en meer in Súdwest-Fryslân",
+      "local": [
+        "Veel ondernemers in Sneek hebben te maken met seizoensinvloeden: in de zomer toeristen en watersporters, in de winter vooral de eigen inwoners. Een slimme contentstrategie speelt daarop in, met pagina's en artikelen die precies op het juiste moment in het jaar gevonden worden.",
+        "Denk aan zeilscholen en botenverhuur die in het voorjaar al bovenaan moeten staan, en sportscholen en trainers die juist in januari nieuwe leden willen trekken. Met goede SEO bouw je die zichtbaarheid één keer op en pluk je er elk seizoen weer de vruchten van."
+      ],
+      "sectors": ["Watersport", "Zeilscholen", "Sportscholen", "Personal trainers", "Recreatie", "Sportwinkels"],
+      "faq": [
+        { "q": "Werkt SEO ook voor seizoensgebonden bedrijven in Sneek?", "a": "Juist dan. Rankings bouw je op in de maanden vóór het seizoen, zodat je bovenaan staat op het moment dat mensen gaan zoeken. Ik plan de content daarom mee met jouw seizoen." },
+        { "q": "Kun je ook Engelse of Duitse pagina's maken voor toeristen?", "a": "Ja, voor watersport- en recreatiebedrijven in Sneek kan een Duitse of Engelse versie flink wat extra boekingen opleveren. Dat neem ik mee in het plan." }
+      ],
+      "nearby": ["bolsward", "joure", "lemmer", "leeuwarden"]
+    },
+    {
+      "slug": "harlingen",
+      "name": "Harlingen",
+      "province": "Friesland",
+      "footer": false,
+      "intro": "Harlingen is de havenstad van Friesland, met de Waddenzee voor de deur en de boot naar Terschelling en Vlieland om de hoek. Sport- en recreatiebedrijven in Harlingen hebben daardoor een publiek van zowel inwoners als toeristen. Ik zorg dat beide groepen jou online vinden.",
+      "localTitle": "Sport en recreatie aan de Waddenkust",
+      "local": [
+        "In Harlingen draait veel om het water: zeilen, suppen, kitesurfen en rondvaarten. Toeristen oriënteren zich vaak al weken van tevoren online, meestal op hun telefoon. Een snelle, mobielvriendelijke site met duidelijke boekingsmogelijkheid is dan geen luxe maar noodzaak.",
+        "Voor sportscholen en trainers in Harlingen en Franeker is de markt kleiner en persoonlijker. Hier werkt een sterk Google Bedrijfsprofiel met echte reviews vaak beter dan welke advertentie dan ook."
+      ],
+      "sectors": ["Watersport", "Recreatie", "Sportscholen", "Personal trainers", "Verenigingen"],
+      "faq": [
+        { "q": "Kan ik via mijn website ook direct boekingen ontvangen?", "a": "Ja. Ik kan een boekings- of reserveringssysteem koppelen aan je website, en met automatisering zorgen dat bevestigingen en herinneringen vanzelf worden verstuurd." },
+        { "q": "Is SEO in een kleinere stad als Harlingen de moeite waard?", "a": "Zeker. De concurrentie is kleiner, waardoor je vaak sneller bovenaan staat. Met relatief weinig inspanning kun je hier de lokale zoekresultaten domineren." }
+      ],
+      "nearby": ["franeker", "bolsward", "leeuwarden", "sneek"]
+    },
+    {
+      "slug": "franeker",
+      "name": "Franeker",
+      "province": "Friesland",
+      "footer": false,
+      "intro": "Franeker is de kaatshoofdstad van Nederland: elk jaar strijden hier de beste kaatsers om de PC. Die sportieve traditie leeft in de hele gemeente Waadhoeke. Ik help sportverenigingen, trainers en sportbedrijven in Franeker om online net zo'n sterke naam op te bouwen.",
+      "localTitle": "Traditie en sport in Waadhoeke",
+      "local": [
+        "In Franeker en omliggende dorpen zijn verenigingen het kloppend hart van het sportleven. Een goede verenigingswebsite maakt het voor nieuwe leden, ouders en sponsors makkelijk om te zien wat er te doen is en hoe ze mee kunnen doen.",
+        "Voor commerciële sportbedrijven, zoals sportscholen en fysiotherapeuten, is de lokale zoekmarkt overzichtelijk. Wie hier als eerste zijn website en Google Bedrijfsprofiel goed op orde heeft, staat vaak snel bovenaan bij zoektermen als 'sportschool Franeker'."
+      ],
+      "sectors": ["Kaatsverenigingen", "Voetbalclubs", "Sportscholen", "Fysiotherapie", "Evenementen"],
+      "faq": [
+        { "q": "Maak je ook websites voor sportverenigingen?", "a": "Ja. Voor verenigingen bouw ik overzichtelijke websites met ruimte voor nieuws, teams, sponsors en inschrijvingen, die het bestuur zelf eenvoudig kan bijhouden." },
+        { "q": "Hoe help je een sportevenement in Franeker aan meer bezoekers?", "a": "Met een duidelijke eventpagina, social media content in aanloop naar het evenement en goede vindbaarheid op zoektermen rond de datum en de sport. VoetbalFunNoord is daar een voorbeeld van." }
+      ],
+      "nearby": ["harlingen", "leeuwarden", "bolsward", "dokkum"]
+    },
+    {
+      "slug": "dokkum",
+      "name": "Dokkum",
+      "province": "Friesland",
+      "footer": false,
+      "intro": "Dokkum is de centrumplaats van Noordoost-Friesland en een van de Elfsteden. Veel inwoners uit de gemeenten Noardeast-Fryslân en Dantumadiel doen hier hun boodschappen, sporten hier en zoeken hier naar diensten. Ik zorg dat jouw sportbedrijf in Dokkum als eerste gevonden wordt.",
+      "localTitle": "Het sportcentrum van Noordoost-Friesland",
+      "local": [
+        "Het verzorgingsgebied van Dokkum is groot en landelijk. Mensen rijden vaak een stukje om bij een goede sportschool, trainer of fysiotherapeut te komen, en maken die keuze bijna altijd online. Reviews, foto's van je locatie en duidelijke informatie over tijden en prijzen wegen daarbij zwaar.",
+        "Omdat de online concurrentie in Noordoost-Friesland nog relatief beperkt is, is hier veel winst te behalen met lokale SEO. Een goed gebouwde website met pagina's voor Dokkum en de omliggende dorpen kan je in korte tijd de meest zichtbare aanbieder in de regio maken."
+      ],
+      "sectors": ["Sportscholen", "Personal trainers", "Voetbalverenigingen", "Fysiotherapie", "Sportwinkels"],
+      "faq": [
+        { "q": "Kan ik ook gevonden worden in dorpen rond Dokkum?", "a": "Ja. Met de juiste pagina's en een goed ingesteld servicegebied in je Google Bedrijfsprofiel word je ook gevonden door mensen uit Damwâld, Holwerd, Kollum en omgeving." },
+        { "q": "Is een nieuwe website nodig of kun je mijn huidige site verbeteren?", "a": "Dat hangt ervan af. Ik begin altijd met een gratis scan van je huidige site. Soms is optimaliseren genoeg, soms levert een nieuwe site meer op. Je krijgt een eerlijk advies." }
+      ],
+      "nearby": ["leeuwarden", "drachten", "franeker"]
+    },
+    {
+      "slug": "joure",
+      "name": "Joure",
+      "province": "Friesland",
+      "footer": false,
+      "intro": "Joure is de grootste plaats van De Fryske Marren en ligt midden tussen Heerenveen, Sneek en Lemmer. Voor sportbedrijven in Joure betekent dat een groot bereik, maar ook concurrentie uit de buurplaatsen. Met een sterke website en gerichte SEO zorg ik dat klanten uit de regio bij jou uitkomen.",
+      "localTitle": "Centraal gelegen in De Fryske Marren",
+      "local": [
+        "Door de ligging aan de A6 en A7 kiezen veel mensen uit De Fryske Marren voor Joure als sportlocatie. Tegelijk vergelijken ze online met aanbieders in Heerenveen en Sneek. Het verschil maak je met een website die direct laat zien waarom jij de beste keuze bent: duidelijk aanbod, echte reviews en een makkelijke manier om een proefles te boeken.",
+        "Ook de vele watersporters rond het Sneekermeer en de Fryske Marren zoeken naar lessen, verhuur en uitrusting. Voor ondernemers in die hoek bouw ik websites die zowel lokaal als bij toeristen goed scoren."
+      ],
+      "sectors": ["Sportscholen", "Watersport", "Personal trainers", "Verenigingen", "Fysiotherapie"],
+      "faq": [
+        { "q": "Hoe onderscheid ik me online van sportscholen in Heerenveen en Sneek?", "a": "Door je te richten op wat jou uniek maakt en daar gericht content over te maken, gecombineerd met sterke lokale SEO voor Joure en de dorpen eromheen. Zo win je de zoekers die dichtbij willen sporten." },
+        { "q": "Kan ik mijn website zelf bijhouden?", "a": "Ja. Ik lever websites op met een eenvoudig beheersysteem, zodat je zelf teksten, foto's en roosters kunt aanpassen. Je krijgt daarbij uitleg en 30 dagen gratis nazorg." }
+      ],
+      "nearby": ["heerenveen", "sneek", "lemmer", "gorredijk"]
+    },
+    {
+      "slug": "wolvega",
+      "name": "Wolvega",
+      "province": "Friesland",
+      "footer": false,
+      "intro": "Wolvega is de hoofdplaats van Weststellingwerf en landelijk bekend van draf- en renbaan Victoria Park. Voor sportbedrijven, maneges en trainers in Wolvega en omgeving bouw ik websites die lokaal goed gevonden worden en bezoekers omzetten in klanten.",
+      "localTitle": "Sport in de Stellingwerven",
+      "local": [
+        "In Wolvega en de dorpen van Weststellingwerf is de paardensport sterk vertegenwoordigd, naast de gebruikelijke sportscholen, verenigingen en fysiotherapeuten. Juist in deze niches zoeken mensen gericht online, vaak ook van buiten de regio.",
+        "Omdat Wolvega op de grens van Friesland, Overijssel en Drenthe ligt, bereik je met goede SEO ook zoekers uit Steenwijk en Noordwolde. Ik stem de website en je Google Bedrijfsprofiel af op dat hele gebied."
+      ],
+      "sectors": ["Paardensport", "Sportscholen", "Personal trainers", "Verenigingen", "Fysiotherapie"],
+      "faq": [
+        { "q": "Help je ook bedrijven in de paardensport?", "a": "Ja. Maneges, trainers en ruitersportwinkels hebben vaak een specifieke doelgroep die gericht zoekt. Met goede content en SEO bereik je die doelgroep ook ver buiten Wolvega." },
+        { "q": "Hoe ver is Wolvega van Wijnjewoude?", "a": "Wolvega ligt ook in de Stellingwerven, op zo'n half uur rijden. Langskomen voor een kennismaking is dus goed te doen." }
+      ],
+      "nearby": ["heerenveen", "oosterwolde", "lemmer", "joure"]
+    },
+    {
+      "slug": "bolsward",
+      "name": "Bolsward",
+      "province": "Friesland",
+      "footer": false,
+      "intro": "Bolsward is een historische Elfstedenstad in Súdwest-Fryslân, met een hechte gemeenschap en een actief verenigingsleven. Ik help sportbedrijven en verenigingen in Bolsward aan een moderne website die past bij hun ambitie en goed te vinden is in Google.",
+      "localTitle": "Een hechte sportgemeenschap",
+      "local": [
+        "In een stad als Bolsward gaat veel via mond-tot-mond. Toch checkt vrijwel iedereen eerst online voordat hij of zij zich aanmeldt bij een sportschool, trainer of club. Een verzorgde website en goede reviews bevestigen dan het positieve verhaal dat mensen al gehoord hebben.",
+        "De online concurrentie in Bolsward is nog beperkt. Dat maakt het relatief eenvoudig om met een goede website en lokale SEO bovenaan te komen, ook voor zoekers uit Workum, Makkum en Wommels."
+      ],
+      "sectors": ["Verenigingen", "Sportscholen", "Personal trainers", "Fysiotherapie", "Kaatsen"],
+      "faq": [
+        { "q": "Wat kost een website voor een sportbedrijf in Bolsward?", "a": "Dat hangt af van wat je nodig hebt. Na een gratis kennismaking ontvang je binnen 48 uur een offerte met een vaste prijs, zodat je nooit voor verrassingen komt te staan." },
+        { "q": "Help je ook met social media?", "a": "Ja. Naast websites en SEO maak ik social media content, van posts tot korte video's, die aansluiten bij je merk en je website." }
+      ],
+      "nearby": ["sneek", "harlingen", "franeker"]
+    },
+    {
+      "slug": "lemmer",
+      "name": "Lemmer",
+      "province": "Friesland",
+      "footer": false,
+      "intro": "Lemmer ligt aan het IJsselmeer en is een van de bekendste watersportplaatsen van Nederland, met het Woudagemaal als werelderfgoed. Voor watersport- en recreatiebedrijven, maar ook voor sportscholen en trainers in Lemmer, bouw ik websites die gevonden worden door zowel toeristen als inwoners.",
+      "localTitle": "Watersporthart aan het IJsselmeer",
+      "local": [
+        "In het zomerseizoen stromen watersporters uit heel Nederland en Duitsland naar Lemmer. Zij zoeken online naar verhuur, lessen, jachthavens en activiteiten, vaak pas op het moment zelf en op hun telefoon. Een snelle mobiele site met duidelijke informatie en een directe contactknop levert dan direct boekingen op.",
+        "Buiten het seizoen draait het om de eigen inwoners en die van De Fryske Marren. Met content die het hele jaar relevant is, blijf je zichtbaar en bouw je een vaste klantenkring op."
+      ],
+      "sectors": ["Watersport", "Recreatie", "Sportscholen", "Personal trainers", "Verhuur"],
+      "faq": [
+        { "q": "Kan ik ook buitenlandse toeristen bereiken?", "a": "Ja. Met een Duitse of Engelse versie van je belangrijkste pagina's en de juiste technische instellingen word je ook gevonden door buitenlandse bezoekers." },
+        { "q": "Hoe snel staat mijn website live?", "a": "Een gemiddelde website voor een sport- of recreatiebedrijf staat binnen enkele weken live. Je krijgt vooraf een planning met duidelijke mijlpalen." }
+      ],
+      "nearby": ["joure", "sneek", "wolvega", "heerenveen"]
+    },
+    {
+      "slug": "oosterwolde",
+      "name": "Oosterwolde",
+      "province": "Friesland",
+      "footer": false,
+      "intro": "Oosterwolde is de hoofdplaats van Ooststellingwerf, de gemeente waar ik zelf woon en werk. Voor sportbedrijven, verenigingen en ondernemers in Oosterwolde ben ik dus letterlijk de specialist om de hoek: kort op de bal, persoonlijk en bekend met de regio.",
+      "localTitle": "Mijn eigen gemeente: Ooststellingwerf",
+      "local": [
+        "Vanuit Wijnjewoude ken ik de sportclubs, sportscholen en ondernemers in Ooststellingwerf goed. Ik weet hoe mensen hier zoeken en kiezen: nuchter, lokaal en vaak op basis van aanbevelingen. Een website moet dat vertrouwen online bevestigen.",
+        "Omdat Oosterwolde tegen de grens met Drenthe ligt, bereik je met goede lokale SEO ook zoekers uit Appelscha, Donkerbroek, Haulerwijk en zelfs uit de kop van Drenthe."
+      ],
+      "sectors": ["Sportscholen", "Voetbalverenigingen", "Personal trainers", "Fysiotherapie", "Recreatie"],
+      "faq": [
+        { "q": "Je zit zelf in Ooststellingwerf, kun je snel langskomen?", "a": "Ja, ik woon in Wijnjewoude, dus Oosterwolde is om de hoek. Een kennismaking op jouw locatie is zo geregeld." },
+        { "q": "Help je ook bedrijven buiten de sportbranche?", "a": "Zeker. Mijn specialisatie is de sportbranche, maar ik maak er ook graag een sport van om andere lokale ondernemers in Oosterwolde te laten groeien." }
+      ],
+      "nearby": ["drachten", "gorredijk", "wolvega", "stadskanaal"]
+    },
+    {
+      "slug": "gorredijk",
+      "name": "Gorredijk",
+      "province": "Friesland",
+      "footer": false,
+      "intro": "Gorredijk is de hoofdplaats van Opsterland en ligt op steenworp afstand van Wijnjewoude. Voor sportbedrijven, trainers en verenigingen in Gorredijk en de omliggende dorpen bouw ik websites en SEO-strategieën die zorgen voor meer aanmeldingen en klanten.",
+      "localTitle": "Sport in Opsterland",
+      "local": [
+        "Opsterland bestaat uit een reeks dorpen rond Gorredijk, zoals Beetsterzwaag, Ureterp en Lippenhuizen. Mensen uit al die dorpen zoeken online naar een sportschool, trainer of fysiotherapeut in de buurt. Wie zijn website en Google Bedrijfsprofiel goed inricht, wordt in al die dorpen gevonden.",
+        "De online concurrentie in Opsterland is nog overzichtelijk. Met een professionele website en een paar goed geschreven pagina's kun je hier relatief snel de meest zichtbare aanbieder worden."
+      ],
+      "sectors": ["Sportscholen", "Personal trainers", "Verenigingen", "Fysiotherapie", "Buitensport"],
+      "faq": [
+        { "q": "Werk je veel in Opsterland?", "a": "Ja, Gorredijk ligt dicht bij Wijnjewoude. Ik ken de regio goed en kom graag langs voor een kennismaking." },
+        { "q": "Kan ik ook gevonden worden in Beetsterzwaag en Ureterp?", "a": "Ja. Met aparte content per dorp en een goed ingesteld servicegebied bereik je zoekers in heel Opsterland." }
+      ],
+      "nearby": ["drachten", "heerenveen", "oosterwolde", "joure"]
+    },
+    {
+      "slug": "groningen",
+      "name": "Groningen",
+      "province": "Groningen",
+      "footer": true,
+      "intro": "Groningen is de grootste stad van Noord-Nederland en een van de jongste steden van het land, met tienduizenden studenten die dagelijks sporten. De concurrentie tussen sportscholen, boxen, studio's en trainers is hier groot. Ik help sportbedrijven in Groningen om online op te vallen en structureel meer leden binnen te halen.",
+      "localTitle": "Studentenstad vol sporters",
+      "local": [
+        "Met FC Groningen, Donar, de ACLO en een enorme hoeveelheid sportscholen en boutique studio's is Groningen een echte sportstad. Veel jonge sporters kiezen hun sportschool op basis van Google-resultaten, Instagram en reviews. Wie daar niet sterk staat, verliest leden aan de concurrent een straat verderop.",
+        "In een stad van deze omvang loont het om per wijk of doelgroep te denken: studenten, young professionals, ouderen, vrouwen-only of juist krachtsport. Met gerichte landingspagina's en content voor elke groep word je gevonden op precies de zoektermen die bij jouw aanbod passen."
+      ],
+      "sectors": ["Sportscholen", "Boutique studio's", "CrossFit & functional", "Personal trainers", "Studentensport", "Sportvoeding"],
+      "faq": [
+        { "q": "Is SEO in Groningen niet te competitief?", "a": "Voor brede termen als 'sportschool Groningen' is het zeker competitief. Maar met specifieke zoektermen per wijk, doelgroep of sport kun je relatief snel bovenaan staan en die basis stap voor stap uitbreiden." },
+        { "q": "Kom je ook naar de stad Groningen?", "a": "Ja, Groningen is goed bereikbaar vanuit Wijnjewoude. Ik kom graag langs om je locatie en team te zien, of we spreken online af." }
+      ],
+      "nearby": ["hoogezand", "zuidhorn", "leek", "appingedam"]
+    },
+    {
+      "slug": "hoogezand",
+      "name": "Hoogezand",
+      "province": "Groningen",
+      "footer": false,
+      "intro": "Hoogezand is de grootste plaats van de gemeente Midden-Groningen en ligt vlak onder de stad Groningen. Sportbedrijven in Hoogezand en Sappemeer concurreren daardoor niet alleen met elkaar, maar ook met de stad. Ik zorg dat jouw bedrijf lokaal de logische keuze wordt.",
+      "localTitle": "Sporten in Midden-Groningen",
+      "local": [
+        "Veel inwoners van Hoogezand, Sappemeer, Slochteren en Kolham sporten liever dicht bij huis dan in de drukke stad. Die groep vind je door lokaal goed zichtbaar te zijn: een sterk Google Bedrijfsprofiel, reviews en een website die duidelijk maakt waar je zit en wat je biedt.",
+        "Met gerichte pagina's voor Midden-Groningen en de dorpen eromheen voorkom je dat zoekers doorklikken naar aanbieders in de stad. Zo haal je meer uit de mensen die al bij jou in de buurt wonen."
+      ],
+      "sectors": ["Sportscholen", "Personal trainers", "Verenigingen", "Fysiotherapie", "Zwem- en sportcentra"],
+      "faq": [
+        { "q": "Hoe voorkom ik dat klanten naar de stad Groningen gaan?", "a": "Door online te laten zien wat het voordeel is van sporten in Hoogezand: dichtbij, persoonlijk en vaak goedkoper. Gecombineerd met sterke lokale SEO sta je bovenaan voor zoekers in Midden-Groningen." },
+        { "q": "Kun je ook mijn Google Bedrijfsprofiel optimaliseren?", "a": "Ja, dat is een vast onderdeel van mijn lokale SEO-aanpak: categorieën, foto's, diensten, berichten en een systeem om structureel reviews te verzamelen." }
+      ],
+      "nearby": ["groningen", "veendam", "appingedam", "stadskanaal"]
+    },
+    {
+      "slug": "veendam",
+      "name": "Veendam",
+      "province": "Groningen",
+      "footer": false,
+      "intro": "Veendam is een van de grotere plaatsen in de Groninger Veenkoloniën, met een trouw publiek en een actief verenigingsleven. Voor sportscholen, trainers, verenigingen en sportwinkels in Veendam bouw ik websites die gevonden worden en vertrouwen wekken.",
+      "localTitle": "Sport in de Veenkoloniën",
+      "local": [
+        "Mensen in Veendam en omliggende dorpen als Wildervank en Ommelanderwijk zijn loyaal, maar kiezen wel bewust. Ze willen weten wie er achter een sportschool of trainer zit, wat het kost en wat anderen ervan vinden. Een persoonlijke website met duidelijke informatie en echte reviews speelt daar perfect op in.",
+        "Omdat de online concurrentie in de Veenkoloniën nog beperkt is, kun je met een goede website en lokale SEO vaak snel de nummer één positie pakken in Google."
+      ],
+      "sectors": ["Sportscholen", "Verenigingen", "Personal trainers", "Fysiotherapie", "Sportwinkels"],
+      "faq": [
+        { "q": "Hoe lang duurt het voordat ik resultaat zie in Veendam?", "a": "In een regio met weinig online concurrentie zie je vaak binnen enkele weken tot drie maanden verbetering, zeker als website en Google Bedrijfsprofiel samen worden aangepakt." },
+        { "q": "Doe je ook de teksten voor mijn website?", "a": "Ja. Ik schrijf de teksten mee, geoptimaliseerd voor Google en afgestemd op jouw doelgroep, zodat je je daar niet zelf mee bezig hoeft te houden." }
+      ],
+      "nearby": ["stadskanaal", "hoogezand", "winschoten"]
+    },
+    {
+      "slug": "stadskanaal",
+      "name": "Stadskanaal",
+      "province": "Groningen",
+      "footer": false,
+      "intro": "Stadskanaal is het centrum van de Zuidoost-Groninger Veenkoloniën en trekt klanten uit een groot gebied, tot in Drenthe aan toe. Ik help sportbedrijven in Stadskanaal om die hele regio online te bereiken met een sterke website en gerichte SEO.",
+      "localTitle": "Een groot verzorgingsgebied",
+      "local": [
+        "Mensen uit Musselkanaal, Onstwedde, Vlagtwedde en de Drentse grensdorpen komen naar Stadskanaal voor winkels, zorg en sport. Voor sportscholen, trainers en fysiotherapeuten betekent dat een groter bereik dan je op het eerste gezicht zou denken.",
+        "Met lokale landingspagina's en een goed ingesteld Google Bedrijfsprofiel zorg je dat je ook gevonden wordt door mensen die niet in Stadskanaal zelf wonen, maar er wel graag naartoe komen voor een goede sportlocatie."
+      ],
+      "sectors": ["Sportscholen", "Personal trainers", "Verenigingen", "Fysiotherapie", "Sportwinkels"],
+      "faq": [
+        { "q": "Kan ik ook zoekers uit Drenthe bereiken?", "a": "Ja. Met de juiste content en instellingen word je ook gevonden door mensen uit Drentse plaatsen rond Stadskanaal, zoals Nieuw-Buinen en Gasselternijveen." },
+        { "q": "Kun je ook terugkerende taken automatiseren?", "a": "Ja. Denk aan automatische bevestigingsmails, herinneringen voor proeflessen of het doorzetten van aanmeldingen naar je ledenadministratie. Dat scheelt je elke week uren." }
+      ],
+      "nearby": ["veendam", "winschoten", "oosterwolde"]
+    },
+    {
+      "slug": "winschoten",
+      "name": "Winschoten",
+      "province": "Groningen",
+      "footer": false,
+      "intro": "Winschoten is de hoofdplaats van Oldambt en bij hardlopers bekend van Run Winschoten, de internationale 100 kilometerloop. Voor sportscholen, trainers, verenigingen en sportwinkels in Winschoten en Oost-Groningen bouw ik websites die zorgen voor meer leden en klanten.",
+      "localTitle": "Sport in Oldambt",
+      "local": [
+        "Oldambt heeft een ruim buitengebied met dorpen als Scheemda, Midwolda en Finsterwolde. Voor die inwoners is Winschoten de logische plek om te sporten. Door lokaal goed zichtbaar te zijn, word jij hun eerste keuze.",
+        "Ook voor hardloop- en duursportbedrijven liggen hier kansen: met goede content rond trainingen, evenementen en uitrusting bereik je sporters uit de hele regio, en zelfs uit het nabijgelegen Duitsland."
+      ],
+      "sectors": ["Hardlopen", "Sportscholen", "Personal trainers", "Verenigingen", "Sportwinkels"],
+      "faq": [
+        { "q": "Kan ik met mijn sportwinkel in Winschoten ook online verkopen?", "a": "Ja. Ik bouw ook webshops, en met SEO voor productpagina's kun je klanten ver buiten Winschoten bereiken. De Sportpoeder-case laat zien wat dat kan opleveren." },
+        { "q": "Help je ook bij het promoten van een sportevenement?", "a": "Ja. Met een eventpagina, social media content en vindbaarheid rond de datum trek je meer deelnemers en bezoekers." }
+      ],
+      "nearby": ["veendam", "stadskanaal", "delfzijl"]
+    },
+    {
+      "slug": "delfzijl",
+      "name": "Delfzijl",
+      "province": "Groningen",
+      "footer": false,
+      "intro": "Delfzijl is de havenstad aan de Eems en de grootste plaats van de gemeente Eemsdelta. Voor sportbedrijven, verenigingen en recreatieondernemers in Delfzijl zorg ik voor een professionele online uitstraling en goede vindbaarheid in Google.",
+      "localTitle": "Sport en recreatie in de Eemsdelta",
+      "local": [
+        "In de Eemsdelta, met Delfzijl, Appingedam en Loppersum, wonen genoeg mensen om een sportbedrijf goed te laten draaien, zolang ze je maar kunnen vinden. Een sterke website en een goed ingericht Google Bedrijfsprofiel zijn daarvoor de basis.",
+        "Aan de waterkant liggen daarnaast kansen voor watersport en recreatie. Met een snelle, mobielvriendelijke website en de juiste zoektermen bereik je ook dagjesmensen en toeristen die de Groninger kust bezoeken."
+      ],
+      "sectors": ["Sportscholen", "Watersport", "Verenigingen", "Personal trainers", "Fysiotherapie"],
+      "faq": [
+        { "q": "Is een website echt nodig als ik al Facebook en Instagram heb?", "a": "Social media is een mooie aanvulling, maar mensen die in Google zoeken naar een sportschool of trainer in Delfzijl vinden je daar niet. Een eigen website is de plek die jij zelf in handen hebt en die gevonden wordt." },
+        { "q": "Kan mijn huidige website sneller?", "a": "Vaak wel. Ik begin met een gratis scan waarin ik onder andere snelheid, mobiel gebruik en vindbaarheid bekijk, en laat je zien waar de grootste winst zit." }
+      ],
+      "nearby": ["appingedam", "winschoten", "groningen"]
+    },
+    {
+      "slug": "appingedam",
+      "name": "Appingedam",
+      "province": "Groningen",
+      "footer": false,
+      "intro": "Appingedam is een historisch stadje in de Eemsdelta, bekend om zijn hangende keukens. De gemeenschap is hecht en het verenigingsleven sterk. Ik help sportbedrijven en verenigingen in Appingedam aan een website die past bij hun kwaliteit en goed gevonden wordt.",
+      "localTitle": "Klein, maar sportief",
+      "local": [
+        "In Appingedam kennen veel mensen elkaar, en aanbevelingen zijn goud waard. Toch zoekt ook hier bijna iedereen eerst online voordat hij of zij zich aanmeldt. Je website en Google-reviews moeten dan bevestigen wat mensen al gehoord hebben.",
+        "Omdat de online concurrentie beperkt is, kun je met relatief weinig moeite bovenaan staan in Google, niet alleen in Appingedam, maar ook in Delfzijl en de dorpen van de Eemsdelta."
+      ],
+      "sectors": ["Verenigingen", "Sportscholen", "Personal trainers", "Fysiotherapie"],
+      "faq": [
+        { "q": "Hoe krijg ik meer Google-reviews?", "a": "Door het vragen om een review een vast onderdeel te maken van je klantcontact, bijvoorbeeld met een automatische mail of WhatsApp na een proefles. Dat richt ik graag voor je in." },
+        { "q": "Maak je ook websites voor kleine verenigingen?", "a": "Ja. Ook voor kleinere clubs bouw ik overzichtelijke, betaalbare websites die het bestuur zelf kan bijhouden." }
+      ],
+      "nearby": ["delfzijl", "groningen", "hoogezand"]
+    },
+    {
+      "slug": "leek",
+      "name": "Leek",
+      "province": "Groningen",
+      "footer": false,
+      "intro": "Leek ligt in het Westerkwartier, net onder de stad Groningen en tegen de Friese grens, met Landgoed Nienoord als groene trekpleister. Voor sportcentra, sportscholen en trainers in Leek bouw ik websites die zowel lokaal als in de wijde omgeving goed gevonden worden.",
+      "localTitle": "Sport in het Westerkwartier",
+      "local": [
+        "Leek trekt sporters uit Tolbert, Zevenhuizen, Roden en zelfs uit de stad Groningen. Buitensport rond Nienoord, sportscholen en sportcentra: er is een breed aanbod, en dus ook concurrentie. Een website die duidelijk maakt wat jou anders maakt, is dan essentieel.",
+        "Met lokale SEO gericht op Leek en de dorpen in het Westerkwartier, gecombineerd met een sterk Google Bedrijfsprofiel, word je de eerste keuze voor mensen die dichtbij huis willen sporten."
+      ],
+      "sectors": ["Sportcentra", "Sportscholen", "Personal trainers", "Buitensport", "Verenigingen"],
+      "faq": [
+        { "q": "Kan ik ook gevonden worden door mensen uit Roden?", "a": "Ja. Leek en Roden liggen dicht bij elkaar. Met de juiste content en een goed ingesteld servicegebied bereik je zoekers aan beide kanten van de provinciegrens." },
+        { "q": "Wat houdt een gratis scan in?", "a": "Je vult een korte scan in over je bedrijf en online aanwezigheid. Daarna krijg je direct een indicatie van waar de kansen liggen, en neem ik contact met je op voor een vrijblijvend advies." }
+      ],
+      "nearby": ["zuidhorn", "groningen", "drachten"]
+    },
+    {
+      "slug": "zuidhorn",
+      "name": "Zuidhorn",
+      "province": "Groningen",
+      "footer": false,
+      "intro": "Zuidhorn is een groeiend dorp in het Westerkwartier, met veel jonge gezinnen en een directe treinverbinding met de stad Groningen. Voor sportscholen, trainers en verenigingen in Zuidhorn zorg ik voor een website die nieuwe inwoners direct naar jou leidt.",
+      "localTitle": "Groei in het Westerkwartier",
+      "local": [
+        "Nieuwe inwoners zoeken online naar alles in hun nieuwe woonplaats: een sportschool, zwemles voor de kinderen, een voetbalclub of een fysiotherapeut. Wie dan bovenaan staat in Google, heeft een streepje voor.",
+        "Door je website en Google Bedrijfsprofiel te richten op Zuidhorn en de omliggende dorpen, zoals Grijpskerk, Aduard en Noordhorn, ben je zichtbaar voor precies de mensen die dichtbij willen sporten."
+      ],
+      "sectors": ["Sportscholen", "Verenigingen", "Zwemscholen", "Personal trainers", "Fysiotherapie"],
+      "faq": [
+        { "q": "Hoe bereik ik nieuwe inwoners van Zuidhorn?", "a": "Door bovenaan te staan bij lokale zoektermen en actief te zijn op social media in de regio. Nieuwe inwoners zoeken vrijwel altijd eerst online." },
+        { "q": "Wat als ik al een website heb?", "a": "Dan kijk ik eerst wat er beter kan. Vaak is met technische verbeteringen, betere teksten en een paar extra pagina's al veel winst te behalen." }
+      ],
+      "nearby": ["leek", "groningen"]
+    }
+  ]
+}

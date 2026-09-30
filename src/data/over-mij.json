@@ -1,18 +1,18 @@
 {
   "marqueeTitle": "Sport, strategie en resultaat",
   "reel": [
-    { "type": "video", "src": "/assets/images/social-clip-1.mp4", "poster": "/assets/images/running.png" },
-    { "type": "video", "src": "/assets/images/social-clip-2.mp4", "poster": "/assets/images/football.png" },
-    { "type": "video", "src": "/assets/images/social-clip-3.mp4", "poster": "/assets/images/team-meeting.png" },
-    { "type": "image", "src": "/assets/images/running.png", "alt": "Bert-Jan aan het hardlopen" },
-    { "type": "image", "src": "/assets/images/football.png", "alt": "Bert-Jan aan de bal" }
+    { "type": "video", "src": "/assets/images/social-clip-1.mp4", "poster": "/assets/images/running.webp" },
+    { "type": "video", "src": "/assets/images/social-clip-2.mp4", "poster": "/assets/images/football.webp" },
+    { "type": "video", "src": "/assets/images/social-clip-3.mp4", "poster": "/assets/images/team-meeting.webp" },
+    { "type": "image", "src": "/assets/images/running.webp", "alt": "Bert-Jan aan het hardlopen" },
+    { "type": "image", "src": "/assets/images/football.webp", "alt": "Bert-Jan aan de bal" }
   ],
   "intro": {
     "title": "Sport, strategie en resultaat",
-    "photo": "/assets/images/running.png",
+    "photo": "/assets/images/running.webp",
     "text": "Ik ben Bert-Jan Russchen, jonge ondernemer met jarenlange werkervaring in marketing. Vanuit die praktijkkennis en een half jaar programmeren aan Harvard University help ik ondernemers in de sportwereld aan een sterke, visueel aantrekkelijke online strategie.",
     "tags": ["Sport", "Online Marketing", "Online Strategie", "SEO"],
-    "badgePhoto": "/assets/images/football.png",
+    "badgePhoto": "/assets/images/football.webp",
     "badgeLabel": "Bert-Jan Russchen, SportSEO Specialist",
     "badgeStat": { "value": "5+", "label": "jaar ervaring" }
   },
@@ -27,9 +27,9 @@
   "clients": {
     "title": "Bedrijven die zijn geholpen",
     "logos": [
-      { "src": "/assets/images/logo-sportpoeder.png", "alt": "Sportpoeder", "height": "28px" },
-      { "src": "/assets/images/logo-voetbalfunnoord.png", "alt": "VoetbalFunNoord", "height": "34px" },
-      { "src": "/assets/images/logo-rebuild.png", "alt": "Rebuild", "height": "26px" }
+      { "src": "/assets/images/logo-sportpoeder.webp", "alt": "Sportpoeder", "height": "28px" },
+      { "src": "/assets/images/logo-voetbalfunnoord.webp", "alt": "VoetbalFunNoord", "height": "34px" },
+      { "src": "/assets/images/logo-rebuild.webp", "alt": "Rebuild", "height": "26px" }
     ]
   },
   "kern": [
@@ -40,7 +40,7 @@
       "titleBold": "Sport",
       "text": "Sport zit in mijn DNA. Als actief sporter begrijp ik de wereld van sportbedrijven van binnenuit, hun uitdagingen, hun klanten en wat hen uniek maakt. Dat begrip vertaalt zich direct in sterkere content en een relevantere online aanwezigheid.",
       "tags": ["Actief sporter", "Branchekennis", "Sportnetwerk"],
-      "image": "/assets/images/football.png",
+      "image": "/assets/images/football.webp",
       "variant": "dark"
     },
     {
@@ -50,7 +50,7 @@
       "titleBold": "Marketing",
       "text": "Van SEO tot social media, ik weet hoe je online opvalt in een competitieve markt. Niet met losse trucjes, maar met een samenhangende strategie die past bij jouw merk en doelgroep in de sportwereld.",
       "tags": ["SEO & content", "Social media", "E-mailmarketing"],
-      "image": "/assets/images/laptop.png",
+      "image": "/assets/images/laptop.webp",
       "variant": "stone",
       "imageTag": "SPORT SEO"
     },
@@ -61,7 +61,7 @@
       "titleBold": "Optimalisatie",
       "text": "Slimmer werken, niet harder. Ik analyseer hoe jouw bedrijf draait, breng inefficiënties in kaart en bouw automatiseringen die uren per week besparen. Meer tijd voor je sporters, minder tijd aan administratie.",
       "tags": ["Workflow analyse", "Automatisering", "Systeemkoppelingen"],
-      "image": "/assets/images/notebook.png",
+      "image": "/assets/images/notebook.webp",
       "variant": "paper"
     },
     {
@@ -70,7 +70,7 @@
       "titleThin": "Sport",
       "titleBold": "Mentaliteit",
       "text": "Doorzetten, verbeteren en altijd streven naar het beste eindresultaat. Beslissingen op basis van cijfers, meetbare groei staat altijd centraal. Geen groot bureau, jij werkt direct met mij samen, zonder tussenpersonen.",
-      "image": "/assets/images/team-meeting.png",
+      "image": "/assets/images/team-meeting.webp",
       "variant": "mist"
     }
   ],
@@ -95,9 +95,9 @@
     "titleLine1": "De beste strategie is één die past bij wie je bent,",
     "titleLine2": "en voor mij begint dat altijd bij sport.",
     "images": [
-      { "src": "/assets/images/running.png", "alt": "Hardlopen als discipline", "tag": "SPORT SEO SPECIALIST®" },
-      { "src": "/assets/images/football.png", "alt": "Voetbal actie" },
-      { "src": "/assets/images/notebook.png", "alt": "Content strategie" }
+      { "src": "/assets/images/running.webp", "alt": "Hardlopen als discipline", "tag": "SPORT SEO SPECIALIST®" },
+      { "src": "/assets/images/football.webp", "alt": "Voetbal actie" },
+      { "src": "/assets/images/notebook.webp", "alt": "Content strategie" }
     ]
   }
 }

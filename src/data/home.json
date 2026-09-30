@@ -1,5 +1,6 @@
 {
   "hero": {
+    "h1": "Websites, SEO & marketing voor sportbedrijven in Friesland en Groningen",
     "titleLine1": "Branding",
     "titleLine2": "Content",
     "titleLine3": "Sport",
@@ -8,16 +9,16 @@
     "whoLinkLabel": "So... who are we?"
   },
   "logos": [
-    { "name": "Sportpoeder", "image": "/assets/images/logo-sportpoeder.png", "height": "32px" },
-    { "name": "VoetbalFunNoord", "image": "/assets/images/logo-voetbalfunnoord.png", "height": "38px" },
-    { "name": "Rebuild", "image": "/assets/images/logo-rebuild.png", "height": "30px" }
+    { "name": "Sportpoeder", "image": "/assets/images/logo-sportpoeder.webp", "height": "32px" },
+    { "name": "VoetbalFunNoord", "image": "/assets/images/logo-voetbalfunnoord.webp", "height": "38px" },
+    { "name": "Rebuild", "image": "/assets/images/logo-rebuild.webp", "height": "30px" }
   ],
   "arcCards": [
-    { "image": "/assets/images/team-meeting.png", "alt": "Strategie overleg", "mark": true },
-    { "image": "/assets/images/running.png", "alt": "Sport en discipline" },
-    { "image": "/assets/images/football.png", "alt": "Voetbal actie" },
-    { "image": "/assets/images/notebook.png", "alt": "Content aantekeningen" },
-    { "image": "/assets/images/laptop.png", "alt": "Website werk" }
+    { "image": "/assets/images/team-meeting.webp", "alt": "Strategie overleg", "mark": true },
+    { "image": "/assets/images/running.webp", "alt": "Sport en discipline" },
+    { "image": "/assets/images/football.webp", "alt": "Voetbal actie" },
+    { "image": "/assets/images/notebook.webp", "alt": "Content aantekeningen" },
+    { "image": "/assets/images/laptop.webp", "alt": "Website werk" }
   ],
   "aboutParagraphs": [
     "Als jonge ondernemer met jarenlange werkervaring in marketing weet ik wat er nodig is om online op te vallen. Sport drijft mij, en daarom richt ik mij juist op ondernemers in de sportwereld.",
@@ -31,24 +32,24 @@
   "work": {
     "tiles": [
       { "id": "rebuild", "label": "Rebuild", "armPrefix": "rebuild", "slides": [
-        { "src": "/assets/images/rebuild-slide-1.jpg", "alt": "Rebuild homepage" },
-        { "src": "/assets/images/rebuild-slide-2.jpg", "alt": "Rebuild programma" },
-        { "src": "/assets/images/rebuild-slide-7.jpg", "alt": "Vier lagen van Rebuild" },
-        { "src": "/assets/images/rebuild-slide-3.jpg", "alt": "Het traject" },
-        { "src": "/assets/images/rebuild-slide-4.jpg", "alt": "Reviews" },
-        { "src": "/assets/images/rebuild-slide-5.jpg", "alt": "Verhalen van deelnemers" },
-        { "src": "/assets/images/rebuild-slide-6.jpg", "alt": "Het Rebuild team" },
-        { "src": "/assets/images/rebuild-slide-8.jpg", "alt": "Rebuild community" }
+        { "src": "/assets/images/rebuild-slide-1.webp", "alt": "Rebuild homepage" },
+        { "src": "/assets/images/rebuild-slide-2.webp", "alt": "Rebuild programma" },
+        { "src": "/assets/images/rebuild-slide-7.webp", "alt": "Vier lagen van Rebuild" },
+        { "src": "/assets/images/rebuild-slide-3.webp", "alt": "Het traject" },
+        { "src": "/assets/images/rebuild-slide-4.webp", "alt": "Reviews" },
+        { "src": "/assets/images/rebuild-slide-5.webp", "alt": "Verhalen van deelnemers" },
+        { "src": "/assets/images/rebuild-slide-6.webp", "alt": "Het Rebuild team" },
+        { "src": "/assets/images/rebuild-slide-8.webp", "alt": "Rebuild community" }
       ]},
       { "id": "sportpoeder", "label": "Sportpoeder", "armPrefix": "sportpoeder", "slides": [
-        { "src": "/assets/images/sportpoeder-slide-1.jpg", "alt": "Sportpoeder homepage" },
-        { "src": "/assets/images/sportpoeder-slide-2.jpg", "alt": "Populair en sales" },
-        { "src": "/assets/images/sportpoeder-slide-3.jpg", "alt": "Deal van de dag" },
-        { "src": "/assets/images/sportpoeder-slide-4.jpg", "alt": "Shop per merk" },
-        { "src": "/assets/images/sportpoeder-slide-8.jpg", "alt": "Deals voor jou" },
-        { "src": "/assets/images/sportpoeder-slide-5.jpg", "alt": "Productvergelijker" },
-        { "src": "/assets/images/sportpoeder-slide-6.jpg", "alt": "Kortingscodes" },
-        { "src": "/assets/images/sportpoeder-slide-7.jpg", "alt": "Footer" }
+        { "src": "/assets/images/sportpoeder-slide-1.webp", "alt": "Sportpoeder homepage" },
+        { "src": "/assets/images/sportpoeder-slide-2.webp", "alt": "Populair en sales" },
+        { "src": "/assets/images/sportpoeder-slide-3.webp", "alt": "Deal van de dag" },
+        { "src": "/assets/images/sportpoeder-slide-4.webp", "alt": "Shop per merk" },
+        { "src": "/assets/images/sportpoeder-slide-8.webp", "alt": "Deals voor jou" },
+        { "src": "/assets/images/sportpoeder-slide-5.webp", "alt": "Productvergelijker" },
+        { "src": "/assets/images/sportpoeder-slide-6.webp", "alt": "Kortingscodes" },
+        { "src": "/assets/images/sportpoeder-slide-7.webp", "alt": "Footer" }
       ]}
     ]
   },
@@ -57,16 +58,16 @@
     "title": "ChatGPT Ads",
     "description": "We bieden nu ook ChatGPT Ads aan, zodat je klanten bereikt daar waar ze zoeken naar antwoorden. Jouw advertentie verschijnt direct in de gesprekken van AI-chatbots, precies op het moment dat iemand op zoek is naar een oplossing. Zo sta je vooraan bij een nieuwe generatie zoekgedrag, nog voordat je concurrenten er zijn.",
     "ctaLabel": "Meer info",
-    "ctaHref": "/diensten#chatgpt-ads",
-    "image": "/assets/images/chatgpt-ads.png",
+    "ctaHref": "/diensten/#chatgpt-ads",
+    "image": "/assets/images/chatgpt-ads.webp",
     "imageAlt": "ChatGPT Ads"
   },
   "socials": {
     "title": "Onze socials",
     "posts": [
-      { "image": "/assets/images/social-post-1.png", "alt": "Nieuwe website online" },
-      { "image": "/assets/images/social-post-2.png", "alt": "Website analyse BigGym" },
-      { "image": "/assets/images/social-post-nieuwe-website.png", "alt": "Nieuwe website transformatie" }
+      { "image": "/assets/images/social-post-1.webp", "alt": "Nieuwe website online" },
+      { "image": "/assets/images/social-post-2.webp", "alt": "Website analyse BigGym" },
+      { "image": "/assets/images/social-post-nieuwe-website.webp", "alt": "Nieuwe website transformatie" }
     ]
   },
   "final": {
@@ -75,6 +76,6 @@
     "titleLine3": "potentieel",
     "subtitle": "Ontdek waar jouw merk nog groei, aandacht en momentum laat liggen.",
     "note": "Vrijblijvend",
-    "image": "/assets/images/bertjan-portrait.png"
+    "image": "/assets/images/bertjan-portrait.webp"
   }
 }

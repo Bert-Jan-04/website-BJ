@@ -1,0 +1,98 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ScanModal from '../../components/ScanModal.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post, posts } }));
+}
+
+const { post, posts } = Astro.props;
+const { Content } = await render(post);
+const siteUrl = Astro.site!.href.replace(/\/$/, '');
+const fmt = (d: Date) => d.toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' });
+const words = (post.body ?? '').split(/\s+/).length;
+const readMinutes = Math.max(1, Math.round(words / 220));
+const image = post.data.image ?? '/assets/images/og-default.jpg';
+const related = posts.filter((p) => p.id !== post.id).slice(0, 3);
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.data.title,
+    description: post.data.description,
+    image: new URL(image, Astro.site).href,
+    datePublished: post.data.pubDate.toISOString(),
+    dateModified: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
+    inLanguage: 'nl-NL',
+    mainEntityOfPage: `${siteUrl}/blog/${post.id}/`,
+    author: { '@type': 'Person', name: 'Bert-Jan Russchen', url: `${siteUrl}/over-mij/` },
+    publisher: { '@id': `${siteUrl}/#business` },
+  },
+];
+---
+
+<BaseLayout
+  title={post.data.title.length > 45 ? post.data.title : `${post.data.title} | SportSEO Specialist`}
+  description={post.data.description}
+  current="blog"
+  type="article"
+  image={image}
+  breadcrumbs={[{ name: 'Blog', path: '/blog/' }, { name: post.data.title, path: `/blog/${post.id}/` }]}
+  schema={schema}
+>
+  <main id="top">
+    <section class="page-hero" style="padding-bottom:70px;">
+      <ol class="crumbs">
+        <li><a href="/">Home</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li>{post.data.category}</li>
+      </ol>
+      <h1 style="font-size:clamp(34px,5vw,64px);">{post.data.title}</h1>
+      <div class="post-meta">
+        <span>{post.data.category}</span>
+        <time datetime={post.data.pubDate.toISOString()}>{fmt(post.data.pubDate)}</time>
+        <span style="color:inherit;font-weight:500;">{readMinutes} min lezen</span>
+        <span style="color:inherit;font-weight:500;">Door <a href="/over-mij/" style="text-decoration:underline;">Bert-Jan Russchen</a></span>
+      </div>
+    </section>
+
+    <article class="lp-section lp-section--light" data-theme="light">
+      <div class="lp-inner lp-inner--narrow prose">
+        <Content />
+      </div>
+    </article>
+
+    <section class="cta-band">
+      <h2>Hulp nodig bij jouw vindbaarheid?</h2>
+      <p>Start de gratis scan en ontdek in een paar minuten waar jouw grootste kansen liggen.</p>
+      <div class="hero-ctas">
+        <button type="button" class="btn btn-solid" data-open-scan>Start gratis scan</button>
+        <a class="btn btn-ghost" href="/diensten/">Bekijk diensten</a>
+      </div>
+    </section>
+
+    {related.length > 0 && (
+      <section class="lp-section lp-section--stone" data-theme="light">
+        <div class="lp-inner">
+          <p class="eyebrow">Verder lezen</p>
+          <h2>Meer artikelen</h2>
+          <div class="post-list" style="margin-top:32px;">
+            {related.map((p) => (
+              <a class="post-card" href={`/blog/${p.id}/`}>
+                <div class="post-meta"><span>{p.data.category}</span></div>
+                <h3>{p.data.title}</h3>
+                <p>{p.data.description}</p>
+                <span class="lp-more">Lees artikel →</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+  </main>
+
+  <ScanModal />
+</BaseLayout>

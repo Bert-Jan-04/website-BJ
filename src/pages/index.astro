@@ -7,19 +7,24 @@ import home from '../data/home.json';
 const mailHref = `mailto:${site.email}`;
 ---
 
-<BaseLayout title="SportSEO Specialist — Branding, content en websites voor de sportbranche" description={home.hero.subtitle} current="home">
+<BaseLayout
+  title="Websites & SEO voor sportbedrijven | SportSEO Specialist"
+  description="Websites, SEO en online marketing voor sportscholen, clubs en sportwinkels in Friesland, Groningen en heel Nederland. Vraag een gratis scan aan."
+  current="home"
+>
   <main id="top">
     <section class="hero">
-      <h1>
+      <h1 class="hero-kicker">{home.hero.h1}</h1>
+      <p class="hero-title" aria-hidden="true">
         <span>{home.hero.titleLine1}</span>
         <span>{home.hero.titleLine2}</span>
         <span>{home.hero.titleLine3}</span>
-      </h1>
+      </p>
       <p class="hero-sub">{home.hero.subtitle}</p>
       <div class="hero-ctas">
         <button class="btn btn-solid" type="button" data-open-scan>{home.hero.ctaLabel}</button>
         <a class="who-link" href="#about">
-          <img src="/assets/images/team-meeting.png" alt="Sport SEO Specialist" />
+          <img src="/assets/images/team-meeting.webp" alt="Bert-Jan Russchen, SportSEO Specialist" width="467" height="558" />
           <span>{home.hero.whoLinkLabel}</span>
         </a>
       </div>
@@ -28,7 +33,7 @@ const mailHref = `mailto:${site.email}`;
     <section class="clients-section" id="about">
       <div class="logo-wall" aria-label="Bedrijven die ik help">
         {home.logos.map((logo) => (
-          <img src={logo.image} alt={logo.name} style={`height:${logo.height};width:auto;filter:grayscale(1) brightness(1.7);`} />
+          <img loading="lazy" decoding="async" src={logo.image} alt={logo.name} style={`height:${logo.height};width:auto;filter:grayscale(1) brightness(1.7);`} />
         ))}
       </div>
 
@@ -38,7 +43,7 @@ const mailHref = `mailto:${site.email}`;
           const ys = [50, 20, 0, 20, 50];
           return (
             <article class="arc-card" style={`--r:${rotations[i]}deg; --y:${ys[i]}px;`}>
-              <img src={card.image} alt={card.alt} />
+              <img loading="lazy" decoding="async" src={card.image} alt={card.alt} />
               {card.mark && <span class="arc-mark">SPORT SEO SPECIALIST</span>}
             </article>
           );
@@ -63,18 +68,18 @@ const mailHref = `mailto:${site.email}`;
     <section class="work-section" id="work">
       <div class="work-grid">
         {home.work.tiles.map((tile) => (
-          <a class="work-tile" href="/cases">
+          <a class="work-tile" href="/cases/">
             <div class="tablet-mock">
               <div class="tablet-mock-inner">
                 <div class="tablet-mock-rig">
-                  <img class="tablet-mock-arm tl" src={`/assets/images/${tile.armPrefix}-arm-tl.png`} alt="" />
-                  <img class="tablet-mock-arm br" src={`/assets/images/${tile.armPrefix}-arm-br.png`} alt="" />
+                  <img loading="lazy" decoding="async" class="tablet-mock-arm tl" src={`/assets/images/${tile.armPrefix}-arm-tl.webp`} alt="" />
+                  <img loading="lazy" decoding="async" class="tablet-mock-arm br" src={`/assets/images/${tile.armPrefix}-arm-br.webp`} alt="" />
                   <div class="tablet-mock-bezel">
                     <span class="tablet-mock-cam"></span>
                     <div class="tablet-mock-screen">
                       <div class="tablet-mock-film">
-                        {tile.slides.map((slide) => <img src={slide.src} alt={slide.alt} />)}
-                        <img src={tile.slides[0].src} alt="" />
+                        {tile.slides.map((slide) => <img loading="lazy" decoding="async" src={slide.src} alt={slide.alt} />)}
+                        <img loading="lazy" decoding="async" src={tile.slides[0].src} alt="" />
                       </div>
                     </div>
                   </div>
@@ -97,7 +102,7 @@ const mailHref = `mailto:${site.email}`;
           <a class="btn btn-solid" href={home.serviceAlert.ctaHref}>{home.serviceAlert.ctaLabel}</a>
         </div>
         <div class="alert-media">
-          <img src={home.serviceAlert.image} alt={home.serviceAlert.imageAlt} />
+          <img loading="lazy" decoding="async" src={home.serviceAlert.image} alt={home.serviceAlert.imageAlt} />
         </div>
       </div>
     </section>
@@ -110,7 +115,7 @@ const mailHref = `mailto:${site.email}`;
       <div class="tiktok-grid">
         {home.socials.posts.map((post, i) => (
           <article class="video-card">
-            <img src={post.image} alt={post.alt} />
+            <img loading="lazy" decoding="async" src={post.image} alt={post.alt} />
             {i === 1 && <a class="btn btn-dark video-cta" href={mailHref}>Contact opnemen</a>}
           </article>
         ))}
@@ -130,7 +135,7 @@ const mailHref = `mailto:${site.email}`;
       </div>
       <div class="final-visual">
         <span class="giant-word"><b>SEO</b>SPORT</span>
-        <img src={home.final.image} alt="Bert-Jan Russchen" />
+        <img loading="lazy" decoding="async" src={home.final.image} alt="Bert-Jan Russchen" />
       </div>
     </section>
   </main>

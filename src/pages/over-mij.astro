@@ -7,7 +7,7 @@ const reel = [...about.reel, ...about.reel];
 const kernBg: Record<string, string> = { dark: 'kern--dark', stone: 'kern--stone', paper: 'kern--paper', mist: 'kern--mist' };
 ---
 
-<BaseLayout title="Over mij — SportSEO Specialist" description={about.intro.text} current="over-mij" showKernPager={true}>
+<BaseLayout title="Over Bert-Jan Russchen | SportSEO Specialist" description="Bert-Jan Russchen uit Wijnjewoude: marketeer, sportliefhebber en bouwer van websites die scoren in Google. Lees mijn verhaal en werkwijze." current="over-mij" showKernPager={true} breadcrumbs={[{ name: 'Over mij', path: '/over-mij/' }]}>
   <main id="top">
     <section class="about-hero">
       <h1 class="title-marquee">
@@ -37,7 +37,7 @@ const kernBg: Record<string, string> = { dark: 'kern--dark', stone: 'kern--stone
       <h2 style="max-width:720px;font-size:clamp(36px,5vw,68px);line-height:.95;letter-spacing:-.045em;margin-bottom:36px;color:#fff;">{about.intro.title}</h2>
       <div class="excellence-grid">
         <figure class="excellence-photo">
-          <img src={about.intro.photo} alt="Bert-Jan aan het hardlopen" />
+          <img loading="lazy" decoding="async" src={about.intro.photo} alt="Bert-Jan aan het hardlopen" />
         </figure>
         <div class="excellence-side">
           <p>{about.intro.text}</p>
@@ -50,7 +50,7 @@ const kernBg: Record<string, string> = { dark: 'kern--dark', stone: 'kern--stone
               <strong>{about.intro.badgeStat.value}</strong>
               <span>{about.intro.badgeStat.label}</span>
             </span>
-            <img src={about.intro.badgePhoto} alt="Bert-Jan aan de bal" />
+            <img loading="lazy" decoding="async" src={about.intro.badgePhoto} alt="Bert-Jan aan de bal" />
           </figure>
         </div>
       </div>
@@ -69,7 +69,7 @@ const kernBg: Record<string, string> = { dark: 'kern--dark', stone: 'kern--stone
       <div class="partner-marquee" aria-label="Merken">
         <div class="partner-marquee__track">
           {[...about.clients.logos, ...about.clients.logos].map((logo) => (
-            <span><img src={logo.src} alt={logo.alt} style={`height:${logo.height};`} /></span>
+            <span><img loading="lazy" decoding="async" src={logo.src} alt={logo.alt} style={`height:${logo.height};`} /></span>
           ))}
         </div>
       </div>
@@ -88,7 +88,7 @@ const kernBg: Record<string, string> = { dark: 'kern--dark', stone: 'kern--stone
         )}
         <figure class={`kern-media ${section.imageTag ? 'kern-media--dark' : ''}`}>
           {section.imageTag && <span class="kern-media-tag">{section.imageTag}</span>}
-          <img src={section.image} alt={section.titleBold} />
+          <img loading="lazy" decoding="async" src={section.image} alt={section.titleBold} />
         </figure>
       </section>
     ))}
@@ -105,7 +105,7 @@ const kernBg: Record<string, string> = { dark: 'kern--dark', stone: 'kern--stone
           </div>
         ))}
       </div>
-      <a href="/contact" class="btn" style="background:#111;color:#fff;margin-bottom:56px;">{about.manifesto.buttonLabel}</a>
+      <a href="/contact/" class="btn" style="background:#111;color:#fff;margin-bottom:56px;">{about.manifesto.buttonLabel}</a>
       <div class="manifesto-stats">
         {about.manifesto.stats.map((stat) => (
           <div><strong>{stat.value}</strong><span>{stat.label}</span></div>
@@ -121,7 +121,7 @@ const kernBg: Record<string, string> = { dark: 'kern--dark', stone: 'kern--stone
       <div class="decade-grid">
         {about.closing.images.map((img) => (
           <article>
-            <img src={img.src} alt={img.alt} />
+            <img loading="lazy" decoding="async" src={img.src} alt={img.alt} />
             {img.tag && <span class="tag">{img.tag}</span>}
           </article>
         ))}

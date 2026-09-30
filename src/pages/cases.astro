@@ -4,7 +4,7 @@ import ScanModal from '../components/ScanModal.astro';
 import cases from '../data/cases.json';
 ---
 
-<BaseLayout title="Klantcases — SportSEO Specialist" description={cases.hero.subtitle} current="cases">
+<BaseLayout title="Klantcases & resultaten | SportSEO Specialist" description="Websites en SEO-resultaten voor Sportpoeder, Rebuild en VoetbalFunNoord, waaronder +113% organische klikken in 6 maanden voor Sportpoeder." current="cases" breadcrumbs={[{ name: 'Klantcases', path: '/cases/' }]}>
   <main id="top">
     <section style="padding:60px 24px 80px;">
       <h1 style="font-size:clamp(38px,6.4vw,84px);line-height:1;letter-spacing:-.04em;font-weight:900;color:#fff;max-width:820px;margin:0 0 24px;">{cases.hero.title}</h1>
@@ -18,14 +18,14 @@ import cases from '../data/cases.json';
             <div class="tablet-mock" style={i % 2 === 1 ? 'order:1;' : undefined}>
               <div class="tablet-mock-inner">
                 <div class="tablet-mock-rig">
-                  <img class="tablet-mock-arm tl" src={`/assets/images/${item.armPrefix}-arm-tl.png`} alt="" />
-                  <img class="tablet-mock-arm br" src={`/assets/images/${item.armPrefix}-arm-br.png`} alt="" />
+                  <img loading="lazy" decoding="async" class="tablet-mock-arm tl" src={`/assets/images/${item.armPrefix}-arm-tl.webp`} alt="" />
+                  <img loading="lazy" decoding="async" class="tablet-mock-arm br" src={`/assets/images/${item.armPrefix}-arm-br.webp`} alt="" />
                   <div class="tablet-mock-bezel">
                     <span class="tablet-mock-cam"></span>
                     <div class="tablet-mock-screen">
                       <div class="tablet-mock-film">
-                        {item.slides.map((slide) => <img src={slide.src} alt={slide.alt} />)}
-                        <img src={item.slides[0].src} alt="" />
+                        {item.slides.map((slide) => <img loading="lazy" decoding="async" src={slide.src} alt={slide.alt} />)}
+                        <img loading="lazy" decoding="async" src={item.slides[0].src} alt="" />
                       </div>
                     </div>
                   </div>
@@ -33,7 +33,7 @@ import cases from '../data/cases.json';
               </div>
             </div>
             <div style={i % 2 === 1 ? 'order:2;' : undefined}>
-              <img src={item.logo} alt={item.id} style={`height:${item.logoHeight};width:auto;margin-bottom:20px;${item.grayscaleLogo ? 'filter:grayscale(1) brightness(0);' : ''}`} />
+              <img loading="lazy" decoding="async" src={item.logo} alt={item.id} style={`height:${item.logoHeight};width:auto;margin-bottom:20px;${item.grayscaleLogo ? 'filter:grayscale(1) brightness(0);' : ''}`} />
               <h2 style="font-size:clamp(28px,3.4vw,44px);font-weight:800;letter-spacing:-.03em;margin:0 0 16px;">{item.title}</h2>
               <p style="font-size:16px;line-height:1.6;color:#333;margin:0 0 20px;">{item.description}</p>
               {item.stats && (

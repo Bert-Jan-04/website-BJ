@@ -6,27 +6,27 @@
   "cases": [
     {
       "id": "rebuild",
-      "logo": "/assets/images/logo-rebuild.png",
+      "logo": "/assets/images/logo-rebuild.webp",
       "logoHeight": "26px",
       "title": "Website voor een coachingtraject",
       "description": "Rebuild is een zes maanden durend persoonlijk coachingtraject. Ik bouwde de website: van landingspagina en programma-uitleg tot reviews en het team, volledig ingericht om aanmeldingen voor kennismakingsgesprekken op te halen.",
       "tags": ["Website design", "Copy & structuur", "Conversie"],
       "armPrefix": "rebuild",
       "slides": [
-        { "src": "/assets/images/rebuild-slide-1.jpg", "alt": "Rebuild homepage" },
-        { "src": "/assets/images/rebuild-slide-2.jpg", "alt": "Rebuild programma" },
-        { "src": "/assets/images/rebuild-slide-7.jpg", "alt": "Vier lagen van Rebuild" },
-        { "src": "/assets/images/rebuild-slide-3.jpg", "alt": "Het traject" },
-        { "src": "/assets/images/rebuild-slide-4.jpg", "alt": "Reviews" },
-        { "src": "/assets/images/rebuild-slide-5.jpg", "alt": "Verhalen van deelnemers" },
-        { "src": "/assets/images/rebuild-slide-6.jpg", "alt": "Het Rebuild team" },
-        { "src": "/assets/images/rebuild-slide-8.jpg", "alt": "Rebuild community" }
+        { "src": "/assets/images/rebuild-slide-1.webp", "alt": "Rebuild homepage" },
+        { "src": "/assets/images/rebuild-slide-2.webp", "alt": "Rebuild programma" },
+        { "src": "/assets/images/rebuild-slide-7.webp", "alt": "Vier lagen van Rebuild" },
+        { "src": "/assets/images/rebuild-slide-3.webp", "alt": "Het traject" },
+        { "src": "/assets/images/rebuild-slide-4.webp", "alt": "Reviews" },
+        { "src": "/assets/images/rebuild-slide-5.webp", "alt": "Verhalen van deelnemers" },
+        { "src": "/assets/images/rebuild-slide-6.webp", "alt": "Het Rebuild team" },
+        { "src": "/assets/images/rebuild-slide-8.webp", "alt": "Rebuild community" }
       ],
       "grayscaleLogo": false
     },
     {
       "id": "sportpoeder",
-      "logo": "/assets/images/logo-sportpoeder.png",
+      "logo": "/assets/images/logo-sportpoeder.webp",
       "logoHeight": "28px",
       "title": "Sportpoeder × SportSEO Specialist",
       "description": "In 6 maanden tijd groeide de organische vindbaarheid van Sportpoeder aanzienlijk door een gerichte SEO-strategie en consistente content.",
@@ -40,34 +40,34 @@
       "tags": ["E-commerce", "Website design", "UX"],
       "armPrefix": "sportpoeder",
       "slides": [
-        { "src": "/assets/images/sportpoeder-slide-1.jpg", "alt": "Sportpoeder homepage" },
-        { "src": "/assets/images/sportpoeder-slide-2.jpg", "alt": "Populair en sales" },
-        { "src": "/assets/images/sportpoeder-slide-3.jpg", "alt": "Deal van de dag" },
-        { "src": "/assets/images/sportpoeder-slide-4.jpg", "alt": "Shop per merk" },
-        { "src": "/assets/images/sportpoeder-slide-8.jpg", "alt": "Deals voor jou" },
-        { "src": "/assets/images/sportpoeder-slide-5.jpg", "alt": "Productvergelijker" },
-        { "src": "/assets/images/sportpoeder-slide-6.jpg", "alt": "Kortingscodes" },
-        { "src": "/assets/images/sportpoeder-slide-7.jpg", "alt": "Footer" }
+        { "src": "/assets/images/sportpoeder-slide-1.webp", "alt": "Sportpoeder homepage" },
+        { "src": "/assets/images/sportpoeder-slide-2.webp", "alt": "Populair en sales" },
+        { "src": "/assets/images/sportpoeder-slide-3.webp", "alt": "Deal van de dag" },
+        { "src": "/assets/images/sportpoeder-slide-4.webp", "alt": "Shop per merk" },
+        { "src": "/assets/images/sportpoeder-slide-8.webp", "alt": "Deals voor jou" },
+        { "src": "/assets/images/sportpoeder-slide-5.webp", "alt": "Productvergelijker" },
+        { "src": "/assets/images/sportpoeder-slide-6.webp", "alt": "Kortingscodes" },
+        { "src": "/assets/images/sportpoeder-slide-7.webp", "alt": "Footer" }
       ],
       "grayscaleLogo": true
     },
     {
       "id": "voetbalfunnoord",
-      "logo": "/assets/images/logo-voetbalfunnoord.png",
+      "logo": "/assets/images/logo-voetbalfunnoord.webp",
       "logoHeight": "32px",
       "title": "Website voor een voetbalevenement",
       "description": "VoetbalFunNoord organiseert voetbalactiviteiten in Noord-Nederland. Ik bouwde de website: van homepage en attracties tot impressies en een contactpagina met FAQ.",
       "tags": ["Website design", "Sportbranche"],
       "armPrefix": "voetbalfunnoord",
       "slides": [
-        { "src": "/assets/images/voetbalfunnoord-slide-1.jpg", "alt": "VoetbalFunNoord homepage" },
-        { "src": "/assets/images/voetbalfunnoord-slide-2.jpg", "alt": "Waarom VoetbalFunNoord" },
-        { "src": "/assets/images/voetbalfunnoord-slide-3.jpg", "alt": "Populairste attracties" },
-        { "src": "/assets/images/voetbalfunnoord-slide-4.jpg", "alt": "Attracties en over ons" },
-        { "src": "/assets/images/voetbalfunnoord-slide-5.jpg", "alt": "Over VoetbalFunNoord" },
-        { "src": "/assets/images/voetbalfunnoord-slide-6.jpg", "alt": "Impressies" },
-        { "src": "/assets/images/voetbalfunnoord-slide-7.jpg", "alt": "Wat wij organiseren" },
-        { "src": "/assets/images/voetbalfunnoord-slide-8.jpg", "alt": "Contact en FAQ" }
+        { "src": "/assets/images/voetbalfunnoord-slide-1.webp", "alt": "VoetbalFunNoord homepage" },
+        { "src": "/assets/images/voetbalfunnoord-slide-2.webp", "alt": "Waarom VoetbalFunNoord" },
+        { "src": "/assets/images/voetbalfunnoord-slide-3.webp", "alt": "Populairste attracties" },
+        { "src": "/assets/images/voetbalfunnoord-slide-4.webp", "alt": "Attracties en over ons" },
+        { "src": "/assets/images/voetbalfunnoord-slide-5.webp", "alt": "Over VoetbalFunNoord" },
+        { "src": "/assets/images/voetbalfunnoord-slide-6.webp", "alt": "Impressies" },
+        { "src": "/assets/images/voetbalfunnoord-slide-7.webp", "alt": "Wat wij organiseren" },
+        { "src": "/assets/images/voetbalfunnoord-slide-8.webp", "alt": "Contact en FAQ" }
       ],
       "grayscaleLogo": true
     }

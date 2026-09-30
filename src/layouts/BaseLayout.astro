@@ -1,15 +1,70 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import site from '../data/site.json';
+
+export type PageKey = 'home' | 'diensten' | 'cases' | 'over-mij' | 'contact' | 'regio' | 'blog';
 
 interface Props {
   title: string;
   description?: string;
-  current: 'home' | 'diensten' | 'cases' | 'over-mij' | 'contact';
+  current: PageKey;
   showKernPager?: boolean;
+  image?: string;
+  type?: 'website' | 'article';
+  breadcrumbs?: { name: string; path: string }[];
+  schema?: Record<string, unknown>[];
 }
 
-const { title, description, current, showKernPager } = Astro.props;
+const { title, description, current, showKernPager, image = '/assets/images/og-default.jpg', type = 'website', breadcrumbs, schema = [] } = Astro.props;
+
+const siteUrl = Astro.site!.href.replace(/\/$/, '');
+const path = Astro.url.pathname.replace(/\/?(index)?(\.html)?$/, '/');
+const canonical = siteUrl + path;
+const imageUrl = new URL(image, Astro.site).href;
+
+const businessId = `${siteUrl}/#business`;
+const business = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  '@id': businessId,
+  name: site.companyName,
+  url: `${siteUrl}/`,
+  image: `${siteUrl}/assets/images/og-default.jpg`,
+  logo: `${siteUrl}/assets/images/logo.webp`,
+  description: 'Websites, SEO, online marketing en automatisering voor sportbedrijven in Friesland, Groningen en de rest van Nederland.',
+  email: site.email,
+  telephone: site.phone.replace(/\s/g, ''),
+  founder: { '@type': 'Person', name: 'Bert-Jan Russchen' },
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: site.address.split(',')[0].trim(),
+    postalCode: '9241 WN',
+    addressLocality: 'Wijnjewoude',
+    addressRegion: 'Friesland',
+    addressCountry: 'NL',
+  },
+  areaServed: [
+    { '@type': 'State', name: 'Friesland' },
+    { '@type': 'State', name: 'Groningen' },
+    { '@type': 'Country', name: 'Nederland' },
+  ],
+  knowsAbout: ['SEO', 'Lokale SEO', 'Webdesign', 'Online marketing', 'Social media', 'Procesautomatisering', 'Sportmarketing'],
+  sameAs: [site.instagramUrl],
+};
+
+const crumbs = breadcrumbs && {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [{ name: 'Home', path: '/' }, ...breadcrumbs].map((c, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: c.name,
+    item: siteUrl + c.path,
+  })),
+};
+
+const jsonLd = [current === 'home' ? business : { '@context': 'https://schema.org', '@type': 'ProfessionalService', '@id': businessId, name: site.companyName, url: `${siteUrl}/` }, crumbs, ...schema].filter(Boolean);
 ---
 
 <!DOCTYPE html>
@@ -19,11 +74,25 @@ const { title, description, current, showKernPager } = Astro.props;
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
   {description && <meta name="description" content={description} />}
+  <link rel="canonical" href={canonical} />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+
+  <meta property="og:type" content={type} />
+  <meta property="og:locale" content="nl_NL" />
+  <meta property="og:site_name" content={site.companyName} />
+  <meta property="og:title" content={title} />
+  {description && <meta property="og:description" content={description} />}
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={imageUrl} />
+  <meta name="twitter:card" content="summary_large_image" />
+
   <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
+  <link rel="sitemap" href="/sitemap-index.xml" />
   <link rel="stylesheet" href="/assets/css/main.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  {jsonLd.map((data) => <script type="application/ld+json" set:html={JSON.stringify(data)} />)}
   <slot name="head" />
 </head>
 <body>

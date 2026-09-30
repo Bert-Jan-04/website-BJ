@@ -1,0 +1,176 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ScanModal from '../../components/ScanModal.astro';
+import site from '../../data/site.json';
+import regio from '../../data/regio.json';
+import cases from '../../data/cases.json';
+
+export function getStaticPaths() {
+  return regio.cities.map((city) => ({ params: { slug: city.slug }, props: { city } }));
+}
+
+const { city } = Astro.props;
+const n = city.name;
+const siteUrl = Astro.site!.href.replace(/\/$/, '');
+const waHref = `https://wa.me/${site.whatsapp}`;
+const sportpoeder = cases.cases.find((c) => c.id === 'sportpoeder');
+const caseStats = [
+  { value: '+113%', label: 'organische klikken in 6 maanden' },
+  { value: '+185%', label: 'vertoningen in Google' },
+  { value: '10,5 → 7,7', label: 'gemiddelde positie' },
+];
+const nearby = city.nearby.map((slug) => regio.cities.find((c) => c.slug === slug)!).filter(Boolean);
+
+const services = [
+  { title: `Website laten maken in ${n}`, desc: `Een snelle, mobielvriendelijke website die bezoekers uit ${n} omzet in leden, klanten of aanmeldingen. Volledig op maat, met teksten die scoren in Google.`, href: '/diensten/#web-design' },
+  { title: `SEO en lokale vindbaarheid`, desc: `Bovenaan in Google bij zoekopdrachten als "sportschool ${n}" of "personal trainer ${n}", inclusief je Google Bedrijfsprofiel en reviews.`, href: '/diensten/#seo' },
+  { title: 'Social media content', desc: `Posts en korte video's die passen bij je merk en je volgers in ${n} en omgeving laten zien waarom ze bij jou moeten zijn.`, href: '/diensten/#social-media' },
+  { title: 'Automatisering', desc: 'Proeflesaanvragen, bevestigingen, reviewverzoeken en administratie die vanzelf lopen, zodat jij tijd overhoudt voor je klanten.', href: '/diensten/#automatisering' },
+];
+
+const faq = [
+  ...city.faq,
+  { q: `Werk je alleen voor sportbedrijven in ${n}?`, a: `De sportbranche is mijn specialisatie: sportscholen, verenigingen, trainers, sportwinkels en evenementen. Maar ik help ook graag andere ondernemers in ${n} om online te groeien.` },
+  { q: 'Wat kost het?', a: 'Elk project is anders. Na een gratis kennismaking van 30 minuten ontvang je binnen 48 uur een offerte met een vaste prijs, zonder verrassingen achteraf. Na oplevering krijg je 30 dagen gratis nazorg.' },
+];
+
+const title = `Website laten maken & SEO in ${n} | SportSEO Specialist`;
+const description = `Website laten maken of beter gevonden worden in ${n}? Websites, SEO en marketing voor sportbedrijven en ondernemers in ${n}. Vraag een gratis scan aan.`;
+const pageUrl = `${siteUrl}/regio/${city.slug}/`;
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: `Website laten maken en SEO in ${n}`,
+    serviceType: ['Webdesign', 'Zoekmachineoptimalisatie', 'Online marketing'],
+    url: pageUrl,
+    provider: { '@id': `${siteUrl}/#business` },
+    areaServed: { '@type': 'City', name: n, containedInPlace: { '@type': 'State', name: city.province } },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  current="regio"
+  breadcrumbs={[{ name: 'Regio', path: '/regio/' }, { name: n, path: `/regio/${city.slug}/` }]}
+  schema={schema}
+>
+  <main id="top">
+    <section class="page-hero">
+      <ol class="crumbs">
+        <li><a href="/">Home</a></li>
+        <li><a href="/regio/">Regio</a></li>
+        <li>{n}</li>
+      </ol>
+      <p class="eyebrow">Regio {city.province}</p>
+      <h1>Website laten maken en SEO in {n}</h1>
+      <p class="lead">{city.intro}</p>
+      <div class="hero-ctas">
+        <button class="btn btn-solid" type="button" data-open-scan>Start gratis scan</button>
+        <a class="btn btn-ghost" href={waHref} target="_blank" rel="noreferrer">App direct</a>
+      </div>
+    </section>
+
+    <section class="lp-section lp-section--light" data-theme="light">
+      <div class="lp-inner lp-inner--narrow">
+        <p class="eyebrow">Lokale markt</p>
+        <h2>{city.localTitle}</h2>
+        {city.local.map((p) => <p class="lp-text">{p}</p>)}
+        <div class="lp-chips">
+          {city.sectors.map((s) => <span>{s}</span>)}
+        </div>
+      </div>
+    </section>
+
+    <section class="lp-section">
+      <div class="lp-inner">
+        <p class="eyebrow">Diensten</p>
+        <h2>Wat ik voor sportbedrijven in {n} doe</h2>
+        <p class="lp-text">Alles onder één dak, van merkidentiteit tot website en marketing. Eén aanspreekpunt, korte lijnen en een aanpak die past bij jouw bedrijf.</p>
+        <div class="lp-grid">
+          {services.map((s) => (
+            <a class="lp-card" href={s.href}>
+              <h3>{s.title}</h3>
+              <p>{s.desc}</p>
+              <span class="lp-more">Meer over deze dienst →</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="lp-section lp-section--stone" data-theme="light">
+      <div class="lp-inner lp-inner--narrow">
+        <p class="eyebrow">Waarom lokale SEO</p>
+        <h2>Gevonden worden door sporters in {n}</h2>
+        <p class="lp-text">
+          Bijna iedereen die in {n} een sportschool, trainer, club of sportwinkel zoekt, begint in Google. De drie bedrijven die op de kaart en bovenaan de resultaten staan, krijgen het grootste deel van de klikken. Lokale SEO zorgt dat jij daarbij hoort.
+        </p>
+        <p class="lp-text">
+          Dat doe ik met een combinatie van een technisch sterke website, pagina's die precies aansluiten op wat mensen in {n} zoeken, een volledig geoptimaliseerd Google Bedrijfsprofiel en een vaste routine voor reviews. Lees ook mijn uitleg over <a href="/blog/lokale-seo-sportbedrijven/" style="text-decoration:underline;font-weight:700;">lokale SEO voor sportbedrijven</a> en het <a href="/blog/google-bedrijfsprofiel-sportschool/" style="text-decoration:underline;font-weight:700;">Google Bedrijfsprofiel voor sportscholen</a>.
+        </p>
+      </div>
+    </section>
+
+    {sportpoeder?.stats && (
+      <section class="lp-section">
+        <div class="lp-inner">
+          <p class="eyebrow">Resultaat</p>
+          <h2>Wat goede SEO oplevert</h2>
+          <p class="lp-text">{sportpoeder.description}</p>
+          <div class="lp-stats">
+            {caseStats.map((s) => <div><strong>{s.value}</strong><span>{s.label}</span></div>)}
+          </div>
+          <a class="btn btn-ghost" href="/cases/">Bekijk alle klantcases</a>
+        </div>
+      </section>
+    )}
+
+    <section class="lp-section lp-section--light" data-theme="light">
+      <div class="lp-inner lp-inner--narrow">
+        <p class="eyebrow">Veelgestelde vragen</p>
+        <h2>Vragen uit {n}</h2>
+        <div class="faq">
+          {faq.map((f) => (
+            <details>
+              <summary>{f.q}</summary>
+              <p>{f.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {nearby.length > 0 && (
+      <section class="lp-section lp-section--stone" data-theme="light">
+        <div class="lp-inner">
+          <p class="eyebrow">Ook actief in</p>
+          <h2>Plaatsen in de buurt van {n}</h2>
+          <div class="region-list">
+            {nearby.map((c) => <a href={`/regio/${c.slug}/`}>{c.name} <span>→</span></a>)}
+            <a href="/regio/">Alle regio's <span>→</span></a>
+          </div>
+        </div>
+      </section>
+    )}
+
+    <section class="cta-band">
+      <h2>Klaar om gevonden te worden in {n}?</h2>
+      <p>Start de gratis scan en ontdek waar jouw bedrijf online nog groei laat liggen.</p>
+      <div class="hero-ctas">
+        <button type="button" class="btn btn-solid" data-open-scan>Start gratis scan</button>
+        <a class="btn btn-ghost" href="/contact/">Contact opnemen</a>
+      </div>
+    </section>
+  </main>
+
+  <ScanModal />
+</BaseLayout>

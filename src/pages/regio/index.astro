@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ScanModal from '../../components/ScanModal.astro';
+import regio from '../../data/regio.json';
+
+const byProvince = regio.provinces.map((p) => ({
+  ...p,
+  cities: regio.cities.filter((c) => c.province === p.name).sort((a, b) => a.name.localeCompare(b.name, 'nl')),
+}));
+---
+
+<BaseLayout
+  title="Werkgebied Friesland & Groningen | SportSEO Specialist"
+  description="Websites, SEO en marketing voor sportbedrijven in Leeuwarden, Drachten, Heerenveen, Sneek, Groningen en andere plaatsen in Friesland en Groningen."
+  current="regio"
+  breadcrumbs={[{ name: 'Regio', path: '/regio/' }]}
+>
+  <main id="top">
+    <section class="page-hero">
+      <ol class="crumbs">
+        <li><a href="/">Home</a></li>
+        <li>Regio</li>
+      </ol>
+      <h1>{regio.hero.title}</h1>
+      <p class="lead">{regio.hero.subtitle}</p>
+      <div class="hero-ctas">
+        <button class="btn btn-solid" type="button" data-open-scan>Start gratis scan</button>
+      </div>
+    </section>
+
+    {byProvince.map((p, i) => (
+      <section class={`lp-section ${i % 2 === 0 ? 'lp-section--light' : 'lp-section--stone'}`} data-theme="light">
+        <div class="lp-inner">
+          <p class="eyebrow">Provincie</p>
+          <h2>{p.name}</h2>
+          <p class="lp-text">{p.intro}</p>
+          <div class="region-list">
+            {p.cities.map((c) => <a href={`/regio/${c.slug}/`}>{c.name} <span>→</span></a>)}
+          </div>
+        </div>
+      </section>
+    ))}
+
+    <section class="lp-section">
+      <div class="lp-inner lp-inner--narrow">
+        <p class="eyebrow">Buiten Noord-Nederland</p>
+        <h2>Staat jouw plaats er niet tussen?</h2>
+        <p class="lp-text">Geen probleem. Ik werk voor sportbedrijven in heel Nederland, met online kennismakingen en korte lijnen via WhatsApp. Voor landelijke webshops en merken, zoals Sportpoeder, maakt de locatie niet uit.</p>
+        <a class="btn btn-ghost" href="/contact/">Neem contact op</a>
+      </div>
+    </section>
+  </main>
+
+  <ScanModal />
+</BaseLayout>

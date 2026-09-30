@@ -36,6 +36,7 @@ collections:
             name: "hero"
             widget: "object"
             fields:
+              - { label: "SEO-kop (H1, klein boven de grote titel)", name: "h1", widget: "string" }
               - { label: "Titel regel 1", name: "titleLine1", widget: "string" }
               - { label: "Titel regel 2", name: "titleLine2", widget: "string" }
               - { label: "Titel regel 3", name: "titleLine3", widget: "string" }
@@ -368,3 +369,17 @@ collections:
               - { label: "Eyebrow", name: "eyebrow", widget: "string" }
               - { label: "Titel", name: "title", widget: "string" }
               - { label: "Notitie onder knop", name: "note", widget: "string" }
+
+  - name: "blog"
+    label: "Blog"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    fields:
+      - { label: "Titel", name: "title", widget: "string" }
+      - { label: "Meta-omschrijving (max. 155 tekens)", name: "description", widget: "text" }
+      - { label: "Publicatiedatum", name: "pubDate", widget: "datetime", format: "YYYY-MM-DD", date_format: "DD-MM-YYYY", time_format: false }
+      - { label: "Categorie", name: "category", widget: "select", options: ["SEO", "Lokale SEO", "Website", "Marketing", "Social media"] }
+      - { label: "Afbeelding", name: "image", widget: "image", required: false }
+      - { label: "Tekst", name: "body", widget: "markdown" }
