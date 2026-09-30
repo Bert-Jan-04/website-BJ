@@ -230,6 +230,8 @@ collections:
             widget: "list"
             fields:
               - { label: "ID (uniek, geen spaties)", name: "id", widget: "string", pattern: ["^[a-z0-9-]+$", "Alleen kleine letters, cijfers en koppeltekens"] }
+              - { label: "Bedrijfsnaam", name: "name", widget: "string", required: false }
+              - { label: "Website klant (volledige URL)", name: "website", widget: "string", required: false }
               - { label: "Logo", name: "logo", widget: "image" }
               - { label: "Logo-hoogte (bv. 28px)", name: "logoHeight", widget: "string" }
               - { label: "Logo grijstinten weergeven", name: "grayscaleLogo", widget: "boolean" }

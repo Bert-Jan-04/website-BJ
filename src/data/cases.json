@@ -6,6 +6,8 @@
   "cases": [
     {
       "id": "rebuild",
+      "name": "Rebuild",
+      "website": "https://rebuildcoaching.nl/",
       "logo": "/assets/images/logo-rebuild.webp",
       "logoHeight": "26px",
       "title": "Website voor een coachingtraject",
@@ -26,6 +28,8 @@
     },
     {
       "id": "sportpoeder",
+      "name": "Sportpoeder",
+      "website": "https://www.sportpoeder.nl/",
       "logo": "/assets/images/logo-sportpoeder.webp",
       "logoHeight": "28px",
       "title": "Sportpoeder × SportSEO Specialist",
@@ -53,6 +57,8 @@
     },
     {
       "id": "voetbalfunnoord",
+      "name": "VoetbalFunNoord",
+      "website": "https://www.voetbalfunnoord.nl/",
       "logo": "/assets/images/logo-voetbalfunnoord.webp",
       "logoHeight": "32px",
       "title": "Website voor een voetbalevenement",

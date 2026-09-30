@@ -203,7 +203,7 @@ strong { font-weight: 700; }
   display: none;
 }
 
-.menu.is-open { display: block; }
+.menu.is-open { display: block; overflow-y: auto; }
 
 .menu-top {
   display: flex;
@@ -1670,3 +1670,37 @@ a.lp-card:hover { transform: translateY(-4px); }
 @media (max-width: 860px) {
   .dienst-package { grid-template-columns: 1fr; gap: 36px; }
 }
+
+/* Diensten-dropdown */
+.nav-dropdown { position: relative; }
+.nav-dropdown > a { display: inline-flex; align-items: center; gap: 6px; }
+.nav-caret { width: 10px; height: 6px; transition: transform .25s var(--ease); }
+.nav-dropdown:hover .nav-caret, .nav-dropdown:focus-within .nav-caret { transform: rotate(180deg); }
+.nav-dropdown-panel {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  min-width: 240px;
+  display: grid;
+  gap: 2px;
+  padding: 10px;
+  background: #111;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 18px;
+  box-shadow: 0 20px 50px rgba(0,0,0,.45);
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -6px);
+  transition: opacity .2s ease, transform .2s var(--ease), visibility .2s;
+}
+.nav-dropdown-panel::before { content: ""; position: absolute; left: 0; right: 0; top: -16px; height: 16px; }
+.nav-dropdown:hover .nav-dropdown-panel,
+.nav-dropdown:focus-within .nav-dropdown-panel { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
+.main-nav .nav-dropdown-panel a { font-size: 14px; padding: 10px 14px; border-radius: 10px; white-space: nowrap; }
+.main-nav .nav-dropdown-panel a:hover { background: rgba(255,255,255,.08); }
+.main-nav .nav-dropdown-panel a:hover::after { display: none; }
+.main-nav .nav-dropdown-panel .nav-dropdown-all { margin-top: 4px; border-top: 1px solid rgba(255,255,255,.1); border-radius: 0 0 10px 10px; color: var(--yellow); font-weight: 700; }
+
+.menu-sub { display: flex; flex-wrap: wrap; gap: 8px; margin: -4px 0 8px; }
+.menu-nav .menu-sub a { font-size: 15px; font-weight: 600; letter-spacing: 0; border: 1px solid rgba(255,255,255,.3); border-radius: 999px; padding: 8px 14px; }

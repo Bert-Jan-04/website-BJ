@@ -33,7 +33,13 @@ import cases from '../data/cases.json';
               </div>
             </div>
             <div style={i % 2 === 1 ? 'order:2;' : undefined}>
-              <img loading="lazy" decoding="async" src={item.logo} alt={item.id} style={`height:${item.logoHeight};width:auto;margin-bottom:20px;${item.grayscaleLogo ? 'filter:grayscale(1) brightness(0);' : ''}`} />
+              {item.website ? (
+                <a href={item.website} target="_blank" rel="noopener" aria-label={`Website van ${item.name}`} style="display:inline-block;">
+                  <img loading="lazy" decoding="async" src={item.logo} alt={`Logo ${item.name}`} style={`height:${item.logoHeight};width:auto;margin-bottom:20px;${item.grayscaleLogo ? 'filter:grayscale(1) brightness(0);' : ''}`} />
+                </a>
+              ) : (
+                <img loading="lazy" decoding="async" src={item.logo} alt={`Logo ${item.name ?? item.id}`} style={`height:${item.logoHeight};width:auto;margin-bottom:20px;${item.grayscaleLogo ? 'filter:grayscale(1) brightness(0);' : ''}`} />
+              )}
               <h2 style="font-size:clamp(28px,3.4vw,44px);font-weight:800;letter-spacing:-.03em;margin:0 0 16px;">{item.title}</h2>
               <p style="font-size:16px;line-height:1.6;color:#333;margin:0 0 20px;">{item.description}</p>
               {item.stats && (
@@ -47,6 +53,11 @@ import cases from '../data/cases.json';
                 </div>
               )}
               {item.outro && <p style="font-size:15px;line-height:1.6;color:#333;margin:0 0 20px;">{item.outro}</p>}
+              {item.website && (
+                <a class="btn btn-dark" href={item.website} target="_blank" rel="noopener" style="margin:0 0 24px;gap:8px;">
+                  Bekijk {item.name} <span aria-hidden="true">↗</span>
+                </a>
+              )}
               <div style="display:flex;flex-wrap:wrap;gap:8px;">
                 {item.tags.map((tag) => (
                   <span style="border:1px solid #ccc;border-radius:999px;padding:6px 12px;font-size:13px;color:#333;">{tag}</span>
