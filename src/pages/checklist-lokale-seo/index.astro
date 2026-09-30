@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ScanModal from '../../components/ScanModal.astro';
+import LeadMagnet from '../../components/LeadMagnet.astro';
+
+const parts = [
+  { title: 'Google Bedrijfsprofiel', desc: 'De 7 instellingen die bepalen of je in het kaartblok van Google Maps verschijnt.' },
+  { title: 'Reviews', desc: 'Hoe je structureel reviews verzamelt en je concurrenten voorbijstreeft.' },
+  { title: 'Je website lokaal relevant maken', desc: 'Titels, koppen, bedrijfsgegevens en gestructureerde data die Google laten zien waar je zit.' },
+  { title: 'Lokale content', desc: "Pagina's per dienst en plaats, zonder in de valkuil van kopieerteksten te trappen." },
+  { title: 'Vermeldingen en links', desc: 'Waar je als sportbedrijf vermeld moet staan om lokaal autoriteit op te bouwen.' },
+  { title: 'Snelheid en mobiel', desc: 'De technische basis voor sporters die onderweg op hun telefoon zoeken.' },
+  { title: 'Meten en verbeteren', desc: 'Welke cijfers je maandelijks bekijkt, en waar de snelste winst zit.' },
+];
+---
+
+<BaseLayout
+  title="Gratis Lokale SEO-checklist voor sportbedrijven | SportSEO Specialist"
+  description="Download gratis de Lokale SEO-checklist: 35 punten om met je sportschool, studio, club of praktijk bovenaan te komen in Google en Google Maps."
+  current="blog"
+  breadcrumbs={[{ name: 'Lokale SEO-checklist', path: '/checklist-lokale-seo/' }]}
+>
+  <main id="top">
+    <section class="page-hero" style="padding-bottom:40px;">
+      <ol class="crumbs">
+        <li><a href="/">Home</a></li>
+        <li>Lokale SEO-checklist</li>
+      </ol>
+      <h1>Word dé sportaanbieder in jouw stad in Google</h1>
+      <p class="lead">Een gratis checklist met 35 concrete punten om bovenaan te komen in Google en Google Maps. Gemaakt voor sportscholen, studio's, personal trainers, fysiotherapeuten, verenigingen en sportwinkels.</p>
+    </section>
+
+    <LeadMagnet title="Download de gratis checklist" />
+
+    <section class="lp-section lp-section--light" data-theme="light">
+      <div class="lp-inner">
+        <p class="eyebrow">Wat staat erin</p>
+        <h2>7 onderdelen, op volgorde van impact</h2>
+        <p class="lp-text">Je begint bij de punten die het snelst resultaat opleveren. Aan het eind tel je je score en zie je precies wat je volgende stap is.</p>
+        <div class="lp-grid">
+          {parts.map((p, i) => (
+            <div class="lp-card">
+              <span style="font-size:13px;font-weight:700;opacity:.5;">Onderdeel {i + 1}</span>
+              <h3>{p.title}</h3>
+              <p>{p.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="lp-section">
+      <div class="lp-inner lp-inner--narrow">
+        <p class="eyebrow">Gemaakt door</p>
+        <h2>Bert-Jan Russchen, SportSEO Specialist</h2>
+        <p class="lp-text">Vanuit Wijnjewoude help ik sportbedrijven in Friesland, Groningen en de rest van Nederland aan websites die gevonden worden en klanten opleveren. Bij Sportpoeder groeiden de organische klikken met +113% in zes maanden. In deze checklist staat dezelfde basis die ik bij mijn klanten gebruik.</p>
+        <div class="hero-ctas" style="justify-content:flex-start;margin-top:28px;">
+          <a class="btn btn-ghost" href="/diensten/seo/">Bekijk mijn SEO-aanpak</a>
+          <a class="btn btn-ghost" href="/blog/lokale-seo-sportbedrijven/">Lees: lokale SEO uitgelegd</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <ScanModal />
+</BaseLayout>

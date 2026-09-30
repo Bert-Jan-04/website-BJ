@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ScanModal from '../../components/ScanModal.astro';
+import LeadMagnet from '../../components/LeadMagnet.astro';
 import diensten from '../../data/diensten.json';
 import dienstpaginas from '../../data/dienstpaginas.json';
 
@@ -39,6 +40,8 @@ const md = (s: string) =>
   esc(s)
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+
+const showLeadMagnet = ['seo', 'website-laten-maken', 'online-marketing'].includes(page.slug);
 
 const siteUrl = Astro.site!.href.replace(/\/$/, '');
 const schema = [
@@ -171,6 +174,8 @@ const schema = [
         </div>
       </div>
     </section>
+
+    {showLeadMagnet && <LeadMagnet />}
 
     <section class="lp-section lp-section--stone" data-theme="light">
       <div class="lp-inner">

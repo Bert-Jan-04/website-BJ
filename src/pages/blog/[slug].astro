@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ScanModal from '../../components/ScanModal.astro';
+import LeadMagnet from '../../components/LeadMagnet.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -64,6 +65,8 @@ const schema = [
         <Content />
       </div>
     </article>
+
+    <LeadMagnet />
 
     <section class="cta-band">
       <h2>Hulp nodig bij jouw vindbaarheid?</h2>

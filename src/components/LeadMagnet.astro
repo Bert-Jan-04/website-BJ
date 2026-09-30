@@ -1,0 +1,63 @@
+---
+interface Props {
+  title?: string;
+  text?: string;
+  theme?: 'light' | 'dark';
+}
+
+const {
+  title = 'Gratis: Lokale SEO-checklist voor sportbedrijven',
+  text = '35 concrete punten om bovenaan te komen in Google en Google Maps in jouw stad. Vink af wat je al goed doet en zie direct waar je klanten laat liggen.',
+  theme = 'dark',
+} = Astro.props;
+
+const CHECKLIST_PDF = '/downloads/lokale-seo-checklist-sportbedrijven.pdf';
+const source = Astro.url.pathname;
+---
+
+<section class={`lead-magnet lead-magnet--${theme}`} data-theme={theme === 'light' ? 'light' : undefined}>
+  <div class="lead-magnet-inner">
+    <div class="lead-magnet-cover">
+      <img loading="lazy" decoding="async" src="/assets/images/checklist-cover.webp" alt="Voorkant van de Lokale SEO-checklist voor sportbedrijven" width="600" height="849" />
+    </div>
+    <div class="lead-magnet-body">
+      <p class="lead-magnet-kicker">Gratis download · PDF</p>
+      <h2>{title}</h2>
+      <p class="lead-magnet-text">{text}</p>
+      <ul class="lead-magnet-points">
+        <li>Google Bedrijfsprofiel &amp; reviews</li>
+        <li>Lokale pagina's &amp; content</li>
+        <li>Links, snelheid &amp; meten</li>
+      </ul>
+
+      <form name="checklist" method="POST" action="/checklist-lokale-seo/bedankt/" data-netlify="true" netlify-honeypot="bot-field" data-lead-form>
+        <input type="hidden" name="form-name" value="checklist" />
+        <input type="hidden" name="bron" value={source} />
+        <p hidden><label>Niet invullen: <input name="bot-field" /></label></p>
+        <div class="lead-magnet-fields">
+          <label>
+            <span>Voornaam</span>
+            <input name="naam" type="text" autocomplete="given-name" placeholder="Jouw naam" required />
+          </label>
+          <label>
+            <span>E-mailadres</span>
+            <input name="email" type="email" autocomplete="email" placeholder="jij@bedrijf.nl" required />
+          </label>
+        </div>
+        <label class="lead-magnet-full">
+          <span>Bedrijfsnaam <em>(optioneel)</em></span>
+          <input name="bedrijf" type="text" autocomplete="organization" placeholder="Bijv. Sportschool Fit" />
+        </label>
+        <button type="submit" class="btn btn-solid" data-lead-submit>Stuur mij de checklist</button>
+        <p class="lead-magnet-note">Geen spam. Ik gebruik je gegevens alleen voor deze checklist en hooguit één persoonlijk bericht van mij.</p>
+        <p class="lead-magnet-error" data-lead-error hidden>Er ging iets mis. Probeer het opnieuw of <a href={CHECKLIST_PDF} target="_blank" rel="noopener">download de checklist direct</a>.</p>
+      </form>
+
+      <div class="lead-magnet-done" data-lead-done hidden>
+        <p class="lead-magnet-done-title">Top<span data-lead-name></span>! Je checklist staat klaar.</p>
+        <a class="btn btn-solid" href={CHECKLIST_PDF} target="_blank" rel="noopener" download>Download de checklist (PDF)</a>
+        <p class="lead-magnet-note">Wil je dat ik direct meekijk? <button type="button" data-open-scan>Start de gratis scan</button> of <a href="/contact/">plan een kennismaking</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>

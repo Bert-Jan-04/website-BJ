@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8" />
+<title>Lokale SEO-checklist voor sportbedrijven | SportSEO Specialist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { font-family: Inter, Helvetica, Arial, sans-serif; color: #111; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { width: 210mm; height: 297mm; padding: 18mm 18mm 16mm; position: relative; overflow: hidden; page-break-after: always; background: #f6f6f3; }
+  .page:last-child { page-break-after: auto; }
+
+  /* Cover */
+  .cover { background: #000; color: #fff; display: flex; flex-direction: column; }
+  .cover .brand { font-size: 11pt; color: #8a8a8a; font-weight: 600; letter-spacing: .02em; }
+  .cover .kicker { margin-top: 44mm; font-size: 11pt; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #f5d76e; }
+  .cover h1 { margin-top: 6mm; font-size: 50pt; line-height: .92; letter-spacing: -.045em; font-weight: 900; text-transform: uppercase; }
+  .cover h1 span { color: #f5d76e; }
+  .cover .sub { margin-top: 10mm; font-size: 13pt; line-height: 1.55; color: #d8d8d6; max-width: 135mm; }
+  .cover .stats { margin-top: auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8mm; border-top: 1px solid rgba(255,255,255,.2); padding-top: 7mm; }
+  .cover .stats strong { display: block; font-size: 22pt; font-weight: 900; letter-spacing: -.03em; color: #f5d76e; }
+  .cover .stats span { font-size: 9pt; color: #bbb; line-height: 1.4; display: block; margin-top: 1mm; }
+  .cover .author { margin-top: 9mm; font-size: 9.5pt; color: #8a8a8a; }
+  .cover .wordmark { position: absolute; right: -6mm; bottom: 60mm; font-size: 120pt; font-weight: 900; letter-spacing: -.06em; color: rgba(255,255,255,.04); transform: rotate(-90deg); transform-origin: right bottom; white-space: nowrap; }
+
+  /* Content pages */
+  .head { display: flex; justify-content: space-between; font-size: 8.5pt; color: #888; margin-bottom: 9mm; }
+  .intro h2, .section h2 { font-size: 20pt; font-weight: 900; letter-spacing: -.03em; line-height: 1.05; }
+  .intro p { margin-top: 4mm; font-size: 10.5pt; line-height: 1.6; color: #333; }
+  .howto { margin-top: 6mm; display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; }
+  .howto div { background: #fff; border-radius: 4mm; padding: 5mm; font-size: 9pt; line-height: 1.5; color: #333; }
+  .howto strong { display: block; font-size: 10pt; color: #111; margin-bottom: 1.5mm; }
+
+  .section { margin-top: 9mm; }
+  .section .tag { display: inline-block; font-size: 8pt; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; background: #111; color: #fff; border-radius: 99px; padding: 1.4mm 3.4mm; margin-bottom: 3mm; }
+  .section h2 { font-size: 16pt; }
+  .section .why { margin-top: 1.8mm; font-size: 9.5pt; color: #555; line-height: 1.5; }
+  ul.check { list-style: none; margin-top: 4mm; display: grid; gap: 2.4mm; }
+  ul.check li { display: grid; grid-template-columns: 6mm 1fr; gap: 3mm; background: #fff; border-radius: 3mm; padding: 3.2mm 4mm; font-size: 9.8pt; line-height: 1.45; color: #222; break-inside: avoid; }
+  ul.check li::before { content: ""; width: 4.6mm; height: 4.6mm; border: 1.6px solid #111; border-radius: 1.2mm; margin-top: .3mm; }
+  ul.check li strong { color: #111; }
+  .tip { margin-top: 3.5mm; border-left: 3px solid #f5d76e; background: #fff; border-radius: 0 3mm 3mm 0; padding: 3.2mm 4mm; font-size: 9.3pt; line-height: 1.5; color: #333; }
+  .tip b { color: #111; }
+  .foot { position: absolute; left: 18mm; right: 18mm; bottom: 9mm; display: flex; justify-content: space-between; font-size: 8pt; color: #999; }
+
+  /* Score + CTA */
+  .score { margin-top: 6mm; display: grid; gap: 3mm; }
+  .score div { display: grid; grid-template-columns: 26mm 1fr; gap: 4mm; align-items: center; background: #fff; border-radius: 3mm; padding: 4mm; font-size: 9.8pt; line-height: 1.45; color: #333; }
+  .score strong { font-size: 13pt; font-weight: 900; letter-spacing: -.02em; color: #111; }
+  .cta { margin-top: 10mm; background: #000; color: #fff; border-radius: 6mm; padding: 11mm 10mm; }
+  .cta .kicker { font-size: 9pt; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #f5d76e; }
+  .cta h2 { margin-top: 3mm; font-size: 24pt; line-height: 1.02; font-weight: 900; letter-spacing: -.035em; }
+  .cta p { margin-top: 4mm; font-size: 10.5pt; line-height: 1.6; color: #d8d8d6; }
+  .cta .contact { margin-top: 7mm; display: grid; gap: 2mm; font-size: 12pt; font-weight: 700; }
+  .cta .contact span { color: #8a8a8a; font-weight: 500; font-size: 9pt; display: inline-block; width: 22mm; }
+  .cta .result { margin-top: 7mm; border-top: 1px solid rgba(255,255,255,.2); padding-top: 5mm; font-size: 9.5pt; color: #bbb; line-height: 1.5; }
+  .cta .result b { color: #f5d76e; }
+</style>
+</head>
+<body>
+
+<!-- 1. Cover -->
+<section class="page cover">
+  <div class="brand">sportseospecialist.nl</div>
+  <div class="kicker">Gratis checklist</div>
+  <h1>Lokale SEO<br />checklist voor<br /><span>sportbedrijven</span></h1>
+  <p class="sub">35 concrete punten om bovenaan te komen in Google en Google Maps in jouw stad. Voor sportscholen, studio's, personal trainers, fysiotherapeuten, verenigingen en sportwinkels.</p>
+  <div class="stats">
+    <div><strong>35</strong><span>punten om direct af te vinken</span></div>
+    <div><strong>7</strong><span>onderdelen, van Google Maps tot reviews</span></div>
+    <div><strong>1 middag</strong><span>om de belangrijkste punten te regelen</span></div>
+  </div>
+  <p class="author">Door Bert-Jan Russchen, SportSEO Specialist · Wijnjewoude, Friesland</p>
+</section>
+
+<!-- 2. Intro + GBP -->
+<section class="page">
+  <div class="head"><span>Lokale SEO-checklist voor sportbedrijven</span><span>sportseospecialist.nl</span></div>
+  <div class="intro">
+    <h2>Zo gebruik je deze checklist</h2>
+    <p>Als iemand zoekt naar "sportschool" of "personal trainer" plus een plaatsnaam, toont Google eerst een kaartje met drie bedrijven. Die drie krijgen het grootste deel van de klikken, telefoontjes en routeverzoeken. Met deze checklist zorg je stap voor stap dat jij daarbij hoort.</p>
+  </div>
+  <div class="howto">
+    <div><strong>1. Vink af</strong>Loop elk onderdeel na en vink af wat al goed staat.</div>
+    <div><strong>2. Begin bovenaan</strong>De onderdelen staan op volgorde van impact. Start met je Google Bedrijfsprofiel.</div>
+    <div><strong>3. Tel je score</strong>Op de laatste pagina zie je waar je staat en wat je volgende stap is.</div>
+  </div>
+
+  <div class="section">
+    <span class="tag">Onderdeel 1</span>
+    <h2>Google Bedrijfsprofiel</h2>
+    <p class="why">De belangrijkste factor voor het kaartblok in Google Maps. Gratis, en bij de meeste sportbedrijven maar half ingevuld.</p>
+    <ul class="check">
+      <li><span>Je profiel is <strong>geclaimd en geverifieerd</strong>, en je hebt zelf toegang (niet alleen een oud-medewerker of bureau).</span></li>
+      <li><span>De <strong>hoofdcategorie</strong> klopt precies (bijv. "Sportschool", "Personal trainer", "Fysiotherapeut") en je hebt relevante extra categorieën toegevoegd.</span></li>
+      <li><span><strong>Naam, adres en telefoonnummer</strong> zijn exact gelijk aan die op je website. Geen extra zoekwoorden in je bedrijfsnaam.</span></li>
+      <li><span><strong>Openingstijden</strong> kloppen, inclusief speciale tijden rond feestdagen en vakanties.</span></li>
+      <li><span>Je <strong>diensten of lessen</strong> staan er apart in, elk met een korte omschrijving (bijv. bootcamp, small group, kinderfitness).</span></li>
+      <li><span>Er staan <strong>minimaal 10 actuele foto's</strong> in: buitenkant, binnenruimte, team en trainingen in actie.</span></li>
+      <li><span>Je plaatst <strong>minimaal twee berichten per maand</strong> (acties, open dag, nieuw rooster).</span></li>
+    </ul>
+    <div class="tip"><b>Tip:</b> upload elke maand een paar nieuwe foto's. Dat laat Google zien dat je profiel actief wordt beheerd.</div>
+  </div>
+  <div class="foot"><span>© SportSEO Specialist</span><span>2</span></div>
+</section>
+
+<!-- 3. Reviews + Website -->
+<section class="page">
+  <div class="head"><span>Lokale SEO-checklist voor sportbedrijven</span><span>sportseospecialist.nl</span></div>
+  <div class="section" style="margin-top:0;">
+    <span class="tag">Onderdeel 2</span>
+    <h2>Reviews</h2>
+    <p class="why">Reviews bepalen je positie in Google Maps én of iemand voor jou kiest of voor de concurrent.</p>
+    <ul class="check">
+      <li><span>Je hebt een <strong>korte reviewlink</strong> uit je Google Bedrijfsprofiel klaarstaan.</span></li>
+      <li><span>Je vraagt <strong>structureel</strong> om een review, bijv. automatisch na een proefles of de eerste maand.</span></li>
+      <li><span>Er hangt een <strong>QR-code</strong> naar je reviewpagina bij de balie of in de kleedkamer.</span></li>
+      <li><span>Je <strong>reageert op elke review</strong> binnen een paar dagen, ook op negatieve (rustig en oplossingsgericht).</span></li>
+      <li><span>Je hebt <strong>meer reviews dan je drie grootste lokale concurrenten</strong>, en je score is 4,5 of hoger.</span></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <span class="tag">Onderdeel 3</span>
+    <h2>Je website lokaal relevant maken</h2>
+    <p class="why">Google moet op je website kunnen zien wat je doet, voor wie en in welke plaats.</p>
+    <ul class="check">
+      <li><span>Je <strong>plaatsnaam staat in de paginatitel</strong> van je homepage, bijv. "Personal trainer in Heerenveen | Naam".</span></li>
+      <li><span>De <strong>H1 (hoofdkop)</strong> van je homepage zegt wat je doet en waar.</span></li>
+      <li><span>Elke belangrijke pagina heeft een <strong>unieke meta-omschrijving</strong> van ± 155 tekens.</span></li>
+      <li><span>Je <strong>naam, adres en telefoonnummer</strong> staan op elke pagina (bijv. in de footer).</span></li>
+      <li><span>Je contactpagina heeft een <strong>ingesloten Google Maps-kaart</strong> en een routebeschrijving.</span></li>
+      <li><span>Je website heeft <strong>gestructureerde data</strong> (LocalBusiness-schema) met je bedrijfsgegevens.</span></li>
+    </ul>
+    <div class="tip"><b>Tip:</b> check je paginatitel door in Google te zoeken op <b>site:jouwdomein.nl</b>. De blauwe titels zijn wat zoekers zien.</div>
+  </div>
+  <div class="foot"><span>© SportSEO Specialist</span><span>3</span></div>
+</section>
+
+<!-- 4. Content + Links -->
+<section class="page">
+  <div class="head"><span>Lokale SEO-checklist voor sportbedrijven</span><span>sportseospecialist.nl</span></div>
+  <div class="section" style="margin-top:0;">
+    <span class="tag">Onderdeel 4</span>
+    <h2>Lokale content</h2>
+    <p class="why">Met de juiste pagina's word je ook gevonden in de dorpen en wijken rond je locatie.</p>
+    <ul class="check">
+      <li><span>Je hebt <strong>een aparte pagina per dienst</strong> of les, zodat elke pagina op een eigen zoekterm kan ranken.</span></li>
+      <li><span>Bedien je meerdere plaatsen? Dan heb je <strong>per plaats een pagina met unieke tekst</strong> (niet dezelfde tekst met een andere plaatsnaam).</span></li>
+      <li><span>Je <strong>prijzen</strong> staan duidelijk op je site. Bezoekers die geen prijs vinden, haken af.</span></li>
+      <li><span>Je publiceert <strong>regelmatig nieuws of artikelen</strong> die vragen van je doelgroep beantwoorden.</span></li>
+      <li><span>Je gebruikt <strong>eigen foto's</strong> van je locatie en team, geen stockfoto's.</span></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <span class="tag">Onderdeel 5</span>
+    <h2>Vermeldingen en links</h2>
+    <p class="why">Hoe vaker betrouwbare lokale websites naar je verwijzen, hoe sterker je staat.</p>
+    <ul class="check">
+      <li><span>Je staat in <strong>lokale bedrijvengidsen</strong> en bij je gemeente of ondernemersvereniging.</span></li>
+      <li><span>Je staat vermeld bij de <strong>sportbond of koepelorganisatie</strong> waar je bij aangesloten bent.</span></li>
+      <li><span>Sponsor je een club of evenement? Dan heb je een <strong>link op hun sponsorpagina</strong>.</span></li>
+      <li><span>Je bedrijfsgegevens zijn <strong>overal precies hetzelfde</strong> (naam, adres, telefoonnummer).</span></li>
+      <li><span>Je hebt <strong>minimaal één keer in de lokale media</strong> gestaan (bijv. met een open dag of actie).</span></li>
+    </ul>
+    <div class="tip"><b>Tip:</b> zoek je bedrijfsnaam op Google en controleer de eerste drie pagina's met resultaten op oude adressen of telefoonnummers.</div>
+  </div>
+  <div class="foot"><span>© SportSEO Specialist</span><span>4</span></div>
+</section>
+
+<!-- 5. Techniek + Meten -->
+<section class="page">
+  <div class="head"><span>Lokale SEO-checklist voor sportbedrijven</span><span>sportseospecialist.nl</span></div>
+  <div class="section" style="margin-top:0;">
+    <span class="tag">Onderdeel 6</span>
+    <h2>Snelheid en mobiel</h2>
+    <p class="why">De meeste lokale zoekopdrachten gebeuren op een telefoon, vaak onderweg.</p>
+    <ul class="check">
+      <li><span>Je site laadt op mobiel <strong>binnen 3 seconden</strong> (test gratis met Google PageSpeed Insights).</span></li>
+      <li><span>Afbeeldingen zijn <strong>gecomprimeerd</strong>, bij voorkeur in WebP-formaat.</span></li>
+      <li><span>Bezoekers kunnen met <strong>één duim bellen, appen of een proefles boeken</strong>.</span></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <span class="tag">Onderdeel 7</span>
+    <h2>Meten en verbeteren</h2>
+    <p class="why">Wat je niet meet, kun je niet verbeteren.</p>
+    <ul class="check">
+      <li><span>Je website is gekoppeld aan <strong>Google Search Console</strong> en je sitemap is ingediend.</span></li>
+      <li><span>Je meet <strong>conversies</strong>: aanvragen, telefoontjes, WhatsApp-berichten en boekingen.</span></li>
+      <li><span>Je bekijkt <strong>maandelijks</strong> de prestaties van je Google Bedrijfsprofiel (weergaven, oproepen, routes).</span></li>
+      <li><span>Je vraagt elke nieuwe klant <strong>hoe hij je heeft gevonden</strong>.</span></li>
+    </ul>
+    <div class="tip"><b>Tip:</b> kijk in Search Console naar zoektermen waarop je op positie 8 tot 15 staat. Met een kleine verbetering haal je daar vaak de meeste winst.</div>
+  </div>
+  <div class="foot"><span>© SportSEO Specialist</span><span>5</span></div>
+</section>
+
+<!-- 6. Score + CTA -->
+<section class="page">
+  <div class="head"><span>Lokale SEO-checklist voor sportbedrijven</span><span>sportseospecialist.nl</span></div>
+  <div class="intro">
+    <h2>Jouw score</h2>
+    <p>Tel het aantal punten dat je hebt afgevinkt.</p>
+  </div>
+  <div class="score">
+    <div><strong>30 – 35</strong><span>Sterk! Je lokale basis staat. Focus nu op content en links om je voorsprong uit te bouwen.</span></div>
+    <div><strong>20 – 29</strong><span>Goede start, maar je laat klanten liggen. Pak eerst de openstaande punten in onderdeel 1 en 2 aan.</span></div>
+    <div><strong>10 – 19</strong><span>Hier valt veel te winnen. Je concurrenten zijn waarschijnlijk beter zichtbaar in Google Maps.</span></div>
+    <div><strong>0 – 9</strong><span>Je bent lokaal nog nauwelijks vindbaar. Het goede nieuws: met de basis zie je vaak al snel resultaat.</span></div>
+  </div>
+
+  <div class="cta">
+    <div class="kicker">Liever dat iemand het voor je doet?</div>
+    <h2>Ik help sportbedrijven in Friesland en Groningen bovenaan in Google.</h2>
+    <p>Van een volledig ingericht Google Bedrijfsprofiel en een snelle website tot lokale pagina's en een automatisch reviewsysteem. Plan een gratis kennismaking van 30 minuten, dan kijken we samen waar jouw grootste kansen liggen.</p>
+    <div class="contact">
+      <div><span>WhatsApp</span><a href="https://wa.me/31682671920" style="color:inherit;text-decoration:none;">06 82 67 19 20</a></div>
+      <div><span>E-mail</span><a href="mailto:russchenbertjan@gmail.com" style="color:inherit;text-decoration:none;">russchenbertjan@gmail.com</a></div>
+      <div><span>Website</span><a href="https://sportseospecialist.nl/?utm_source=checklist&amp;utm_medium=pdf" style="color:inherit;text-decoration:none;">sportseospecialist.nl</a></div>
+    </div>
+    <div class="result">Bewezen resultaat: bij Sportpoeder groeiden de organische klikken met <b>+113%</b> en de vertoningen in Google met <b>+185%</b> in zes maanden.</div>
+  </div>
+  <div class="foot"><span>© SportSEO Specialist</span><span>6</span></div>
+</section>
+
+</body>
+</html>

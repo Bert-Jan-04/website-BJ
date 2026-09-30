@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ScanModal from '../../components/ScanModal.astro';
+import LeadMagnet from '../../components/LeadMagnet.astro';
 import site from '../../data/site.json';
 import regio from '../../data/regio.json';
 import cases from '../../data/cases.json';
@@ -148,6 +149,11 @@ const schema = [
         </div>
       </div>
     </section>
+
+    <LeadMagnet
+      title={`Gratis checklist: bovenaan in Google in ${n}`}
+      text={`35 concrete punten om met je sportbedrijf in ${n} bovenaan te komen in Google en Google Maps. Vink af wat je al goed doet en zie direct waar je klanten laat liggen.`}
+    />
 
     {nearby.length > 0 && (
       <section class="lp-section lp-section--stone" data-theme="light">

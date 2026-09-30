@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ScanModal from '../../components/ScanModal.astro';
+import LeadMagnet from '../../components/LeadMagnet.astro';
 
 const posts = (await getCollection('blog')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 const fmt = (d: Date) => d.toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' });
@@ -37,6 +38,8 @@ const fmt = (d: Date) => d.toLocaleDateString('nl-NL', { day: 'numeric', month: 
         </div>
       </div>
     </section>
+
+    <LeadMagnet />
 
     <section class="cta-band">
       <h2>Liever dat iemand het voor je doet?</h2>

@@ -354,4 +354,39 @@
       }
     }
   });
+
+  document.querySelectorAll("[data-lead-form]").forEach((form) => {
+    const wrap = form.closest(".lead-magnet");
+    const done = wrap?.querySelector("[data-lead-done]");
+    const error = form.querySelector("[data-lead-error]");
+    const submit = form.querySelector("[data-lead-submit]");
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      if (error) error.hidden = true;
+      if (submit) {
+        submit.disabled = true;
+        submit.textContent = "Versturen...";
+      }
+      try {
+        const res = await fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(data).toString(),
+        });
+        if (!res.ok) throw new Error(String(res.status));
+        const name = String(data.get("naam") || "").trim();
+        const nameEl = done?.querySelector("[data-lead-name]");
+        if (nameEl) nameEl.textContent = name ? `, ${name}` : "";
+        form.hidden = true;
+        if (done) done.hidden = false;
+      } catch {
+        if (error) error.hidden = false;
+        if (submit) {
+          submit.disabled = false;
+          submit.textContent = "Stuur mij de checklist";
+        }
+      }
+    });
+  });
 })();
