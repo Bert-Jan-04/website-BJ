@@ -14,9 +14,10 @@ interface Props {
   type?: 'website' | 'article';
   breadcrumbs?: { name: string; path: string }[];
   schema?: Record<string, unknown>[];
+  noindex?: boolean;
 }
 
-const { title, description, current, showKernPager, image = '/assets/images/og-default.jpg', type = 'website', breadcrumbs, schema = [] } = Astro.props;
+const { title, description, current, showKernPager, image = '/assets/images/og-default.jpg', type = 'website', breadcrumbs, schema = [], noindex = false } = Astro.props;
 
 const siteUrl = Astro.site!.href.replace(/\/$/, '');
 const path = Astro.url.pathname.replace(/\/?(index)?(\.html)?$/, '/');
@@ -50,7 +51,7 @@ const business = {
     { '@type': 'Country', name: 'Nederland' },
   ],
   knowsAbout: ['SEO', 'Lokale SEO', 'Webdesign', 'Online marketing', 'Social media', 'Procesautomatisering', 'Sportmarketing'],
-  sameAs: [site.instagramUrl],
+  sameAs: [site.instagramUrl, site.tiktokUrl],
 };
 
 const crumbs = breadcrumbs && {
@@ -75,7 +76,7 @@ const jsonLd = [current === 'home' ? business : { '@context': 'https://schema.or
   <title>{title}</title>
   {description && <meta name="description" content={description} />}
   <link rel="canonical" href={canonical} />
-  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
 
   <meta property="og:type" content={type} />
   <meta property="og:locale" content="nl_NL" />

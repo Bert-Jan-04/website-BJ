@@ -29,9 +29,7 @@ const telHref = `+${site.whatsapp}`;
             <p class="eyebrow">Socials</p>
             <div style="display:grid;gap:10px;">
               <a href={site.instagramUrl} target="_blank" rel="noreferrer" style="font-size:16px;width:max-content;">Instagram</a>
-              <a href="https://www.tiktok.com" target="_blank" rel="noreferrer" style="font-size:16px;width:max-content;">TikTok</a>
-              <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" style="font-size:16px;width:max-content;">LinkedIn</a>
-              <a href="https://www.youtube.com" target="_blank" rel="noreferrer" style="font-size:16px;width:max-content;">YouTube</a>
+              <a href={site.tiktokUrl} target="_blank" rel="noreferrer" style="font-size:16px;width:max-content;">TikTok</a>
             </div>
           </div>
         </div>
@@ -39,7 +37,9 @@ const telHref = `+${site.whatsapp}`;
         <div class="scan-card" style="width:100%;">
           <p class="eyebrow">{contact.form.eyebrow}</p>
           <h3 style="font-size:28px;letter-spacing:-.03em;margin:0 0 24px;color:#fff;">{contact.form.title}</h3>
-          <form data-contact-form>
+          <form name="contact" method="POST" action="/contact/bedankt/" data-netlify="true" netlify-honeypot="bot-field" data-contact-form>
+            <input type="hidden" name="form-name" value="contact" />
+            <p hidden><label>Niet invullen: <input name="bot-field" /></label></p>
             <label>
               Naam
               <input name="name" type="text" placeholder="Jouw naam" required />
@@ -52,7 +52,8 @@ const telHref = `+${site.whatsapp}`;
               Bericht
               <textarea name="message" placeholder="Vertel kort waar je hulp bij zoekt" required rows="4"></textarea>
             </label>
-            <button type="submit" class="btn btn-solid">Versturen</button>
+            <button type="submit" class="btn btn-solid" data-contact-submit>Versturen</button>
+            <p data-contact-error hidden style="color:#ffb4a8;font-size:14px;line-height:1.5;margin:0;">Er ging iets mis bij het versturen. Stuur je bericht via <a href={waHref} target="_blank" rel="noreferrer" style="text-decoration:underline;">WhatsApp</a> of mail naar <a href={`mailto:${site.email}`} style="text-decoration:underline;">{site.email}</a>.</p>
             <p class="final-note"><i></i> {contact.form.note}</p>
           </form>
           <div data-contact-done hidden>

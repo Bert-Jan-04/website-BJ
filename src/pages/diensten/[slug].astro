@@ -1,0 +1,213 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ScanModal from '../../components/ScanModal.astro';
+import diensten from '../../data/diensten.json';
+import dienstpaginas from '../../data/dienstpaginas.json';
+
+export function getStaticPaths() {
+  return dienstpaginas.pages.map((page) => ({ params: { slug: page.slug }, props: { page } }));
+}
+
+type Card = {
+  anchorId: string;
+  title: string;
+  idealFor?: string[];
+  group1?: { label: string; items: string[] };
+  group2?: { label: string; items: string[] };
+  features: string[];
+  microCopy?: string;
+  addons?: { label: string; price: string }[];
+};
+
+const { page } = Astro.props;
+const allCards: Card[] = [...diensten.designMarketing.cards, diensten.seo, diensten.marketing, ...diensten.automatisering.cards];
+const cards = page.anchors.map((a) => allCards.find((c) => c.anchorId === a)).filter(Boolean) as Card[];
+const features = [...new Set(cards.flatMap((c) => c.features))];
+const idealFor = cards.find((c) => c.idealFor)?.idealFor ?? [];
+const groups = cards.flatMap((c) => [c.group1, c.group2]).filter(Boolean) as { label: string; items: string[] }[];
+const addons = cards.flatMap((c) => c.addons ?? []);
+const microCopy = cards[0]?.microCopy;
+
+const posts = await getCollection('blog');
+const blog = page.blog.map((id) => posts.find((p) => p.id === id)).filter(Boolean);
+const related = page.related.map((s) => dienstpaginas.pages.find((p) => p.slug === s)!).filter(Boolean);
+
+// Minimal inline markdown: **vet** en [tekst](/link/)
+const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const md = (s: string) =>
+  esc(s)
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+
+const siteUrl = Astro.site!.href.replace(/\/$/, '');
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: page.h1,
+    description: page.metaDescription,
+    url: `${siteUrl}/diensten/${page.slug}/`,
+    provider: { '@id': `${siteUrl}/#business` },
+    areaServed: [
+      { '@type': 'State', name: 'Friesland' },
+      { '@type': 'State', name: 'Groningen' },
+      { '@type': 'Country', name: 'Nederland' },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: page.faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  },
+];
+---
+
+<BaseLayout
+  title={page.metaTitle}
+  description={page.metaDescription}
+  current="diensten"
+  breadcrumbs={[{ name: 'Diensten', path: '/diensten/' }, { name: page.navLabel, path: `/diensten/${page.slug}/` }]}
+  schema={schema}
+>
+  <main id="top">
+    <section class="page-hero">
+      <ol class="crumbs">
+        <li><a href="/">Home</a></li>
+        <li><a href="/diensten/">Diensten</a></li>
+        <li>{page.navLabel}</li>
+      </ol>
+      <h1>{page.h1}</h1>
+      <p class="lead">{page.intro}</p>
+      <div class="hero-ctas">
+        <button class="btn btn-solid" type="button" data-open-scan>Start gratis scan</button>
+        <a class="btn btn-ghost" href="/contact/">Offerte aanvragen</a>
+      </div>
+    </section>
+
+    <section class="lp-section lp-section--light" data-theme="light">
+      <div class="lp-inner">
+        <div class="dienst-package">
+          <div>
+            <p class="eyebrow">Wat je krijgt</p>
+            <h2>Alles inbegrepen</h2>
+            <ul class="service-card-features">
+              {features.map((f) => <li><span>✓</span><span>{f}</span></li>)}
+            </ul>
+            {microCopy && <p class="dienst-micro">{microCopy}</p>}
+          </div>
+          <div class="dienst-meta">
+            {idealFor.length > 0 && (
+              <div class="service-card-group">
+                <p>Ideaal voor</p>
+                <div class="service-card-chips">{idealFor.map((t) => <span>{t}</span>)}</div>
+              </div>
+            )}
+            {groups.map((g) => (
+              <div class="service-card-group">
+                <p>{g.label}</p>
+                <div class="service-card-chips">{g.items.map((t) => <span>{t}</span>)}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {page.sections.map((s, i) => (
+      <section class={`lp-section ${i % 2 === 0 ? '' : 'lp-section--stone'}`} data-theme={i % 2 === 0 ? undefined : 'light'}>
+        <div class="lp-inner lp-inner--narrow dienst-body">
+          <h2>{s.title}</h2>
+          {s.paragraphs?.map((p) => <p class="lp-text" set:html={md(p)} />)}
+          {s.bullets && (
+            <ul class="dienst-bullets">
+              {s.bullets.map((b) => <li set:html={md(b)} />)}
+            </ul>
+          )}
+        </div>
+      </section>
+    ))}
+
+    <section class="lp-section" style="background:#000;">
+      <div class="lp-inner">
+        <p class="eyebrow">Werkwijze</p>
+        <h2>Zo pakken we het aan</h2>
+        <div class="lp-grid">
+          {page.steps.map((step, i) => (
+            <div class="step-card">
+              <span>Stap {i + 1}</span>
+              <h3>{step.title}</h3>
+              <p>{step.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {addons.length > 0 && (
+      <section class="lp-section lp-section--stone" data-theme="light">
+        <div class="lp-inner lp-inner--narrow">
+          <p class="eyebrow">Mogelijkheden</p>
+          <h2>Extra opties</h2>
+          <div class="service-card-addons" style="border-top-color:rgba(0,0,0,.12);">
+            {addons.map((a) => <div><span>{a.label}</span><span>{a.price}</span></div>)}
+          </div>
+          <button type="button" class="btn btn-dark" data-open-scan style="margin-top:32px;">Offerte aanvragen →</button>
+        </div>
+      </section>
+    )}
+
+    <section class="lp-section lp-section--light" data-theme="light">
+      <div class="lp-inner lp-inner--narrow">
+        <p class="eyebrow">Veelgestelde vragen</p>
+        <h2>Vragen over {page.navLabel.toLowerCase() === 'seo' ? 'SEO' : page.navLabel.toLowerCase()}</h2>
+        <div class="faq">
+          {page.faq.map((f) => (
+            <details>
+              <summary>{f.q}</summary>
+              <p>{f.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="lp-section lp-section--stone" data-theme="light">
+      <div class="lp-inner">
+        {blog.length > 0 && (
+          <>
+            <p class="eyebrow">Verder lezen</p>
+            <h2>Uit de kennisbank</h2>
+            <div class="post-list" style="margin:32px 0 64px;">
+              {blog.map((p) => (
+                <a class="post-card" href={`/blog/${p!.id}/`}>
+                  <div class="post-meta"><span>{p!.data.category}</span></div>
+                  <h3>{p!.data.title}</h3>
+                  <p>{p!.data.description}</p>
+                  <span class="lp-more">Lees artikel →</span>
+                </a>
+              ))}
+            </div>
+          </>
+        )}
+        <p class="eyebrow">Andere diensten</p>
+        <h2>Past goed samen met</h2>
+        <div class="region-list">
+          {related.map((r) => <a href={`/diensten/${r.slug}/`}>{r.navLabel} <span>→</span></a>)}
+          <a href="/diensten/">Alle diensten <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <h2>Klaar om te groeien?</h2>
+      <p>Vraag een gratis kennismakingsgesprek aan, geen verplichtingen.</p>
+      <div class="hero-ctas">
+        <button type="button" class="btn btn-solid" data-open-scan>Start gratis scan</button>
+        <a class="btn btn-ghost" href="/contact/">Contact opnemen</a>
+      </div>
+    </section>
+  </main>
+
+  <ScanModal />
+</BaseLayout>

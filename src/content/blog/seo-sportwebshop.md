@@ -101,4 +101,4 @@ SEO is nooit af. Kijk maandelijks in Google Search Console naar:
 
 Een sportwebshop hoger in Google krijgen is geen kwestie van één trucje, maar van een stevige basis die je consequent uitbouwt: goede zoekwoorden, een logische structuur, sterke categoriepagina's, unieke teksten, techniek op orde, waardevolle content en autoriteit.
 
-De resultaten van [Sportpoeder](/cases/) laten zien wat dat kan opleveren. Wil je weten waar de kansen voor jouw webshop liggen? Doe de gratis scan of lees meer over mijn [SEO-aanpak](/diensten/#seo).
+De resultaten van [Sportpoeder](/cases/) laten zien wat dat kan opleveren. Wil je weten waar de kansen voor jouw webshop liggen? Doe de gratis scan of lees meer over mijn [SEO-aanpak](/diensten/seo/).

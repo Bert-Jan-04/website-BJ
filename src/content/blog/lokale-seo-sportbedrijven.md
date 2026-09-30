@@ -62,7 +62,7 @@ Het geheim is om het vragen om een review een **vast onderdeel van je proces** t
 - Vraag het persoonlijk op het moment dat iemand enthousiast is, bijvoorbeeld na een persoonlijk record.
 - Reageer op **elke** review, ook op de negatieve. Rustig, vriendelijk en oplossingsgericht.
 
-Tip: met een eenvoudige automatisering gaat dit volledig vanzelf. Dat is precies het soort [procesautomatisering](/diensten/#automatisering) waarmee ik sportbedrijven help.
+Tip: met een eenvoudige automatisering gaat dit volledig vanzelf. Dat is precies het soort [procesautomatisering](/diensten/automatisering/) waarmee ik sportbedrijven help.
 
 ## Stap 4: Zorg voor lokale vermeldingen en links
 
@@ -101,4 +101,4 @@ Het mooie is dat een goede positie, eenmaal bereikt, je elke maand nieuwe klante
 4. Zorg voor consistente vermeldingen en lokale links.
 5. Maak je site snel en mobielvriendelijk.
 
-Wil je weten hoe jouw sportbedrijf er nu voor staat? Doe de gratis scan of bekijk hoe ik bedrijven in jouw [regio](/regio/) help met [SEO en lokale vindbaarheid](/diensten/#seo).
+Wil je weten hoe jouw sportbedrijf er nu voor staat? Doe de gratis scan of bekijk hoe ik bedrijven in jouw [regio](/regio/) help met [SEO en lokale vindbaarheid](/diensten/seo/).

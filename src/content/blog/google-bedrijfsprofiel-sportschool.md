@@ -124,4 +124,4 @@ In je profiel zie je onder "Prestaties" hoeveel mensen je profiel bekeken, hoeve
 - [ ] Openingstijden en diensten actueel
 - [ ] Website sluit aan op het profiel
 
-Geen tijd of zin om dit zelf te doen? Ik richt je Google Bedrijfsprofiel in als onderdeel van mijn [lokale SEO-aanpak](/diensten/#seo), voor sportbedrijven in heel [Friesland en Groningen](/regio/).
+Geen tijd of zin om dit zelf te doen? Ik richt je Google Bedrijfsprofiel in als onderdeel van mijn [lokale SEO-aanpak](/diensten/seo/), voor sportbedrijven in heel [Friesland en Groningen](/regio/).

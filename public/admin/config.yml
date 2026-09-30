@@ -27,6 +27,8 @@ collections:
           - { label: "E-mailadres", name: "email", widget: "string" }
           - { label: "Instagram-naam (met @)", name: "instagramHandle", widget: "string" }
           - { label: "Instagram-URL", name: "instagramUrl", widget: "string" }
+          - { label: "TikTok-naam (met @)", name: "tiktokHandle", widget: "string" }
+          - { label: "TikTok-URL", name: "tiktokUrl", widget: "string" }
 
       - file: "src/data/home.json"
         label: "Homepage"

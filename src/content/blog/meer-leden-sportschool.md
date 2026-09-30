@@ -45,7 +45,7 @@ Iemand die een proefles aanvraagt en pas na drie dagen iets hoort, is vaak alwee
 2. Een herinnering de dag van tevoren
 3. Na de proefles een persoonlijk bericht met een aanbod
 
-Dit kost je eenmalig wat tijd om in te richten en werkt daarna volledig vanzelf. Lees meer over [automatisering voor sportbedrijven](/diensten/#automatisering).
+Dit kost je eenmalig wat tijd om in te richten en werkt daarna volledig vanzelf. Lees meer over [automatisering voor sportbedrijven](/diensten/automatisering/).
 
 ## 5. Schrijf content die je doelgroep zoekt
 
@@ -92,7 +92,7 @@ Met Google Ads en Meta-advertenties (Facebook en Instagram) kun je heel gericht 
 - Richt je op een straal van een paar kilometer rond je locatie.
 - Test verschillende boodschappen en kijk wat het meeste aanvragen oplevert.
 
-Ook nieuwe kanalen zoals [ChatGPT Ads](/diensten/#chatgpt-ads) bieden kansen om zichtbaar te zijn op het moment dat mensen een AI-assistent om advies vragen.
+Ook nieuwe kanalen zoals [ChatGPT Ads](/diensten/chatgpt-ads/) bieden kansen om zichtbaar te zijn op het moment dat mensen een AI-assistent om advies vragen.
 
 ## 10. Meet wat werkt
 

@@ -82,7 +82,7 @@ Meer daarover lees je in [lokale SEO voor sportbedrijven](/blog/lokale-seo-sport
 
 ## Bonus: automatiseer de administratie
 
-Veel bestuursleden besteden uren aan het overtypen van aanmeldingen, het versturen van welkomstmails en het bijhouden van lijsten. Met een paar slimme koppelingen komt een aanmelding via de website automatisch in je ledenadministratie terecht en krijgt het nieuwe lid direct een welkomstbericht. Dat bespaart vrijwilligers veel tijd. Lees meer over [automatisering](/diensten/#automatisering).
+Veel bestuursleden besteden uren aan het overtypen van aanmeldingen, het versturen van welkomstmails en het bijhouden van lijsten. Met een paar slimme koppelingen komt een aanmelding via de website automatisch in je ledenadministratie terecht en krijgt het nieuwe lid direct een welkomstbericht. Dat bespaart vrijwilligers veel tijd. Lees meer over [automatisering](/diensten/automatisering/).
 
 ## Tot slot
 

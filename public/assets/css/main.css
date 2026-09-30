@@ -1653,3 +1653,20 @@ a.lp-card:hover { transform: translateY(-4px); }
   .page-hero { padding: 40px 16px 70px; }
   .prose { font-size: 17px; }
 }
+
+/* Dienstpagina's */
+.dienst-package { display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: start; }
+.dienst-package h2 { margin-bottom: 28px; }
+.dienst-package .service-card-features li { font-size: 16px; }
+.dienst-meta { display: grid; gap: 28px; background: #fff; border-radius: 24px; padding: 32px; }
+.dienst-micro { margin-top: 24px; font-size: 14px; color: #666; }
+.dienst-body a { text-decoration: underline; text-underline-offset: 3px; font-weight: 700; }
+.dienst-bullets { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 14px; max-width: 720px; }
+.dienst-bullets li { position: relative; padding-left: 28px; font-size: 17px; line-height: 1.6; opacity: .9; }
+.dienst-bullets li::before { content: "✓"; position: absolute; left: 0; top: 0; font-weight: 800; color: var(--yellow); }
+.lp-section--stone .dienst-bullets li::before, .lp-section--light .dienst-bullets li::before { color: #111; }
+.dienst-overview-link { font-size: 14px; font-weight: 700; width: max-content; text-decoration: underline; text-underline-offset: 3px; }
+
+@media (max-width: 860px) {
+  .dienst-package { grid-template-columns: 1fr; gap: 36px; }
+}

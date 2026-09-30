@@ -2,6 +2,10 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ScanModal from '../components/ScanModal.astro';
 import diensten from '../data/diensten.json';
+import dienstpaginas from '../data/dienstpaginas.json';
+
+const pageFor = (anchor: string) => dienstpaginas.pages.find((p) => p.anchors.includes(anchor))!;
+const pageHref = (anchor: string) => `/diensten/${pageFor(anchor).slug}/`;
 
 const seo = diensten.seo;
 const marketing = diensten.marketing;
@@ -14,7 +18,7 @@ const marketing = diensten.marketing;
       <p style="max-width:620px;font-size:clamp(16px,1.5vw,19px);line-height:1.55;color:#d8d8d6;margin:0 0 36px;">{diensten.hero.subtitle}</p>
       <div style="display:flex;flex-wrap:wrap;gap:12px;">
         {diensten.hero.chips.map((chip) => (
-          <a href={chip.href} style="font-size:14px;font-weight:600;color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:999px;padding:10px 18px;">{chip.label}</a>
+          <a href={pageHref(chip.href.replace('#', ''))} style="font-size:14px;font-weight:600;color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:999px;padding:10px 18px;">{chip.label}</a>
         ))}
       </div>
     </section>
@@ -49,7 +53,7 @@ const marketing = diensten.marketing;
                   ))}
                 </div>
               )}
-              <a href="#" data-open-scan style="font-size:14px;font-weight:600;color:#111;width:max-content;">{card.ctaLabel || 'Offerte aanvragen →'}</a>
+              <a href={pageHref(card.anchorId)} class="dienst-overview-link" style="color:#111;">Bekijk dienst: {pageFor(card.anchorId).navLabel} →</a>
               <ul class="service-card-features">
                 {card.features.map((feat: string) => <li><span>✓</span><span>{feat}</span></li>)}
               </ul>
@@ -87,7 +91,7 @@ const marketing = diensten.marketing;
             <p>{seo.group1.label}</p>
             <div class="service-card-chips">{seo.group1.items.map((t) => <span>{t}</span>)}</div>
           </div>
-          <a href="#" data-open-scan style="font-size:14px;font-weight:600;color:#fff;width:max-content;">Offerte aanvragen →</a>
+          <a href={pageHref(seo.anchorId)} class="dienst-overview-link" style="color:#fff;">Bekijk dienst: {pageFor(seo.anchorId).navLabel} →</a>
           <ul class="service-card-features">
             {seo.features.map((feat) => <li><span>✓</span><span>{feat}</span></li>)}
           </ul>
@@ -116,7 +120,7 @@ const marketing = diensten.marketing;
             <p>{marketing.group1.label}</p>
             <div class="service-card-chips">{marketing.group1.items.map((t) => <span>{t}</span>)}</div>
           </div>
-          <a href="#" data-open-scan style="font-size:14px;font-weight:600;color:#111;width:max-content;">Offerte aanvragen →</a>
+          <a href={pageHref(marketing.anchorId)} class="dienst-overview-link" style="color:#111;">Bekijk dienst: {pageFor(marketing.anchorId).navLabel} →</a>
           <ul class="service-card-features">
             {marketing.features.map((feat) => <li><span>✓</span><span>{feat}</span></li>)}
           </ul>
@@ -155,7 +159,7 @@ const marketing = diensten.marketing;
                   <div class="service-card-chips">{card.group2.items.map((t: string) => <span>{t}</span>)}</div>
                 </div>
               )}
-              <a href="#" data-open-scan style="font-size:14px;font-weight:600;color:#111;width:max-content;">Offerte aanvragen →</a>
+              <a href={pageHref(card.anchorId)} class="dienst-overview-link" style="color:#111;">Bekijk dienst: {pageFor(card.anchorId).navLabel} →</a>
               <ul class="service-card-features">
                 {card.features.map((feat: string) => <li><span>✓</span><span>{feat}</span></li>)}
               </ul>

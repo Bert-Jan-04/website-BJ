@@ -323,21 +323,35 @@
 
   const contactForm = document.querySelector("[data-contact-form]");
   const contactDone = document.querySelector("[data-contact-done]");
-  contactForm?.addEventListener("submit", (e) => {
+  const contactError = document.querySelector("[data-contact-error]");
+  const contactSubmit = document.querySelector("[data-contact-submit]");
+  contactForm?.addEventListener("submit", async (e) => {
     e.preventDefault();
     const data = new FormData(contactForm);
     const name = String(data.get("name") || "").trim();
-    const email = String(data.get("email") || "").trim();
-    const message = String(data.get("message") || "").trim();
     const nameEl = document.querySelector("[data-contact-name]");
     if (nameEl) nameEl.textContent = name ? `, ${name}` : "";
+    if (contactError) contactError.hidden = true;
+    if (contactSubmit) {
+      contactSubmit.disabled = true;
+      contactSubmit.textContent = "Versturen...";
+    }
 
-    const subject = `Contact via website${name ? ` — ${name}` : ""}`;
-    const body = `Naam: ${name}\nE-mail: ${email}\n\n${message}`;
-    const mailtoHref = `mailto:russchenbertjan@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailtoHref;
-
-    contactForm.hidden = true;
-    if (contactDone) contactDone.hidden = false;
+    try {
+      const res = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(data).toString(),
+      });
+      if (!res.ok) throw new Error(String(res.status));
+      contactForm.hidden = true;
+      if (contactDone) contactDone.hidden = false;
+    } catch {
+      if (contactError) contactError.hidden = false;
+      if (contactSubmit) {
+        contactSubmit.disabled = false;
+        contactSubmit.textContent = "Versturen";
+      }
+    }
   });
 })();
